@@ -1,0 +1,34 @@
+﻿xpark.dataset.VideoCompute
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoCompute
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoCompute.average_rate
+      ~VideoCompute.base_rate
+      ~VideoCompute.bit_rate
+      ~VideoCompute.codec
+      ~VideoCompute.decode_frame_at
+      ~VideoCompute.decode_frames
+      ~VideoCompute.display_aspect_ratio
+      ~VideoCompute.extract_audio
+      ~VideoCompute.height
+      ~VideoCompute.pix_fmt
+      ~VideoCompute.split_by_duration
+      ~VideoCompute.split_by_key_frame
+      ~VideoCompute.time_base
+      ~VideoCompute.width
+   
+   
+
+   
+   
+   

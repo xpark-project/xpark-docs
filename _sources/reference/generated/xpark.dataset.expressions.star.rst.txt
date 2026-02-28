@@ -1,0 +1,6 @@
+﻿xpark.dataset.expressions.star
+==============================
+
+.. currentmodule:: xpark.dataset.expressions
+
+.. autofunction:: star

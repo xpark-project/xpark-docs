@@ -1,0 +1,6 @@
+﻿xpark.dataset.read\_image
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: read_image

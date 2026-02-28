@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.ZeroPercentage
+======================================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: ZeroPercentage
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ZeroPercentage.aggregate_block
+      ~ZeroPercentage.combine
+      ~ZeroPercentage.finalize
+      ~ZeroPercentage.get_agg_name
+      ~ZeroPercentage.get_target_column
+   
+   
+
+   
+   
+   

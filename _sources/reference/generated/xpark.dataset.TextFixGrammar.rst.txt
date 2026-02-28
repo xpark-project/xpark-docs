@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextFixGrammar
+============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextFixGrammar
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextFixGrammar.__call__
+      ~TextFixGrammar.options
+      ~TextFixGrammar.with_column
+   
+   
+
+   
+   
+   

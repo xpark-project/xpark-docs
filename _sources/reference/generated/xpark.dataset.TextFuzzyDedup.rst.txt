@@ -1,0 +1,21 @@
+﻿xpark.dataset.TextFuzzyDedup
+============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextFuzzyDedup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextFuzzyDedup.with_column
+   
+   
+
+   
+   
+   
