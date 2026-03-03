@@ -11,6 +11,7 @@ Text
     :toctree: generated/
 
     xpark.dataset.TextFuzzyDedup
+    xpark.dataset.TextExactSubstringDedup
 
 Audio
 -------------
