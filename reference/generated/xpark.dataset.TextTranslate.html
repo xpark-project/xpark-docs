@@ -44,13 +44,6 @@
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/xpark.dataset.TextTranslate';</script>
-    <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner =
-            false;
-        </script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="xpark.dataset.TextSentiment" href="xpark.dataset.TextSentiment.html" />
@@ -123,26 +116,6 @@
   
 </a></div>
     
-      <div class="navbar-item">
-<div class="version-switcher__container dropdown pst-js-only">
-  <button id="pst-version-switcher-button-2"
-    type="button"
-    class="version-switcher__button btn btn-sm dropdown-toggle"
-    data-bs-toggle="dropdown"
-    aria-haspopup="listbox"
-    aria-controls="pst-version-switcher-list-2"
-    aria-label="Version switcher list"
-  >
-    Choose version  <!-- this text may get changed later by javascript -->
-    <span class="caret"></span>
-  </button>
-  <div id="pst-version-switcher-list-2"
-    class="version-switcher__menu dropdown-menu list-group-flush py-0"
-    role="listbox" aria-labelledby="pst-version-switcher-button-2">
-    <!-- dropdown will be populated by javascript on page load -->
-  </div>
-</div></div>
-    
   </div>
   
   <div class="col-lg-9 navbar-header-items">
@@ -154,22 +127,29 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../index.html">
     Dataset API
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../data_processors.html">
-    Data Processors
-  </a>
-</li>
-
-
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../ai_processors.html">
-    AI Processors
+  <a class="nav-link nav-internal" href="../processors.html">
+    Processors
   </a>
 </li>
 
@@ -247,22 +227,29 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../index.html">
     Dataset API
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../data_processors.html">
-    Data Processors
-  </a>
-</li>
-
-
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../ai_processors.html">
-    AI Processors
+  <a class="nav-link nav-internal" href="../processors.html">
+    Processors
   </a>
 </li>
 
@@ -293,7 +280,20 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextFuzzyDedup.html">xpark.dataset.TextFuzzyDedup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextExactSubstringDedup.html">xpark.dataset.TextExactSubstringDedup</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.AudioCompute.html">xpark.dataset.AudioCompute</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageCompute.html">xpark.dataset.ImageCompute</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCompute.html">xpark.dataset.VideoCompute</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextEmbedding.html">xpark.dataset.TextEmbedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextSummarize.html">xpark.dataset.TextSummarize</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextMask.html">xpark.dataset.TextMask</a></li>
@@ -354,7 +354,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../ai_processors.html" class="nav-link">AI Processors</a></li>
+    <li class="breadcrumb-item"><a href="../processors.html" class="nav-link">Processors</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">xpark.dataset.TextTranslate</span></li>
   </ul>
@@ -543,7 +543,7 @@ If set to None, the exception will be raised instead.</p></li>
 
   <p class="copyright">
     
-      © Copyright 2025, Tencent.
+      © Copyright 2026, Tencent.
       <br/>
     
   </p>

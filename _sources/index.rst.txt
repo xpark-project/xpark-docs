@@ -8,11 +8,120 @@ Welcome to Xpark!
    :maxdepth: 2
    :hidden:
 
+   reference/get_started
+   examples/index
    reference/index
-   reference/data_processors
-   reference/ai_processors
+   reference/processors
 
 
-The AI Data Processing Platform is a powerful tool designed to streamline and optimize the processing
-of data for AI applications. It provides various utilities for data handling, transformation, and
-integration with machine learning workflows.
+Xpark is a multimodal AI data processing platform designed to streamline and optimize data workflows for AI applications.
+It provides comprehensive capabilities for data handling, transformation, and seamless integration with AI workflows.
+
+
+Processing Multimodal Data with Xpark
+--------------------------------------
+
+.. tabs::
+   .. code-tab:: python Text
+
+      from xpark.dataset import TextEmbedding, from_items
+      from xpark.dataset.expressions import col
+
+      ds = from_items(
+         [
+            "what is the advantage of using the GPU rendering options in Android?",
+            "Blank video when converting uncompressed AVI files with ffmpeg",
+         ]
+      )
+      ds = ds.with_column(
+         "embedding",
+         TextEmbedding(
+            # Local embedding model.
+            "Qwen/Qwen3-Embedding-0.6B",
+         )
+         .options(num_workers={{"CPU": 1}})
+         .with_column(col("item")),
+      )
+
+      output = ds.take_all()
+      
+
+   .. code-tab:: python Image
+
+      from PIL import Image
+
+      from xpark.dataset import ImageCompute, ImageTextSimilarityScore, read_image
+      from xpark.dataset.expressions import col
+
+      ds = read_image("/data/Test/test-ray-data/data/mini_coco_images")
+
+      # Image Data Function: resized_image
+      ds = ds.with_column("image_resized", ImageCompute.resize(col("image"), size=(224, 224)))
+
+      # Image AI Function: image text similarity score
+      ds = ds.with_column(
+         "image_text_similarity",
+         ImageTextSimilarityScore(text="a photo of a cat")
+         .options(batch_size=16, num_workers={"CPU": 1})
+         .with_column(col("image")),
+      )
+
+      output = ds.take_all()
+
+      print(output[0]["image_text_similarity"])
+      Image.fromarray(output[0]["image_resized"]).show()
+
+   .. code-tab:: python Video
+
+      import pyarrow as pa
+
+      from xpark.dataset import VideoCompute, from_arrow
+      from xpark.dataset.expressions import col
+
+      ds = from_arrow(
+         pa.table(
+            {
+                  "video": ["/path/to/video1.mp4", "/path/to/video2.mp4"],
+            }
+         )
+      )
+
+      # Get Video Bit Rate
+      ds = ds.with_column("video_bit_rate", VideoCompute.bit_rate(col("videos")))
+
+      # Extract Audio
+      ds = ds.with_column("audio", VideoCompute.extract_audio(col("video"), codec="aac", sample_rate=16000))
+
+      # Extract frames
+      ds = ds.with_column("frames", VideoCompute.extract_frames(col("video"), start_time=30, end_time=50, num_frames=3))
+
+
+      output = ds.take_all()
+
+   .. code-tab:: python Audio
+
+      from __future__ import annotations
+
+      from xpark.dataset.expressions import col
+      from xpark.dataset import SpeechToText, from_items
+
+      ds = from_items(["multilingual.mp3"])
+      ds = ds.with_column(
+         "text",
+         SpeechToText(
+            # Local transcriptions model.
+            "Systran/faster-whisper-large-v3",
+         )
+         .options(num_workers={{"GPU": 1}})
+         .with_column(col("item")),
+      )
+
+      print(ds.take_all(2))
+      
+      
+Next Steps
+--------------------------------------
+
+- :ref:`get_started` — A quick tutorial to get you started with Xpark
+- :ref:`reference_index` — Full Dataset API reference
+- :ref:`processors` — All built-in Data and AI Processors

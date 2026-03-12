@@ -32,6 +32,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -43,17 +44,11 @@
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
-    <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner =
-            false;
-        </script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Dataset API" href="reference/index.html" />
+    <link rel="next" title="Getting Started" href="reference/get_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -122,26 +117,6 @@
   
 </a></div>
     
-      <div class="navbar-item">
-<div class="version-switcher__container dropdown pst-js-only">
-  <button id="pst-version-switcher-button-2"
-    type="button"
-    class="version-switcher__button btn btn-sm dropdown-toggle"
-    data-bs-toggle="dropdown"
-    aria-haspopup="listbox"
-    aria-controls="pst-version-switcher-list-2"
-    aria-label="Version switcher list"
-  >
-    Choose version  <!-- this text may get changed later by javascript -->
-    <span class="caret"></span>
-  </button>
-  <div id="pst-version-switcher-list-2"
-    class="version-switcher__menu dropdown-menu list-group-flush py-0"
-    role="listbox" aria-labelledby="pst-version-switcher-button-2">
-    <!-- dropdown will be populated by javascript on page load -->
-  </div>
-</div></div>
-    
   </div>
   
   <div class="col-lg-9 navbar-header-items">
@@ -153,6 +128,20 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="reference/index.html">
     Dataset API
   </a>
@@ -160,15 +149,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="reference/data_processors.html">
-    Data Processors
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="reference/ai_processors.html">
-    AI Processors
+  <a class="nav-link nav-internal" href="reference/processors.html">
+    Processors
   </a>
 </li>
 
@@ -248,6 +230,20 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="reference/index.html">
     Dataset API
   </a>
@@ -255,15 +251,8 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="reference/data_processors.html">
-    Data Processors
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="reference/ai_processors.html">
-    AI Processors
+  <a class="nav-link nav-internal" href="reference/processors.html">
+    Processors
   </a>
 </li>
 
@@ -321,9 +310,112 @@
 <span id="index"></span><h1>Welcome to Xpark!<a class="headerlink" href="#welcome-to-xpark" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>The AI Data Processing Platform is a powerful tool designed to streamline and optimize the processing
-of data for AI applications. It provides various utilities for data handling, transformation, and
-integration with machine learning workflows.</p>
+<p>Xpark is a multimodal AI data processing platform designed to streamline and optimize data workflows for AI applications.
+It provides comprehensive capabilities for data handling, transformation, and seamless integration with AI workflows.</p>
+<section id="processing-multimodal-data-with-xpark">
+<h2>Processing Multimodal Data with Xpark<a class="headerlink" href="#processing-multimodal-data-with-xpark" title="Link to this heading">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-VGV4dA==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-VGV4dA==" name="VGV4dA==" role="tab" tabindex="0">Text</button><button aria-controls="panel-0-SW1hZ2U=" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-SW1hZ2U=" name="SW1hZ2U=" role="tab" tabindex="-1">Image</button><button aria-controls="panel-0-VmlkZW8=" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-VmlkZW8=" name="VmlkZW8=" role="tab" tabindex="-1">Video</button><button aria-controls="panel-0-QXVkaW8=" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-QXVkaW8=" name="QXVkaW8=" role="tab" tabindex="-1">Audio</button></div><div aria-labelledby="tab-0-VGV4dA==" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-VGV4dA==" name="VGV4dA==" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextEmbedding</span><span class="p">,</span> <span class="n">from_items</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">(</span>
+   <span class="p">[</span>
+      <span class="s2">&quot;what is the advantage of using the GPU rendering options in Android?&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Blank video when converting uncompressed AVI files with ffmpeg&quot;</span><span class="p">,</span>
+   <span class="p">]</span>
+<span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+   <span class="s2">&quot;embedding&quot;</span><span class="p">,</span>
+   <span class="n">TextEmbedding</span><span class="p">(</span>
+      <span class="c1"># Local embedding model.</span>
+      <span class="s2">&quot;Qwen/Qwen3-Embedding-0.6B&quot;</span><span class="p">,</span>
+   <span class="p">)</span>
+   <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
+   <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">take_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-SW1hZ2U=" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-0-SW1hZ2U=" name="SW1hZ2U=" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageCompute</span><span class="p">,</span> <span class="n">ImageTextSimilarityScore</span><span class="p">,</span> <span class="n">read_image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">read_image</span><span class="p">(</span><span class="s2">&quot;/data/Test/test-ray-data/data/mini_coco_images&quot;</span><span class="p">)</span>
+
+<span class="c1"># Image Data Function: resized_image</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;image_resized&quot;</span><span class="p">,</span> <span class="n">ImageCompute</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)))</span>
+
+<span class="c1"># Image AI Function: image text similarity score</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+   <span class="s2">&quot;image_text_similarity&quot;</span><span class="p">,</span>
+   <span class="n">ImageTextSimilarityScore</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;a photo of a cat&quot;</span><span class="p">)</span>
+   <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+   <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">take_all</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;image_text_similarity&quot;</span><span class="p">])</span>
+<span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;image_resized&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-VmlkZW8=" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-0-VmlkZW8=" name="VmlkZW8=" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoCompute</span><span class="p">,</span> <span class="n">from_arrow</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_arrow</span><span class="p">(</span>
+   <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+      <span class="p">{</span>
+            <span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/path/to/video1.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;/path/to/video2.mp4&quot;</span><span class="p">],</span>
+      <span class="p">}</span>
+   <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Get Video Bit Rate</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;video_bit_rate&quot;</span><span class="p">,</span> <span class="n">VideoCompute</span><span class="o">.</span><span class="n">bit_rate</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;videos&quot;</span><span class="p">)))</span>
+
+<span class="c1"># Extract Audio</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_audio</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span> <span class="n">codec</span><span class="o">=</span><span class="s2">&quot;aac&quot;</span><span class="p">,</span> <span class="n">sample_rate</span><span class="o">=</span><span class="mi">16000</span><span class="p">))</span>
+
+<span class="c1"># Extract frames</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;frames&quot;</span><span class="p">,</span> <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span> <span class="n">start_time</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">num_frames</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">take_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-QXVkaW8=" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-0-QXVkaW8=" name="QXVkaW8=" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpeechToText</span><span class="p">,</span> <span class="n">from_items</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span><span class="s2">&quot;multilingual.mp3&quot;</span><span class="p">])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+   <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+   <span class="n">SpeechToText</span><span class="p">(</span>
+      <span class="c1"># Local transcriptions model.</span>
+      <span class="s2">&quot;Systran/faster-whisper-large-v3&quot;</span><span class="p">,</span>
+   <span class="p">)</span>
+   <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{{</span><span class="s2">&quot;GPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
+   <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">take_all</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="reference/get_started.html#get-started"><span class="std std-ref">Getting Started</span></a> — A quick tutorial to get you started with Xpark</p></li>
+<li><p><a class="reference internal" href="reference/index.html#reference-index"><span class="std std-ref">Dataset API</span></a> — Full Dataset API reference</p></li>
+<li><p><a class="reference internal" href="reference/processors.html#processors"><span class="std std-ref">Processors</span></a> — All built-in Data and AI Processors</p></li>
+</ul>
+</section>
 </section>
 
 
@@ -337,11 +429,11 @@ integration with machine learning workflows.</p>
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="reference/index.html"
+       href="reference/get_started.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dataset API</p>
+        <p class="prev-next-title">Getting Started</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -355,6 +447,19 @@ integration with machine learning workflows.</p>
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-multimodal-data-with-xpark">Processing Multimodal Data with Xpark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
@@ -390,7 +495,7 @@ integration with machine learning workflows.</p>
 
   <p class="copyright">
     
-      © Copyright 2025, Tencent.
+      © Copyright 2026, Tencent.
       <br/>
     
   </p>
