@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.Quantile
+================================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: Quantile
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Quantile.aggregate_block
+      ~Quantile.combine
+      ~Quantile.finalize
+      ~Quantile.get_agg_name
+      ~Quantile.get_target_column
+   
+   
+
+   
+   
+   

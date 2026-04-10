@@ -1,0 +1,6 @@
+﻿xpark.dataset.read\_lerobot
+===========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: read_lerobot

@@ -1,0 +1,6 @@
+﻿xpark.dataset.from\_arrow
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: from_arrow

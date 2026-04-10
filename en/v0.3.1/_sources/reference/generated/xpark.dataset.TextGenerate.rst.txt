@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextGenerate
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextGenerate
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextGenerate.__call__
+      ~TextGenerate.options
+      ~TextGenerate.with_column
+   
+   
+
+   
+   
+   

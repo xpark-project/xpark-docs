@@ -1,0 +1,1029 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>xpark.dataset.GroupedData &#8212; Xpark</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/xpark.dataset.GroupedData';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'v0.4.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="xpark.dataset.from_arrow" href="xpark.dataset.from_arrow.html" />
+    <link rel="prev" title="xpark.dataset.DatasetContext" href="xpark.dataset.DatasetContext.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xpark</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.udf.html">xpark.dataset.udf</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.html">xpark.dataset.Dataset</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.DatasetContext.html">xpark.dataset.DatasetContext</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">xpark.dataset.GroupedData</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.from_arrow.html">xpark.dataset.from_arrow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.from_blocks.html">xpark.dataset.from_blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.from_huggingface.html">xpark.dataset.from_huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.from_items.html">xpark.dataset.from_items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.from_range.html">xpark.dataset.from_range</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.from_range_tensor.html">xpark.dataset.from_range_tensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.from_pandas.html">xpark.dataset.from_pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.from_numpy.html">xpark.dataset.from_numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.read_json.html">xpark.dataset.read_json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.read_audio.html">xpark.dataset.read_audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.read_video.html">xpark.dataset.read_video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.read_image.html">xpark.dataset.read_image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.read_parquet.html">xpark.dataset.read_parquet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.read_iceberg.html">xpark.dataset.read_iceberg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.read_lance.html">xpark.dataset.read_lance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.read_lerobot.html">xpark.dataset.read_lerobot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.read_files.html">xpark.dataset.read_files</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.iter_batches.html">xpark.dataset.Dataset.iter_batches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.show.html">xpark.dataset.Dataset.show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.take.html">xpark.dataset.Dataset.take</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.take_all.html">xpark.dataset.Dataset.take_all</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.take_batch.html">xpark.dataset.Dataset.take_batch</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.to_pandas.html">xpark.dataset.Dataset.to_pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.write_json.html">xpark.dataset.Dataset.write_json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.write_csv.html">xpark.dataset.Dataset.write_csv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.write_numpy.html">xpark.dataset.Dataset.write_numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.write_parquet.html">xpark.dataset.Dataset.write_parquet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.write_iceberg.html">xpark.dataset.Dataset.write_iceberg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.Dataset.write_lance.html">xpark.dataset.Dataset.write_lance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.expressions.ExprUDFOptions.html">xpark.dataset.expressions.ExprUDFOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.expressions.udf.html">xpark.dataset.expressions.udf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.expressions.star.html">xpark.dataset.expressions.star</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.expressions.col.html">xpark.dataset.expressions.col</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.expressions.lit.html">xpark.dataset.expressions.lit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.expressions.download.html">xpark.dataset.expressions.download</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.AggregateFnV2.html">xpark.dataset.aggregate.AggregateFnV2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.Count.html">xpark.dataset.aggregate.Count</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.Sum.html">xpark.dataset.aggregate.Sum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.Mean.html">xpark.dataset.aggregate.Mean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.Max.html">xpark.dataset.aggregate.Max</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.Min.html">xpark.dataset.aggregate.Min</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.Std.html">xpark.dataset.aggregate.Std</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.AbsMax.html">xpark.dataset.aggregate.AbsMax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.Quantile.html">xpark.dataset.aggregate.Quantile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.Unique.html">xpark.dataset.aggregate.Unique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.MissingValuePercentage.html">xpark.dataset.aggregate.MissingValuePercentage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.aggregate.ZeroPercentage.html">xpark.dataset.aggregate.ZeroPercentage</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Dataset API</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">xpark.dataset.GroupedData</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="xpark-dataset-groupeddata">
+<h1>xpark.dataset.GroupedData<a class="headerlink" href="#xpark-dataset-groupeddata" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">GroupedData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ray_grouped_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GroupedData</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#GroupedData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.GroupedData" title="Link to this definition">#</a></dt>
+<dd><p>Represents a grouped dataset created by calling <code class="docutils literal notranslate"><span class="pre">Dataset.groupby()</span></code>.</p>
+<p>The actual groupby is deferred until an aggregation is applied.</p>
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.GroupedData.aggregate" title="xpark.dataset.GroupedData.aggregate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aggregate</span></code></a>(*aggs)</p></td>
+<td><p>Implements an accumulator-based aggregation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.GroupedData.count" title="xpark.dataset.GroupedData.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a>()</p></td>
+<td><p>Compute count aggregation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.GroupedData.map_groups" title="xpark.dataset.GroupedData.map_groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_groups</span></code></a>(fn, *[, zero_copy_batch, ...])</p></td>
+<td><p>Apply the given function to each group of records of this dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.GroupedData.max" title="xpark.dataset.GroupedData.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>([on, ignore_nulls])</p></td>
+<td><p>Compute grouped max aggregation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.GroupedData.mean" title="xpark.dataset.GroupedData.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>([on, ignore_nulls])</p></td>
+<td><p>Compute grouped mean aggregation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.GroupedData.min" title="xpark.dataset.GroupedData.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>([on, ignore_nulls])</p></td>
+<td><p>Compute grouped min aggregation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.GroupedData.std" title="xpark.dataset.GroupedData.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>([on, ddof, ignore_nulls])</p></td>
+<td><p>Compute grouped standard deviation aggregation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.GroupedData.sum" title="xpark.dataset.GroupedData.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>([on, ignore_nulls])</p></td>
+<td><p>Compute grouped sum aggregation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.GroupedData.with_column" title="xpark.dataset.GroupedData.with_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_column</span></code></a>(column_name, expr, **ray_remote_args)</p></td>
+<td><p>Add a new column to each group using an expression.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData.aggregate">
+<span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">aggs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AggregateFn</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#xpark.dataset.GroupedData.aggregate" title="Link to this definition">#</a></dt>
+<dd><p>Implements an accumulator-based aggregation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>aggs</strong> – Aggregations to do.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The output is an dataset of <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> columns where the first column
+is the groupby key and the second through <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> columns are the
+results of the aggregations.
+If groupby key is <code class="docutils literal notranslate"><span class="pre">None</span></code> then the key part of return is omitted.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#xpark.dataset.GroupedData.count" title="Link to this definition">#</a></dt>
+<dd><p>Compute count aggregation.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;A&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dataset of <code class="docutils literal notranslate"><span class="pre">[k,</span> <span class="pre">v]</span></code> columns where <code class="docutils literal notranslate"><span class="pre">k</span></code> is the groupby key and
+<code class="docutils literal notranslate"><span class="pre">v</span></code> is the number of rows with that key.
+If groupby key is <code class="docutils literal notranslate"><span class="pre">None</span></code> then the key part of return is omitted.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData.map_groups">
+<span class="sig-name descname"><span class="pre">map_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">_CallableClassProtocol</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_copy_batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ComputeStrategy</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_constructor_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_constructor_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_gpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ray_remote_args_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ray_remote_args</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><span class="pre">Dataset</span></a></span></span><a class="headerlink" href="#xpark.dataset.GroupedData.map_groups" title="Link to this definition">#</a></dt>
+<dd><p>Apply the given function to each group of records of this dataset.</p>
+<p>While map_groups() is very flexible, note that it comes with downsides:</p>
+<ul class="simple">
+<li><p>It may be slower than using more specific methods such as min(), max().</p></li>
+<li><p>It requires that each group fits in memory on a single node.</p></li>
+</ul>
+<p>In general, prefer to use <cite>aggregate()</cite> instead of <cite>map_groups()</cite>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Specifying both <code class="docutils literal notranslate"><span class="pre">num_cpus</span></code> and <code class="docutils literal notranslate"><span class="pre">num_gpus</span></code> for map tasks is experimental,
+and may result in scheduling or stability issues. Please
+report any issues
+to the Xpark team.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Return a single record per group (list of multiple records in,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># list of a single record out).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get first value per group.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map_groups</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="k">lambda</span> <span class="n">g</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]])})</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Return multiple records per group (dataframe in, dataframe out).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grouped</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grouped</span><span class="o">.</span><span class="n">map_groups</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="k">lambda</span> <span class="n">g</span><span class="p">:</span> <span class="n">g</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span> <span class="o">/</span> <span class="n">g</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="n">c</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fn</strong> – The function to apply to each group of records, or a class type
+that can be instantiated to create such a callable. It takes as
+input a batch of all records from a single group, and returns a
+batch of zero or more records, similar to map_batches().</p></li>
+<li><p><strong>zero_copy_batch</strong> – If True, each group of rows (batch) will be provided w/o
+making an additional copy.</p></li>
+<li><p><strong>compute</strong> – <p>The compute strategy to use for the map operation.</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">compute</span></code> is not specified for a function, will use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.TaskPoolStrategy()</span></code> to launch concurrent tasks based on the available resources and number of input blocks.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.TaskPoolStrategy(size=n)</span></code> to launch at most <code class="docutils literal notranslate"><span class="pre">n</span></code> concurrent Xpark tasks.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">compute</span></code> is not specified for a callable class, will use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.ActorPoolStrategy(min_size=1,</span> <span class="pre">max_size=None)</span></code> to launch an autoscaling actor pool from 1 to unlimited workers.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.ActorPoolStrategy(size=n)</span></code> to use a fixed size actor pool of <code class="docutils literal notranslate"><span class="pre">n</span></code> workers.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.ActorPoolStrategy(min_size=m,</span> <span class="pre">max_size=n)</span></code> to use an autoscaling actor pool from <code class="docutils literal notranslate"><span class="pre">m</span></code> to <code class="docutils literal notranslate"><span class="pre">n</span></code> workers.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.ActorPoolStrategy(min_size=m,</span> <span class="pre">max_size=n,</span> <span class="pre">initial_size=initial)</span></code> to use an autoscaling actor pool from <code class="docutils literal notranslate"><span class="pre">m</span></code> to <code class="docutils literal notranslate"><span class="pre">n</span></code> workers, with an initial size of <code class="docutils literal notranslate"><span class="pre">initial</span></code>.</p></li>
+</ul>
+</p></li>
+<li><p><strong>batch_format</strong> – Specify <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code> to use the default block format
+(NumPy), <code class="docutils literal notranslate"><span class="pre">&quot;pandas&quot;</span></code> to select <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>, “pyarrow” to
+select <code class="docutils literal notranslate"><span class="pre">pyarrow.Table</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;numpy&quot;</span></code> to select
+<code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">numpy.ndarray]</span></code>, or None to return the underlying block
+exactly as is with no additional formatting.</p></li>
+<li><p><strong>fn_args</strong> – Arguments to <cite>fn</cite>.</p></li>
+<li><p><strong>fn_kwargs</strong> – Keyword arguments to <cite>fn</cite>.</p></li>
+<li><p><strong>fn_constructor_args</strong> – Positional arguments to pass to <code class="docutils literal notranslate"><span class="pre">fn</span></code>’s constructor.
+You can only provide this if <code class="docutils literal notranslate"><span class="pre">fn</span></code> is a callable class. These arguments
+are top-level arguments in the underlying Xpark actor construction task.</p></li>
+<li><p><strong>fn_constructor_kwargs</strong> – Keyword arguments to pass to <code class="docutils literal notranslate"><span class="pre">fn</span></code>’s constructor.
+This can only be provided if <code class="docutils literal notranslate"><span class="pre">fn</span></code> is a callable class. These arguments
+are top-level arguments in the underlying Xpark actor construction task.</p></li>
+<li><p><strong>num_cpus</strong> – The number of CPUs to reserve for each parallel map worker.</p></li>
+<li><p><strong>num_gpus</strong> – The number of GPUs to reserve for each parallel map worker. For
+example, specify <cite>num_gpus=1</cite> to request 1 GPU for each parallel map
+worker.</p></li>
+<li><p><strong>memory</strong> – The heap memory in bytes to reserve for each parallel map worker.</p></li>
+<li><p><strong>ray_remote_args_fn</strong> – A function that returns a dictionary of remote args
+passed to each map worker. The purpose of this argument is to generate
+dynamic arguments for each actor or task, and will be called each time prior
+to initializing the worker. Args returned from this dict will always
+override the args in <code class="docutils literal notranslate"><span class="pre">ray_remote_args</span></code>. Note: this is an advanced,
+experimental feature.</p></li>
+<li><p><strong>concurrency</strong> – This argument is deprecated. Use <code class="docutils literal notranslate"><span class="pre">compute</span></code> argument.</p></li>
+<li><p><strong>ray_remote_args</strong> – Additional resource requirements to request from
+Xpark (e.g., num_gpus=1 to request GPUs for the map tasks). See
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ray.remote()</span></code> for details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The return type is determined by the return type of <code class="docutils literal notranslate"><span class="pre">fn</span></code>, and the return
+value is combined from results of all groups.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#xpark.dataset.GroupedData.aggregate" title="xpark.dataset.GroupedData.aggregate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GroupedData.aggregate()</span></code></a></dt><dd><p>Use this method for common aggregation use cases.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData.max">
+<span class="sig-name descname"><span class="pre">max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nulls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#xpark.dataset.GroupedData.max" title="Link to this definition">#</a></dt>
+<dd><p>Compute grouped max aggregation.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">le</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">}</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>on</strong> – a column name or a list of column names to aggregate.</p></li>
+<li><p><strong>ignore_nulls</strong> – Whether to ignore null values. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, null
+values will be ignored when computing the max; if <code class="docutils literal notranslate"><span class="pre">False</span></code>,
+if a null value is encountered, the output will be null.
+We consider np.nan, None, and pd.NaT to be null values.
+Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The max result.</p>
+<p>For different values of <code class="docutils literal notranslate"><span class="pre">on</span></code>, the return varies:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">on=None</span></code>: a dataset containing a groupby key column,
+<code class="docutils literal notranslate"><span class="pre">&quot;k&quot;</span></code>, and a column-wise max column for each original column in
+the dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on=[&quot;col_1&quot;,</span> <span class="pre">...,</span> <span class="pre">&quot;col_n&quot;]</span></code>: a dataset of <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code>
+columns where the first column is the groupby key and the second
+through <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> columns are the results of the aggregations.</p></li>
+</ul>
+<p>If groupby key is <code class="docutils literal notranslate"><span class="pre">None</span></code> then the key part of return is omitted.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData.mean">
+<span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nulls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#xpark.dataset.GroupedData.mean" title="Link to this definition">#</a></dt>
+<dd><p>Compute grouped mean aggregation.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">le</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">}</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>on</strong> – a column name or a list of column names to aggregate.</p></li>
+<li><p><strong>ignore_nulls</strong> – Whether to ignore null values. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, null
+values will be ignored when computing the mean; if <code class="docutils literal notranslate"><span class="pre">False</span></code>,
+if a null value is encountered, the output will be null.
+We consider np.nan, None, and pd.NaT to be null values.
+Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The mean result.</p>
+<p>For different values of <code class="docutils literal notranslate"><span class="pre">on</span></code>, the return varies:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">on=None</span></code>: a dataset containing a groupby key column,
+<code class="docutils literal notranslate"><span class="pre">&quot;k&quot;</span></code>, and a column-wise mean column for each original column
+in the dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on=[&quot;col_1&quot;,</span> <span class="pre">...,</span> <span class="pre">&quot;col_n&quot;]</span></code>: a dataset of <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code>
+columns where the first column is the groupby key and the second
+through <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> columns are the results of the aggregations.</p></li>
+</ul>
+<p>If groupby key is <code class="docutils literal notranslate"><span class="pre">None</span></code> then the key part of return is omitted.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData.min">
+<span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nulls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#xpark.dataset.GroupedData.min" title="Link to this definition">#</a></dt>
+<dd><p>Compute grouped min aggregation.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">le</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">}</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>on</strong> – a column name or a list of column names to aggregate.</p></li>
+<li><p><strong>ignore_nulls</strong> – Whether to ignore null values. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, null
+values will be ignored when computing the min; if <code class="docutils literal notranslate"><span class="pre">False</span></code>,
+if a null value is encountered, the output will be null.
+We consider np.nan, None, and pd.NaT to be null values.
+Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The min result.</p>
+<p>For different values of <code class="docutils literal notranslate"><span class="pre">on</span></code>, the return varies:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">on=None</span></code>: a dataset containing a groupby key column,
+<code class="docutils literal notranslate"><span class="pre">&quot;k&quot;</span></code>, and a column-wise min column for each original column in
+the dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on=[&quot;col_1&quot;,</span> <span class="pre">...,</span> <span class="pre">&quot;col_n&quot;]</span></code>: a dataset of <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code>
+columns where the first column is the groupby key and the second
+through <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> columns are the results of the aggregations.</p></li>
+</ul>
+<p>If groupby key is <code class="docutils literal notranslate"><span class="pre">None</span></code> then the key part of return is omitted.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData.std">
+<span class="sig-name descname"><span class="pre">std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nulls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#xpark.dataset.GroupedData.std" title="Link to this definition">#</a></dt>
+<dd><p>Compute grouped standard deviation aggregation.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">}</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">std</span><span class="p">([</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>NOTE: This uses Welford’s online method for an accumulator-style
+computation of the standard deviation. This method was chosen due to
+it’s numerical stability, and it being computable in a single pass.
+This may give different (but more accurate) results than NumPy, Pandas,
+and sklearn, which use a less numerically stable two-pass algorithm.
+See
+<a class="reference external" href="https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance#Welford's_online_algorithm">https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance#Welford’s_online_algorithm</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>on</strong> – a column name or a list of column names to aggregate.</p></li>
+<li><p><strong>ddof</strong> – Delta Degrees of Freedom. The divisor used in calculations
+is <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">-</span> <span class="pre">ddof</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> represents the number of elements.</p></li>
+<li><p><strong>ignore_nulls</strong> – Whether to ignore null values. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, null
+values will be ignored when computing the std; if <code class="docutils literal notranslate"><span class="pre">False</span></code>,
+if a null value is encountered, the output will be null.
+We consider np.nan, None, and pd.NaT to be null values.
+Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The standard deviation result.</p>
+<p>For different values of <code class="docutils literal notranslate"><span class="pre">on</span></code>, the return varies:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">on=None</span></code>: a dataset containing a groupby key column,
+<code class="docutils literal notranslate"><span class="pre">&quot;k&quot;</span></code>, and a column-wise std column for each original column in
+the dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on=[&quot;col_1&quot;,</span> <span class="pre">...,</span> <span class="pre">&quot;col_n&quot;]</span></code>: a dataset of <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code>
+columns where the first column is the groupby key and the second
+through <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> columns are the results of the aggregations.</p></li>
+</ul>
+<p>If groupby key is <code class="docutils literal notranslate"><span class="pre">None</span></code> then the key part of return is omitted.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData.sum">
+<span class="sig-name descname"><span class="pre">sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nulls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#xpark.dataset.GroupedData.sum" title="Link to this definition">#</a></dt>
+<dd><p>Compute grouped sum aggregation.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">}</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>on</strong> – a column name or a list of column names to aggregate.</p></li>
+<li><p><strong>ignore_nulls</strong> – Whether to ignore null values. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, null
+values will be ignored when computing the sum; if <code class="docutils literal notranslate"><span class="pre">False</span></code>,
+if a null value is encountered, the output will be null.
+We consider np.nan, None, and pd.NaT to be null values.
+Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The sum result.</p>
+<p>For different values of <code class="docutils literal notranslate"><span class="pre">on</span></code>, the return varies:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">on=None</span></code>: a dataset containing a groupby key column,
+<code class="docutils literal notranslate"><span class="pre">&quot;k&quot;</span></code>, and a column-wise sum column for each original column
+in the dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on=[&quot;col_1&quot;,</span> <span class="pre">...,</span> <span class="pre">&quot;col_n&quot;]</span></code>: a dataset of <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code>
+columns where the first column is the groupby key and the second
+through <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> columns are the results of the aggregations.</p></li>
+</ul>
+<p>If groupby key is <code class="docutils literal notranslate"><span class="pre">None</span></code> then the key part of return is omitted.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.GroupedData.with_column">
+<span class="sig-name descname"><span class="pre">with_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ray_remote_args</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#xpark.dataset.GroupedData.with_column" title="Link to this definition">#</a></dt>
+<dd><p>Add a new column to each group using an expression.</p>
+<p>The supplied expression is evaluated against every row in each group, and
+the resulting column is appended to the group’s records. The output dataset
+preserves the original rows and columns.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}])</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;value_twice&quot;</span><span class="p">,</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">sort</span><span class="p">([</span><span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">])</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">take_all</span><span class="p">()</span>
+<span class="go">[{&#39;group&#39;: 1, &#39;value&#39;: 1, &#39;value_twice&#39;: 2}, {&#39;group&#39;: 1, &#39;value&#39;: 2, &#39;value_twice&#39;: 4}]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_name</strong> – Name of the column to add.</p></li>
+<li><p><strong>expr</strong> – Expression that yields the values for the new column.</p></li>
+<li><p><strong>**ray_remote_args</strong> – Additional resource requirements to request from Xpark
+for the underlying map tasks (for example, <code class="docutils literal notranslate"><span class="pre">num_gpus=1</span></code>).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new <a class="reference internal" href="xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> containing all existing columns plus
+the newly computed column.</p>
+</dd>
+</dl>
+<p><strong>PublicAPI (alpha):</strong> This API is in alpha and may change before becoming stable.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="xpark.dataset.DatasetContext.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">xpark.dataset.DatasetContext</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="xpark.dataset.from_arrow.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">xpark.dataset.from_arrow</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData"><code class="docutils literal notranslate"><span class="pre">GroupedData</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData.aggregate"><code class="docutils literal notranslate"><span class="pre">GroupedData.aggregate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData.count"><code class="docutils literal notranslate"><span class="pre">GroupedData.count()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData.map_groups"><code class="docutils literal notranslate"><span class="pre">GroupedData.map_groups()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData.max"><code class="docutils literal notranslate"><span class="pre">GroupedData.max()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData.mean"><code class="docutils literal notranslate"><span class="pre">GroupedData.mean()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData.min"><code class="docutils literal notranslate"><span class="pre">GroupedData.min()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData.std"><code class="docutils literal notranslate"><span class="pre">GroupedData.std()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData.sum"><code class="docutils literal notranslate"><span class="pre">GroupedData.sum()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.GroupedData.with_column"><code class="docutils literal notranslate"><span class="pre">GroupedData.with_column()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/reference/generated/xpark.dataset.GroupedData.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Tencent.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

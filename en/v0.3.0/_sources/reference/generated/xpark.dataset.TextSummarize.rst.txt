@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextSummarize
+===========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextSummarize
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextSummarize.__call__
+      ~TextSummarize.options
+      ~TextSummarize.with_column
+   
+   
+
+   
+   
+   

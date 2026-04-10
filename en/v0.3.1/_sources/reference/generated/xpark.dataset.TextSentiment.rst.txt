@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextSentiment
+===========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextSentiment
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextSentiment.__call__
+      ~TextSentiment.options
+      ~TextSentiment.with_column
+   
+   
+
+   
+   
+   

@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.Count
+=============================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: Count
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Count.aggregate_block
+      ~Count.combine
+      ~Count.finalize
+      ~Count.get_agg_name
+      ~Count.get_target_column
+   
+   
+
+   
+   
+   

@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextChunking
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextChunking
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextChunking.__call__
+      ~TextChunking.options
+      ~TextChunking.with_column
+   
+   
+
+   
+   
+   

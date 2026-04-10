@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.Mean
+============================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: Mean
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Mean.aggregate_block
+      ~Mean.combine
+      ~Mean.finalize
+      ~Mean.get_agg_name
+      ~Mean.get_target_column
+   
+   
+
+   
+   
+   

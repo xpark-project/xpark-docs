@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.AggregateFnV2
+=====================================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: AggregateFnV2
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AggregateFnV2.aggregate_block
+      ~AggregateFnV2.combine
+      ~AggregateFnV2.finalize
+      ~AggregateFnV2.get_agg_name
+      ~AggregateFnV2.get_target_column
+   
+   
+
+   
+   
+   

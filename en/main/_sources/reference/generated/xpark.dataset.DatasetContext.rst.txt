@@ -1,0 +1,88 @@
+﻿xpark.dataset.DatasetContext
+============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: DatasetContext
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DatasetContext.copy
+      ~DatasetContext.get_config
+      ~DatasetContext.get_current
+      ~DatasetContext.remove_config
+      ~DatasetContext.set_config
+      ~DatasetContext.set_dataset_logger_id
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DatasetContext.actor_init_max_retries
+      ~DatasetContext.actor_init_retry_on_errors
+      ~DatasetContext.actor_prefetcher_enabled
+      ~DatasetContext.actor_task_retry_on_errors
+      ~DatasetContext.checkpoint_config
+      ~DatasetContext.decoding_size_estimation
+      ~DatasetContext.default_hash_shuffle_parallelism
+      ~DatasetContext.downstream_capacity_backpressure_ratio
+      ~DatasetContext.eager_free
+      ~DatasetContext.enable_auto_log_stats
+      ~DatasetContext.enable_dynamic_output_queue_size_backpressure
+      ~DatasetContext.enable_get_object_locations_for_metrics
+      ~DatasetContext.enable_operator_progress_bars
+      ~DatasetContext.enable_pandas_block
+      ~DatasetContext.enable_per_node_metrics
+      ~DatasetContext.enable_progress_bar_name_truncation
+      ~DatasetContext.enable_progress_bars
+      ~DatasetContext.enable_rich_progress_bars
+      ~DatasetContext.enable_tensor_extension_casting
+      ~DatasetContext.enforce_schemas
+      ~DatasetContext.hash_shuffle_aggregator_health_warning_interval_s
+      ~DatasetContext.large_args_threshold
+      ~DatasetContext.log_internal_stack_trace_to_stdout
+      ~DatasetContext.max_errored_blocks
+      ~DatasetContext.memory_usage_poll_interval_s
+      ~DatasetContext.min_hash_shuffle_aggregator_wait_time_in_s
+      ~DatasetContext.min_parallelism
+      ~DatasetContext.op_resource_reservation_enabled
+      ~DatasetContext.op_resource_reservation_ratio
+      ~DatasetContext.pandas_block_ignore_metadata
+      ~DatasetContext.pipeline_push_based_shuffle_reduce_tasks
+      ~DatasetContext.print_on_execution_start
+      ~DatasetContext.raise_original_map_exception
+      ~DatasetContext.read_op_min_num_blocks
+      ~DatasetContext.s3_try_create_dir
+      ~DatasetContext.scheduling_strategy
+      ~DatasetContext.scheduling_strategy_large_args
+      ~DatasetContext.shuffle_strategy
+      ~DatasetContext.streaming_read_buffer_size
+      ~DatasetContext.target_max_block_size
+      ~DatasetContext.target_min_block_size
+      ~DatasetContext.trace_allocations
+      ~DatasetContext.use_arrow_tensor_v2
+      ~DatasetContext.use_polars
+      ~DatasetContext.use_polars_sort
+      ~DatasetContext.use_push_based_shuffle
+      ~DatasetContext.use_ray_tqdm
+      ~DatasetContext.verbose_stats_logs
+      ~DatasetContext.wait_for_min_actors_s
+      ~DatasetContext.warn_on_driver_memory_usage_bytes
+      ~DatasetContext.write_file_retry_on_errors
+      ~DatasetContext.storage_options
+      ~DatasetContext.autoscaling_config
+      ~DatasetContext.execution_options
+      ~DatasetContext.retried_io_errors
+      ~DatasetContext.iceberg_config
+      ~DatasetContext.issue_detectors_config
+   
+   

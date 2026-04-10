@@ -1,0 +1,23 @@
+﻿xpark.dataset.ImageNSFWScore
+============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageNSFWScore
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageNSFWScore.__call__
+      ~ImageNSFWScore.options
+      ~ImageNSFWScore.with_column
+   
+   
+
+   
+   
+   

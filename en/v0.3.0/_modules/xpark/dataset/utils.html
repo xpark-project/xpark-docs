@@ -1,0 +1,1323 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xpark.dataset.utils &#8212; Xpark</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/xpark/dataset/utils';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'v0.3.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xpark</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">xpark.dataset.utils</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for xpark.dataset.utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">contextlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">contextvars</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">enum</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">asyncio</span><span class="w"> </span><span class="kn">import</span> <span class="n">events</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TYPE_CHECKING</span><span class="p">,</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">AsyncGenerator</span><span class="p">,</span>
+    <span class="n">Coroutine</span><span class="p">,</span>
+    <span class="n">Generator</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">ParamSpec</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">TypeVar</span><span class="p">,</span>
+    <span class="n">cast</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlparse</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.compute</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.constants</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AUDIO_FORMAT_MAPPING</span><span class="p">,</span>
+    <span class="n">RAY_DOC_REPLACE_PAIRS</span><span class="p">,</span>
+    <span class="n">WRAPPER_ASSIGNMENTS</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.context</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatasetContext</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.import_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">lazy_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">KeyType</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">av</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">fsspec</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">openai</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.compute</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pc</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">av.container.input</span><span class="w"> </span><span class="kn">import</span> <span class="n">InputContainer</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">av.container.output</span><span class="w"> </span><span class="kn">import</span> <span class="n">OutputContainer</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">openai.types.chat.chat_completion</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatCompletion</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">openai.types.chat.chat_completion_message_param</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+        <span class="n">ChatCompletionMessageParam</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.filters.dedup</span><span class="w"> </span><span class="kn">import</span> <span class="n">utils</span> <span class="k">as</span> <span class="n">dedup_utils</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">av</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;av&quot;</span><span class="p">)</span>
+    <span class="n">fsspec</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;fsspec&quot;</span><span class="p">)</span>
+    <span class="n">openai</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;openai&quot;</span><span class="p">)</span>
+    <span class="n">pc</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;pyarrow.compute&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;pc&quot;</span><span class="p">)</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;pa&quot;</span><span class="p">)</span>
+    <span class="n">dedup_utils</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;xpark.dataset.filters.dedup.utils&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;dedup_utils&quot;</span><span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;ray&quot;</span><span class="p">)</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="n">ParamSpec</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">copy_sig</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">R</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">]],</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extend the functools.wraps (The `wraps` function name results in incorrect type inference in PyCharm,</span>
+<span class="sd">    so it has been renamed to copy_sig):</span>
+<span class="sd">    1. Skip copying __qualname__ and __module__ attributes</span>
+<span class="sd">    2. Update __doc__</span>
+<span class="sd">    3. Update return annotations</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">]:</span>
+        <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">signature</span><span class="o">.</span><span class="n">return_annotation</span> <span class="ow">is</span> <span class="n">inspect</span><span class="o">.</span><span class="n">_empty</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">copy_sig</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> decorated function `</span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">` must have a return annotation.&quot;</span>
+            <span class="p">)</span>
+        <span class="n">wrapped</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">assigned</span><span class="o">=</span><span class="n">WRAPPER_ASSIGNMENTS</span><span class="p">)(</span><span class="n">target</span><span class="p">)</span>
+        <span class="n">wrapped</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">wrap_ray_doc</span><span class="p">(</span><span class="n">fn</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+        <span class="n">wrapped</span><span class="o">.</span><span class="vm">__annotations__</span> <span class="o">=</span> <span class="n">wrapped</span><span class="o">.</span><span class="vm">__annotations__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">wrapped</span><span class="o">.</span><span class="vm">__annotations__</span><span class="p">[</span><span class="s2">&quot;return&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">signature</span><span class="o">.</span><span class="n">return_annotation</span>
+        <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">],</span> <span class="n">wrapped</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">decorator</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">deep_update</span><span class="p">(</span><span class="n">mapping</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">KeyType</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="o">*</span><span class="n">updating_mappings</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">KeyType</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">KeyType</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="n">updated_mapping</span> <span class="o">=</span> <span class="n">mapping</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">updating_mapping</span> <span class="ow">in</span> <span class="n">updating_mappings</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">updating_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">updated_mapping</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">updated_mapping</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">updated_mapping</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">deep_update</span><span class="p">(</span><span class="n">updated_mapping</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">v</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">updated_mapping</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">return</span> <span class="n">updated_mapping</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">multi_replace</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">replace_pairs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span>
+    <span class="k">for</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span> <span class="ow">in</span> <span class="n">replace_pairs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">wrap_ray_doc</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">multi_replace</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">RAY_DOC_REPLACE_PAIRS</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">wrap_ray_class</span><span class="p">(</span><span class="n">ray_class</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a wrapper class that inherits from a Ray class and replaces its documentation.</span>
+
+<span class="sd">    This function creates a new class that:</span>
+<span class="sd">    1. Inherits from the original Ray class</span>
+<span class="sd">    2. Automatically replaces Ray-specific documentation with Xpark equivalents</span>
+<span class="sd">    3. Preserves all functionality of the original class</span>
+
+<span class="sd">    Similar to `copy_sig`, this function helps maintain Xpark-specific documentation</span>
+<span class="sd">    without modifying the original Ray classes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ray_class: The Ray class to wrap.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A new class that inherits from ray_class with updated documentation.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; import ray.data.aggregate</span>
+<span class="sd">        &gt;&gt;&gt; Count = wrap_ray_class(ray.data.aggregate.Count)</span>
+<span class="sd">        &gt;&gt;&gt; # Count now has Xpark-specific documentation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Special handling for Enum classes</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ray_class</span><span class="p">,</span> <span class="n">enum</span><span class="o">.</span><span class="n">EnumMeta</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Do not wrap enum class.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># For regular classes, use inheritance</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">WrappedClass</span><span class="p">(</span><span class="n">ray_class</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
+        <span class="vm">__doc__</span> <span class="o">=</span> <span class="n">wrap_ray_doc</span><span class="p">(</span><span class="n">ray_class</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+
+    <span class="c1"># Preserve the original class name and module</span>
+    <span class="n">WrappedClass</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">ray_class</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="n">WrappedClass</span><span class="o">.</span><span class="vm">__qualname__</span> <span class="o">=</span> <span class="n">ray_class</span><span class="o">.</span><span class="vm">__qualname__</span>
+
+    <span class="k">return</span> <span class="n">WrappedClass</span>  <span class="c1"># type: ignore</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">iter_batch</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">array</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">qps_limiter</span><span class="p">(</span><span class="n">max_qps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">max_concurrency</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorator to limit QPS (queries per second) for async functions.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">max_qps</span> <span class="ow">and</span> <span class="n">max_qps</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;max_qps must be &gt;= 1&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">max_concurrency</span> <span class="ow">and</span> <span class="n">max_concurrency</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;max_concurrency must be &gt;= 1&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">max_qps</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">max_concurrency</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span>
+
+        <span class="c1"># Store timestamps of function calls</span>
+        <span class="n">timestamps</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+        <span class="n">lock</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="n">semaphore</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Semaphore</span><span class="p">(</span><span class="n">max_concurrency</span><span class="p">)</span> <span class="k">if</span> <span class="n">max_concurrency</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="nd">@copy_sig</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">semaphore</span><span class="p">:</span>
+                <span class="k">await</span> <span class="n">semaphore</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">max_qps</span><span class="p">:</span>
+                    <span class="c1"># Acquire lock to ensure that rate-limiting is concurrent-safe</span>
+                    <span class="k">async</span> <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
+                        <span class="c1"># Current time</span>
+                        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+                        <span class="c1"># Remove timestamps that are older than 1 second from the current time</span>
+                        <span class="k">while</span> <span class="n">timestamps</span> <span class="ow">and</span> <span class="n">timestamps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">now</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="n">timestamps</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+
+                        <span class="c1"># Check if we exceeded the max QPS</span>
+                        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">timestamps</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_qps</span><span class="p">:</span>
+                            <span class="c1"># Calculate how much time we need to wait</span>
+                            <span class="n">sleep_time</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">timestamps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_time</span><span class="p">)</span>
+
+                        <span class="n">timestamps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+                        <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="k">finally</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">semaphore</span><span class="p">:</span>
+                    <span class="n">semaphore</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+    <span class="k">return</span> <span class="n">_decorator</span>
+
+
+<div class="viewcode-block" id="Count">
+<a class="viewcode-back" href="../../../reference/generated/xpark.dataset.aggregate.Count.html#xpark.dataset.aggregate.Count">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Count</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">firstval</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_firstval</span> <span class="o">=</span> <span class="n">firstval</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_step</span> <span class="o">=</span> <span class="n">step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gen</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">firstval</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">firstval</span> <span class="o">-</span> <span class="n">step</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">last_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_val</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_firstval</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">val</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gen</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">val</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gen</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_firstval</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_firstval</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_firstval</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">audio_codec_to_format_ext</span><span class="p">(</span><span class="n">codec_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert audio codec name to file format and extension</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        codec_name: Audio codec name.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        File format and extension.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">codec_name</span> <span class="o">=</span> <span class="n">codec_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">codec_name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;pcm_&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;wav&quot;</span><span class="p">,</span> <span class="s2">&quot;wav&quot;</span>
+
+    <span class="k">if</span> <span class="n">codec_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">AUDIO_FORMAT_MAPPING</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Audio codec name not found in AUDIO_FORMAT_MAPPING: </span><span class="si">{</span><span class="n">codec_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">AUDIO_FORMAT_MAPPING</span><span class="p">[</span><span class="n">codec_name</span><span class="p">]</span>
+
+
+<span class="nd">@contextlib</span><span class="o">.</span><span class="n">asynccontextmanager</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">open_video</span><span class="p">(</span>
+    <span class="n">video</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">BinaryScalar</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">StringScalar</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">,</span> <span class="o">**</span><span class="n">storage_options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncGenerator</span><span class="p">[</span><span class="n">InputContainer</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Open a video file asynchronously.</span>
+
+<span class="sd">    Supports multiple input types:</span>
+<span class="sd">    - pa.StringScalar: PyArrow string scalar (video path)</span>
+<span class="sd">    - pa.BinaryScalar: PyArrow binary scalar (video data)</span>
+<span class="sd">    - str: Raw string path</span>
+<span class="sd">    - bytes: Raw binary data</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        video: Video path or binary data.</span>
+<span class="sd">        **storage_options: Storage options for remote paths.</span>
+
+<span class="sd">    Yields:</span>
+<span class="sd">        PyAV InputContainer for the video.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">video_binary</span><span class="p">,</span> <span class="n">video_url</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="c1"># Handle different input types</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">video</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">video_url</span> <span class="o">=</span> <span class="n">video</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">video</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+        <span class="n">video_binary</span> <span class="o">=</span> <span class="n">video</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">video</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">StringScalar</span><span class="p">):</span>
+        <span class="n">video_url</span> <span class="o">=</span> <span class="n">video</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">video</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">BinaryScalar</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">video</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">StringScalar</span><span class="p">):</span>
+        <span class="n">video_binary</span> <span class="o">=</span> <span class="n">video</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">video_url</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">video_binary</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">video_url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http://&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">video_url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://&quot;</span><span class="p">):</span>
+            <span class="k">with</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">av</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="n">video_url</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_container</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">input_container</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">with</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">auto_open</span><span class="p">,</span> <span class="n">video_url</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">storage_options</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
+                <span class="k">with</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">av</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="n">file_obj</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_container</span><span class="p">:</span>
+                    <span class="k">yield</span> <span class="n">input_container</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">video_binary</span><span class="p">)</span> <span class="k">as</span> <span class="n">bio</span><span class="p">:</span>
+            <span class="k">with</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">av</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="n">bio</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_container</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">input_container</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">assert_type</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">expect_type</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The helper function to narrow the types.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expect_type</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">to_thread</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">_executor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Asynchronously run function *func* in a separate thread.</span>
+
+<span class="sd">    Any *args and **kwargs supplied for this function are directly passed</span>
+<span class="sd">    to *func*. Also, the current :class:`contextvars.Context` is propagated,</span>
+<span class="sd">    allowing context variables from the main thread to be accessed in the</span>
+<span class="sd">    separate thread.</span>
+
+<span class="sd">    Return a coroutine that can be awaited to get the eventual result of *func*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span>
+    <span class="n">ctx</span> <span class="o">=</span> <span class="n">contextvars</span><span class="o">.</span><span class="n">copy_context</span><span class="p">()</span>
+    <span class="n">func_call</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">run</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="n">_executor</span><span class="p">,</span> <span class="n">func_call</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">split_audio</span><span class="p">(</span>
+    <span class="n">audio_data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">sample_rate</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">max_audio_clip_s</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="n">overlap_chunk_second</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">min_energy_split_window_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1600</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Copy from: https://github.com/vllm-project/vllm/blob/main/vllm/entrypoints/openai/speech_to_text.py&quot;&quot;&quot;</span>
+    <span class="n">chunk_size</span> <span class="o">=</span> <span class="n">sample_rate</span> <span class="o">*</span> <span class="n">max_audio_clip_s</span>
+    <span class="n">overlap_size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sample_rate</span> <span class="o">*</span> <span class="n">overlap_chunk_second</span><span class="p">)</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">total_samples</span> <span class="o">=</span> <span class="n">audio_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">total_samples</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">chunk_size</span> <span class="o">&gt;=</span> <span class="n">total_samples</span><span class="p">:</span>
+            <span class="c1"># handle last chunk</span>
+            <span class="n">chunks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">audio_data</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">:])</span>
+            <span class="k">break</span>
+
+        <span class="n">search_end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">chunk_size</span><span class="p">,</span> <span class="n">total_samples</span><span class="p">)</span>
+        <span class="n">search_window</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_energy_split_window_size</span><span class="p">,</span> <span class="n">overlap_size</span><span class="p">)</span>
+        <span class="n">search_range</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">search_window</span><span class="p">)</span>
+        <span class="n">search_start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">search_end</span> <span class="o">-</span> <span class="n">search_range</span><span class="p">)</span>
+
+        <span class="n">split_point</span> <span class="o">=</span> <span class="n">_find_split_point</span><span class="p">(</span>
+            <span class="n">audio_data</span><span class="p">,</span>
+            <span class="n">search_start</span><span class="p">,</span>
+            <span class="n">search_end</span><span class="p">,</span>
+            <span class="n">min_energy_split_window_size</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">split_point</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="ow">or</span> <span class="n">split_point</span> <span class="o">&gt;</span> <span class="n">search_end</span><span class="p">:</span>
+            <span class="n">split_point</span> <span class="o">=</span> <span class="n">search_end</span>
+
+        <span class="c1"># Extract chunk up to the split point</span>
+        <span class="n">chunks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">audio_data</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span><span class="n">split_point</span><span class="p">])</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">split_point</span>
+    <span class="k">return</span> <span class="n">chunks</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_find_split_point</span><span class="p">(</span><span class="n">wav</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">start_idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end_idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">min_energy_split_window_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find the best point to split audio by</span>
+<span class="sd">    looking for silence or low amplitude.</span>
+<span class="sd">    Args:</span>
+<span class="sd">        wav: Audio tensor [1, T]</span>
+<span class="sd">        start_idx: Start index of search region</span>
+<span class="sd">        end_idx: End index of search region</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Index of best splitting point</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">segment</span> <span class="o">=</span> <span class="n">wav</span><span class="p">[</span><span class="n">start_idx</span><span class="p">:</span><span class="n">end_idx</span><span class="p">]</span>
+
+    <span class="c1"># Calculate RMS energy in small windows</span>
+    <span class="n">min_energy</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>
+    <span class="n">quietest_idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">min_energy_window</span> <span class="o">=</span> <span class="n">min_energy_split_window_size</span>
+    <span class="k">assert</span> <span class="n">min_energy_window</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span> <span class="o">-</span> <span class="n">min_energy_window</span><span class="p">,</span> <span class="n">min_energy_window</span><span class="p">):</span>
+        <span class="n">window</span> <span class="o">=</span> <span class="n">segment</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="n">min_energy_window</span><span class="p">]</span>
+        <span class="n">energy</span> <span class="o">=</span> <span class="p">(</span><span class="n">window</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">**</span> <span class="mf">0.5</span>
+        <span class="k">if</span> <span class="n">energy</span> <span class="o">&lt;</span> <span class="n">min_energy</span><span class="p">:</span>
+            <span class="n">quietest_idx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">start_idx</span>
+            <span class="n">min_energy</span> <span class="o">=</span> <span class="n">energy</span>
+    <span class="k">return</span> <span class="n">quietest_idx</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">auto_batch</span><span class="p">(</span>
+    <span class="n">items</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">map_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Coroutine</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
+    <span class="n">filter_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncGenerator</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Auto batch process the items by the map function.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        items: A list of items</span>
+<span class="sd">        map_fn: The sync or async map function to process one item.</span>
+<span class="sd">            It should accept (index, item) and return (index, value).</span>
+<span class="sd">        filter_fn: A sync filter function to determine which items to process.</span>
+<span class="sd">            All the items will be processed if the filter_fn is None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        An async generator that yields a tuple of (batch index, batch items).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">batch_index</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">batch_items</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">async_tasks</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">asyncio</span><span class="o">.</span><span class="n">Task</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">map_fn</span><span class="p">):</span>
+        <span class="n">map_fn</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span>
+            <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Coroutine</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]],</span>
+            <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">,</span> <span class="n">map_fn</span><span class="p">),</span>  <span class="c1"># type: ignore[call-arg]</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">filter_fn</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">filter_fn</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+                <span class="n">async_tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">map_fn</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">item</span><span class="p">)))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">batch_index</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+                <span class="n">batch_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">async_tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">map_fn</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">items</span><span class="p">)]</span>
+
+    <span class="k">while</span> <span class="n">batch_index</span> <span class="ow">or</span> <span class="n">async_tasks</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">async_tasks</span><span class="p">:</span>
+            <span class="n">ready</span><span class="p">,</span> <span class="n">remaining</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">async_tasks</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">ready</span><span class="p">:</span>
+                <span class="n">idx</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+                <span class="n">batch_index</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+                <span class="n">batch_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">async_tasks</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">remaining</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">batch_items</span><span class="p">:</span>
+            <span class="c1"># We got nothing, so wait until got one.</span>
+            <span class="n">ready</span><span class="p">,</span> <span class="n">remaining</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">async_tasks</span><span class="p">,</span> <span class="n">return_when</span><span class="o">=</span><span class="n">asyncio</span><span class="o">.</span><span class="n">FIRST_COMPLETED</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">ready</span><span class="p">:</span>
+                <span class="n">idx</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+                <span class="n">batch_index</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+                <span class="n">batch_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">async_tasks</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">remaining</span>
+
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_index</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_items</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">batch_index</span><span class="p">,</span> <span class="n">batch_items</span>
+
+        <span class="n">batch_index</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">batch_items</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+
+<span class="nd">@contextlib</span><span class="o">.</span><span class="n">asynccontextmanager</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">open_image</span><span class="p">(</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">BinaryScalar</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">StringScalar</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">ExtensionScalar</span><span class="p">,</span>
+    <span class="n">source_mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">storage_options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncGenerator</span><span class="p">[</span><span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">StringScalar</span><span class="p">):</span>
+        <span class="n">image_url</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+        <span class="k">with</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">auto_open</span><span class="p">,</span> <span class="n">image_url</span><span class="p">,</span> <span class="o">**</span><span class="n">storage_options</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_obj</span><span class="p">)</span>
+            <span class="c1"># convert PIL.ImageFile.ImageFile to Image.Image</span>
+            <span class="k">yield</span> <span class="n">img</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">source_mode</span> <span class="k">if</span> <span class="n">source_mode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">img</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">ExtensionScalar</span><span class="p">):</span>
+        <span class="n">image_ndarray</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+        <span class="k">yield</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">image_ndarray</span><span class="p">,</span> <span class="n">source_mode</span><span class="p">)</span>
+
+    <span class="c1"># Note: pa.StringScalar is a subclass of pa.BinaryScalar, so we need to exclude it explicitly</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">BinaryScalar</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">StringScalar</span><span class="p">):</span>
+        <span class="n">image_binary</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+        <span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">image_binary</span><span class="p">)</span> <span class="k">as</span> <span class="n">bio</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">bio</span><span class="p">)</span> <span class="k">as</span> <span class="n">img</span><span class="p">:</span>
+                <span class="c1"># convert PIL.ImageFile.ImageFile to Image.Image</span>
+                <span class="k">yield</span> <span class="n">img</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">source_mode</span> <span class="k">if</span> <span class="n">source_mode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">img</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_image</span><span class="p">(</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">BinaryScalar</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">StringScalar</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">ExtensionScalar</span><span class="p">,</span>
+    <span class="n">source_mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">storage_options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">open_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">source_mode</span><span class="p">,</span> <span class="o">**</span><span class="n">storage_options</span><span class="p">)</span> <span class="k">as</span> <span class="n">img</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">img</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_register_cos_protocol</span><span class="p">():</span>
+    <span class="c1"># Import s3fs takes more than 200ms, lazy import it here.</span>
+    <span class="n">cos_protocol</span> <span class="o">=</span> <span class="s2">&quot;cos&quot;</span>
+    <span class="k">if</span> <span class="n">cos_protocol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">registry</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">s3fs</span><span class="w"> </span><span class="kn">import</span> <span class="n">S3FileSystem</span>
+
+        <span class="k">class</span><span class="w"> </span><span class="nc">COSFileSystem</span><span class="p">(</span><span class="n">S3FileSystem</span><span class="p">):</span>
+            <span class="n">protocol</span> <span class="o">=</span> <span class="n">cos_protocol</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fsspec</span><span class="o">.</span><span class="n">register_implementation</span><span class="p">(</span><span class="n">cos_protocol</span><span class="p">,</span> <span class="n">COSFileSystem</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="n">cos_protocol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">registry</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Register COSFileSystem failed!&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_register_hf_protocol</span><span class="p">():</span>
+    <span class="n">hf_protocol</span> <span class="o">=</span> <span class="s2">&quot;hf&quot;</span>
+    <span class="k">if</span> <span class="n">hf_protocol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">registry</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">huggingface_hub</span><span class="w"> </span><span class="kn">import</span> <span class="n">HfFileSystem</span>
+
+            <span class="n">fsspec</span><span class="o">.</span><span class="n">register_implementation</span><span class="p">(</span><span class="n">hf_protocol</span><span class="p">,</span> <span class="n">HfFileSystem</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_filesystem</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="s2">&quot;fsspec.AbstractFileSystem&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get filesystem and normalized path from a path string.&quot;&quot;&quot;</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">protocol</span> <span class="o">=</span> <span class="n">parsed</span><span class="o">.</span><span class="n">scheme</span> <span class="ow">or</span> <span class="s2">&quot;file&quot;</span>
+
+    <span class="k">if</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s2">&quot;cos&quot;</span><span class="p">:</span>
+        <span class="n">_register_cos_protocol</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s2">&quot;hf&quot;</span><span class="p">:</span>
+        <span class="n">_register_hf_protocol</span><span class="p">()</span>
+
+    <span class="n">ctx</span> <span class="o">=</span> <span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span>
+    <span class="n">storage_options</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">storage_options</span>
+
+    <span class="k">if</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s2">&quot;hf&quot;</span><span class="p">:</span>
+        <span class="n">hf_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;HF_TOKEN&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">storage_options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;hf&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">)</span>
+        <span class="n">proto_options</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">hf_token</span><span class="p">}</span> <span class="k">if</span> <span class="n">hf_token</span> <span class="k">else</span> <span class="p">{}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">proto_options</span> <span class="o">=</span> <span class="n">storage_options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">{})</span>
+
+    <span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="o">**</span><span class="n">proto_options</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">protocol</span> <span class="o">!=</span> <span class="s2">&quot;file&quot;</span><span class="p">:</span>
+        <span class="n">normalized_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;://&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="s2">&quot;://&quot;</span> <span class="ow">in</span> <span class="n">path</span> <span class="k">else</span> <span class="n">path</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">normalized_path</span> <span class="o">=</span> <span class="n">parsed</span><span class="o">.</span><span class="n">path</span> <span class="ow">or</span> <span class="n">path</span>
+
+    <span class="k">return</span> <span class="n">fs</span><span class="p">,</span> <span class="n">normalized_path</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">auto_open</span><span class="p">(</span>
+    <span class="n">urlpath</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;rb&quot;</span><span class="p">,</span>
+    <span class="n">compression</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">,</span>
+    <span class="n">errors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">protocol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">newline</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">expand</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">OpenFile</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Auto select storage options based on protocol.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">urlpath</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="nb">set</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">urlpath</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;empty urlpath sequence&quot;</span><span class="p">)</span>
+        <span class="n">urlpath0</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">stringify_path</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">urlpath</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">urlpath0</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">stringify_path</span><span class="p">(</span><span class="n">urlpath</span><span class="p">)</span>
+
+    <span class="c1"># Ensure that the cos protocol is registered before open.</span>
+    <span class="n">_register_cos_protocol</span><span class="p">()</span>
+
+    <span class="n">selected_storage_options</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">bit</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">_un_chain</span><span class="p">(</span><span class="n">urlpath0</span><span class="p">,</span> <span class="p">{}):</span>
+        <span class="n">so</span> <span class="o">=</span> <span class="n">storage_options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">so</span><span class="p">:</span>
+            <span class="n">selected_storage_options</span><span class="p">[</span><span class="n">protocol</span><span class="p">]</span> <span class="o">=</span> <span class="n">so</span>
+
+    <span class="k">return</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+        <span class="n">urlpath</span><span class="p">,</span>
+        <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+        <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+        <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+        <span class="n">protocol</span><span class="o">=</span><span class="n">protocol</span><span class="p">,</span>
+        <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
+        <span class="n">expand</span><span class="o">=</span><span class="n">expand</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">selected_storage_options</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">isolated_loop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">asyncio</span><span class="o">.</span><span class="n">AbstractEventLoop</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A simpler version of `loop_in_thread`, don&#39;t need the ThreadPoolExecutor.</span>
+<span class="sd">    https://docs.python.org/3/library/asyncio-task.html#asyncio.run_coroutine_threadsafe</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_run_loop</span><span class="p">(</span><span class="n">_loop</span><span class="p">:</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">AbstractEventLoop</span><span class="p">):</span>
+        <span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="n">_loop</span><span class="p">)</span>
+        <span class="n">_loop</span><span class="o">.</span><span class="n">run_forever</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">to_cancel</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">all_tasks</span><span class="p">(</span><span class="n">_loop</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">to_cancel</span><span class="p">:</span>
+                <span class="k">return</span>
+
+            <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">to_cancel</span><span class="p">:</span>
+                <span class="n">task</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+
+            <span class="n">_loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">to_cancel</span><span class="p">,</span> <span class="n">return_exceptions</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+            <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">to_cancel</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">cancelled</span><span class="p">():</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">exception</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">_loop</span><span class="o">.</span><span class="n">call_exception_handler</span><span class="p">(</span>
+                        <span class="p">{</span>
+                            <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;unhandled exception during isolated loop shutdown&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;exception&quot;</span><span class="p">:</span> <span class="n">task</span><span class="o">.</span><span class="n">exception</span><span class="p">(),</span>
+                            <span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span>
+                        <span class="p">}</span>
+                    <span class="p">)</span>
+
+            <span class="n">_loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">_loop</span><span class="o">.</span><span class="n">shutdown_asyncgens</span><span class="p">())</span>
+            <span class="n">_loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">_loop</span><span class="o">.</span><span class="n">shutdown_default_executor</span><span class="p">())</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">_loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">new_loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">()</span>
+    <span class="n">loop_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">_run_loop</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">new_loop</span><span class="p">,))</span>
+    <span class="n">loop_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">yield</span> <span class="n">new_loop</span>
+
+    <span class="n">new_loop</span><span class="o">.</span><span class="n">call_soon_threadsafe</span><span class="p">(</span><span class="n">new_loop</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span>
+    <span class="n">loop_thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">safe_run</span><span class="p">(</span><span class="n">main</span><span class="p">:</span> <span class="n">Coroutine</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">isolated_loop</span><span class="p">()</span> <span class="k">as</span> <span class="n">loop</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run_coroutine_threadsafe</span><span class="p">(</span><span class="n">main</span><span class="p">,</span> <span class="n">loop</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">copy_video_stream</span><span class="p">(</span>
+    <span class="n">input_container</span><span class="p">:</span> <span class="n">InputContainer</span><span class="p">,</span>
+    <span class="n">output_container</span><span class="p">:</span> <span class="n">OutputContainer</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">start_second</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">end_second</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Copies the video stream without re-encoding. This method relies on locating the I-frame in the video,</span>
+<span class="sd">    which may result in slight inaccuracies. For example, if you extract a 10-second segment,</span>
+<span class="sd">    the final video might be 10.3 seconds long. This behavior is equivalent to using the &#39;-ss&#39; option</span>
+<span class="sd">    before &#39;-i&#39; and &#39;-c:v copy&#39; in ffmpeg.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Import av takes more than 200ms, lazy import it here.</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">av.audio.stream</span><span class="w"> </span><span class="kn">import</span> <span class="n">AudioStream</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">av.packet</span><span class="w"> </span><span class="kn">import</span> <span class="n">Packet</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">av.stream</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stream</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">av.video.stream</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoStream</span>
+
+    <span class="n">streams_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Stream</span><span class="p">,</span> <span class="n">VideoStream</span> <span class="o">|</span> <span class="n">AudioStream</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">video_stream</span> <span class="o">=</span> <span class="n">input_container</span><span class="o">.</span><span class="n">streams</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">video_stream</span><span class="o">.</span><span class="n">time_base</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;video stream time base is zero, file may be broken.&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="n">input_container</span><span class="o">.</span><span class="n">streams</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">stream</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;video&quot;</span><span class="p">:</span>
+            <span class="n">streams_map</span><span class="p">[</span><span class="n">stream</span><span class="p">]</span> <span class="o">=</span> <span class="n">output_container</span><span class="o">.</span><span class="n">add_stream_from_template</span><span class="p">(</span><span class="n">template</span><span class="o">=</span><span class="n">cast</span><span class="p">(</span><span class="n">VideoStream</span><span class="p">,</span> <span class="n">stream</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">stream</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;audio&quot;</span><span class="p">:</span>
+            <span class="n">streams_map</span><span class="p">[</span><span class="n">stream</span><span class="p">]</span> <span class="o">=</span> <span class="n">output_container</span><span class="o">.</span><span class="n">add_stream_from_template</span><span class="p">(</span><span class="n">template</span><span class="o">=</span><span class="n">cast</span><span class="p">(</span><span class="n">AudioStream</span><span class="p">,</span> <span class="n">stream</span><span class="p">))</span>
+
+    <span class="n">start_pts_map</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">running_stream</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">streams_map</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="n">input_container</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">start_second</span> <span class="o">/</span> <span class="n">video_stream</span><span class="o">.</span><span class="n">time_base</span><span class="p">),</span> <span class="n">stream</span><span class="o">=</span><span class="n">video_stream</span><span class="p">)</span>
+    <span class="c1"># TODO(anthonycai) add precise segmentation logic, use decode method</span>
+    <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">input_container</span><span class="o">.</span><span class="n">demux</span><span class="p">(</span><span class="o">*</span><span class="n">streams_map</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="n">Packet</span><span class="p">)</span> <span class="ow">or</span> <span class="n">packet</span><span class="o">.</span><span class="n">pts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">current_time_sec</span> <span class="o">=</span> <span class="n">packet</span><span class="o">.</span><span class="n">pts</span> <span class="o">*</span> <span class="n">packet</span><span class="o">.</span><span class="n">time_base</span>
+        <span class="k">if</span> <span class="n">end_second</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">current_time_sec</span> <span class="o">&gt;</span> <span class="n">end_second</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">stream</span> <span class="ow">in</span> <span class="n">running_stream</span><span class="p">:</span>
+                <span class="n">running_stream</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">packet</span><span class="o">.</span><span class="n">stream</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">running_stream</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">continue</span>
+
+        <span class="n">input_stream</span> <span class="o">=</span> <span class="n">packet</span><span class="o">.</span><span class="n">stream</span>
+        <span class="k">if</span> <span class="n">input_stream</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">start_pts_map</span><span class="p">:</span>
+            <span class="n">start_pts_map</span><span class="p">[</span><span class="n">input_stream</span><span class="p">]</span> <span class="o">=</span> <span class="n">packet</span><span class="o">.</span><span class="n">pts</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="n">start_pts_map</span><span class="p">[</span><span class="n">input_stream</span><span class="p">]</span>
+        <span class="n">packet</span><span class="o">.</span><span class="n">pts</span> <span class="o">-=</span> <span class="n">offset</span>
+        <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">dts</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">packet</span><span class="o">.</span><span class="n">dts</span> <span class="o">-=</span> <span class="n">offset</span>
+        <span class="n">packet</span><span class="o">.</span><span class="n">stream</span> <span class="o">=</span> <span class="n">streams_map</span><span class="p">[</span><span class="n">input_stream</span><span class="p">]</span>
+        <span class="n">output_container</span><span class="o">.</span><span class="n">mux</span><span class="p">(</span><span class="n">packet</span><span class="p">)</span>
+
+    <span class="c1"># flush encoder</span>
+    <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="n">streams_map</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">stream</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;video&quot;</span><span class="p">:</span>
+            <span class="n">output_container</span><span class="o">.</span><span class="n">mux</span><span class="p">(</span><span class="n">stream</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">desire_video_format</span><span class="p">(</span><span class="n">list_format</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Select a single, explicitly supported output container format (FFmpeg muxer name)</span>
+<span class="sd">    from the list of possible container formats reported by FFmpeg.</span>
+
+<span class="sd">    Why is this function needed?</span>
+
+<span class="sd">    1. `input_container.format.name` returns a string like &quot;mov,mp4,m4a,3gp,3g2,mj2&quot;,</span>
+<span class="sd">       which lists **all possible container formats** that FFmpeg believes the file</span>
+<span class="sd">       could be compatible with (comma-separated).</span>
+
+<span class="sd">       Passing this full string directly to `av.open(..., format=...)` will fail</span>
+<span class="sd">       because FFmpeg cannot recognize a combined name like &quot;mov,mp4,m4a,...&quot; —</span>
+<span class="sd">       it expects **one valid muxer name**.</span>
+
+<span class="sd">    2. The `format` parameter in `av.open(..., mode=&quot;w&quot;, format=...)` **must be a single</span>
+<span class="sd">       valid muxer name** (e.g., &quot;mp4&quot;, &quot;mov&quot;, &quot;matroska&quot;). Otherwise, it raises:</span>
+<span class="sd">       `ValueError: unknown format`.</span>
+
+<span class="sd">    3. Priority strategy:</span>
+<span class="sd">       - Prefer **mp4**: most widely supported, excellent web and mobile compatibility.</span>
+<span class="sd">       - Then **mov**: common in Apple ecosystem, good compatibility with QuickTime.</span>
+<span class="sd">       - Then **mkv** (as &quot;matroska&quot;): powerful container, supports many codecs.</span>
+<span class="sd">       - Fallback: use the first format in the list (guaranteed to be recognized by FFmpeg).</span>
+
+<span class="sd">    This ensures we always pass a **valid and highly compatible** output format to `av.open`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;mp4&quot;</span> <span class="ow">in</span> <span class="n">list_format</span><span class="p">:</span>
+        <span class="n">output_format</span> <span class="o">=</span> <span class="s2">&quot;mp4&quot;</span>
+    <span class="k">elif</span> <span class="s2">&quot;mov&quot;</span> <span class="ow">in</span> <span class="n">list_format</span><span class="p">:</span>
+        <span class="n">output_format</span> <span class="o">=</span> <span class="s2">&quot;mov&quot;</span>
+    <span class="k">elif</span> <span class="s2">&quot;mkv&quot;</span> <span class="ow">in</span> <span class="n">list_format</span><span class="p">:</span>
+        <span class="n">output_format</span> <span class="o">=</span> <span class="s2">&quot;matroska&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output_format</span> <span class="o">=</span> <span class="n">list_format</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">output_format</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cut_video_by_seconds</span><span class="p">(</span>
+    <span class="n">input_container</span><span class="p">:</span> <span class="n">InputContainer</span><span class="p">,</span>
+    <span class="n">start_second</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">end_second</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+    <span class="n">input_video_stream</span> <span class="o">=</span> <span class="n">input_container</span><span class="o">.</span><span class="n">streams</span><span class="o">.</span><span class="n">video</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">input_video_stream</span><span class="o">.</span><span class="n">time_base</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">input_video_stream</span><span class="o">.</span><span class="n">time_base</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;video stream time base is zero, file may be broken.&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">output_buffer</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">av</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="n">output_buffer</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">desire_video_format</span><span class="p">(</span><span class="n">input_container</span><span class="o">.</span><span class="n">format</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
+        <span class="p">)</span> <span class="k">as</span> <span class="n">output_container</span><span class="p">:</span>
+            <span class="n">copy_video_stream</span><span class="p">(</span><span class="n">input_container</span><span class="p">,</span> <span class="n">output_container</span><span class="p">,</span> <span class="n">start_second</span><span class="o">=</span><span class="n">start_second</span><span class="p">,</span> <span class="n">end_second</span><span class="o">=</span><span class="n">end_second</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">output_buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">deep_getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">attr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">part</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; object has no attribute &#39;</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">LLMChatCompletions</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">max_qps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">fallback_response</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">response_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Using Remote Http LLMChatCompletions&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fallback_response</span> <span class="o">=</span> <span class="n">fallback_response</span>
+
+        <span class="n">supported_formats</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;json_object&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">response_format</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">supported_formats</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported response_format: </span><span class="si">{</span><span class="n">response_format</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">response_format</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">response_format</span><span class="p">}</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="n">max_retries</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_completions</span> <span class="o">=</span> <span class="n">qps_limiter</span><span class="p">(</span><span class="n">max_qps</span><span class="p">)(</span><span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ChatCompletionMessageParam</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ChatCompletion</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_completions</span><span class="p">(</span>
+                <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">response_format</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">response_format</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;create_completions failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">batch_generate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">texts</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">,</span>
+        <span class="n">build_prompt</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ChatCompletionMessageParam</span><span class="p">]],</span>
+        <span class="n">post_process</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">datatype</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">DataType</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">(),</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+        <span class="n">requests</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
+            <span class="n">requests</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">(</span><span class="n">messages</span><span class="o">=</span><span class="n">build_prompt</span><span class="p">(</span><span class="n">text</span><span class="p">)))</span>
+
+        <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">requests</span><span class="p">)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">post_process</span> <span class="ow">is</span> <span class="kc">None</span>
+                    <span class="k">else</span> <span class="n">post_process</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;request failed, response is: </span><span class="si">{</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fallback_response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fallback_response</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;LLM call failed or returned empty content.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">skip_empty_texts</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">empty_response</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorator to skip empty or null texts in text processing.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">texts</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+            <span class="n">combined</span> <span class="o">=</span> <span class="n">texts</span><span class="o">.</span><span class="n">combine_chunks</span><span class="p">()</span>
+            <span class="n">is_not_empty</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">fill_null</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">not_equal</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_length</span><span class="p">(</span><span class="n">combined</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="kc">False</span><span class="p">)</span>
+
+            <span class="n">valid_indices</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">indices_nonzero</span><span class="p">(</span><span class="n">is_not_empty</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">valid_indices</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">empty_response</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">combined</span><span class="p">),</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+
+            <span class="n">valid_texts</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">combined</span><span class="p">,</span> <span class="n">is_not_empty</span><span class="p">)</span>
+            <span class="n">processed_results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valid_texts</span><span class="p">)</span>
+
+            <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">empty_response</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">combined</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">valid_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">valid_indices</span><span class="p">):</span>
+                <span class="n">results</span><span class="p">[</span><span class="n">valid_idx</span><span class="o">.</span><span class="n">as_py</span><span class="p">()]</span> <span class="o">=</span> <span class="n">processed_results</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+    <span class="c1"># Support both @skip_empty_texts and @skip_empty_texts(...)</span>
+    <span class="k">if</span> <span class="n">func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_labels</span><span class="p">(</span><span class="n">labels</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">labels_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;labels&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">label</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span> <span class="k">if</span> <span class="n">label</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">labels_name</span><span class="si">}</span><span class="s2"> must not be empty&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">labels</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">text_tokenize</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">regex_patten</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">cjk</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">regex_patten</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cjk</span><span class="p">:</span>
+            <span class="n">tokens</span> <span class="o">=</span> <span class="n">dedup_utils</span><span class="o">.</span><span class="n">utf8_split_mixed</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tokens</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_split_whitespace</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">split_pattern_regex</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="n">regex_patten</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">tokens</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Tencent.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

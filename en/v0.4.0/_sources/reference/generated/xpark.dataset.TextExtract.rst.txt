@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextExtract
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextExtract
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextExtract.__call__
+      ~TextExtract.options
+      ~TextExtract.with_column
+   
+   
+
+   
+   
+   

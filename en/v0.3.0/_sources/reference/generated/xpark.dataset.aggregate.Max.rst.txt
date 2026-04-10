@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.Max
+===========================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: Max
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Max.aggregate_block
+      ~Max.combine
+      ~Max.finalize
+      ~Max.get_agg_name
+      ~Max.get_target_column
+   
+   
+
+   
+   
+   

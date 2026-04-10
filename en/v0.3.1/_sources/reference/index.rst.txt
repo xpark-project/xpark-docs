@@ -1,0 +1,226 @@
+.. _reference_index:
+
+=====================
+Dataset API
+=====================
+
+
+UDF
+---
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.udf
+
+
+Dataset
+-------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.Dataset
+
+
+Dataset Context
+---------------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.DatasetContext
+
+
+Grouped Dataset
+---------------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.GroupedData
+
+
+.. _read-api:
+
+Read API
+--------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.from_arrow
+    xpark.dataset.from_blocks
+    xpark.dataset.from_huggingface
+    xpark.dataset.from_items
+    xpark.dataset.from_range
+    xpark.dataset.from_range_tensor
+    xpark.dataset.from_pandas
+    xpark.dataset.from_numpy
+    xpark.dataset.read_json
+    xpark.dataset.read_audio
+    xpark.dataset.read_video
+    xpark.dataset.read_image
+    xpark.dataset.read_parquet
+    xpark.dataset.read_iceberg
+    xpark.dataset.read_lance
+    xpark.dataset.read_lerobot
+    xpark.dataset.read_files
+
+
+.. _consuming-api:
+
+Consuming API
+--------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.Dataset.iter_batches
+    xpark.dataset.Dataset.show
+    xpark.dataset.Dataset.take
+    xpark.dataset.Dataset.take_all
+    xpark.dataset.Dataset.take_batch
+
+.. _io-and-conversion:
+
+I/O and Conversion API
+--------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.Dataset.to_pandas
+    xpark.dataset.Dataset.write_json
+    xpark.dataset.Dataset.write_csv
+    xpark.dataset.Dataset.write_numpy
+    xpark.dataset.Dataset.write_parquet
+    xpark.dataset.Dataset.write_iceberg
+    xpark.dataset.Dataset.write_lance
+
+Expressions
+-----------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.expressions.ExprUDFOptions
+    xpark.dataset.expressions.udf
+    xpark.dataset.expressions.star
+    xpark.dataset.expressions.col
+    xpark.dataset.expressions.lit
+    xpark.dataset.expressions.download
+
+
+Expression namespaces
+------------------------------------
+
+These namespace classes provide specialized operations for list, string, and struct columns.
+You access them through properties on expressions: ``.list``, ``.str``, and ``.struct``.
+
+The following example shows how to use the string namespace to transform text columns:
+
+.. testcode::
+
+    from xpark.dataset import from_items
+    from xpark.dataset.expressions import col
+
+    # Create a dataset with a text column
+    ds = from_items([
+        {"name": "alice"},
+        {"name": "bob"},
+        {"name": "charlie"}
+    ])
+
+    # Use the string namespace to uppercase the names
+    ds = ds.with_column("upper_name", col("name").str.upper())
+    ds.show()
+
+.. testoutput::
+
+    {'name': 'alice', 'upper_name': 'ALICE'}
+    {'name': 'bob', 'upper_name': 'BOB'}
+    {'name': 'charlie', 'upper_name': 'CHARLIE'}
+
+The following example demonstrates using the list namespace to work with array columns:
+
+.. testcode::
+
+    from xpark.dataset import from_items
+    from xpark.dataset.expressions import col
+
+    # Create a dataset with list columns
+    ds = from_items([
+        {"scores": [85, 90, 78]},
+        {"scores": [92, 88]},
+        {"scores": [76, 82, 88, 91]}
+    ])
+
+    # Use the list namespace to get the length of each list
+    ds = ds.with_column("num_scores", col("scores").list.len())
+    ds.show()
+
+.. testoutput::
+
+    {'scores': [85, 90, 78], 'num_scores': 3}
+    {'scores': [92, 88], 'num_scores': 2}
+    {'scores': [76, 82, 88, 91], 'num_scores': 4}
+
+The following example shows how to use the struct namespace to access nested fields:
+
+.. testcode::
+
+    from xpark.dataset import from_items
+    from xpark.dataset.expressions import col
+
+    # Create a dataset with struct columns
+    ds = from_items([
+        {"user": {"name": "alice", "age": 25}},
+        {"user": {"name": "bob", "age": 30}},
+        {"user": {"name": "charlie", "age": 35}}
+    ])
+
+    # Use the struct namespace to extract a specific field
+    ds = ds.with_column("user_name", col("user").struct.field("name"))
+    ds.show()
+
+.. testoutput::
+
+    {'user': {'name': 'alice', 'age': 25}, 'user_name': 'alice'}
+    {'user': {'name': 'bob', 'age': 30}, 'user_name': 'bob'}
+    {'user': {'name': 'charlie', 'age': 35}, 'user_name': 'charlie'}
+
+.. autoclass:: xpark.dataset.namespace_expressions.list_namespace._ListNamespace
+    :members:
+    :inherited-members:
+    :exclude-members: _expr
+
+.. autoclass:: xpark.dataset.namespace_expressions.string_namespace._StringNamespace
+    :members:
+    :inherited-members:
+    :exclude-members: _expr
+
+.. autoclass:: xpark.dataset.namespace_expressions.struct_namespace._StructNamespace
+    :members:
+    :inherited-members:
+    :exclude-members: _expr
+
+.. autoclass:: xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace
+    :members:
+    :inherited-members:
+    :exclude-members: _expr
+
+.. autoclass:: xpark.dataset.namespace_expressions.array_namespace._ArrayNamespace
+    :members:
+    :inherited-members:
+    :exclude-members: _expr
+
+Aggregation
+-----------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.aggregate.AggregateFnV2
+    xpark.dataset.aggregate.Count
+    xpark.dataset.aggregate.Sum
+    xpark.dataset.aggregate.Mean
+    xpark.dataset.aggregate.Max
+    xpark.dataset.aggregate.Min
+    xpark.dataset.aggregate.Std
+    xpark.dataset.aggregate.AbsMax
+    xpark.dataset.aggregate.Quantile
+    xpark.dataset.aggregate.Unique
+    xpark.dataset.aggregate.MissingValuePercentage
+    xpark.dataset.aggregate.ZeroPercentage

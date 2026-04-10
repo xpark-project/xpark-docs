@@ -1,0 +1,126 @@
+Video Classify By Speech Content
+===================================================
+
+Background
+----------
+
+This pipeline demonstrates how to implement a video classification algorithm based on speech content
+by chaining multiple Xpark operators.
+
+To complete video classification, we need to execute the following steps in order:
+
+The detailed workflow is as follows:
+
+1. **Read Videos**: Use ``from_items`` to load a list of video file paths.
+2. **Extract Audio**: Use the ``VideoCompute.extract_audio`` operator to extract audio binary data from videos.
+3. **Speech to Text**: Use the ``SpeechToText`` operator to transcribe audio into text (supports local models(CPU/GPU) or remote HTTP interfaces).
+4. **Text Classification**: Use the ``TextClassify`` operator to classify text content based on LLM, outputting predefined labels.
+
+
+Video Classify
+--------------
+
+The following example shows how to chain Xpark operators to perform batch video content classification:
+
+.. code-block:: python
+
+    import os
+
+    from xpark.dataset import (
+        SpeechToText,
+        TextClassify,
+        VideoCompute,
+        from_items,
+    )
+    from xpark.dataset.expressions import col
+
+    # List of video file paths to classify (supports local paths, COS, S3, HTTP, etc.)
+    video_paths = [
+        "/path/to/video.mp4",
+        "/path/to/video1.mp4",
+        "/path/to/video2.mp4",
+    ]
+
+    # Step 1: Build the video dataset
+    ds = from_items([{"video": path} for path in video_paths])
+
+    # Step 2: Extract audio from videos (Video → Audio)
+    # VideoCompute.extract_audio returns audio binary data (bytes)
+    ds = ds.with_column(
+        "audio",
+        VideoCompute.extract_audio(col("video"), codec="mp3"),
+    )
+
+    # Step 3: Transcribe audio to text (Audio → Text)
+    # SpeechToText supports both local models (CPU/GPU) and remote HTTP interfaces
+    # Local model mode (using faster Whisper):
+    ds = ds.with_column(
+        "text",
+        SpeechToText(
+            # Local transcription model
+            "Systran/faster-whisper-tiny",
+        )
+        .options(num_workers={"CPU": 1}, batch_size=4)
+        .with_column(col("audio")),
+    )
+
+    # Step 4: Classify videos based on text content (Text → Category)
+    # TextClassify uses LLM to assign text to one of the predefined labels
+    ds = ds.with_column(
+        "category",
+        TextClassify(
+            # Predefined classification labels
+            ["Sports", "Entertainment", "Technology", "Education", "Lifestyle"],
+            model="deepseek-v3-0324",
+            base_url=os.getenv("LKE_ENDPOINT"),
+            api_key=os.getenv("LKEAP_API_KEY"),
+        )
+        .options(num_workers={"IO": 1}, batch_size=4)
+        .with_column(col("text")),
+    )
+
+    # Output classification results
+    results = ds.select_columns(["video", "text", "category"]).take_all()
+    for row in results:
+        print(f"Video: {row['video']}")
+        print(f"Transcript: {row['text'][:100]}...")
+        print(f"Category: {row['category']}")
+        print("-" * 50)
+
+    # Results can also be written to a Parquet file
+    # ds.select_columns(["video", "text", "category"]).write_parquet("/path/to/output/")
+
+
+Example Output
+--------------
+
+.. code-block:: text
+
+    Video: /path/to/video1.mp4
+    Transcript: Today's match was incredibly exciting. The home team completed a stunning comeback...
+    Category: Sports
+    --------------------------------------------------
+    Video: /path/to/video2.mp4
+    Transcript: A new study shows that artificial intelligence has made a major breakthrough in...
+    Category: Technology
+    --------------------------------------------------
+    Video: /path/to/video3.mp4
+    Transcript: In this episode, we will show you how to make a simple and delicious home-cooked...
+    Category: Lifestyle
+    --------------------------------------------------
+
+
+Operator Reference
+------------------
+
+- :py:class:`xpark.dataset.VideoCompute` — A collection of video processing operators. The ``extract_audio`` method supports extracting audio from specified time ranges, with support for COS, S3, HTTP, and other storage backends.
+- :py:class:`xpark.dataset.SpeechToText` — Speech-to-text operator that supports local models (Whisper, FasterWhisper, etc.) and remote OpenAI-compatible interfaces.
+- :py:class:`xpark.dataset.TextClassify` — Text classification operator that uses LLM to assign text to predefined labels, supporting any OpenAI-compatible LLM service.
+
+
+Further Notes
+-------------
+
+As multimodal large language models continue to evolve, Xpark will provide interfaces for more modalities.
+In addition to audio, support for classifying video content based on image information and music information
+will be added, further improving the accuracy and applicability of video classification.

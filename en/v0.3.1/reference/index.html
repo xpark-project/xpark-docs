@@ -1,0 +1,1502 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dataset API &#8212; Xpark</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'v0.3.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="xpark.dataset.udf" href="generated/xpark.dataset.udf.html" />
+    <link rel="prev" title="Video Classify By Speech Content" href="../examples/video_classify.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xpark</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.udf.html">xpark.dataset.udf</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.html">xpark.dataset.Dataset</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.DatasetContext.html">xpark.dataset.DatasetContext</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.GroupedData.html">xpark.dataset.GroupedData</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.from_arrow.html">xpark.dataset.from_arrow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.from_blocks.html">xpark.dataset.from_blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.from_huggingface.html">xpark.dataset.from_huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.from_items.html">xpark.dataset.from_items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.from_range.html">xpark.dataset.from_range</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.from_range_tensor.html">xpark.dataset.from_range_tensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.from_pandas.html">xpark.dataset.from_pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.from_numpy.html">xpark.dataset.from_numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.read_json.html">xpark.dataset.read_json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.read_audio.html">xpark.dataset.read_audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.read_video.html">xpark.dataset.read_video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.read_image.html">xpark.dataset.read_image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.read_parquet.html">xpark.dataset.read_parquet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.read_iceberg.html">xpark.dataset.read_iceberg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.read_lance.html">xpark.dataset.read_lance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.read_lerobot.html">xpark.dataset.read_lerobot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.read_files.html">xpark.dataset.read_files</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.iter_batches.html">xpark.dataset.Dataset.iter_batches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.show.html">xpark.dataset.Dataset.show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.take.html">xpark.dataset.Dataset.take</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.take_all.html">xpark.dataset.Dataset.take_all</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.take_batch.html">xpark.dataset.Dataset.take_batch</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.to_pandas.html">xpark.dataset.Dataset.to_pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.write_json.html">xpark.dataset.Dataset.write_json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.write_csv.html">xpark.dataset.Dataset.write_csv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.write_numpy.html">xpark.dataset.Dataset.write_numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.write_parquet.html">xpark.dataset.Dataset.write_parquet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.write_iceberg.html">xpark.dataset.Dataset.write_iceberg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.Dataset.write_lance.html">xpark.dataset.Dataset.write_lance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.expressions.ExprUDFOptions.html">xpark.dataset.expressions.ExprUDFOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.expressions.udf.html">xpark.dataset.expressions.udf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.expressions.star.html">xpark.dataset.expressions.star</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.expressions.col.html">xpark.dataset.expressions.col</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.expressions.lit.html">xpark.dataset.expressions.lit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.expressions.download.html">xpark.dataset.expressions.download</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.AggregateFnV2.html">xpark.dataset.aggregate.AggregateFnV2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.Count.html">xpark.dataset.aggregate.Count</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.Sum.html">xpark.dataset.aggregate.Sum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.Mean.html">xpark.dataset.aggregate.Mean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.Max.html">xpark.dataset.aggregate.Max</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.Min.html">xpark.dataset.aggregate.Min</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.Std.html">xpark.dataset.aggregate.Std</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.AbsMax.html">xpark.dataset.aggregate.AbsMax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.Quantile.html">xpark.dataset.aggregate.Quantile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.Unique.html">xpark.dataset.aggregate.Unique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.MissingValuePercentage.html">xpark.dataset.aggregate.MissingValuePercentage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/xpark.dataset.aggregate.ZeroPercentage.html">xpark.dataset.aggregate.ZeroPercentage</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Dataset API</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dataset-api">
+<span id="reference-index"></span><h1>Dataset API<a class="headerlink" href="#dataset-api" title="Link to this heading">#</a></h1>
+<section id="udf">
+<h2>UDF<a class="headerlink" href="#udf" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.udf.html#xpark.dataset.udf" title="xpark.dataset.udf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.udf</span></code></a>(*, return_dtype[, ...])</p></td>
+<td><p>Decorator to convert a UDF into an expression-compatible function.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset</span></code></a>(ray_dataset)</p></td>
+<td><p>Construct a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code> from a <a class="reference external" href="https://docs.ray.io/en/latest/data/api/dataset.html">ray.data.Dataset</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dataset-context">
+<h2>Dataset Context<a class="headerlink" href="#dataset-context" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.DatasetContext.html#xpark.dataset.DatasetContext" title="xpark.dataset.DatasetContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.DatasetContext</span></code></a>(...)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="grouped-dataset">
+<h2>Grouped Dataset<a class="headerlink" href="#grouped-dataset" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.GroupedData.html#xpark.dataset.GroupedData" title="xpark.dataset.GroupedData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.GroupedData</span></code></a>(ray_grouped_data)</p></td>
+<td><p>Represents a grouped dataset created by calling <code class="docutils literal notranslate"><span class="pre">Dataset.groupby()</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="read-api">
+<span id="id1"></span><h2>Read API<a class="headerlink" href="#read-api" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.from_arrow.html#xpark.dataset.from_arrow" title="xpark.dataset.from_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.from_arrow</span></code></a>(tables, *[, ...])</p></td>
+<td><p>Create a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from a list of PyArrow tables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.from_blocks.html#xpark.dataset.from_blocks" title="xpark.dataset.from_blocks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.from_blocks</span></code></a>(blocks)</p></td>
+<td><p>Create a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from a list of blocks.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.from_huggingface.html#xpark.dataset.from_huggingface" title="xpark.dataset.from_huggingface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.from_huggingface</span></code></a>(dataset[, ...])</p></td>
+<td><p>Read a Hugging Face Dataset into a Xpark Datasetset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.from_items.html#xpark.dataset.from_items" title="xpark.dataset.from_items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.from_items</span></code></a>(items, *[, ...])</p></td>
+<td><p>Create a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from a list of local Python objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.from_range.html#xpark.dataset.from_range" title="xpark.dataset.from_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.from_range</span></code></a>(n, *[, ...])</p></td>
+<td><p>Creates a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from a range of integers [0..n).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.from_range_tensor.html#xpark.dataset.from_range_tensor" title="xpark.dataset.from_range_tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.from_range_tensor</span></code></a>(n, *[, ...])</p></td>
+<td><p>Creates a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> tensors of the provided shape from range [0...n].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.from_pandas.html#xpark.dataset.from_pandas" title="xpark.dataset.from_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.from_pandas</span></code></a>(dfs[, ...])</p></td>
+<td><p>Create a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from a list of pandas dataframes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.from_numpy.html#xpark.dataset.from_numpy" title="xpark.dataset.from_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.from_numpy</span></code></a>(ndarrays)</p></td>
+<td><p>Creates a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from a list of NumPy ndarrays.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.read_json.html#xpark.dataset.read_json" title="xpark.dataset.read_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.read_json</span></code></a>(paths, *[, lines, ...])</p></td>
+<td><p>Creates a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from JSON and JSONL files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.read_audio.html#xpark.dataset.read_audio" title="xpark.dataset.read_audio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.read_audio</span></code></a>(paths, *[, ...])</p></td>
+<td><p>Creates a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from audio files.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.read_video.html#xpark.dataset.read_video" title="xpark.dataset.read_video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.read_video</span></code></a>(paths, *[, ...])</p></td>
+<td><p>Creates a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from video files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.read_image.html#xpark.dataset.read_image" title="xpark.dataset.read_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.read_image</span></code></a>(paths, *[, ...])</p></td>
+<td><p>Creates a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from image files.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.read_parquet.html#xpark.dataset.read_parquet" title="xpark.dataset.read_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.read_parquet</span></code></a>(paths, *, ...)</p></td>
+<td><p>Creates a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from parquet files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.read_iceberg.html#xpark.dataset.read_iceberg" title="xpark.dataset.read_iceberg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.read_iceberg</span></code></a>(*, table_identifier)</p></td>
+<td><p>Create a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from an Iceberg table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.read_lance.html#xpark.dataset.read_lance" title="xpark.dataset.read_lance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.read_lance</span></code></a>(uri, *[, version, ...])</p></td>
+<td><p>Create a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from a <a class="reference external" href="https://lance-format.github.io/lance-python-doc/dataset.html">Lance Dataset</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.read_lerobot.html#xpark.dataset.read_lerobot" title="xpark.dataset.read_lerobot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.read_lerobot</span></code></a>(path, *[, ...])</p></td>
+<td><p>Creates a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from a LeRobot format dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.read_files.html#xpark.dataset.read_files" title="xpark.dataset.read_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.read_files</span></code></a>(paths, *[, ...])</p></td>
+<td><p>Create a <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> from binary files of arbitrary contents.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="consuming-api">
+<span id="id2"></span><h2>Consuming API<a class="headerlink" href="#consuming-api" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.iter_batches.html#xpark.dataset.Dataset.iter_batches" title="xpark.dataset.Dataset.iter_batches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.iter_batches</span></code></a>(*[, ...])</p></td>
+<td><p>Return an iterable over batches of data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.show.html#xpark.dataset.Dataset.show" title="xpark.dataset.Dataset.show"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.show</span></code></a>([limit])</p></td>
+<td><p>Print up to the given number of rows from the <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.take.html#xpark.dataset.Dataset.take" title="xpark.dataset.Dataset.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.take</span></code></a>([limit])</p></td>
+<td><p>Return up to <code class="docutils literal notranslate"><span class="pre">limit</span></code> rows from the <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.take_all.html#xpark.dataset.Dataset.take_all" title="xpark.dataset.Dataset.take_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.take_all</span></code></a>([limit])</p></td>
+<td><p>Return all of the rows in this <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.take_batch.html#xpark.dataset.Dataset.take_batch" title="xpark.dataset.Dataset.take_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.take_batch</span></code></a>([...])</p></td>
+<td><p>Return up to <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> rows from the <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code> in a batch.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="i-o-and-conversion-api">
+<span id="io-and-conversion"></span><h2>I/O and Conversion API<a class="headerlink" href="#i-o-and-conversion-api" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.to_pandas.html#xpark.dataset.Dataset.to_pandas" title="xpark.dataset.Dataset.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.to_pandas</span></code></a>([limit])</p></td>
+<td><p>Convert this <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> to a single pandas DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.write_json.html#xpark.dataset.Dataset.write_json" title="xpark.dataset.Dataset.write_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.write_json</span></code></a>(path, *[, ...])</p></td>
+<td><p>Writes the <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> to JSON and JSONL files.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.write_csv.html#xpark.dataset.Dataset.write_csv" title="xpark.dataset.Dataset.write_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.write_csv</span></code></a>(path, *[, ...])</p></td>
+<td><p>Writes the <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> to CSV files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.write_numpy.html#xpark.dataset.Dataset.write_numpy" title="xpark.dataset.Dataset.write_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.write_numpy</span></code></a>(path, *, ...)</p></td>
+<td><p>Writes a column of the <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> to .npy files.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.write_parquet.html#xpark.dataset.Dataset.write_parquet" title="xpark.dataset.Dataset.write_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.write_parquet</span></code></a>(path, *)</p></td>
+<td><p>Writes the <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> to parquet files under the provided <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.write_iceberg.html#xpark.dataset.Dataset.write_iceberg" title="xpark.dataset.Dataset.write_iceberg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.write_iceberg</span></code></a>(...[, ...])</p></td>
+<td><p>Writes the <a class="reference internal" href="generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> to an Iceberg table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.Dataset.write_lance.html#xpark.dataset.Dataset.write_lance" title="xpark.dataset.Dataset.write_lance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.Dataset.write_lance</span></code></a>(path, *[, ...])</p></td>
+<td><p>Write the dataset to a Lance dataset.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="expressions">
+<h2>Expressions<a class="headerlink" href="#expressions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.expressions.ExprUDFOptions.html#xpark.dataset.expressions.ExprUDFOptions" title="xpark.dataset.expressions.ExprUDFOptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.expressions.ExprUDFOptions</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.expressions.udf.html#xpark.dataset.expressions.udf" title="xpark.dataset.expressions.udf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.expressions.udf</span></code></a>(*, return_dtype)</p></td>
+<td><p>Decorator to convert a UDF into an expression-compatible function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.expressions.star.html#xpark.dataset.expressions.star" title="xpark.dataset.expressions.star"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.expressions.star</span></code></a>()</p></td>
+<td><p>References all input columns from the input.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.expressions.col.html#xpark.dataset.expressions.col" title="xpark.dataset.expressions.col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.expressions.col</span></code></a>(name)</p></td>
+<td><p>Reference an existing column by name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.expressions.lit.html#xpark.dataset.expressions.lit" title="xpark.dataset.expressions.lit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.expressions.lit</span></code></a>(value)</p></td>
+<td><p>Create a literal expression from a constant value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.expressions.download.html#xpark.dataset.expressions.download" title="xpark.dataset.expressions.download"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.expressions.download</span></code></a>(...[, ...])</p></td>
+<td><p>Create a download expression that downloads content from URIs.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="expression-namespaces">
+<h2>Expression namespaces<a class="headerlink" href="#expression-namespaces" title="Link to this heading">#</a></h2>
+<p>These namespace classes provide specialized operations for list, string, and struct columns.
+You access them through properties on expressions: <code class="docutils literal notranslate"><span class="pre">.list</span></code>, <code class="docutils literal notranslate"><span class="pre">.str</span></code>, and <code class="docutils literal notranslate"><span class="pre">.struct</span></code>.</p>
+<p>The following example shows how to use the string namespace to transform text columns:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">from_items</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="c1"># Create a dataset with a text column</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;alice&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;charlie&quot;</span><span class="p">}</span>
+<span class="p">])</span>
+
+<span class="c1"># Use the string namespace to uppercase the names</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;upper_name&quot;</span><span class="p">,</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;alice&#39;, &#39;upper_name&#39;: &#39;ALICE&#39;}
+{&#39;name&#39;: &#39;bob&#39;, &#39;upper_name&#39;: &#39;BOB&#39;}
+{&#39;name&#39;: &#39;charlie&#39;, &#39;upper_name&#39;: &#39;CHARLIE&#39;}
+</pre></div>
+</div>
+<p>The following example demonstrates using the list namespace to work with array columns:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">from_items</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="c1"># Create a dataset with list columns</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span>
+    <span class="p">{</span><span class="s2">&quot;scores&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s2">&quot;scores&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">92</span><span class="p">,</span> <span class="mi">88</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s2">&quot;scores&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">76</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">91</span><span class="p">]}</span>
+<span class="p">])</span>
+
+<span class="c1"># Use the list namespace to get the length of each list</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;num_scores&quot;</span><span class="p">,</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;scores&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">len</span><span class="p">())</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;scores&#39;: [85, 90, 78], &#39;num_scores&#39;: 3}
+{&#39;scores&#39;: [92, 88], &#39;num_scores&#39;: 2}
+{&#39;scores&#39;: [76, 82, 88, 91], &#39;num_scores&#39;: 4}
+</pre></div>
+</div>
+<p>The following example shows how to use the struct namespace to access nested fields:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">from_items</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="c1"># Create a dataset with struct columns</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span>
+    <span class="p">{</span><span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}},</span>
+    <span class="p">{</span><span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}},</span>
+    <span class="p">{</span><span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">35</span><span class="p">}}</span>
+<span class="p">])</span>
+
+<span class="c1"># Use the struct namespace to extract a specific field</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;user_name&quot;</span><span class="p">,</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">))</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;user&#39;: {&#39;name&#39;: &#39;alice&#39;, &#39;age&#39;: 25}, &#39;user_name&#39;: &#39;alice&#39;}
+{&#39;user&#39;: {&#39;name&#39;: &#39;bob&#39;, &#39;age&#39;: 30}, &#39;user_name&#39;: &#39;bob&#39;}
+{&#39;user&#39;: {&#39;name&#39;: &#39;charlie&#39;, &#39;age&#39;: 35}, &#39;user_name&#39;: &#39;charlie&#39;}
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.list_namespace._ListNamespace">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.namespace_expressions.list_namespace.</span></span><span class="sig-name descname"><span class="pre">_ListNamespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/xpark/dataset/namespace_expressions/list_namespace.html#_ListNamespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace for list operations on expression columns.</p>
+<p>This namespace provides methods for operating on list-typed columns using
+PyArrow compute functions.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get length of list column</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get first item using method</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get first item using indexing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Slice list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.list_namespace._ListNamespace.flatten">
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/list_namespace.html#_ListNamespace.flatten"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.flatten" title="Link to this definition">#</a></dt>
+<dd><p>Flatten one level of nesting for each list value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.list_namespace._ListNamespace.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/list_namespace.html#_ListNamespace.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.get" title="Link to this definition">#</a></dt>
+<dd><p>Get element at the specified index from each list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> – The index of the element to retrieve. Negative indices are supported.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UDFExpr that extracts the element at the given index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.list_namespace._ListNamespace.len">
+<span class="sig-name descname"><span class="pre">len</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/list_namespace.html#_ListNamespace.len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.len" title="Link to this definition">#</a></dt>
+<dd><p>Get the length of each list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.list_namespace._ListNamespace.slice">
+<span class="sig-name descname"><span class="pre">slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/list_namespace.html#_ListNamespace.slice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.slice" title="Link to this definition">#</a></dt>
+<dd><p>Slice each list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – Start index (inclusive). Defaults to 0.</p></li>
+<li><p><strong>stop</strong> – Stop index (exclusive). Defaults to list length.</p></li>
+<li><p><strong>step</strong> – Step size. Defaults to 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UDFExpr that extracts a slice from each list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.list_namespace._ListNamespace.sort">
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'ascending'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'descending'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'ascending'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">null_placement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'at_start'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'at_end'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'at_end'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/list_namespace.html#_ListNamespace.sort"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.sort" title="Link to this definition">#</a></dt>
+<dd><p>Sort the elements within each (nested) list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> – Sorting order, must be <code class="docutils literal notranslate"><span class="pre">&quot;ascending&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;descending&quot;</span></code>.</p></li>
+<li><p><strong>null_placement</strong> – Placement for null values, <code class="docutils literal notranslate"><span class="pre">&quot;at_start&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;at_end&quot;</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UDFExpr providing the sorted lists.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[3,1],[2,None]] -&gt; [[1,3],[2,None]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.namespace_expressions.string_namespace.</span></span><span class="sig-name descname"><span class="pre">_StringNamespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/xpark/dataset/namespace_expressions/string_namespace.html#_StringNamespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace for string operations on expression columns.</p>
+<p>This namespace provides methods for operating on string-typed columns using
+PyArrow compute functions.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Convert to uppercase</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get string length</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Check if string starts with a prefix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">starts_with</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.byte_len">
+<span class="sig-name descname"><span class="pre">byte_len</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.byte_len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.byte_len" title="Link to this definition">#</a></dt>
+<dd><p>Get the length of each string in bytes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.capitalize">
+<span class="sig-name descname"><span class="pre">capitalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.capitalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.capitalize" title="Link to this definition">#</a></dt>
+<dd><p>Capitalize the first character of each string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.center">
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.center"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.center" title="Link to this definition">#</a></dt>
+<dd><p>Center strings in a field of given width.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.contains">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.contains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.contains" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings contain a substring.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.count" title="Link to this definition">#</a></dt>
+<dd><p>Count occurrences of a substring.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.count_regex">
+<span class="sig-name descname"><span class="pre">count_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.count_regex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.count_regex" title="Link to this definition">#</a></dt>
+<dd><p>Count occurrences matching a regex pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.ends_with">
+<span class="sig-name descname"><span class="pre">ends_with</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.ends_with"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.ends_with" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings end with a pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.extract">
+<span class="sig-name descname"><span class="pre">extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.extract"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.extract" title="Link to this definition">#</a></dt>
+<dd><p>Extract a substring matching a regex pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find">
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.find"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find" title="Link to this definition">#</a></dt>
+<dd><p>Find the first occurrence of a substring.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find_regex">
+<span class="sig-name descname"><span class="pre">find_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.find_regex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find_regex" title="Link to this definition">#</a></dt>
+<dd><p>Find the first occurrence matching a regex pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_alnum">
+<span class="sig-name descname"><span class="pre">is_alnum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_alnum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_alnum" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings contain only alphanumeric characters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_alpha">
+<span class="sig-name descname"><span class="pre">is_alpha</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_alpha"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_alpha" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings contain only alphabetic characters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_ascii">
+<span class="sig-name descname"><span class="pre">is_ascii</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_ascii"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_ascii" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings contain only ASCII characters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_decimal">
+<span class="sig-name descname"><span class="pre">is_decimal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_decimal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_decimal" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings contain only decimal characters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_digit">
+<span class="sig-name descname"><span class="pre">is_digit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_digit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_digit" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings contain only digits.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_lower">
+<span class="sig-name descname"><span class="pre">is_lower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_lower"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_lower" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings are lowercase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_numeric">
+<span class="sig-name descname"><span class="pre">is_numeric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_numeric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_numeric" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings contain only numeric characters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_printable">
+<span class="sig-name descname"><span class="pre">is_printable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_printable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_printable" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings contain only printable characters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_space">
+<span class="sig-name descname"><span class="pre">is_space</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_space" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings contain only whitespace.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_title">
+<span class="sig-name descname"><span class="pre">is_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_title" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings are title-cased.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_upper">
+<span class="sig-name descname"><span class="pre">is_upper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.is_upper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_upper" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings are uppercase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.len">
+<span class="sig-name descname"><span class="pre">len</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.len" title="Link to this definition">#</a></dt>
+<dd><p>Get the length of each string in characters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lower">
+<span class="sig-name descname"><span class="pre">lower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.lower"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lower" title="Link to this definition">#</a></dt>
+<dd><p>Convert strings to lowercase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lpad">
+<span class="sig-name descname"><span class="pre">lpad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.lpad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lpad" title="Link to this definition">#</a></dt>
+<dd><p>Right-align strings by padding with a given character while respecting <code class="docutils literal notranslate"><span class="pre">width</span></code>.</p>
+<p>If the string is longer than the specified width, it remains intact (no truncation occurs).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lstrip">
+<span class="sig-name descname"><span class="pre">lstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">characters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.lstrip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lstrip" title="Link to this definition">#</a></dt>
+<dd><p>Remove leading whitespace or specified characters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>characters</strong> – Characters to remove. If None, removes whitespace.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UDFExpr that strips characters from the left.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match">
+<span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match" title="Link to this definition">#</a></dt>
+<dd><p>Match strings against a SQL LIKE pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match_regex">
+<span class="sig-name descname"><span class="pre">match_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.match_regex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match_regex" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings match a regex pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.pad">
+<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'left'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'right'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'both'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'right'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.pad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.pad" title="Link to this definition">#</a></dt>
+<dd><p>Pad strings to a specified width.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – Target width.</p></li>
+<li><p><strong>fillchar</strong> – Character to use for padding.</p></li>
+<li><p><strong>side</strong> – “left”, “right”, or “both” for padding side.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UDFExpr that pads strings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.repeat">
+<span class="sig-name descname"><span class="pre">repeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.repeat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.repeat" title="Link to this definition">#</a></dt>
+<dd><p>Repeat each string n times.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace">
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replacement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.replace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace" title="Link to this definition">#</a></dt>
+<dd><p>Replace occurrences of a substring.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace_regex">
+<span class="sig-name descname"><span class="pre">replace_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replacement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.replace_regex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace_regex" title="Link to this definition">#</a></dt>
+<dd><p>Replace occurrences matching a regex pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace_slice">
+<span class="sig-name descname"><span class="pre">replace_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replacement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.replace_slice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace_slice" title="Link to this definition">#</a></dt>
+<dd><p>Replace a slice with a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.reverse">
+<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.reverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.reverse" title="Link to this definition">#</a></dt>
+<dd><p>Reverse each string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.rpad">
+<span class="sig-name descname"><span class="pre">rpad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.rpad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.rpad" title="Link to this definition">#</a></dt>
+<dd><p>Left-align strings by padding with a given character while respecting <code class="docutils literal notranslate"><span class="pre">width</span></code>.</p>
+<p>If the string is longer than the specified width, it remains intact (no truncation occurs).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.rstrip">
+<span class="sig-name descname"><span class="pre">rstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">characters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.rstrip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.rstrip" title="Link to this definition">#</a></dt>
+<dd><p>Remove trailing whitespace or specified characters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>characters</strong> – Characters to remove. If None, removes whitespace.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UDFExpr that strips characters from the right.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.slice">
+<span class="sig-name descname"><span class="pre">slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.slice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.slice" title="Link to this definition">#</a></dt>
+<dd><p>Slice strings by codeunit indices.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split">
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.split"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split" title="Link to this definition">#</a></dt>
+<dd><p>Split strings by a pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split_regex">
+<span class="sig-name descname"><span class="pre">split_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.split_regex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split_regex" title="Link to this definition">#</a></dt>
+<dd><p>Split strings by a regex pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split_whitespace">
+<span class="sig-name descname"><span class="pre">split_whitespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.split_whitespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split_whitespace" title="Link to this definition">#</a></dt>
+<dd><p>Split strings on whitespace.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.starts_with">
+<span class="sig-name descname"><span class="pre">starts_with</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.starts_with"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.starts_with" title="Link to this definition">#</a></dt>
+<dd><p>Check if strings start with a pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.strip">
+<span class="sig-name descname"><span class="pre">strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">characters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.strip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.strip" title="Link to this definition">#</a></dt>
+<dd><p>Remove leading and trailing whitespace or specified characters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>characters</strong> – Characters to remove. If None, removes whitespace.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UDFExpr that strips characters from both ends.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.swapcase">
+<span class="sig-name descname"><span class="pre">swapcase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.swapcase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.swapcase" title="Link to this definition">#</a></dt>
+<dd><p>Swap the case of each character.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.title">
+<span class="sig-name descname"><span class="pre">title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.title" title="Link to this definition">#</a></dt>
+<dd><p>Convert strings to title case.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.upper">
+<span class="sig-name descname"><span class="pre">upper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/string_namespace.html#_StringNamespace.upper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.upper" title="Link to this definition">#</a></dt>
+<dd><p>Convert strings to uppercase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.string_namespace._StringNamespace.word_count">
+<span class="sig-name descname"><span class="pre">word_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cjk'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/xpark/dataset/namespace_expressions/string_namespace.html#_StringNamespace.word_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.word_count" title="Link to this definition">#</a></dt>
+<dd><p>Count words in texts using the specified tokenizer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tokenizer</strong> – The tokenizer type to use for word segmentation.
+Defaults to “cjk” for Chinese-Japanese-Korean text processing.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">from_items</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span><span class="s2">&quot;Hello world&quot;</span><span class="p">,</span> <span class="s2">&quot;This is a test&quot;</span><span class="p">])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">&quot;word_count&quot;</span><span class="p">,</span>
+    <span class="n">col</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">word_count</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="s2">&quot;cjk&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">take_all</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.struct_namespace._StructNamespace">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.namespace_expressions.struct_namespace.</span></span><span class="sig-name descname"><span class="pre">_StructNamespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/xpark/dataset/namespace_expressions/struct_namespace.html#_StructNamespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.struct_namespace._StructNamespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace for struct operations on expression columns.</p>
+<p>This namespace provides methods for operating on struct-typed columns using
+PyArrow compute functions.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Access a field using method</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;user_record&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Access a field using bracket notation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;user_record&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">struct</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Access nested field</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;user_record&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">struct</span><span class="p">[</span><span class="s2">&quot;address&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">struct</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.struct_namespace._StructNamespace.field">
+<span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/struct_namespace.html#_StructNamespace.field"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.struct_namespace._StructNamespace.field" title="Link to this definition">#</a></dt>
+<dd><p>Extract a field from a struct.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>field_name</strong> – The name of the field to extract.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UDFExpr that extracts the specified field from each struct.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.namespace_expressions.datetime_namespace.</span></span><span class="sig-name descname"><span class="pre">_DatetimeNamespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/xpark/dataset/namespace_expressions/datetime_namespace.html#_DatetimeNamespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace for datetime operations on expression columns.</p>
+<p>This namespace provides methods for operating on datetime-typed columns using
+PyArrow compute functions.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Extract year component</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Extract month component</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Extract day component</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Extract hour component</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Extract minute component</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">minute</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Extract second component</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">second</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.ceil">
+<span class="sig-name descname"><span class="pre">ceil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TemporalUnit</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.ceil"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.ceil" title="Link to this definition">#</a></dt>
+<dd><p>Ceil timestamps to the next multiple of the given unit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.day">
+<span class="sig-name descname"><span class="pre">day</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.day"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.day" title="Link to this definition">#</a></dt>
+<dd><p>Extract day component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.floor">
+<span class="sig-name descname"><span class="pre">floor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TemporalUnit</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.floor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.floor" title="Link to this definition">#</a></dt>
+<dd><p>Floor timestamps to the previous multiple of the given unit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.hour">
+<span class="sig-name descname"><span class="pre">hour</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.hour"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.hour" title="Link to this definition">#</a></dt>
+<dd><p>Extract hour component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.minute">
+<span class="sig-name descname"><span class="pre">minute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.minute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.minute" title="Link to this definition">#</a></dt>
+<dd><p>Extract minute component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.month">
+<span class="sig-name descname"><span class="pre">month</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.month"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.month" title="Link to this definition">#</a></dt>
+<dd><p>Extract month component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.round">
+<span class="sig-name descname"><span class="pre">round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TemporalUnit</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.round"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.round" title="Link to this definition">#</a></dt>
+<dd><p>Round timestamps to the nearest multiple of the given unit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.second">
+<span class="sig-name descname"><span class="pre">second</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.second"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.second" title="Link to this definition">#</a></dt>
+<dd><p>Extract second component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.strftime">
+<span class="sig-name descname"><span class="pre">strftime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.strftime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.strftime" title="Link to this definition">#</a></dt>
+<dd><p>Format timestamps with a strftime pattern.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.year">
+<span class="sig-name descname"><span class="pre">year</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/dt_namespace.html#_DatetimeNamespace.year"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.year" title="Link to this definition">#</a></dt>
+<dd><p>Extract year component.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.array_namespace._ArrayNamespace">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.namespace_expressions.array_namespace.</span></span><span class="sig-name descname"><span class="pre">_ArrayNamespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/xpark/dataset/namespace_expressions/array_namespace.html#_ArrayNamespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.array_namespace._ArrayNamespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace for array operations on expression columns.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Convert fixed-size lists to variable-length lists</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;features&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">arr</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.namespace_expressions.array_namespace._ArrayNamespace.to_list">
+<span class="sig-name descname"><span class="pre">to_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UDFExpr</span></span></span><a class="reference internal" href="../_modules/ray/data/namespace_expressions/arr_namespace.html#_ArrayNamespace.to_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.namespace_expressions.array_namespace._ArrayNamespace.to_list" title="Link to this definition">#</a></dt>
+<dd><p>Convert FixedSizeList columns into variable-length lists.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="aggregation">
+<h2>Aggregation<a class="headerlink" href="#aggregation" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.AggregateFnV2.html#xpark.dataset.aggregate.AggregateFnV2" title="xpark.dataset.aggregate.AggregateFnV2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.AggregateFnV2</span></code></a>(name, ...)</p></td>
+<td><p>Provides an interface to implement efficient aggregations to be applied to the dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.Count.html#xpark.dataset.aggregate.Count" title="xpark.dataset.aggregate.Count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.Count</span></code></a>([on, ...])</p></td>
+<td><p>Defines count aggregation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.Sum.html#xpark.dataset.aggregate.Sum" title="xpark.dataset.aggregate.Sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.Sum</span></code></a>([on, ...])</p></td>
+<td><p>Defines sum aggregation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.Mean.html#xpark.dataset.aggregate.Mean" title="xpark.dataset.aggregate.Mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.Mean</span></code></a>([on, ...])</p></td>
+<td><p>Defines mean (average) aggregation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.Max.html#xpark.dataset.aggregate.Max" title="xpark.dataset.aggregate.Max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.Max</span></code></a>(on, ...)</p></td>
+<td><p>Defines max aggregation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.Min.html#xpark.dataset.aggregate.Min" title="xpark.dataset.aggregate.Min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.Min</span></code></a>(on, ...)</p></td>
+<td><p>Defines min aggregation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.Std.html#xpark.dataset.aggregate.Std" title="xpark.dataset.aggregate.Std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.Std</span></code></a>([on, ddof, ...])</p></td>
+<td><p>Defines standard deviation aggregation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.AbsMax.html#xpark.dataset.aggregate.AbsMax" title="xpark.dataset.aggregate.AbsMax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.AbsMax</span></code></a>(on, ...)</p></td>
+<td><p>Defines absolute max aggregation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.Quantile.html#xpark.dataset.aggregate.Quantile" title="xpark.dataset.aggregate.Quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.Quantile</span></code></a>([on, q, ...])</p></td>
+<td><p>Defines Quantile aggregation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.Unique.html#xpark.dataset.aggregate.Unique" title="xpark.dataset.aggregate.Unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.Unique</span></code></a>([on, ...])</p></td>
+<td><p>Defines unique aggregation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.MissingValuePercentage.html#xpark.dataset.aggregate.MissingValuePercentage" title="xpark.dataset.aggregate.MissingValuePercentage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.MissingValuePercentage</span></code></a>(on)</p></td>
+<td><p>Calculates the percentage of null values in a column.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xpark.dataset.aggregate.ZeroPercentage.html#xpark.dataset.aggregate.ZeroPercentage" title="xpark.dataset.aggregate.ZeroPercentage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xpark.dataset.aggregate.ZeroPercentage</span></code></a>(on[, ...])</p></td>
+<td><p>Calculates the percentage of zero values in a numeric column.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../examples/video_classify.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Video Classify By Speech Content</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="generated/xpark.dataset.udf.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">xpark.dataset.udf</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#udf">UDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-context">Dataset Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouped-dataset">Grouped Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-api">Read API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consuming-api">Consuming API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-o-and-conversion-api">I/O and Conversion API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions">Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-namespaces">Expression namespaces</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace"><code class="docutils literal notranslate"><span class="pre">_ListNamespace</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.flatten"><code class="docutils literal notranslate"><span class="pre">_ListNamespace.flatten()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.get"><code class="docutils literal notranslate"><span class="pre">_ListNamespace.get()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.len"><code class="docutils literal notranslate"><span class="pre">_ListNamespace.len()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.slice"><code class="docutils literal notranslate"><span class="pre">_ListNamespace.slice()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.sort"><code class="docutils literal notranslate"><span class="pre">_ListNamespace.sort()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace"><code class="docutils literal notranslate"><span class="pre">_StringNamespace</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.byte_len"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.byte_len()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.capitalize"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.capitalize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.center"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.center()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.contains"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.contains()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.count"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.count()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.count_regex"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.count_regex()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.ends_with"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.ends_with()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.extract"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.extract()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.find()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find_regex"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.find_regex()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_alnum"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_alnum()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_alpha"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_alpha()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_ascii"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_ascii()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_decimal"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_decimal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_digit"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_digit()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_lower"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_lower()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_numeric"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_numeric()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_printable"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_printable()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_space"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_space()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_title"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_title()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_upper"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.is_upper()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.len"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.len()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lower"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.lower()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lpad"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.lpad()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lstrip"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.lstrip()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.match()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match_regex"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.match_regex()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.pad"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.pad()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.repeat"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.repeat()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.replace()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace_regex"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.replace_regex()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace_slice"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.replace_slice()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.reverse"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.reverse()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.rpad"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.rpad()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.rstrip"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.rstrip()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.slice"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.slice()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.split()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split_regex"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.split_regex()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split_whitespace"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.split_whitespace()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.starts_with"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.starts_with()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.strip"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.strip()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.swapcase"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.swapcase()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.title"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.title()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.upper"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.upper()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.word_count"><code class="docutils literal notranslate"><span class="pre">_StringNamespace.word_count()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.struct_namespace._StructNamespace"><code class="docutils literal notranslate"><span class="pre">_StructNamespace</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.struct_namespace._StructNamespace.field"><code class="docutils literal notranslate"><span class="pre">_StructNamespace.field()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.ceil"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.ceil()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.day"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.day()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.floor"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.floor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.hour"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.hour()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.minute"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.minute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.month"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.month()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.round"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.round()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.second"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.second()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.strftime"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.strftime()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.year"><code class="docutils literal notranslate"><span class="pre">_DatetimeNamespace.year()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.array_namespace._ArrayNamespace"><code class="docutils literal notranslate"><span class="pre">_ArrayNamespace</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.namespace_expressions.array_namespace._ArrayNamespace.to_list"><code class="docutils literal notranslate"><span class="pre">_ArrayNamespace.to_list()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregation">Aggregation</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Tencent.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

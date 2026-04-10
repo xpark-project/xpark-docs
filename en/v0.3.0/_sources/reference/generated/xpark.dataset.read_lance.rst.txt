@@ -1,0 +1,6 @@
+﻿xpark.dataset.read\_lance
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: read_lance

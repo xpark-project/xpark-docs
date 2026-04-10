@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.Sum
+===========================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: Sum
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Sum.aggregate_block
+      ~Sum.combine
+      ~Sum.finalize
+      ~Sum.get_agg_name
+      ~Sum.get_target_column
+   
+   
+
+   
+   
+   
