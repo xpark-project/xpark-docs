@@ -1,0 +1,6 @@
+﻿xpark.dataset.read\_video
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: read_video

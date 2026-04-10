@@ -1,0 +1,987 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xpark.dataset.processors.speech_to_text &#8212; Xpark</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/xpark/dataset/processors/speech_to_text';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'v0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xpark</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/data_processors.html">
+    Data Processors
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/ai_processors.html">
+    AI Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/data_processors.html">
+    Data Processors
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/ai_processors.html">
+    AI Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">xpark.dataset.processors.speech_to_text</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for xpark.dataset.processors.speech_to_text</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="kn">import</span> <span class="n">CoroutineType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">TypeAlias</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="c1"># Use np.ndarray type</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">IO_WORKER_ENV</span><span class="p">,</span> <span class="n">NOT_SET</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.context</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatasetContext</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.datatype</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BatchColumnClassProtocol</span><span class="p">,</span> <span class="n">udf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.import_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">lazy_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.model</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelSpec</span><span class="p">,</span> <span class="n">cache_model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">assert_type</span><span class="p">,</span> <span class="n">auto_open</span><span class="p">,</span> <span class="n">qps_limiter</span><span class="p">,</span> <span class="n">split_audio</span><span class="p">,</span> <span class="n">to_thread</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">faster_whisper</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">librosa</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">nemo.collections.asr</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nemo_asr</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">openai</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">openvino_genai</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ov_genai</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.attention</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">torch_attention</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">transformers</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">faster_whisper</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;faster_whisper&quot;</span><span class="p">)</span>
+    <span class="n">librosa</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;librosa&quot;</span><span class="p">)</span>
+    <span class="n">nemo_asr</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;nemo.collections.asr&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;nemo_asr&quot;</span><span class="p">)</span>
+    <span class="n">openai</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;openai&quot;</span><span class="p">)</span>
+    <span class="n">ov_genai</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;openvino_genai&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;ov_genai&quot;</span><span class="p">)</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;pa&quot;</span><span class="p">)</span>
+    <span class="n">torch</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+    <span class="n">torch_attention</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;torch.nn.attention&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;torch_attention&quot;</span><span class="p">)</span>
+    <span class="n">transformers</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;transformers&quot;</span><span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;ray&quot;</span><span class="p">)</span>
+
+<span class="n">SAMPLE_RATE</span> <span class="o">=</span> <span class="mi">16000</span>
+
+<span class="n">SpeechToTextModel</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;openai/whisper-large-v3&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;backend&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="s2">&quot;transformers&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;GPU&quot;</span><span class="p">:</span> <span class="s2">&quot;vLLM&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;model_specs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;huggingface&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;openai/whisper-large-v3&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;model_revision&quot;</span><span class="p">:</span> <span class="s2">&quot;06f233fe06e710322aca913c1bc4249a0d71fce1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;modelscope&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;AI-ModelScope/whisper-large-v3&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;openai/whisper-tiny&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;test&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;backend&quot;</span><span class="p">:</span> <span class="s2">&quot;transformers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model_specs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;huggingface&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;openai/whisper-tiny&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;model_revision&quot;</span><span class="p">:</span> <span class="s2">&quot;169d4a4341b33bc18d8881c4b69c2e104e1cc0af&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;modelscope&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;openai-mirror/whisper-tiny&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Systran/faster-whisper-large-v3&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;backend&quot;</span><span class="p">:</span> <span class="s2">&quot;faster-whisper&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model_specs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;huggingface&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Systran/faster-whisper-large-v3&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;model_revision&quot;</span><span class="p">:</span> <span class="s2">&quot;edaa852ec7e145841d8ffdb056a99866b5f0a478&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;modelscope&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Systran/faster-whisper-large-v3&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Systran/faster-whisper-tiny&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;test&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;backend&quot;</span><span class="p">:</span> <span class="s2">&quot;faster-whisper&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model_specs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;huggingface&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Systran/faster-whisper-tiny&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;model_revision&quot;</span><span class="p">:</span> <span class="s2">&quot;d90ca5fe260221311c53c58e660288d3deb8d356&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;modelscope&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Systran/faster-whisper-tiny&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;nvidia/parakeet-tdt-0.6b-v3&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;backend&quot;</span><span class="p">:</span> <span class="s2">&quot;nemo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model_specs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;huggingface&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;nemo&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;nvidia/parakeet-tdt-0.6b-v3&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;model_revision&quot;</span><span class="p">:</span> <span class="s2">&quot;be0d803fd1970eca8627f5467c208118f0f6c171&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;modelscope&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;nemo&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;nv-community/parakeet-tdt-0.6b-v3&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;OpenVINO/whisper-large-v3-int8-ov&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;backend&quot;</span><span class="p">:</span> <span class="s2">&quot;openvino&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model_specs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;huggingface&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenVINO/whisper-large-v3-int8-ov&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;model_revision&quot;</span><span class="p">:</span> <span class="s2">&quot;b31e1dcee5de24d49c6cc96da2a603eae409e722&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;modelscope&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenVINO/whisper-large-v3-int8-ov&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;OpenVINO/whisper-tiny-int8-ov&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;test&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;backend&quot;</span><span class="p">:</span> <span class="s2">&quot;openvino&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model_specs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;huggingface&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenVINO/whisper-tiny-int8-ov&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;model_revision&quot;</span><span class="p">:</span> <span class="s2">&quot;f04a5e7ec899ce17bfbc3f0efcdea55df4356028&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;modelscope&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenVINO/whisper-tiny-int8-ov&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+
+<span class="n">BACKEND</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;faster-whisper&quot;</span><span class="p">,</span> <span class="s2">&quot;transformers&quot;</span><span class="p">,</span> <span class="s2">&quot;nemo&quot;</span><span class="p">,</span> <span class="s2">&quot;openvino&quot;</span><span class="p">,</span> <span class="s2">&quot;vLLM&quot;</span><span class="p">]</span>
+    <span class="o">|</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;CPU&quot;</span><span class="p">,</span> <span class="s2">&quot;GPU&quot;</span><span class="p">],</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;faster-whisper&quot;</span><span class="p">,</span> <span class="s2">&quot;transformers&quot;</span><span class="p">,</span> <span class="s2">&quot;nemo&quot;</span><span class="p">,</span> <span class="s2">&quot;openvino&quot;</span><span class="p">,</span> <span class="s2">&quot;vLLM&quot;</span><span class="p">]]</span>
+<span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SpeechToTextModelSpec</span><span class="p">(</span><span class="n">ModelSpec</span><span class="p">):</span>
+    <span class="n">backend</span><span class="p">:</span> <span class="n">BACKEND</span>
+
+
+<span class="n">ALL_SPEECH_TO_TEXT_MODELS</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">SpeechToTextModelSpec</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">SpeechToTextModel</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="n">AVAILABLE_MODELS</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ALL_SPEECH_TO_TEXT_MODELS</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">label</span> <span class="o">&amp;</span> <span class="p">{</span><span class="s2">&quot;all&quot;</span><span class="p">}]</span>
+
+<span class="n">InputType</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
+<span class="n">OutputType</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="nb">str</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SpeechToTextBackend</span><span class="p">(</span><span class="n">BatchColumnClassProtocol</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">:</span> <span class="n">SpeechToTextModelSpec</span><span class="p">):</span> <span class="o">...</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">audio_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">InputType</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">OutputType</span><span class="p">]:</span> <span class="o">...</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">FasterWhisper</span><span class="p">(</span><span class="n">SpeechToTextBackend</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">:</span> <span class="n">SpeechToTextModelSpec</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Using FasterWhisper backend.&quot;</span><span class="p">)</span>
+        <span class="n">model_path</span> <span class="o">=</span> <span class="n">cache_model</span><span class="p">(</span><span class="s2">&quot;huggingface&quot;</span><span class="p">,</span> <span class="s2">&quot;pytorch&quot;</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">compute_type</span> <span class="o">=</span> <span class="s2">&quot;float16&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;int8&quot;</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">faster_whisper</span><span class="o">.</span><span class="n">WhisperModel</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">compute_type</span><span class="o">=</span><span class="n">compute_type</span><span class="p">)</span>
+        <span class="c1"># This is only for batch multiple segments of single audio</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">batched_model</span> <span class="o">=</span> <span class="n">faster_whisper</span><span class="o">.</span><span class="n">BatchedInferencePipeline</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">audio_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">InputType</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">OutputType</span><span class="p">]:</span>
+        <span class="c1"># TODO(baobliu): Expose kwargs to user.</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">audio</span> <span class="ow">in</span> <span class="n">audio_list</span><span class="p">:</span>
+            <span class="c1"># Multiple audio batching has not merged: https://github.com/SYSTRAN/faster-whisper/pull/1359</span>
+            <span class="n">segments</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">batched_model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seg</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">results</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Transformers</span><span class="p">(</span><span class="n">SpeechToTextBackend</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">:</span> <span class="n">SpeechToTextModelSpec</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Using Transformers backend.&quot;</span><span class="p">)</span>
+        <span class="n">model_path</span> <span class="o">=</span> <span class="n">cache_model</span><span class="p">(</span><span class="s2">&quot;huggingface&quot;</span><span class="p">,</span> <span class="s2">&quot;pytorch&quot;</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="n">torch</span><span class="o">.</span><span class="n">set_float32_matmul_precision</span><span class="p">(</span><span class="s2">&quot;high&quot;</span><span class="p">)</span>
+
+        <span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+        <span class="n">torch_dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">float16</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="n">torch</span><span class="o">.</span><span class="n">float32</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">transformers</span><span class="o">.</span><span class="n">AutoModelForSpeechSeq2Seq</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+            <span class="n">model_path</span><span class="p">,</span> <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch_dtype</span><span class="p">,</span> <span class="n">low_cpu_mem_usage</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="c1"># Enable static cache and compile the forward pass</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">generation_config</span><span class="o">.</span><span class="n">cache_implementation</span> <span class="o">=</span> <span class="s2">&quot;static&quot;</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">generation_config</span><span class="o">.</span><span class="n">max_new_tokens</span> <span class="o">=</span> <span class="mi">256</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">forward</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reduce-overhead&quot;</span><span class="p">,</span> <span class="n">fullgraph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">processor</span> <span class="o">=</span> <span class="n">transformers</span><span class="o">.</span><span class="n">AutoProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">transformers</span><span class="o">.</span><span class="n">pipeline</span><span class="p">(</span>
+            <span class="s2">&quot;automatic-speech-recognition&quot;</span><span class="p">,</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">tokenizer</span><span class="o">=</span><span class="n">processor</span><span class="o">.</span><span class="n">tokenizer</span><span class="p">,</span>
+            <span class="n">feature_extractor</span><span class="o">=</span><span class="n">processor</span><span class="o">.</span><span class="n">feature_extractor</span><span class="p">,</span>
+            <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch_dtype</span><span class="p">,</span>
+            <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">audio_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">InputType</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">OutputType</span><span class="p">]:</span>
+        <span class="n">texts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">with</span> <span class="n">torch_attention</span><span class="o">.</span><span class="n">sdpa_kernel</span><span class="p">(</span><span class="n">torch_attention</span><span class="o">.</span><span class="n">SDPBackend</span><span class="o">.</span><span class="n">MATH</span><span class="p">):</span>
+            <span class="c1"># If the input audio is an http or https url, it downloads all the contents in the preprocess step.</span>
+            <span class="c1"># https://github.com/huggingface/transformers/blob/main/src/transformers/pipelines/automatic_speech_recognition.py</span>
+            <span class="c1"># TODO(baobliu): Expose kwargs to user.</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">audio_list</span><span class="p">,</span> <span class="n">return_timestamps</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+                <span class="n">texts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">texts</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Nemo</span><span class="p">(</span><span class="n">SpeechToTextBackend</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">:</span> <span class="n">SpeechToTextModelSpec</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Using Nemo backend.&quot;</span><span class="p">)</span>
+        <span class="n">model_path</span><span class="p">,</span> <span class="n">nemo_extracted_dir</span> <span class="o">=</span> <span class="n">cache_model</span><span class="p">(</span><span class="s2">&quot;huggingface&quot;</span><span class="p">,</span> <span class="s2">&quot;nemo&quot;</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">nemo.core.connectors.save_restore_connector</span><span class="w"> </span><span class="kn">import</span> <span class="n">SaveRestoreConnector</span>
+
+        <span class="n">connector</span> <span class="o">=</span> <span class="n">SaveRestoreConnector</span><span class="p">()</span>
+        <span class="n">connector</span><span class="o">.</span><span class="n">_model_extracted_dir</span> <span class="o">=</span> <span class="n">nemo_extracted_dir</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">nemo_asr</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ASRModel</span><span class="o">.</span><span class="n">restore_from</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">save_restore_connector</span><span class="o">=</span><span class="n">connector</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">audio_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">InputType</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">OutputType</span><span class="p">]:</span>
+        <span class="c1"># TODO(baobliu): Expose kwargs to user.</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">audio_list</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">OpenVINO</span><span class="p">(</span><span class="n">SpeechToTextBackend</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">:</span> <span class="n">SpeechToTextModelSpec</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Using OpenVINO backend.&quot;</span><span class="p">)</span>
+        <span class="n">model_path</span> <span class="o">=</span> <span class="n">cache_model</span><span class="p">(</span><span class="s2">&quot;huggingface&quot;</span><span class="p">,</span> <span class="s2">&quot;pytorch&quot;</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">ov_genai</span><span class="o">.</span><span class="n">WhisperPipeline</span><span class="p">(</span>
+            <span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;CPU&quot;</span><span class="p">,</span> <span class="n">INFERENCE_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ENABLE_MMAP</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ENABLE_CPU_PINNING</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">audio_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">InputType</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">OutputType</span><span class="p">]:</span>
+        <span class="c1"># TODO(baobliu): Expose kwargs to user.</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">audio</span> <span class="ow">in</span> <span class="n">audio_list</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">audio</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">texts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">results</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">vLLM</span><span class="p">(</span><span class="n">SpeechToTextBackend</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">:</span> <span class="n">SpeechToTextModelSpec</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Using vLLM backend.&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;VLLM_USE_V1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+
+        <span class="n">model_path</span> <span class="o">=</span> <span class="n">cache_model</span><span class="p">(</span><span class="s2">&quot;huggingface&quot;</span><span class="p">,</span> <span class="s2">&quot;pytorch&quot;</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="kn">from</span><span class="w"> </span><span class="nn">vllm</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLM</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">LLM</span><span class="p">(</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
+            <span class="n">max_model_len</span><span class="o">=</span><span class="mi">448</span><span class="p">,</span>
+            <span class="n">max_num_seqs</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+            <span class="n">limit_mm_per_prompt</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;audio&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+            <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;half&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">audio_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">InputType</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">OutputType</span><span class="p">]:</span>
+        <span class="c1"># TODO(baobliu): Expose kwargs to user.</span>
+
+        <span class="kn">from</span><span class="w"> </span><span class="nn">vllm</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptType</span><span class="p">,</span> <span class="n">SamplingParams</span>
+
+        <span class="n">prompts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">chunk_count</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">audio</span> <span class="ow">in</span> <span class="n">audio_list</span><span class="p">:</span>
+            <span class="n">duration</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">get_duration</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">audio</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">SAMPLE_RATE</span><span class="p">)</span>
+            <span class="n">chunks</span> <span class="o">=</span> <span class="p">[</span><span class="n">audio</span><span class="p">]</span> <span class="k">if</span> <span class="n">duration</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="k">else</span> <span class="n">split_audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">SAMPLE_RATE</span><span class="p">)</span>
+            <span class="n">chunk_count</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">chunks</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">:</span>
+                <span class="n">prompt</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># Test implicit prompt</span>
+                    <span class="s2">&quot;encoder_prompt&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="c1"># Whisper does not support encoder prompt.</span>
+                        <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;multi_modal_data&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s2">&quot;audio&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">chunk</span><span class="p">,</span> <span class="n">SAMPLE_RATE</span><span class="p">),</span>
+                        <span class="p">},</span>
+                    <span class="p">},</span>
+                    <span class="c1"># Whisper does not support language detection:</span>
+                    <span class="c1"># https://github.com/vllm-project/vllm/issues/14174</span>
+                    <span class="s2">&quot;decoder_prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;|prev|&gt;&lt;|startoftranscript|&gt;&lt;|en|&gt;&lt;|transcribe|&gt;&lt;|notimestamps|&gt;&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+                <span class="n">prompts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">PromptType</span><span class="p">,</span> <span class="n">prompt</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="n">chunk_count</span><span class="p">)</span>
+
+        <span class="c1"># Create a sampling params object.</span>
+        <span class="n">sampling_params</span> <span class="o">=</span> <span class="n">SamplingParams</span><span class="p">(</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">top_p</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+            <span class="n">max_tokens</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span>
+            <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">sampling_params</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
+
+        <span class="c1"># Get output.</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chunk_count</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">c</span><span class="p">))</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">c</span>
+        <span class="k">return</span> <span class="n">results</span>
+
+
+<span class="n">BACKENDS</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">BACKEND</span><span class="p">,</span> <span class="nb">type</span><span class="p">[</span><span class="n">SpeechToTextBackend</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;faster-whisper&quot;</span><span class="p">:</span> <span class="n">FasterWhisper</span><span class="p">,</span>
+    <span class="s2">&quot;transformers&quot;</span><span class="p">:</span> <span class="n">Transformers</span><span class="p">,</span>
+    <span class="s2">&quot;vLLM&quot;</span><span class="p">:</span> <span class="n">vLLM</span><span class="p">,</span>
+    <span class="s2">&quot;nemo&quot;</span><span class="p">:</span> <span class="n">Nemo</span><span class="p">,</span>
+    <span class="s2">&quot;openvino&quot;</span><span class="p">:</span> <span class="n">OpenVINO</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="n">TYPED_OPEN</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">:</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">auto_open</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;rb&quot;</span><span class="p">),</span> <span class="nb">bytes</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">:</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">b</span><span class="p">)}</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SpeechToTextLocal</span><span class="p">(</span><span class="n">BatchColumnClassProtocol</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">model_spec</span> <span class="o">=</span> <span class="n">ALL_SPEECH_TO_TEXT_MODELS</span><span class="p">[</span><span class="n">model</span><span class="p">]</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="n">model_spec</span><span class="o">.</span><span class="n">backend</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model_spec</span><span class="o">.</span><span class="n">backend</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">backend</span> <span class="o">=</span> <span class="n">model_spec</span><span class="o">.</span><span class="n">backend</span><span class="p">[</span><span class="s2">&quot;GPU&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;CPU&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">BACKENDS</span><span class="p">[</span><span class="n">backend</span><span class="p">](</span><span class="n">model_spec</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">py_audio_array</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">py_audio_array</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Audio array is empty.&quot;</span><span class="p">)</span>
+
+        <span class="n">item</span> <span class="o">=</span> <span class="n">py_audio_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Check the ndarray ndim and yield the channel data if the channel is 1</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">formatted</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">audio</span> <span class="ow">in</span> <span class="n">py_audio_array</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">audio</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">audio</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">formatted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">audio</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                            <span class="s2">&quot;Local transcription (Speech To Text) requires a single channel audio input, &quot;</span>
+                            <span class="s2">&quot;however the audio has multiple channels.&quot;</span>
+                        <span class="p">)</span>
+                <span class="k">elif</span> <span class="n">audio</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The shape of audio ndarray is incorrect, we expect the ndim &lt;= 2.&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">formatted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
+
+            <span class="n">outputs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">OutputType</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">to_thread</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">formatted</span><span class="p">,</span> <span class="n">_executor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">executor</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)):</span>
+            <span class="n">typed_open</span> <span class="o">=</span> <span class="n">TYPED_OPEN</span><span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)]</span>
+            <span class="n">storage_options</span> <span class="o">=</span> <span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">storage_options</span>
+
+            <span class="k">def</span><span class="w"> </span><span class="nf">_read_ndarray</span><span class="p">(</span><span class="n">_path</span><span class="p">):</span>
+                <span class="c1"># The Nemo backend only accepts local files, ndarrays, or torch tensors.</span>
+                <span class="c1"># HTTP URLs or bytes are not supported.</span>
+                <span class="c1"># We just use type here, do not support subtype.</span>
+                <span class="k">with</span> <span class="n">typed_open</span><span class="p">(</span><span class="n">_path</span><span class="p">,</span> <span class="o">**</span><span class="n">storage_options</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">SAMPLE_RATE</span><span class="p">,</span> <span class="n">mono</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+                <span class="n">arrays</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">_read_ndarray</span><span class="p">,</span> <span class="n">py_audio_array</span><span class="p">))</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="p">(</span><span class="n">arrays</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We expect a numpy ndarray or a str as input, got `</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s2">`&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SpeechToTextHttp</span><span class="p">(</span><span class="n">BatchColumnClassProtocol</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">max_qps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Using Remote Http Transcription (Speech To Text)&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="n">max_retries</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_transcriptions</span> <span class="o">=</span> <span class="n">qps_limiter</span><span class="p">(</span><span class="n">max_qps</span><span class="p">)(</span><span class="n">client</span><span class="o">.</span><span class="n">audio</span><span class="o">.</span><span class="n">transcriptions</span><span class="o">.</span><span class="n">create</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">py_audio_array</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">py_audio_array</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Audio array is empty.&quot;</span><span class="p">)</span>
+
+        <span class="n">item</span> <span class="o">=</span> <span class="n">py_audio_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">storage_options</span> <span class="o">=</span> <span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">storage_options</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Http remote transcription (Speech To Text) does not support numpy arrays.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+            <span class="n">requests</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">create_transcriptions</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">audio</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">audio</span> <span class="ow">in</span> <span class="n">py_audio_array</span>
+            <span class="p">]</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+
+            <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_create_request</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="k">with</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">auto_open</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">storage_options</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_transcriptions</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="n">requests</span> <span class="o">=</span> <span class="p">[</span><span class="n">_create_request</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span> <span class="k">for</span> <span class="n">audio</span> <span class="ow">in</span> <span class="n">py_audio_array</span><span class="p">]</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Http Transcription (Speech To Text) does not support type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+        <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">requests</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">r</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">],</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+
+
+<div class="viewcode-block" id="SpeechToText">
+<a class="viewcode-back" href="../../../../reference/generated/xpark.dataset.SpeechToText.html#xpark.dataset.SpeechToText">[docs]</a>
+<span class="nd">@udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SpeechToText</span><span class="p">(</span><span class="n">BatchColumnClassProtocol</span><span class="p">):</span>
+    <span class="vm">__doc__</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Speech to text processor for CPU, GPU and remote Http requests.</span>
+
+<span class="s2">    Args:</span>
+<span class="s2">        _local_model: The speech to text model name for CPU or GPU, available models: </span><span class="si">{</span><span class="n">AVAILABLE_MODELS</span><span class="si">}</span>
+<span class="s2">        base_url: The base URL of the LLM server.</span>
+<span class="s2">        model: The request model name.</span>
+<span class="s2">        api_key: The request API key.</span>
+<span class="s2">        batch_rows: The number of rows to request once.</span>
+<span class="s2">        max_qps: The maximum number of requests per second.</span>
+<span class="s2">        max_retries: The maximum number of retries per request in the event of failures.</span>
+<span class="s2">            We retry with exponential backoff upto this specific maximum retries.</span>
+<span class="s2">        **kwargs: Keyword arguments to pass to the `openai.AsyncClient.audio.transcriptions.create</span>
+<span class="s2">            &lt;https://github.com/openai/openai-python/blob/main/src/openai/resources/audio/transcriptions.py&gt;`_ API.</span>
+
+<span class="s2">    Examples:</span>
+<span class="s2">        .. code-block:: python</span>
+
+<span class="s2">            from xpark.dataset.expressions import col</span>
+<span class="s2">            from xpark.dataset import SpeechToText, from_items</span>
+
+<span class="s2">            ds = from_items([&quot;multilingual.mp3&quot;])</span>
+<span class="s2">            ds = ds.with_column(</span>
+<span class="s2">                &quot;text&quot;,</span>
+<span class="s2">                SpeechToText(</span>
+<span class="s2">                    # Local transcriptions model.</span>
+<span class="s2">                    &quot;openai/whisper-large-v3&quot;,</span>
+<span class="s2">                    # For remote transcriptions requests.</span>
+<span class="s2">                    base_url=&quot;http://127.0.0.1:9997/v1&quot;,</span>
+<span class="s2">                    model=&quot;whisper1&quot;,</span>
+<span class="s2">                )</span>
+<span class="s2">                # One IO worker for HTTP request, 10 CPU workers for local transcriptions.</span>
+<span class="s2">                .options(num_workers=</span><span class="se">{{</span><span class="s2">&quot;CPU&quot;: 10, &quot;IO&quot;: 1</span><span class="se">}}</span><span class="s2">)</span>
+<span class="s2">                .with_column(col(&quot;item&quot;)),</span>
+<span class="s2">            )</span>
+<span class="s2">            print(ds.take(2))</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="n">model</span><span class="p">:</span> <span class="n">BatchColumnClassProtocol</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">_local_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">NOT_SET</span><span class="p">,</span>
+        <span class="n">max_qps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">_local_model</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">base_url</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either _local_model or base_url must be specified.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">IO_WORKER_ENV</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">base_url</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;base_url must be specified for IO worker.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;model must be specified if base_url is specified.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">SpeechToTextHttp</span><span class="p">(</span>
+                <span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">,</span> <span class="n">max_qps</span><span class="o">=</span><span class="n">max_qps</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="n">max_retries</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">_local_model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;_local_model must be specified for CPU or GPU worker.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">SpeechToTextLocal</span><span class="p">(</span><span class="n">_local_model</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">audio_array</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Transcript the audio array to text array.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            audio_array: The audio array. The type of array is either:</span>
+
+<span class="sd">              - `str` that is either the filename of a local audio file, or a public URL address to download the</span>
+<span class="sd">                audio file. The file will be read at the correct sampling rate to get the waveform using</span>
+<span class="sd">                *ffmpeg*. This requires *ffmpeg* to be installed on the system.</span>
+<span class="sd">              - `bytes` it is supposed to be the content of an audio file and is interpreted by *ffmpeg* in the</span>
+<span class="sd">                same way.</span>
+<span class="sd">              - (`np.ndarray` of shape (n, ) of type `np.float32` or `np.float64`)</span>
+<span class="sd">                Raw audio at the correct sampling rate (For example, 16K).</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            The transcribed text array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">audio_array</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">([],</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">assert_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">audio_array</span><span class="o">.</span><span class="n">to_pylist</span><span class="p">()),</span> <span class="n">CoroutineType</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Tencent.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

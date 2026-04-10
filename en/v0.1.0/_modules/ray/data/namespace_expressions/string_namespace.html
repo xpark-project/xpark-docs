@@ -1,0 +1,896 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ray.data.namespace_expressions.string_namespace &#8212; Xpark</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ray/data/namespace_expressions/string_namespace';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'v0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xpark</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/data_processors.html">
+    Data Processors
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/ai_processors.html">
+    AI Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/data_processors.html">
+    Data Processors
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/ai_processors.html">
+    AI Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ray.data.namespace_expressions.string_namespace</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for ray.data.namespace_expressions.string_namespace</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;String namespace for expression operations on string-typed columns.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Literal</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.compute</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pc</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.datatype</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyarrow_udf</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Expr</span><span class="p">,</span> <span class="n">UDFExpr</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_create_str_udf</span><span class="p">(</span>
+    <span class="n">pc_func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">],</span> <span class="n">return_dtype</span><span class="p">:</span> <span class="n">DataType</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Helper to create a string UDF that wraps a PyArrow compute function.</span>
+
+<span class="sd">    This helper handles all types of PyArrow compute operations:</span>
+<span class="sd">    - Unary operations (no args): upper(), lower(), reverse()</span>
+<span class="sd">    - Pattern operations (pattern + args): starts_with(), contains()</span>
+<span class="sd">    - Multi-argument operations: replace(), replace_slice()</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pc_func: PyArrow compute function that takes (array, *positional, **kwargs)</span>
+<span class="sd">        return_dtype: The return data type</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A callable that creates UDFExpr instances</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="n">expr</span><span class="p">:</span> <span class="n">Expr</span><span class="p">,</span> <span class="o">*</span><span class="n">positional</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">return_dtype</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">udf</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pc_func</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="o">*</span><span class="n">positional</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">udf</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_StringNamespace</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Namespace for string operations on expression columns.</span>
+
+<span class="sd">    This namespace provides methods for operating on string-typed columns using</span>
+<span class="sd">    PyArrow compute functions.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; from ray.data.expressions import col</span>
+<span class="sd">        &gt;&gt;&gt; # Convert to uppercase</span>
+<span class="sd">        &gt;&gt;&gt; expr = col(&quot;name&quot;).str.upper()</span>
+<span class="sd">        &gt;&gt;&gt; # Get string length</span>
+<span class="sd">        &gt;&gt;&gt; expr = col(&quot;name&quot;).str.len()</span>
+<span class="sd">        &gt;&gt;&gt; # Check if string starts with a prefix</span>
+<span class="sd">        &gt;&gt;&gt; expr = col(&quot;name&quot;).str.starts_with(&quot;A&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_expr</span><span class="p">:</span> <span class="n">Expr</span>
+
+    <span class="c1"># Length methods</span>
+<div class="viewcode-block" id="_StringNamespace.len">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.len">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the length of each string in characters.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_length</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.byte_len">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.byte_len">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">byte_len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the length of each string in bytes.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">binary_length</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+    <span class="c1"># Case methods</span>
+<div class="viewcode-block" id="_StringNamespace.upper">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.upper">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">upper</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert strings to uppercase.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_upper</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.lower">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lower">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lower</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert strings to lowercase.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_lower</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.capitalize">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.capitalize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">capitalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Capitalize the first character of each string.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_capitalize</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.title">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.title">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">title</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert strings to title case.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_title</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.swapcase">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.swapcase">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">swapcase</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Swap the case of each character.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_swapcase</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+    <span class="c1"># Predicate methods</span>
+<div class="viewcode-block" id="_StringNamespace.is_alpha">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_alpha">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_alpha</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings contain only alphabetic characters.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_alpha</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_alnum">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_alnum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_alnum</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings contain only alphanumeric characters.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_alnum</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_digit">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_digit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_digit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings contain only digits.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_digit</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_decimal">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_decimal">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_decimal</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings contain only decimal characters.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_decimal</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_numeric">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_numeric">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_numeric</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings contain only numeric characters.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_numeric</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_space">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_space">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings contain only whitespace.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_space</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_lower">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_lower">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_lower</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings are lowercase.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_lower</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_upper">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_upper">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_upper</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings are uppercase.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_upper</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_title">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_title">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_title</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings are title-cased.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_title</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_printable">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_printable">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_printable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings contain only printable characters.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_is_printable</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.is_ascii">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_ascii">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_ascii</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings contain only ASCII characters.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">string_is_ascii</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+    <span class="c1"># Searching methods</span>
+<div class="viewcode-block" id="_StringNamespace.starts_with">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.starts_with">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">starts_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings start with a pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">starts_with</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.ends_with">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.ends_with">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ends_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings end with a pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">ends_with</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.contains">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.contains">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings contain a substring.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">match_substring</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.match">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Match strings against a SQL LIKE pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">match_like</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.find">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find the first occurrence of a substring.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">find_substring</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.count">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.count">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Count occurrences of a substring.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">count_substring</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.find_regex">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find_regex">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">find_regex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find the first occurrence matching a regex pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">find_substring_regex</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.count_regex">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.count_regex">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">count_regex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Count occurrences matching a regex pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">count_substring_regex</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.match_regex">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match_regex">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">match_regex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if strings match a regex pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">match_substring_regex</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">bool</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+    <span class="c1"># Transformation methods</span>
+<div class="viewcode-block" id="_StringNamespace.reverse">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.reverse">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reverse each string.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_reverse</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.slice">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.slice">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Slice strings by codeunit indices.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_slice_codeunits</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.replace">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">replace</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">replacement</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Replace occurrences of a substring.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">replace_substring</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.replace_regex">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace_regex">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">replace_regex</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">replacement</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Replace occurrences matching a regex pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">replace_substring_regex</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.replace_slice">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.replace_slice">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">replace_slice</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">stop</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">replacement</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Replace a slice with a string.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">binary_replace_slice</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.split">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split strings by a pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">split_pattern</span><span class="p">,</span> <span class="n">DataType</span><span class="p">(</span><span class="nb">object</span><span class="p">))(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.split_regex">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split_regex">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">split_regex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split strings by a regex pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">split_pattern_regex</span><span class="p">,</span> <span class="n">DataType</span><span class="p">(</span><span class="nb">object</span><span class="p">))(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.split_whitespace">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.split_whitespace">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">split_whitespace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split strings on whitespace.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_split_whitespace</span><span class="p">,</span> <span class="n">DataType</span><span class="p">(</span><span class="nb">object</span><span class="p">))(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.extract">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.extract">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract a substring matching a regex pattern.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">extract_regex</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.repeat">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.repeat">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Repeat each string n times.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">binary_repeat</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.center">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.center">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">center</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">padding</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Center strings in a field of given width.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_create_str_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">utf8_center</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">padding</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+    <span class="c1"># Custom methods that need special logic beyond simple PyArrow function calls</span>
+<div class="viewcode-block" id="_StringNamespace.strip">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.strip">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">strip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">characters</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove leading and trailing whitespace or specified characters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            characters: Characters to remove. If None, removes whitespace.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            UDFExpr that strips characters from both ends.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_str_strip</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">characters</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_trim_whitespace</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_trim</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">characters</span><span class="o">=</span><span class="n">characters</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_str_strip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.lstrip">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.lstrip">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lstrip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">characters</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove leading whitespace or specified characters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            characters: Characters to remove. If None, removes whitespace.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            UDFExpr that strips characters from the left.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_str_lstrip</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">characters</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_ltrim_whitespace</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_ltrim</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">characters</span><span class="o">=</span><span class="n">characters</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_str_lstrip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_StringNamespace.rstrip">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.rstrip">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rstrip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">characters</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove trailing whitespace or specified characters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            characters: Characters to remove. If None, removes whitespace.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            UDFExpr that strips characters from the right.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_str_rstrip</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">characters</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_rtrim_whitespace</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_rtrim</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">characters</span><span class="o">=</span><span class="n">characters</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_str_rstrip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+
+    <span class="c1"># Padding</span>
+<div class="viewcode-block" id="_StringNamespace.pad">
+<a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.pad">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pad</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">fillchar</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">,</span>
+        <span class="n">side</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;both&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Pad strings to a specified width.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            width: Target width.</span>
+<span class="sd">            fillchar: Character to use for padding.</span>
+<span class="sd">            side: &quot;left&quot;, &quot;right&quot;, or &quot;both&quot; for padding side.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            UDFExpr that pads strings.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_str_pad</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">side</span> <span class="o">==</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_rpad</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="n">fillchar</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">side</span> <span class="o">==</span> <span class="s2">&quot;left&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_lpad</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="n">fillchar</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">side</span> <span class="o">==</span> <span class="s2">&quot;both&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">utf8_center</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="n">fillchar</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;side must be &#39;left&#39;, &#39;right&#39;, or &#39;both&#39;&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_str_pad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Tencent.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+.. _processors:
+
+=====================
+Data Processors
+=====================
+
+
+Text
+-------------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.TextFuzzyDedup
+
+Audio
+-------------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.AudioCompute
+
+
+Image
+-------------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.ImageCompute
+
+
+Video
+-------------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.VideoCompute

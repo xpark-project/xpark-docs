@@ -1,0 +1,18 @@
+.. _index:
+
+======================
+Welcome to Xpark!
+======================
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   reference/index
+   reference/data_processors
+   reference/ai_processors
+
+
+The AI Data Processing Platform is a powerful tool designed to streamline and optimize the processing
+of data for AI applications. It provides various utilities for data handling, transformation, and
+integration with machine learning workflows.
