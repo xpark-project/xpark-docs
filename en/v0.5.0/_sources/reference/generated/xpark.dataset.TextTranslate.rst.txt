@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextTranslate
+===========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextTranslate
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextTranslate.__call__
+      ~TextTranslate.options
+      ~TextTranslate.with_column
+   
+   
+
+   
+   
+   

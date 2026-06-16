@@ -1,0 +1,23 @@
+﻿xpark.dataset.connectors.InsertVectorDB
+=======================================
+
+.. currentmodule:: xpark.dataset.connectors
+
+.. autoclass:: InsertVectorDB
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~InsertVectorDB.__call__
+      ~InsertVectorDB.options
+      ~InsertVectorDB.with_column
+   
+   
+
+   
+   
+   

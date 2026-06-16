@@ -1,0 +1,6 @@
+﻿xpark.dataset.expressions.lit
+=============================
+
+.. currentmodule:: xpark.dataset.expressions
+
+.. autofunction:: lit

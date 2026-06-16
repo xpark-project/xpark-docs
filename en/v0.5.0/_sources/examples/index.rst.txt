@@ -1,0 +1,15 @@
+.. _examples_index:
+
+========
+Examples
+========
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   text_dedup
+   video_classify
+
+Here you can find examples and resources to learn about how to use Xpark.
+

@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.Unique
+==============================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: Unique
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Unique.aggregate_block
+      ~Unique.combine
+      ~Unique.finalize
+      ~Unique.get_agg_name
+      ~Unique.get_target_column
+   
+   
+
+   
+   
+   

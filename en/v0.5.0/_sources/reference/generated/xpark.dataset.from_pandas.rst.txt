@@ -1,0 +1,6 @@
+﻿xpark.dataset.from\_pandas
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: from_pandas

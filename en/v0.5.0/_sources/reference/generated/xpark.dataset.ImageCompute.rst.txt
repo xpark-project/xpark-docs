@@ -1,0 +1,34 @@
+﻿xpark.dataset.ImageCompute
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageCompute
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageCompute.convert
+      ~ImageCompute.crop
+      ~ImageCompute.entropy
+      ~ImageCompute.filter
+      ~ImageCompute.getchannel
+      ~ImageCompute.height
+      ~ImageCompute.mode
+      ~ImageCompute.point
+      ~ImageCompute.quantize
+      ~ImageCompute.reduce
+      ~ImageCompute.resize
+      ~ImageCompute.rotate
+      ~ImageCompute.size
+      ~ImageCompute.width
+   
+   
+
+   
+   
+   

@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextFlaggedWordRatio
+==================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextFlaggedWordRatio
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextFlaggedWordRatio.__call__
+      ~TextFlaggedWordRatio.options
+      ~TextFlaggedWordRatio.with_column
+   
+   
+
+   
+   
+   

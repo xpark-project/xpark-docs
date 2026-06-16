@@ -1,0 +1,23 @@
+﻿xpark.dataset.TimeSeriesForecast
+================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TimeSeriesForecast
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TimeSeriesForecast.__call__
+      ~TimeSeriesForecast.options
+      ~TimeSeriesForecast.with_column
+   
+   
+
+   
+   
+   

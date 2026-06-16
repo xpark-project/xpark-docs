@@ -26,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -44,7 +44,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/index';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -73,7 +73,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -203,11 +205,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -292,11 +301,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -358,17 +374,22 @@
 <ul><li><a href="ray/data/namespace_expressions/arr_namespace.html">ray.data.namespace_expressions.arr_namespace</a></li>
 <li><a href="ray/data/namespace_expressions/dt_namespace.html">ray.data.namespace_expressions.dt_namespace</a></li>
 <li><a href="ray/data/namespace_expressions/list_namespace.html">ray.data.namespace_expressions.list_namespace</a></li>
+<li><a href="ray/data/namespace_expressions/map_namespace.html">ray.data.namespace_expressions.map_namespace</a></li>
 <li><a href="ray/data/namespace_expressions/string_namespace.html">ray.data.namespace_expressions.string_namespace</a></li>
 <li><a href="ray/data/namespace_expressions/struct_namespace.html">ray.data.namespace_expressions.struct_namespace</a></li>
 <li><a href="xpark/dataset/aggregate.html">xpark.dataset.aggregate</a></li>
+<li><a href="xpark/dataset/connectors/vectordb/modify.html">xpark.dataset.connectors.vectordb.modify</a></li>
+<li><a href="xpark/dataset/connectors/vectordb/search.html">xpark.dataset.connectors.vectordb.search</a></li>
 <li><a href="xpark/dataset/context.html">xpark.dataset.context</a></li>
 <li><a href="xpark/dataset/dataset.html">xpark.dataset.dataset</a></li>
 <li><a href="xpark/dataset/expressions.html">xpark.dataset.expressions</a></li>
+<li><a href="xpark/dataset/filters/dedup/hash_dedup.html">xpark.dataset.filters.dedup.hash_dedup</a></li>
 <li><a href="xpark/dataset/filters/dedup/text_exact_substring_dedup.html">xpark.dataset.filters.dedup.text_exact_substring_dedup</a></li>
 <li><a href="xpark/dataset/filters/dedup/text_fuzzy_dedup.html">xpark.dataset.filters.dedup.text_fuzzy_dedup</a></li>
 <li><a href="xpark/dataset/namespace_expressions/array_namespace.html">xpark.dataset.namespace_expressions.array_namespace</a></li>
 <li><a href="xpark/dataset/namespace_expressions/datetime_namespace.html">xpark.dataset.namespace_expressions.datetime_namespace</a></li>
 <li><a href="xpark/dataset/namespace_expressions/list_namespace.html">xpark.dataset.namespace_expressions.list_namespace</a></li>
+<li><a href="xpark/dataset/namespace_expressions/map_namespace.html">xpark.dataset.namespace_expressions.map_namespace</a></li>
 <li><a href="xpark/dataset/namespace_expressions/string_namespace.html">xpark.dataset.namespace_expressions.string_namespace</a></li>
 <li><a href="xpark/dataset/namespace_expressions/struct_namespace.html">xpark.dataset.namespace_expressions.struct_namespace</a></li>
 <li><a href="xpark/dataset/processors/audio_compute.html">xpark.dataset.processors.audio_compute</a></li>
@@ -379,6 +400,7 @@
 <li><a href="xpark/dataset/processors/speech_to_text.html">xpark.dataset.processors.speech_to_text</a></li>
 <li><a href="xpark/dataset/processors/text_chunking.html">xpark.dataset.processors.text_chunking</a></li>
 <li><a href="xpark/dataset/processors/text_classify.html">xpark.dataset.processors.text_classify</a></li>
+<li><a href="xpark/dataset/processors/text_cleaner.html">xpark.dataset.processors.text_cleaner</a></li>
 <li><a href="xpark/dataset/processors/text_embedding.html">xpark.dataset.processors.text_embedding</a></li>
 <li><a href="xpark/dataset/processors/text_extract.html">xpark.dataset.processors.text_extract</a></li>
 <li><a href="xpark/dataset/processors/text_fix_grammar.html">xpark.dataset.processors.text_fix_grammar</a></li>
@@ -392,6 +414,7 @@
 <li><a href="xpark/dataset/processors/text_similarity.html">xpark.dataset.processors.text_similarity</a></li>
 <li><a href="xpark/dataset/processors/text_summarize.html">xpark.dataset.processors.text_summarize</a></li>
 <li><a href="xpark/dataset/processors/text_translate.html">xpark.dataset.processors.text_translate</a></li>
+<li><a href="xpark/dataset/processors/time_series_forecast.html">xpark.dataset.processors.time_series_forecast</a></li>
 <li><a href="xpark/dataset/processors/video_compute.html">xpark.dataset.processors.video_compute</a></li>
 <li><a href="xpark/dataset/read_api.html">xpark.dataset.read_api</a></li>
 <li><a href="xpark/dataset/utils.html">xpark.dataset.utils</a></li>
@@ -424,8 +447,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -459,7 +482,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

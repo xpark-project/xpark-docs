@@ -1,0 +1,23 @@
+﻿xpark.dataset.ImageAestheticScore
+=================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageAestheticScore
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageAestheticScore.__call__
+      ~ImageAestheticScore.options
+      ~ImageAestheticScore.with_column
+   
+   
+
+   
+   
+   

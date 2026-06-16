@@ -1,0 +1,23 @@
+﻿xpark.dataset.connectors.DeleteVectorDB
+=======================================
+
+.. currentmodule:: xpark.dataset.connectors
+
+.. autoclass:: DeleteVectorDB
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DeleteVectorDB.__call__
+      ~DeleteVectorDB.options
+      ~DeleteVectorDB.with_column
+   
+   
+
+   
+   
+   

@@ -1,0 +1,23 @@
+﻿xpark.dataset.ImageTextSimilarityScore
+======================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageTextSimilarityScore
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageTextSimilarityScore.__call__
+      ~ImageTextSimilarityScore.options
+      ~ImageTextSimilarityScore.with_column
+   
+   
+
+   
+   
+   

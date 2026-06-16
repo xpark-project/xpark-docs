@@ -1,0 +1,29 @@
+﻿xpark.dataset.GroupedData
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: GroupedData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GroupedData.aggregate
+      ~GroupedData.count
+      ~GroupedData.map_groups
+      ~GroupedData.max
+      ~GroupedData.mean
+      ~GroupedData.min
+      ~GroupedData.std
+      ~GroupedData.sum
+      ~GroupedData.with_column
+   
+   
+
+   
+   
+   

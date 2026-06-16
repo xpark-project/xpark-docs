@@ -1,0 +1,23 @@
+﻿xpark.dataset.connectors.SearchVectorDB
+=======================================
+
+.. currentmodule:: xpark.dataset.connectors
+
+.. autoclass:: SearchVectorDB
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SearchVectorDB.__call__
+      ~SearchVectorDB.options
+      ~SearchVectorDB.with_column
+   
+   
+
+   
+   
+   

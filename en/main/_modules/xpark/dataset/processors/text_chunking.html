@@ -26,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -44,7 +44,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/xpark/dataset/processors/text_chunking';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -73,7 +73,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -203,11 +205,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -292,11 +301,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -391,6 +407,28 @@
 <span class="n">DEFAULT_TOKENIZER</span> <span class="o">=</span> <span class="s2">&quot;cl100k_base&quot;</span>
 
 
+<span class="k">def</span><span class="w"> </span><span class="nf">_resolve_tokenizer</span><span class="p">(</span><span class="n">name_or_obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pre-resolve tiktoken encoding names to concrete ``Encoding`` objects.</span>
+
+<span class="sd">    chonkie&#39;s ``AutoTokenizer`` resolves string names by trying ``tokenizers``</span>
+<span class="sd">    (HuggingFace) before ``tiktoken``, which probes ``huggingface.co`` even for</span>
+<span class="sd">    pure tiktoken encoding names. Pre-resolving known tiktoken names here forces</span>
+<span class="sd">    the ``TiktokenAutoTokenizer`` adapter and skips the HuggingFace probe.</span>
+
+<span class="sd">    chonkie built-ins (``character`` / ``word`` / ``byte`` / ``row``) and any</span>
+<span class="sd">    unrecognized strings are passed through unchanged so chonkie can resolve</span>
+<span class="sd">    them via its normal path.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">name_or_obj</span>
+    <span class="k">if</span> <span class="n">name_or_obj</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;character&quot;</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;byte&quot;</span><span class="p">,</span> <span class="s2">&quot;row&quot;</span><span class="p">}:</span>
+        <span class="k">return</span> <span class="n">name_or_obj</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">tiktoken</span><span class="o">.</span><span class="n">get_encoding</span><span class="p">(</span><span class="n">name_or_obj</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">name_or_obj</span>
+
+
 <span class="k">class</span><span class="w"> </span><span class="nc">MarkdownTreeSplitter</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Split markdown into a virtual file-tree of ``(path, text, is_dir)`` tuples.</span>
 
@@ -416,7 +454,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">max_tokens</span> <span class="o">=</span> <span class="n">max_tokens</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_chunker</span><span class="p">:</span> <span class="n">chonkie</span><span class="o">.</span><span class="n">RecursiveChunker</span> <span class="o">=</span> <span class="n">chonkie</span><span class="o">.</span><span class="n">RecursiveChunker</span><span class="p">(</span>
             <span class="n">chunk_size</span><span class="o">=</span><span class="n">max_tokens</span><span class="p">,</span>
-            <span class="n">tokenizer</span><span class="o">=</span><span class="n">DEFAULT_TOKENIZER</span><span class="p">,</span>
+            <span class="n">tokenizer</span><span class="o">=</span><span class="n">_resolve_tokenizer</span><span class="p">(</span><span class="n">DEFAULT_TOKENIZER</span><span class="p">),</span>
         <span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_count_tokens</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -719,6 +757,9 @@
             <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">parent_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">.md&quot;</span><span class="p">,</span> <span class="n">merged</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
 
 
+<span class="c1"># TODO(anthonycai): Move tokenizer assets (tiktoken BPE files, HuggingFace tokenizers) into</span>
+<span class="c1"># xpark asset management with unified env-var configuration so users do not need</span>
+<span class="c1"># direct internet access.</span>
 <div class="viewcode-block" id="TextChunking">
 <a class="viewcode-back" href="../../../../reference/generated/xpark.dataset.TextChunking.html#xpark.dataset.TextChunking">[docs]</a>
 <span class="nd">@udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">from_arrow</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())))</span>
@@ -729,10 +770,27 @@
 
 <span class="sd">    - ``&quot;fast&quot;`` (default): SIMD-accelerated byte-based chunking (100+ GB/s throughput).</span>
 <span class="sd">      No tokenization overhead. Best for high-throughput pipelines.</span>
+
+<span class="sd">      .. warning::</span>
+
+<span class="sd">          Splits on **raw bytes**, suitable for ASCII / Latin text. Multi-byte scripts</span>
+<span class="sd">          (Chinese, Japanese, Korean, etc.) may be cut mid-character; use</span>
+<span class="sd">          ``&quot;recursive&quot;`` instead for non-ASCII text.</span>
+
 <span class="sd">    - ``&quot;recursive&quot;``: Recursive token-based chunking with hierarchical splitting.</span>
 <span class="sd">      Uses multi-level rules (RecursiveRules) for better structure preservation.</span>
 <span class="sd">      Supports loading pre-configured recipes via ``recipe`` parameter.</span>
 <span class="sd">      Please refer to https://huggingface.co/datasets/chonkie-ai/recipes for recipes.</span>
+
+<span class="sd">      .. warning::</span>
+
+<span class="sd">          Tokenizers other than the chonkie built-ins (``&quot;character&quot;`` /</span>
+<span class="sd">          ``&quot;word&quot;`` / ``&quot;byte&quot;`` / ``&quot;row&quot;``) require fetching assets from</span>
+<span class="sd">          the public internet on first use: tiktoken encoding names download</span>
+<span class="sd">          BPE files from ``openaipublic.blob.core.windows.net``, and arbitrary</span>
+<span class="sd">          HuggingFace repo ids download from ``huggingface.co``. In offline /</span>
+<span class="sd">          intranet environments without such access these tokenizers may be</span>
+<span class="sd">          unusable until xpark&#39;s unified asset management ships.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        strategy (Literal[&quot;fast&quot;, &quot;recursive&quot;]): Chunking strategy to use.</span>
@@ -741,41 +799,44 @@
 <span class="sd">            measured in **bytes** (default 4096). For ``&quot;recursive&quot;`` strategy this is</span>
 <span class="sd">            measured in **tokens** (default 1024). If ``None``, the strategy-specific</span>
 <span class="sd">            default is used.</span>
-
-<span class="sd">        **Fast strategy parameters** (only used when ``strategy=&quot;fast&quot;``):</span>
-
-<span class="sd">        delimiters (str): Single-byte delimiter characters to split on. Each character</span>
-<span class="sd">            in the string is treated as an individual delimiter. Defaults to ``&quot;\\n.?&quot;``.</span>
-<span class="sd">        pattern (str | None): Multi-byte pattern to split on. If set, overrides</span>
-<span class="sd">            ``delimiters``. Defaults to ``None``.</span>
-<span class="sd">        prefix (bool): If ``True``, keep the delimiter/pattern at the start of the</span>
-<span class="sd">            next chunk instead of the end of the current chunk. Defaults to ``False``.</span>
-<span class="sd">        consecutive (bool): If ``True``, split at the **start** of consecutive</span>
-<span class="sd">            delimiter runs instead of the middle. Defaults to ``False``.</span>
-<span class="sd">        forward_fallback (bool): If ``True``, search forward for a delimiter when</span>
-<span class="sd">            none is found in the backward search window. Defaults to ``False``.</span>
-
-<span class="sd">        **Recursive strategy parameters** (only used when ``strategy=&quot;recursive&quot;``):</span>
-
-<span class="sd">        tokenizer (str | None): Tokenizer to use for token counting. Can be a</span>
-<span class="sd">            ``tiktoken`` encoding name (e.g. ``&quot;cl100k_base&quot;``, ``&quot;o200k_base&quot;``).</span>
+<span class="sd">        delimiters (str): [fast only] Single-byte delimiter characters to split on.</span>
+<span class="sd">            Each character in the string is treated as an individual delimiter.</span>
+<span class="sd">            Defaults to ``&quot;\\n.?&quot;``.</span>
+<span class="sd">        pattern (str | None): [fast only] Multi-byte pattern to split on. If set,</span>
+<span class="sd">            overrides ``delimiters``. Defaults to ``None``.</span>
+<span class="sd">        prefix (bool): [fast only] If ``True``, keep the delimiter/pattern at the</span>
+<span class="sd">            start of the next chunk instead of the end of the current chunk.</span>
+<span class="sd">            Defaults to ``False``.</span>
+<span class="sd">        consecutive (bool): [fast only] If ``True``, split at the **start** of</span>
+<span class="sd">            consecutive delimiter runs instead of the middle. Defaults to ``False``.</span>
+<span class="sd">        forward_fallback (bool): [fast only] If ``True``, search forward for a</span>
+<span class="sd">            delimiter when none is found in the backward search window.</span>
+<span class="sd">            Defaults to ``False``.</span>
+<span class="sd">        tokenizer (str | TokenizerProtocol | None): [recursive only] Tokenizer to</span>
+<span class="sd">            use for token counting. Accepts a ``tiktoken`` encoding name</span>
+<span class="sd">            (e.g. ``&quot;cl100k_base&quot;``, ``&quot;o200k_base&quot;``), a chonkie built-in name</span>
+<span class="sd">            (``&quot;character&quot;`` / ``&quot;word&quot;`` / ``&quot;byte&quot;`` / ``&quot;row&quot;``), or a</span>
+<span class="sd">            pre-constructed tokenizer instance. Only the chonkie built-ins are</span>
+<span class="sd">            guaranteed to work without internet access; see the warning above.</span>
 <span class="sd">            Defaults to ``&quot;cl100k_base&quot;``.</span>
-<span class="sd">        rules (RecursiveRules | None): Hierarchical splitting rules that define</span>
-<span class="sd">            multi-level delimiters for recursive chunking. If ``None``, the default</span>
-<span class="sd">            ``RecursiveRules()`` is used, which splits by paragraphs → sentences →</span>
-<span class="sd">            punctuation → whitespace → characters. Defaults to ``None``.</span>
-<span class="sd">        min_characters_per_chunk (int): Minimum number of characters per chunk.</span>
-<span class="sd">            Chunks shorter than this will be merged with adjacent chunks.</span>
+<span class="sd">        rules (RecursiveRules | None): [recursive only] Hierarchical splitting rules</span>
+<span class="sd">            that define multi-level delimiters for recursive chunking. If ``None``,</span>
+<span class="sd">            the default ``RecursiveRules()`` is used, which splits by paragraphs →</span>
+<span class="sd">            sentences → punctuation → whitespace → characters. Defaults to ``None``.</span>
+<span class="sd">        min_characters_per_chunk (int): [recursive only] Minimum number of characters</span>
+<span class="sd">            per chunk. Chunks shorter than this will be merged with adjacent chunks.</span>
 <span class="sd">            Defaults to ``12``.</span>
-<span class="sd">        recipe (str | None): Name of a pre-configured recipe to load via</span>
-<span class="sd">            ``RecursiveChunker.from_recipe()``. When set, ``rules`` is ignored and</span>
+<span class="sd">        recipe (str | None): [recursive only] Name of a pre-configured recipe to load</span>
+<span class="sd">            via ``RecursiveChunker.from_recipe()``. When set, ``rules`` is ignored and</span>
 <span class="sd">            the recipe&#39;s built-in rules are used instead. Common recipes include</span>
 <span class="sd">            ``&quot;default&quot;``. See https://huggingface.co/datasets/chonkie-ai/recipes</span>
 <span class="sd">            for available recipes. Defaults to ``None``.</span>
-<span class="sd">        lang (str): Language code for recipe loading (e.g. ``&quot;en&quot;``, ``&quot;zh&quot;``).</span>
-<span class="sd">            Only used when ``recipe`` is set. Defaults to ``&quot;en&quot;``.</span>
+<span class="sd">        lang (str): [recursive only] Language code for recipe loading</span>
+<span class="sd">            (e.g. ``&quot;en&quot;``, ``&quot;zh&quot;``). Only used when ``recipe`` is set.</span>
+<span class="sd">            Defaults to ``&quot;en&quot;``.</span>
 
-<span class="sd">    Returns a list of text chunks (``pa.list_(pa.string())``) per input row.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        A list of text chunks (``pa.list_(pa.string())``) per input row.</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        .. code-block:: python</span>
@@ -822,10 +883,6 @@
 <span class="sd">            )</span>
 
 <span class="sd">            print(ds.take_all())</span>
-<span class="sd">            # Output: [{&quot;item&quot;: &quot;The quick brown fox. Jumps over the lazy dog. Hello world.&quot;,</span>
-<span class="sd">            #           &quot;chunks_fast&quot;: [&quot;The quick brown fox.&quot;, &quot; Jumps over the &quot;, &quot;lazy dog. Hello &quot;, &quot;world.&quot;],</span>
-<span class="sd">            #           &quot;chunks_recursive&quot;: [&quot;The quick brown fox. &quot;, &quot;Jumps over the lazy dog. &quot;, &quot;Hello world.&quot;],</span>
-<span class="sd">            #           &quot;chunks_with_recipe&quot;: [&quot;The quick brown fox. &quot;, &quot;Jumps over the lazy dog. &quot;, &quot;Hello world.&quot;]}]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@overload</span>
@@ -894,7 +951,7 @@
         <span class="k">elif</span> <span class="n">strategy</span> <span class="o">==</span> <span class="s2">&quot;recursive&quot;</span><span class="p">:</span>
             <span class="c1"># Recursive chunker: token-based with hierarchical splitting</span>
             <span class="n">actual_chunk_size</span> <span class="o">=</span> <span class="n">chunk_size</span> <span class="k">if</span> <span class="n">chunk_size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">DEFAULT_MAX_CHUNK_TOKENS</span>
-            <span class="n">actual_tokenizer</span> <span class="o">=</span> <span class="n">tokenizer</span> <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">DEFAULT_TOKENIZER</span>
+            <span class="n">actual_tokenizer</span> <span class="o">=</span> <span class="n">_resolve_tokenizer</span><span class="p">(</span><span class="n">tokenizer</span> <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">DEFAULT_TOKENIZER</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">recipe</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_chunker</span> <span class="o">=</span> <span class="n">chonkie</span><span class="o">.</span><span class="n">RecursiveChunker</span><span class="o">.</span><span class="n">from_recipe</span><span class="p">(</span>
@@ -923,6 +980,8 @@
 
 
 
+<div class="viewcode-block" id="MarkdownChunking">
+<a class="viewcode-back" href="../../../../reference/generated/xpark.dataset.MarkdownChunking.html#xpark.dataset.MarkdownChunking">[docs]</a>
 <span class="nd">@udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">from_arrow</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">struct</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">(),</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()}))))</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">MarkdownChunking</span><span class="p">(</span><span class="n">BatchColumnClassProtocol</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Markdown-aware structural text chunking operator.</span>
@@ -943,10 +1002,12 @@
 <span class="sd">            from xpark.dataset.expressions import col</span>
 <span class="sd">            from xpark.dataset import MarkdownChunking, from_items</span>
 
-<span class="sd">            # Structural markdown chunking with unique path IDs</span>
+<span class="sd">            text1 = &quot;# Introduction1\\n\\nContent here...&quot;</span>
+<span class="sd">            text2 = &quot;# Introduction2\\n\\nContent here...&quot;</span>
+
 <span class="sd">            ds = from_items([</span>
-<span class="sd">                {&quot;text&quot;: &quot;# Introduction1\n\nContent here...&quot;, &quot;doc_name&quot;: &quot;document1&quot;},</span>
-<span class="sd">                {&quot;text&quot;: &quot;# Introduction2\n\nContent here...&quot;, &quot;doc_name&quot;: &quot;document2&quot;},</span>
+<span class="sd">                {&quot;text&quot;: text1, &quot;doc_name&quot;: &quot;document1&quot;},</span>
+<span class="sd">                {&quot;text&quot;: text2, &quot;doc_name&quot;: &quot;document2&quot;},</span>
 <span class="sd">            ])</span>
 <span class="sd">            ds = ds.with_column(</span>
 <span class="sd">                &quot;chunks&quot;,</span>
@@ -955,11 +1016,6 @@
 <span class="sd">                .with_column(col(&quot;text&quot;), col(&quot;doc_name&quot;)),</span>
 <span class="sd">            )</span>
 <span class="sd">            print(ds.take_all())</span>
-<span class="sd">            # Output: [{&#39;text&#39;: &#39;# Introduction1\n\nContent here...&#39;, &#39;doc_name&#39;:</span>
-<span class="sd">            # &#39;document1&#39;, &#39;chunks&#39;: [{&#39;id&#39;: &#39;markdown:document1/document1.md&#39;,</span>
-<span class="sd">            # &#39;content&#39;: &#39;# Introduction1\n\nContent here...&#39;}]},</span>
-<span class="sd">            # {&#39;text&#39;: &#39;# Introduction2\n\nContent here...&#39;, &#39;doc_name&#39;: &#39;document2&#39;,</span>
-<span class="sd">            # &#39;chunks&#39;: [{&#39;id&#39;: &#39;markdown:document2/document2.md&#39;, &#39;content&#39;: &#39;# Introduction2\n\nContent here...&#39;}]}]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEFAULT_MAX_CHUNK_TOKENS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -986,7 +1042,8 @@
             <span class="p">]</span>
             <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">struct</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">(),</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()})))</span>
+        <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">struct</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">(),</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()})))</span></div>
+
 </pre></div>
 
                 </article>
@@ -1016,8 +1073,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1051,7 +1108,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

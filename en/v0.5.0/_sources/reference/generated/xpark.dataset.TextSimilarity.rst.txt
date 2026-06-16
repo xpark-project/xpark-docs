@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextSimilarity
+============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextSimilarity
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextSimilarity.__call__
+      ~TextSimilarity.options
+      ~TextSimilarity.with_column
+   
+   
+
+   
+   
+   

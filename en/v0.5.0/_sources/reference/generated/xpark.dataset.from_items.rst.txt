@@ -1,0 +1,6 @@
+﻿xpark.dataset.from\_items
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: from_items

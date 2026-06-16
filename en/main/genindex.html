@@ -26,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
@@ -44,7 +44,7 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -73,7 +73,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -203,11 +205,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -292,11 +301,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -344,6 +360,7 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
@@ -363,12 +380,22 @@
 <h2 id="_">_</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/generated/xpark.dataset.ImageAestheticScore.html#xpark.dataset.ImageAestheticScore.__call__">__call__() (xpark.dataset.ImageAestheticScore method)</a>
+      <li><a href="reference/generated/xpark.dataset.connectors.DeleteVectorDB.html#xpark.dataset.connectors.DeleteVectorDB.__call__">__call__() (xpark.dataset.connectors.DeleteVectorDB method)</a>
 
       <ul>
+        <li><a href="reference/generated/xpark.dataset.connectors.InsertVectorDB.html#xpark.dataset.connectors.InsertVectorDB.__call__">(xpark.dataset.connectors.InsertVectorDB method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.connectors.SearchVectorDB.html#xpark.dataset.connectors.SearchVectorDB.__call__">(xpark.dataset.connectors.SearchVectorDB method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.connectors.UpsertVectorDB.html#xpark.dataset.connectors.UpsertVectorDB.__call__">(xpark.dataset.connectors.UpsertVectorDB method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.ImageAestheticScore.html#xpark.dataset.ImageAestheticScore.__call__">(xpark.dataset.ImageAestheticScore method)</a>
+</li>
         <li><a href="reference/generated/xpark.dataset.ImageNSFWScore.html#xpark.dataset.ImageNSFWScore.__call__">(xpark.dataset.ImageNSFWScore method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.ImageTextSimilarityScore.html#xpark.dataset.ImageTextSimilarityScore.__call__">(xpark.dataset.ImageTextSimilarityScore method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.MarkdownChunking.html#xpark.dataset.MarkdownChunking.__call__">(xpark.dataset.MarkdownChunking method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.SpeechToText.html#xpark.dataset.SpeechToText.__call__">(xpark.dataset.SpeechToText method)</a>
 </li>
@@ -392,6 +419,8 @@
 </li>
         <li><a href="reference/generated/xpark.dataset.TextMask.html#xpark.dataset.TextMask.__call__">(xpark.dataset.TextMask method)</a>
 </li>
+        <li><a href="reference/generated/xpark.dataset.TextPatternCleaner.html#xpark.dataset.TextPatternCleaner.__call__">(xpark.dataset.TextPatternCleaner method)</a>
+</li>
         <li><a href="reference/generated/xpark.dataset.TextPerplexity.html#xpark.dataset.TextPerplexity.__call__">(xpark.dataset.TextPerplexity method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.TextPredicateEval.html#xpark.dataset.TextPredicateEval.__call__">(xpark.dataset.TextPredicateEval method)</a>
@@ -404,6 +433,8 @@
 </li>
         <li><a href="reference/generated/xpark.dataset.TextTranslate.html#xpark.dataset.TextTranslate.__call__">(xpark.dataset.TextTranslate method)</a>
 </li>
+        <li><a href="reference/generated/xpark.dataset.TimeSeriesForecast.html#xpark.dataset.TimeSeriesForecast.__call__">(xpark.dataset.TimeSeriesForecast method)</a>
+</li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -412,6 +443,8 @@
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace">_DatetimeNamespace (class in xpark.dataset.namespace_expressions.datetime_namespace)</a>
 </li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.list_namespace._ListNamespace">_ListNamespace (class in xpark.dataset.namespace_expressions.list_namespace)</a>
+</li>
+      <li><a href="reference/index.html#xpark.dataset.namespace_expressions.map_namespace._MapNamespace">_MapNamespace (class in xpark.dataset.namespace_expressions.map_namespace)</a>
 </li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace">_StringNamespace (class in xpark.dataset.namespace_expressions.string_namespace)</a>
 </li>
@@ -517,6 +550,8 @@
 </li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.day">day() (xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace method)</a>
 </li>
+      <li><a href="reference/generated/xpark.dataset.connectors.DeleteVectorDB.html#xpark.dataset.connectors.DeleteVectorDB">DeleteVectorDB (class in xpark.dataset.connectors)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/xpark.dataset.VideoCompute.html#xpark.dataset.VideoCompute.display_aspect_ratio">display_aspect_ratio() (xpark.dataset.VideoCompute static method)</a>
@@ -566,6 +601,8 @@
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find">find() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
 </li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.find_regex">find_regex() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
+</li>
+      <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.flat_map">flat_map() (xpark.dataset.Dataset method)</a>
 </li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.flatten">flatten() (xpark.dataset.namespace_expressions.list_namespace._ListNamespace method)</a>
 </li>
@@ -617,6 +654,8 @@
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/xpark.dataset.HashDedup.html#xpark.dataset.HashDedup">HashDedup (class in xpark.dataset)</a>
+</li>
       <li><a href="reference/generated/xpark.dataset.ImageCompute.html#xpark.dataset.ImageCompute.height">height() (xpark.dataset.ImageCompute static method)</a>
 
       <ul>
@@ -626,6 +665,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.hour">hour() (xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace method)</a>
+</li>
+      <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.html_clean">html_clean() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -642,6 +683,8 @@
       <li><a href="reference/generated/xpark.dataset.ImageTextSimilarityScore.html#xpark.dataset.ImageTextSimilarityScore">ImageTextSimilarityScore (class in xpark.dataset)</a>
 </li>
       <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.input_files">input_files() (xpark.dataset.Dataset method)</a>
+</li>
+      <li><a href="reference/generated/xpark.dataset.connectors.InsertVectorDB.html#xpark.dataset.connectors.InsertVectorDB">InsertVectorDB (class in xpark.dataset.connectors)</a>
 </li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_alnum">is_alnum() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
 </li>
@@ -668,6 +711,14 @@
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.is_upper">is_upper() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
 </li>
       <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.iter_batches">iter_batches() (xpark.dataset.Dataset method)</a>, <a href="reference/generated/xpark.dataset.Dataset.iter_batches.html#xpark.dataset.Dataset.iter_batches">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/index.html#xpark.dataset.namespace_expressions.map_namespace._MapNamespace.keys">keys() (xpark.dataset.namespace_expressions.map_namespace._MapNamespace method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -707,6 +758,8 @@
 </li>
       <li><a href="reference/generated/xpark.dataset.GroupedData.html#xpark.dataset.GroupedData.map_groups">map_groups() (xpark.dataset.GroupedData method)</a>
 </li>
+      <li><a href="reference/generated/xpark.dataset.MarkdownChunking.html#xpark.dataset.MarkdownChunking">MarkdownChunking (class in xpark.dataset)</a>
+</li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match">match() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
 </li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.match_regex">match_regex() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
@@ -721,10 +774,10 @@
         <li><a href="reference/generated/xpark.dataset.GroupedData.html#xpark.dataset.GroupedData.max">(xpark.dataset.GroupedData method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.max_line_length">max_line_length() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.max_line_length">max_line_length() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
+</li>
       <li><a href="reference/generated/xpark.dataset.aggregate.Mean.html#xpark.dataset.aggregate.Mean">Mean (class in xpark.dataset.aggregate)</a>
 </li>
       <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.mean">mean() (xpark.dataset.Dataset method)</a>
@@ -763,12 +816,22 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/generated/xpark.dataset.ImageAestheticScore.html#xpark.dataset.ImageAestheticScore.options">options() (xpark.dataset.ImageAestheticScore method)</a>
+      <li><a href="reference/generated/xpark.dataset.connectors.DeleteVectorDB.html#xpark.dataset.connectors.DeleteVectorDB.options">options() (xpark.dataset.connectors.DeleteVectorDB method)</a>
 
       <ul>
+        <li><a href="reference/generated/xpark.dataset.connectors.InsertVectorDB.html#xpark.dataset.connectors.InsertVectorDB.options">(xpark.dataset.connectors.InsertVectorDB method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.connectors.SearchVectorDB.html#xpark.dataset.connectors.SearchVectorDB.options">(xpark.dataset.connectors.SearchVectorDB method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.connectors.UpsertVectorDB.html#xpark.dataset.connectors.UpsertVectorDB.options">(xpark.dataset.connectors.UpsertVectorDB method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.ImageAestheticScore.html#xpark.dataset.ImageAestheticScore.options">(xpark.dataset.ImageAestheticScore method)</a>
+</li>
         <li><a href="reference/generated/xpark.dataset.ImageNSFWScore.html#xpark.dataset.ImageNSFWScore.options">(xpark.dataset.ImageNSFWScore method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.ImageTextSimilarityScore.html#xpark.dataset.ImageTextSimilarityScore.options">(xpark.dataset.ImageTextSimilarityScore method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.MarkdownChunking.html#xpark.dataset.MarkdownChunking.options">(xpark.dataset.MarkdownChunking method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.SpeechToText.html#xpark.dataset.SpeechToText.options">(xpark.dataset.SpeechToText method)</a>
 </li>
@@ -792,6 +855,8 @@
 </li>
         <li><a href="reference/generated/xpark.dataset.TextMask.html#xpark.dataset.TextMask.options">(xpark.dataset.TextMask method)</a>
 </li>
+        <li><a href="reference/generated/xpark.dataset.TextPatternCleaner.html#xpark.dataset.TextPatternCleaner.options">(xpark.dataset.TextPatternCleaner method)</a>
+</li>
         <li><a href="reference/generated/xpark.dataset.TextPerplexity.html#xpark.dataset.TextPerplexity.options">(xpark.dataset.TextPerplexity method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.TextPredicateEval.html#xpark.dataset.TextPredicateEval.options">(xpark.dataset.TextPredicateEval method)</a>
@@ -803,6 +868,8 @@
         <li><a href="reference/generated/xpark.dataset.TextSummarize.html#xpark.dataset.TextSummarize.options">(xpark.dataset.TextSummarize method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.TextTranslate.html#xpark.dataset.TextTranslate.options">(xpark.dataset.TextTranslate method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.TimeSeriesForecast.html#xpark.dataset.TimeSeriesForecast.options">(xpark.dataset.TimeSeriesForecast method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -837,6 +904,8 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.random_sample">random_sample() (xpark.dataset.Dataset method)</a>
+</li>
       <li><a href="reference/generated/xpark.dataset.read_audio.html#xpark.dataset.read_audio">read_audio() (in module xpark.dataset)</a>
 </li>
       <li><a href="reference/generated/xpark.dataset.read_files.html#xpark.dataset.read_files">read_files() (in module xpark.dataset)</a>
@@ -890,6 +959,8 @@
       <li><a href="reference/generated/xpark.dataset.AudioCompute.html#xpark.dataset.AudioCompute.samplerate">samplerate() (xpark.dataset.AudioCompute static method)</a>
 </li>
       <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.schema">schema() (xpark.dataset.Dataset method)</a>
+</li>
+      <li><a href="reference/generated/xpark.dataset.connectors.SearchVectorDB.html#xpark.dataset.connectors.SearchVectorDB">SearchVectorDB (class in xpark.dataset.connectors)</a>
 </li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.second">second() (xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace method)</a>
 </li>
@@ -995,11 +1066,13 @@
 </li>
       <li><a href="reference/generated/xpark.dataset.TextLanguageDetector.html#xpark.dataset.TextLanguageDetector">TextLanguageDetector (class in xpark.dataset)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/xpark.dataset.TextLanguageScore.html#xpark.dataset.TextLanguageScore">TextLanguageScore (class in xpark.dataset)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/xpark.dataset.TextMask.html#xpark.dataset.TextMask">TextMask (class in xpark.dataset)</a>
+</li>
+      <li><a href="reference/generated/xpark.dataset.TextPatternCleaner.html#xpark.dataset.TextPatternCleaner">TextPatternCleaner (class in xpark.dataset)</a>
 </li>
       <li><a href="reference/generated/xpark.dataset.TextPerplexity.html#xpark.dataset.TextPerplexity">TextPerplexity (class in xpark.dataset)</a>
 </li>
@@ -1015,6 +1088,8 @@
 </li>
       <li><a href="reference/generated/xpark.dataset.VideoCompute.html#xpark.dataset.VideoCompute.time_base">time_base() (xpark.dataset.VideoCompute static method)</a>
 </li>
+      <li><a href="reference/generated/xpark.dataset.TimeSeriesForecast.html#xpark.dataset.TimeSeriesForecast">TimeSeriesForecast (class in xpark.dataset)</a>
+</li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.title">title() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
 </li>
       <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.to_arrow_refs">to_arrow_refs() (xpark.dataset.Dataset method)</a>
@@ -1022,6 +1097,8 @@
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.array_namespace._ArrayNamespace.to_list">to_list() (xpark.dataset.namespace_expressions.array_namespace._ArrayNamespace method)</a>
 </li>
       <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.to_pandas">to_pandas() (xpark.dataset.Dataset method)</a>, <a href="reference/generated/xpark.dataset.Dataset.to_pandas.html#xpark.dataset.Dataset.to_pandas">[1]</a>
+</li>
+      <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.to_ray_dataset">to_ray_dataset() (xpark.dataset.Dataset method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1035,6 +1112,8 @@
         <li><a href="reference/generated/xpark.dataset.expressions.udf.html#xpark.dataset.expressions.udf">(in module xpark.dataset.expressions)</a>
 </li>
       </ul></li>
+      <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.union">union() (xpark.dataset.Dataset method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/xpark.dataset.aggregate.Unique.html#xpark.dataset.aggregate.Unique">Unique (class in xpark.dataset.aggregate)</a>
@@ -1043,11 +1122,17 @@
 </li>
       <li><a href="reference/index.html#xpark.dataset.namespace_expressions.string_namespace._StringNamespace.upper">upper() (xpark.dataset.namespace_expressions.string_namespace._StringNamespace method)</a>
 </li>
+      <li><a href="reference/generated/xpark.dataset.connectors.UpsertVectorDB.html#xpark.dataset.connectors.UpsertVectorDB">UpsertVectorDB (class in xpark.dataset.connectors)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/index.html#xpark.dataset.namespace_expressions.map_namespace._MapNamespace.values">values() (xpark.dataset.namespace_expressions.map_namespace._MapNamespace method)</a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/xpark.dataset.VideoCompute.html#xpark.dataset.VideoCompute">VideoCompute (class in xpark.dataset)</a>
 </li>
@@ -1063,16 +1148,28 @@
         <li><a href="reference/generated/xpark.dataset.VideoCompute.html#xpark.dataset.VideoCompute.width">(xpark.dataset.VideoCompute static method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.with_column">with_column() (xpark.dataset.Dataset method)</a>
+      <li><a href="reference/generated/xpark.dataset.connectors.DeleteVectorDB.html#xpark.dataset.connectors.DeleteVectorDB.with_column">with_column() (xpark.dataset.connectors.DeleteVectorDB method)</a>
 
       <ul>
+        <li><a href="reference/generated/xpark.dataset.connectors.InsertVectorDB.html#xpark.dataset.connectors.InsertVectorDB.with_column">(xpark.dataset.connectors.InsertVectorDB method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.connectors.SearchVectorDB.html#xpark.dataset.connectors.SearchVectorDB.with_column">(xpark.dataset.connectors.SearchVectorDB method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.connectors.UpsertVectorDB.html#xpark.dataset.connectors.UpsertVectorDB.with_column">(xpark.dataset.connectors.UpsertVectorDB method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.with_column">(xpark.dataset.Dataset method)</a>
+</li>
         <li><a href="reference/generated/xpark.dataset.GroupedData.html#xpark.dataset.GroupedData.with_column">(xpark.dataset.GroupedData method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.HashDedup.html#xpark.dataset.HashDedup.with_column">(xpark.dataset.HashDedup method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.ImageAestheticScore.html#xpark.dataset.ImageAestheticScore.with_column">(xpark.dataset.ImageAestheticScore method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.ImageNSFWScore.html#xpark.dataset.ImageNSFWScore.with_column">(xpark.dataset.ImageNSFWScore method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.ImageTextSimilarityScore.html#xpark.dataset.ImageTextSimilarityScore.with_column">(xpark.dataset.ImageTextSimilarityScore method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.MarkdownChunking.html#xpark.dataset.MarkdownChunking.with_column">(xpark.dataset.MarkdownChunking method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.SpeechToText.html#xpark.dataset.SpeechToText.with_column">(xpark.dataset.SpeechToText method)</a>
 </li>
@@ -1100,6 +1197,8 @@
 </li>
         <li><a href="reference/generated/xpark.dataset.TextMask.html#xpark.dataset.TextMask.with_column">(xpark.dataset.TextMask method)</a>
 </li>
+        <li><a href="reference/generated/xpark.dataset.TextPatternCleaner.html#xpark.dataset.TextPatternCleaner.with_column">(xpark.dataset.TextPatternCleaner method)</a>
+</li>
         <li><a href="reference/generated/xpark.dataset.TextPerplexity.html#xpark.dataset.TextPerplexity.with_column">(xpark.dataset.TextPerplexity method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.TextPredicateEval.html#xpark.dataset.TextPredicateEval.with_column">(xpark.dataset.TextPredicateEval method)</a>
@@ -1111,6 +1210,8 @@
         <li><a href="reference/generated/xpark.dataset.TextSummarize.html#xpark.dataset.TextSummarize.with_column">(xpark.dataset.TextSummarize method)</a>
 </li>
         <li><a href="reference/generated/xpark.dataset.TextTranslate.html#xpark.dataset.TextTranslate.with_column">(xpark.dataset.TextTranslate method)</a>
+</li>
+        <li><a href="reference/generated/xpark.dataset.TimeSeriesForecast.html#xpark.dataset.TimeSeriesForecast.with_column">(xpark.dataset.TimeSeriesForecast method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1130,6 +1231,8 @@
       <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.write_numpy">write_numpy() (xpark.dataset.Dataset method)</a>, <a href="reference/generated/xpark.dataset.Dataset.write_numpy.html#xpark.dataset.Dataset.write_numpy">[1]</a>
 </li>
       <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.write_parquet">write_parquet() (xpark.dataset.Dataset method)</a>, <a href="reference/generated/xpark.dataset.Dataset.write_parquet.html#xpark.dataset.Dataset.write_parquet">[1]</a>
+</li>
+      <li><a href="reference/generated/xpark.dataset.Dataset.html#xpark.dataset.Dataset.write_sql">write_sql() (xpark.dataset.Dataset method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1179,8 +1282,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1214,7 +1317,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

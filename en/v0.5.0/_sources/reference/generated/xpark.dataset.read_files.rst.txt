@@ -1,0 +1,6 @@
+﻿xpark.dataset.read\_files
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: read_files

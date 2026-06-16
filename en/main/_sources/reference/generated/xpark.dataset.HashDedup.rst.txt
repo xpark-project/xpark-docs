@@ -1,0 +1,21 @@
+﻿xpark.dataset.HashDedup
+=======================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: HashDedup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~HashDedup.with_column
+   
+   
+
+   
+   
+   

@@ -27,17 +27,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -45,7 +45,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/xpark.dataset.Dataset';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -76,7 +76,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -206,11 +208,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -297,11 +306,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -480,35 +496,41 @@ manually call this constructor. Please use the <a class="reference internal" hre
 <tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.filter" title="xpark.dataset.Dataset.filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter</span></code></a>(expr[, compute])</p></td>
 <td><p>Filter out rows that don't satisfy the given predicate.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.groupby" title="xpark.dataset.Dataset.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a>(key[, num_partitions])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.flat_map" title="xpark.dataset.Dataset.flat_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flat_map</span></code></a>(fn, *[, compute, fn_args, ...])</p></td>
+<td><p>Apply the given function to each row and then flatten results.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.groupby" title="xpark.dataset.Dataset.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a>(key[, num_partitions])</p></td>
 <td><p>Group rows of a <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> according to a column.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.input_files" title="xpark.dataset.Dataset.input_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_files</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.input_files" title="xpark.dataset.Dataset.input_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_files</span></code></a>()</p></td>
 <td><p>Return the list of input files for the dataset.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="xpark.dataset.Dataset.iter_batches.html#xpark.dataset.Dataset.iter_batches" title="xpark.dataset.Dataset.iter_batches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_batches</span></code></a>(*[, prefetch_batches, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="xpark.dataset.Dataset.iter_batches.html#xpark.dataset.Dataset.iter_batches" title="xpark.dataset.Dataset.iter_batches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_batches</span></code></a>(*[, prefetch_batches, ...])</p></td>
 <td><p>Return an iterable over batches of data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.limit" title="xpark.dataset.Dataset.limit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">limit</span></code></a>(limit)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.limit" title="xpark.dataset.Dataset.limit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">limit</span></code></a>(limit)</p></td>
 <td><p>Truncate the dataset to the first <code class="docutils literal notranslate"><span class="pre">limit</span></code> rows.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.map" title="xpark.dataset.Dataset.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map</span></code></a>(fn, *[, compute, fn_args, fn_kwargs, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.map" title="xpark.dataset.Dataset.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map</span></code></a>(fn, *[, compute, fn_args, fn_kwargs, ...])</p></td>
 <td><p>Apply the given function to each row of this dataset.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.map_batches" title="xpark.dataset.Dataset.map_batches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_batches</span></code></a>(fn, *[, batch_size, compute, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.map_batches" title="xpark.dataset.Dataset.map_batches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_batches</span></code></a>(fn, *[, batch_size, compute, ...])</p></td>
 <td><p>Apply the given function to batches of data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.materialize" title="xpark.dataset.Dataset.materialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">materialize</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.materialize" title="xpark.dataset.Dataset.materialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">materialize</span></code></a>()</p></td>
 <td><p>Execute and materialize this dataset into object store memory.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.max" title="xpark.dataset.Dataset.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>([on, ignore_nulls])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.max" title="xpark.dataset.Dataset.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>([on, ignore_nulls])</p></td>
 <td><p>Return the maximum of one or more columns.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.mean" title="xpark.dataset.Dataset.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>([on, ignore_nulls])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.mean" title="xpark.dataset.Dataset.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>([on, ignore_nulls])</p></td>
 <td><p>Compute the mean of one or more columns.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.min" title="xpark.dataset.Dataset.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>([on, ignore_nulls])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.min" title="xpark.dataset.Dataset.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>([on, ignore_nulls])</p></td>
 <td><p>Return the minimum of one or more columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.random_sample" title="xpark.dataset.Dataset.random_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_sample</span></code></a>(fraction, *[, seed])</p></td>
+<td><p>Returns a new <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> containing a random fraction of the rows.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.repartition" title="xpark.dataset.Dataset.repartition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repartition</span></code></a>([num_blocks, ...])</p></td>
 <td><p>Repartition the <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> into exactly this number of <a class="reference external" href="https://docs.ray.io/en/latest/data/data-internals.html#dataset-concept">blocks</a>.</p></td>
@@ -549,10 +571,16 @@ manually call this constructor. Please use the <a class="reference internal" hre
 <tr class="row-odd"><td><p><a class="reference internal" href="xpark.dataset.Dataset.to_pandas.html#xpark.dataset.Dataset.to_pandas" title="xpark.dataset.Dataset.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>([limit])</p></td>
 <td><p>Convert this <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> to a single pandas DataFrame.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.to_ray_dataset" title="xpark.dataset.Dataset.to_ray_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ray_dataset</span></code></a>()</p></td>
+<td><p>Return the underlying Ray Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.union" title="xpark.dataset.Dataset.union"><code class="xref py py-obj docutils literal notranslate"><span class="pre">union</span></code></a>(*other)</p></td>
+<td><p>Concatenate <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Datasets</span></code></a> across rows.</p></td>
+</tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.unique" title="xpark.dataset.Dataset.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(column[, ignore_nulls])</p></td>
 <td><p>List the unique elements in a given column.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.with_column" title="xpark.dataset.Dataset.with_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_column</span></code></a>(column_name, expr, **ray_remote_args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.with_column" title="xpark.dataset.Dataset.with_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_column</span></code></a>(column_name, expr, *[, compute])</p></td>
 <td><p>Add a new column to the dataset via an expression.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="xpark.dataset.Dataset.write_csv.html#xpark.dataset.Dataset.write_csv" title="xpark.dataset.Dataset.write_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_csv</span></code></a>(path, *[, filesystem, ...])</p></td>
@@ -572,6 +600,9 @@ manually call this constructor. Please use the <a class="reference internal" hre
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="xpark.dataset.Dataset.write_parquet.html#xpark.dataset.Dataset.write_parquet" title="xpark.dataset.Dataset.write_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_parquet</span></code></a>(path, *[, partition_cols, ...])</p></td>
 <td><p>Writes the <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> to parquet files under the provided <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.Dataset.write_sql" title="xpark.dataset.Dataset.write_sql"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sql</span></code></a>(sql, connection_factory[, ...])</p></td>
+<td><p>Write to a database that provides a <a class="reference external" href="https://peps.python.org/pep-0249/">Python DB API2-compliant</a> connector.</p></td>
 </tr>
 </tbody>
 </table>
@@ -712,10 +743,13 @@ efficiently count the number of rows without reading in the entire data.</p>
 an exception is raised. Column names must be unique.</p></li>
 <li><p><strong>compute</strong> – This argument is deprecated. Use <code class="docutils literal notranslate"><span class="pre">concurrency</span></code> argument.</p></li>
 <li><p><strong>concurrency</strong> – The maximum number of Xpark workers to use concurrently.</p></li>
-<li><p><strong>ray_remote_args</strong> – Additional resource requirements to request from
+<li><p><strong>**ray_remote_args</strong> – Additional resource requirements to request from
 Xpark (e.g., num_gpus=1 to request GPUs for the map tasks). See
 <code class="xref py py-func docutils literal notranslate"><span class="pre">ray.remote()</span></code> for details.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> with the specified columns removed.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -758,6 +792,105 @@ Can be either a predicate expression from <cite>ray.data.expressions</cite> or a
 Ray (e.g., num_gpus=1 to request GPUs for the map tasks). See
 <code class="xref py py-func docutils literal notranslate"><span class="pre">ray.remote()</span></code> for details.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.Dataset.flat_map">
+<span class="sig-name descname"><span class="pre">flat_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">_CallableClassProtocol</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ComputeStrategy</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_constructor_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_constructor_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_gpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ray_remote_args_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ray_remote_args</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><span class="pre">Dataset</span></a></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.flat_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.flat_map" title="Link to this definition">#</a></dt>
+<dd><p>Apply the given function to each row and then flatten results.</p>
+<p>Use this method if your transformation returns multiple rows for each input
+row.</p>
+<p>You can use either a function or a callable class to perform the transformation.
+For functions, Xpark Dataset uses stateless Xpark tasks. For classes, Xpark Dataset uses
+stateful Xpark actors. For more information, see
+<span class="xref std std-ref">Stateful Transforms</span>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="reference internal" href="#xpark.dataset.Dataset.map_batches" title="xpark.dataset.Dataset.map_batches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map_batches()</span></code></a> can also modify the number of rows. If your
+transformation is vectorized like most NumPy and pandas operations,
+it might be faster.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Specifying both <code class="docutils literal notranslate"><span class="pre">num_cpus</span></code> and <code class="docutils literal notranslate"><span class="pre">num_gpus</span></code> for map tasks is experimental,
+and may result in scheduling or stability issues. Please
+<a href="#id1"><span class="problematic" id="id2">`</span></a>report any issues &lt;
+to the Xpark team.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">duplicate_row</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">row</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">flat_map</span><span class="p">(</span><span class="n">duplicate_row</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">take_all</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: 0}, {&#39;id&#39;: 0}, {&#39;id&#39;: 1}, {&#39;id&#39;: 1}, {&#39;id&#39;: 2}, {&#39;id&#39;: 2}]
+</pre></div>
+</div>
+<p>Time complexity: O(dataset size / parallelism)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fn</strong> – The function or generator to apply to each record, or a class type
+that can be instantiated to create such a callable.</p></li>
+<li><p><strong>compute</strong> – <p>The compute strategy to use for the map operation.</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">compute</span></code> is not specified for a function, will use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.TaskPoolStrategy()</span></code> to launch concurrent tasks based on the available resources and number of input blocks.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.TaskPoolStrategy(size=n)</span></code> to launch at most <code class="docutils literal notranslate"><span class="pre">n</span></code> concurrent Xpark tasks.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">compute</span></code> is not specified for a callable class, will use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.ActorPoolStrategy(min_size=1,</span> <span class="pre">max_size=None)</span></code> to launch an autoscaling actor pool from 1 to unlimited workers.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.ActorPoolStrategy(size=n)</span></code> to use a fixed size actor pool of <code class="docutils literal notranslate"><span class="pre">n</span></code> workers.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.ActorPoolStrategy(min_size=m,</span> <span class="pre">max_size=n)</span></code> to use an autoscaling actor pool from <code class="docutils literal notranslate"><span class="pre">m</span></code> to <code class="docutils literal notranslate"><span class="pre">n</span></code> workers.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">xpark.dataset.ActorPoolStrategy(min_size=m,</span> <span class="pre">max_size=n,</span> <span class="pre">initial_size=initial)</span></code> to use an autoscaling actor pool from <code class="docutils literal notranslate"><span class="pre">m</span></code> to <code class="docutils literal notranslate"><span class="pre">n</span></code> workers, with an initial size of <code class="docutils literal notranslate"><span class="pre">initial</span></code>.</p></li>
+</ul>
+</p></li>
+<li><p><strong>fn_args</strong> – Positional arguments to pass to <code class="docutils literal notranslate"><span class="pre">fn</span></code> after the first argument.
+These arguments are top-level arguments to the underlying Xpark task.</p></li>
+<li><p><strong>fn_kwargs</strong> – Keyword arguments to pass to <code class="docutils literal notranslate"><span class="pre">fn</span></code>. These arguments are
+top-level arguments to the underlying Xpark task.</p></li>
+<li><p><strong>fn_constructor_args</strong> – Positional arguments to pass to <code class="docutils literal notranslate"><span class="pre">fn</span></code>’s constructor.
+You can only provide this if <code class="docutils literal notranslate"><span class="pre">fn</span></code> is a callable class. These arguments
+are top-level arguments in the underlying Xpark actor construction task.</p></li>
+<li><p><strong>fn_constructor_kwargs</strong> – Keyword arguments to pass to <code class="docutils literal notranslate"><span class="pre">fn</span></code>’s constructor.
+This can only be provided if <code class="docutils literal notranslate"><span class="pre">fn</span></code> is a callable class. These arguments
+are top-level arguments in the underlying Xpark actor construction task.</p></li>
+<li><p><strong>num_cpus</strong> – The number of CPUs to reserve for each parallel map worker.</p></li>
+<li><p><strong>num_gpus</strong> – The number of GPUs to reserve for each parallel map worker. For
+example, specify <cite>num_gpus=1</cite> to request 1 GPU for each parallel map
+worker.</p></li>
+<li><p><strong>memory</strong> – The heap memory in bytes to reserve for each parallel map worker.</p></li>
+<li><p><strong>concurrency</strong> – This argument is deprecated. Use <code class="docutils literal notranslate"><span class="pre">compute</span></code> argument.</p></li>
+<li><p><strong>ray_remote_args_fn</strong> – A function that returns a dictionary of remote args
+passed to each map worker. The purpose of this argument is to generate
+dynamic arguments for each actor/task, and will be called each time
+prior to initializing the worker. Args returned from this dict will
+always override the args in <code class="docutils literal notranslate"><span class="pre">ray_remote_args</span></code>. Note: this is an
+advanced, experimental feature.</p></li>
+<li><p><strong>**ray_remote_args</strong> – Additional resource requirements to request from
+Xpark for each map worker. See <code class="xref py py-func docutils literal notranslate"><span class="pre">ray.remote()</span></code> for details.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#xpark.dataset.Dataset.map_batches" title="xpark.dataset.Dataset.map_batches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map_batches()</span></code></a></dt><dd><p>Call this method to transform batches of data.</p>
+</dd>
+<dt><a class="reference internal" href="#xpark.dataset.Dataset.map" title="xpark.dataset.Dataset.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a></dt><dd><p>Call this method to transform one row at time.</p>
+</dd>
+</dl>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> containing the flattened results of applying the function to each row.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -837,7 +970,7 @@ list if the input files is not known.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.Dataset.iter_batches">
-<span class="sig-name descname"><span class="pre">iter_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefetch_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_last</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_shuffle_buffer_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_shuffle_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_collate_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">CollatedData</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.iter_batches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.iter_batches" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">iter_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefetch_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_last</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_shuffle_buffer_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_shuffle_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_collate_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">cudf.DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">CollatedData</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">cudf.DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.iter_batches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.iter_batches" title="Link to this definition">#</a></dt>
 <dd><p>Return an iterable over batches of data.</p>
 <p>This method is useful for model training.</p>
 <div class="admonition note">
@@ -872,7 +1005,9 @@ The final batch may include fewer than <code class="docutils literal notranslate
 <code class="docutils literal notranslate"><span class="pre">drop_last</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>. Defaults to 256.</p></li>
 <li><p><strong>batch_format</strong> – If <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;numpy&quot;</span></code>, batches are
 <code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">numpy.ndarray]</span></code>. If <code class="docutils literal notranslate"><span class="pre">&quot;pandas&quot;</span></code>, batches are
-<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. If <code class="docutils literal notranslate"><span class="pre">&quot;pyarrow&quot;</span></code>, batches are
+<code class="docutils literal notranslate"><span class="pre">pyarrow.Table</span></code>. If <code class="docutils literal notranslate"><span class="pre">&quot;cudf&quot;</span></code> [Experimental], batches are
+<code class="docutils literal notranslate"><span class="pre">cudf.DataFrame</span></code>.</p></li>
 <li><p><strong>drop_last</strong> – Whether to drop the last batch if it’s incomplete.</p></li>
 <li><p><strong>local_shuffle_buffer_size</strong> – If not <code class="docutils literal notranslate"><span class="pre">None</span></code>, the data is randomly shuffled
 using a local in-memory shuffle buffer, and this value serves as the
@@ -880,6 +1015,7 @@ minimum number of rows that must be in the local in-memory shuffle
 buffer in order to yield a batch. When there are no more rows to add to
 the buffer, the remaining rows in the buffer are drained.</p></li>
 <li><p><strong>local_shuffle_seed</strong> – The seed to use for the local random shuffle.</p></li>
+<li><p><strong>_collate_fn</strong> – A custom function to collate each batch of data.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -932,7 +1068,7 @@ stateful Xpark actors. For more information, see
 <p class="admonition-title">Warning</p>
 <p>Specifying both <code class="docutils literal notranslate"><span class="pre">num_cpus</span></code> and <code class="docutils literal notranslate"><span class="pre">num_gpus</span></code> for map tasks is experimental,
 and may result in scheduling or stability issues. Please
-report any issues
+<a href="#id3"><span class="problematic" id="id4">`</span></a>report any issues &lt;
 to the Xpark team.</p>
 </div>
 <p class="rubric">Examples</p>
@@ -996,7 +1132,7 @@ dynamic arguments for each actor/task, and will be called each time prior
 to initializing the worker. Args returned from this dict will always
 override the args in <code class="docutils literal notranslate"><span class="pre">ray_remote_args</span></code>. Note: this is an advanced,
 experimental feature.</p></li>
-<li><p><strong>ray_remote_args</strong> – Additional resource requirements to request from
+<li><p><strong>**ray_remote_args</strong> – Additional resource requirements to request from
 Xpark for each map worker. See <code class="xref py py-func docutils literal notranslate"><span class="pre">ray.remote()</span></code> for details.</p></li>
 </ul>
 </dd>
@@ -1004,19 +1140,24 @@ Xpark for each map worker. See <code class="xref py py-func docutils literal not
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">flat_map()</span></code></dt><dd><p>Call this method to create new rows from existing ones. Unlike
+<dt><a class="reference internal" href="#xpark.dataset.Dataset.flat_map" title="xpark.dataset.Dataset.flat_map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flat_map()</span></code></a></dt><dd><p>Call this method to create new rows from existing ones. Unlike
 <a class="reference internal" href="#xpark.dataset.Dataset.map" title="xpark.dataset.Dataset.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a>, a function passed to
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">flat_map()</span></code> can return multiple rows.</p>
+<a class="reference internal" href="#xpark.dataset.Dataset.flat_map" title="xpark.dataset.Dataset.flat_map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flat_map()</span></code></a> can return multiple rows.</p>
 </dd>
 <dt><a class="reference internal" href="#xpark.dataset.Dataset.map_batches" title="xpark.dataset.Dataset.map_batches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map_batches()</span></code></a></dt><dd><p>Call this method to transform batches of data.</p>
 </dd>
 </dl>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> with the transformation applied to each row.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.Dataset.map_batches">
-<span class="sig-name descname"><span class="pre">map_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">_CallableClassProtocol</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'default'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ComputeStrategy</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_copy_batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_constructor_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_constructor_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_gpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">udf_modifying_row_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ray_remote_args_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ray_remote_args</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><span class="pre">Dataset</span></a></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.map_batches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.map_batches" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">map_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">cudf.DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">cudf.DataFrame</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">cudf.DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">cudf.DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">_CallableClassProtocol</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'default'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ComputeStrategy</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_copy_batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_constructor_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_constructor_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_gpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">udf_modifying_row_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ray_remote_args_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ray_remote_args</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><span class="pre">Dataset</span></a></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.map_batches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.map_batches" title="Link to this definition">#</a></dt>
 <dd><p>Apply the given function to batches of data.</p>
 <p>This method is useful for preprocessing data and performing inference. To learn
 more, see <span class="xref std std-ref">Transforming batches</span>.</p>
@@ -1045,7 +1186,7 @@ a zero-copy view.</p>
 <p class="admonition-title">Warning</p>
 <p>Specifying both <code class="docutils literal notranslate"><span class="pre">num_cpus</span></code> and <code class="docutils literal notranslate"><span class="pre">num_gpus</span></code> for map tasks is experimental,
 and may result in scheduling or stability issues. Please
-report any issues
+<a href="#id5"><span class="problematic" id="id6">`</span></a>report any issues &lt;
 to the Xpark team.</p>
 </div>
 <p class="rubric">Examples</p>
@@ -1147,8 +1288,10 @@ to a given map task. Default <code class="docutils literal notranslate"><span cl
 <li><p><strong>batch_format</strong> – If <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;numpy&quot;</span></code>, batches are
 <code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">numpy.ndarray]</span></code>. If <code class="docutils literal notranslate"><span class="pre">&quot;pandas&quot;</span></code>, batches are
 <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. If <code class="docutils literal notranslate"><span class="pre">&quot;pyarrow&quot;</span></code>, batches are
-<code class="docutils literal notranslate"><span class="pre">pyarrow.Table</span></code>. If <code class="docutils literal notranslate"><span class="pre">batch_format</span></code> is set to <code class="docutils literal notranslate"><span class="pre">None</span></code> input
-block format will be used.</p></li>
+<code class="docutils literal notranslate"><span class="pre">pyarrow.Table</span></code>. If <code class="docutils literal notranslate"><span class="pre">&quot;cudf&quot;</span></code> [Experimental], batches are
+<code class="docutils literal notranslate"><span class="pre">cudf.DataFrame</span></code> (requires cudf to be installed).
+If <code class="docutils literal notranslate"><span class="pre">batch_format</span></code> is set to <code class="docutils literal notranslate"><span class="pre">None</span></code> input block format
+will be used.</p></li>
 <li><p><strong>zero_copy_batch</strong> – Whether <code class="docutils literal notranslate"><span class="pre">fn</span></code> should be provided zero-copy, read-only
 batches. If this is <code class="docutils literal notranslate"><span class="pre">True</span></code> and no copy is required for the
 <code class="docutils literal notranslate"><span class="pre">batch_format</span></code> conversion, the batch is a zero-copy, read-only
@@ -1183,7 +1326,7 @@ dynamic arguments for each actor/task, and will be called each time prior
 to initializing the worker. Args returned from this dict will always
 override the args in <code class="docutils literal notranslate"><span class="pre">ray_remote_args</span></code>. Note: this is an advanced,
 experimental feature.</p></li>
-<li><p><strong>ray_remote_args</strong> – Additional resource requirements to request from
+<li><p><strong>**ray_remote_args</strong> – Additional resource requirements to request from
 Xpark for each map worker. See <code class="xref py py-func docutils literal notranslate"><span class="pre">ray.remote()</span></code> for details.</p></li>
 </ul>
 </dd>
@@ -1209,14 +1352,19 @@ will receive entire input block as a batch.</p>
 in the same format as will be passed to the <cite>fn</cite> function of
 <a class="reference internal" href="#xpark.dataset.Dataset.map_batches" title="xpark.dataset.Dataset.map_batches"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map_batches()</span></code></a>.</p>
 </dd>
-<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">flat_map()</span></code></dt><dd><p>Call this method to create new records from existing ones. Unlike
-<a class="reference internal" href="#xpark.dataset.Dataset.map" title="xpark.dataset.Dataset.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a>, a function passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">flat_map()</span></code>
+<dt><a class="reference internal" href="#xpark.dataset.Dataset.flat_map" title="xpark.dataset.Dataset.flat_map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flat_map()</span></code></a></dt><dd><p>Call this method to create new records from existing ones. Unlike
+<a class="reference internal" href="#xpark.dataset.Dataset.map" title="xpark.dataset.Dataset.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a>, a function passed to <a class="reference internal" href="#xpark.dataset.Dataset.flat_map" title="xpark.dataset.Dataset.flat_map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">flat_map()</span></code></a>
 can return multiple records.</p>
 </dd>
 <dt><a class="reference internal" href="#xpark.dataset.Dataset.map" title="xpark.dataset.Dataset.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a></dt><dd><p>Call this method to transform one record at time.</p>
 </dd>
 </dl>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> with the transformation applied to each batch.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1420,8 +1568,55 @@ containing the column-wise min of the provided columns.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.Dataset.random_sample">
+<span class="sig-name descname"><span class="pre">random_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fraction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">RandomSeedConfig</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.random_sample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.random_sample" title="Link to this definition">#</a></dt>
+<dd><p>Returns a new <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> containing a random fraction of the rows.
+In other words, this method “randomly filters” the rows of the dataset without
+shuffling (i.e., changing the order of the rows).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method returns roughly <code class="docutils literal notranslate"><span class="pre">fraction</span> <span class="pre">*</span> <span class="pre">total_rows</span></code> rows. An exact number
+of rows isn’t guaranteed.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomSeedConfig</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds1</span> <span class="o">=</span> <span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds1</span><span class="o">.</span><span class="n">random_sample</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Deterministic across executions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds2</span> <span class="o">=</span> <span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds2</span><span class="o">.</span><span class="n">random_sample</span><span class="p">(</span><span class="mf">0.123</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[{&#39;id&#39;: 2}, {&#39;id&#39;: 9}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds2</span><span class="o">.</span><span class="n">random_sample</span><span class="p">(</span><span class="mf">0.123</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[{&#39;id&#39;: 2}, {&#39;id&#39;: 9}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Different sample each execution</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds2</span><span class="o">.</span><span class="n">random_sample</span><span class="p">(</span><span class="mf">0.123</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">RandomSeedConfig</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">reseed_after_execution</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[{&#39;id&#39;: 2}, {&#39;id&#39;: 9}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds2</span><span class="o">.</span><span class="n">random_sample</span><span class="p">(</span><span class="mf">0.123</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">RandomSeedConfig</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">reseed_after_execution</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[{&#39;id&#39;: 15}, {&#39;id&#39;: 23}]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fraction</strong> – The fraction of elements to sample. It must be between 0 and 1 (inclusive).</p></li>
+<li><p><strong>seed</strong> – An optional random seed. Can be an integer or a <code class="xref py py-class docutils literal notranslate"><span class="pre">RandomSeedConfig</span></code>
+object. If an integer is provided, it defaults to fully deterministic
+behavior (same sample across executions). If None, the sample
+is non-deterministic. See <code class="xref py py-class docutils literal notranslate"><span class="pre">RandomSeedConfig</span></code> for more details on
+seed behavior.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> containing the sampled rows.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.Dataset.repartition">
-<span class="sig-name descname"><span class="pre">repartition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_num_rows_per_block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.repartition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.repartition" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">repartition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_num_rows_per_block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.repartition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.repartition" title="Link to this definition">#</a></dt>
 <dd><p>Repartition the <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> into exactly this number of
 <a class="reference external" href="https://docs.ray.io/en/latest/data/data-internals.html#dataset-concept">blocks</a>.</p>
 <p>This method can be useful to tune the performance of your pipeline. To learn
@@ -1465,6 +1660,13 @@ optimal execution, based on the <cite>target_num_rows_per_block</cite>. This is
 the current behavior because of the implementation and may change in
 the future.</p>
 </p></li>
+<li><p><strong>strict</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">repartition</span></code> guarantees that all output blocks,
+except for the last one, will have exactly <code class="docutils literal notranslate"><span class="pre">target_num_rows_per_block</span></code> rows.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">repartition</span></code> uses best-effort bundling and may produce at most
+one block smaller than <code class="docutils literal notranslate"><span class="pre">target_num_rows_per_block</span></code> per input block without
+forcing exact sizes through block splitting.
+This parameter is only used with <code class="docutils literal notranslate"><span class="pre">target_num_rows_per_block</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 <li><p><strong>shuffle</strong> – Whether to perform a distributed shuffle during the
 repartition. When shuffle is enabled, each output block
 contains a subset of data rows from each input block, which
@@ -1560,10 +1762,13 @@ you might be able to speed it up by using projection pushdown; see
 dataset schema, an exception is raised. Columns also should be unique.</p></li>
 <li><p><strong>compute</strong> – This argument is deprecated. Use <code class="docutils literal notranslate"><span class="pre">concurrency</span></code> argument.</p></li>
 <li><p><strong>concurrency</strong> – The maximum number of Xpark workers to use concurrently.</p></li>
-<li><p><strong>ray_remote_args</strong> – Additional resource requirements to request from
+<li><p><strong>**ray_remote_args</strong> – Additional resource requirements to request from
 Xpark (e.g., num_gpus=1 to request GPUs for the map tasks). See
 <code class="xref py py-func docutils literal notranslate"><span class="pre">ray.remote()</span></code> for details.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> composed with the specified columns.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1889,7 +2094,7 @@ machine. If the dataset is large, this method can cause an
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.Dataset.take_batch">
-<span class="sig-name descname"><span class="pre">take_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.take_batch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.take_batch" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">take_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pyarrow.Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">cudf.DataFrame</span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.take_batch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.take_batch" title="Link to this definition">#</a></dt>
 <dd><p>Return up to <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> rows from the <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> in a batch.</p>
 <p>Xpark Dataset represents batches as NumPy arrays or pandas DataFrames. You can
 configure the batch type by specifying <code class="docutils literal notranslate"><span class="pre">batch_format</span></code>.</p>
@@ -1918,7 +2123,9 @@ machine. If <code class="docutils literal notranslate"><span class="pre">batch_s
 <li><p><strong>batch_size</strong> – The maximum number of rows to return.</p></li>
 <li><p><strong>batch_format</strong> – If <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;numpy&quot;</span></code>, batches are
 <code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">numpy.ndarray]</span></code>. If <code class="docutils literal notranslate"><span class="pre">&quot;pandas&quot;</span></code>, batches are
-<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. If <code class="docutils literal notranslate"><span class="pre">&quot;pyarrow&quot;</span></code>, batches are
+<code class="docutils literal notranslate"><span class="pre">pyarrow.Table</span></code>. If <code class="docutils literal notranslate"><span class="pre">&quot;cudf&quot;</span></code> [Experimental], batches are
+<code class="docutils literal notranslate"><span class="pre">cudf.DataFrame</span></code>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1999,6 +2206,44 @@ number of rows.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.Dataset.to_ray_dataset">
+<span class="sig-name descname"><span class="pre">to_ray_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.to_ray_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.to_ray_dataset" title="Link to this definition">#</a></dt>
+<dd><p>Return the underlying Ray Dataset.</p>
+<p>This is useful for advanced users who want to use Ray Dataset APIs directly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.Dataset.union">
+<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.union"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.union" title="Link to this definition">#</a></dt>
+<dd><p>Concatenate <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Datasets</span></code></a> across rows.</p>
+<p>The order of the blocks in the datasets is preserved, as is the
+relative ordering between the datasets passed in the argument list.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Unioned datasets aren’t lineage-serializable. As a result, they can’t be
+used as a tunable hyperparameter in Xpark Tune.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds1</span> <span class="o">=</span> <span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds2</span> <span class="o">=</span> <span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">ds2</span><span class="p">)</span><span class="o">.</span><span class="n">take_all</span><span class="p">()</span>
+<span class="go">[{&#39;id&#39;: 0}, {&#39;id&#39;: 1}, {&#39;id&#39;: 0}, {&#39;id&#39;: 1}, {&#39;id&#39;: 2}]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*other</strong> – The datasets to combine with this one. The datasets
+must have the same schema as this dataset, otherwise the
+behavior is undefined.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new dataset holding the rows of the input datasets.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.Dataset.unique">
 <span class="sig-name descname"><span class="pre">unique</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nulls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.unique"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.unique" title="Link to this definition">#</a></dt>
 <dd><p>List the unique elements in a given column.</p>
@@ -2053,7 +2298,7 @@ into integers for training and inference:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.Dataset.with_column">
-<span class="sig-name descname"><span class="pre">with_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ray_remote_args</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.dataset.Dataset"><span class="pre">Dataset</span></a></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.with_column"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.with_column" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">with_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expr</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ComputeStrategy</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">ray_remote_args</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.dataset.Dataset"><span class="pre">Dataset</span></a></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.with_column"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.with_column" title="Link to this definition">#</a></dt>
 <dd><p>Add a new column to the dataset via an expression.</p>
 <p>This method allows you to add a new column to a dataset by applying an
 expression. The expression can be composed of existing columns, literals,
@@ -2101,6 +2346,17 @@ and user-defined functions (UDFs).</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>column_name</strong> – The name of the new column.</p></li>
 <li><p><strong>expr</strong> – An expression that defines the new column values.</p></li>
+<li><p><strong>compute</strong> – <p>The compute strategy to use for the projection operation.
+If not specified and the expression contains callable class UDFs,
+Xpark Dataset automatically uses <code class="docutils literal notranslate"><span class="pre">ActorPoolStrategy</span></code> for actor semantics.
+Otherwise, uses <code class="docutils literal notranslate"><span class="pre">TaskPoolStrategy</span></code>.</p>
+<ul>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ray.data.ActorPoolStrategy(size=n)</span></code> to use a fixed size
+actor pool of <code class="docutils literal notranslate"><span class="pre">n</span></code> workers.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ray.data.ActorPoolStrategy(min_size=m,</span> <span class="pre">max_size=n)</span></code> to use
+an autoscaling actor pool from <code class="docutils literal notranslate"><span class="pre">m</span></code> to <code class="docutils literal notranslate"><span class="pre">n</span></code> workers.</p></li>
+</ul>
+</p></li>
 <li><p><strong>**ray_remote_args</strong> – Additional resource requirements to request from
 Ray for the map tasks (e.g., <cite>num_gpus=1</cite>).</p></li>
 </ul>
@@ -2181,13 +2437,13 @@ to control number of tasks to run concurrently. This doesn’t change the
 total number of tasks run. By default, concurrency is dynamically
 decided based on the available resources.</p></li>
 <li><p><strong>num_rows_per_file</strong> – [Deprecated] Use min_rows_per_file instead.</p></li>
-<li><p><strong>arrow_csv_args</strong> – <p>Options to pass to <a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.csv.write_csv.html#pyarrow.csv.write_csv">pyarrow.write.write_csv</a>
-when writing each block to a file.</p>
-</p></li>
 <li><p><strong>mode</strong> – Determines how to handle existing files. Valid modes are “overwrite”, “error”,
 “ignore”, “append”. Defaults to “append”.
 NOTE: This method isn’t atomic. “Overwrite” first deletes all the data
 before writing to <cite>path</cite>.</p></li>
+<li><p><strong>**arrow_csv_args</strong> – <p>Options to pass to <a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.csv.write_csv.html#pyarrow.csv.write_csv">pyarrow.write.write_csv</a>
+when writing each block to a file.</p>
+</p></li>
 </ul>
 </dd>
 </dl>
@@ -2366,16 +2622,16 @@ to control number of tasks to run concurrently. This doesn’t change the
 total number of tasks run. By default, concurrency is dynamically
 decided based on the available resources.</p></li>
 <li><p><strong>num_rows_per_file</strong> – Deprecated. Use <code class="docutils literal notranslate"><span class="pre">min_rows_per_file</span></code> instead.</p></li>
-<li><p><strong>pandas_json_args</strong> – <p>These args are passed to
+<li><p><strong>mode</strong> – Determines how to handle existing files. Valid modes are “overwrite”, “error”,
+“ignore”, “append”. Defaults to “append”.
+NOTE: This method isn’t atomic. “Overwrite” first deletes all the data
+before writing to <cite>path</cite>.</p></li>
+<li><p><strong>**pandas_json_args</strong> – <p>These args are passed to
 <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_json.html">pandas.DataFrame.to_json()</a>,
 which is used under the hood to write out each
 <a class="reference internal" href="#xpark.dataset.Dataset" title="xpark.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> block. These
 are dict(orient=”records”, lines=True) by default.</p>
 </p></li>
-<li><p><strong>mode</strong> – Determines how to handle existing files. Valid modes are “overwrite”, “error”,
-“ignore”, “append”. Defaults to “append”.
-NOTE: This method isn’t atomic. “Overwrite” first deletes all the data
-before writing to <cite>path</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2383,7 +2639,7 @@ before writing to <cite>path</cite>.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.Dataset.write_lance">
-<span class="sig-name descname"><span class="pre">write_lance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyarrow.Schema</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'create'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'append'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'overwrite'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'create'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_rows_per_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1048576</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_per_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">67108864</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_storage_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ray_remote_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.write_lance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.write_lance" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">write_lance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyarrow.Schema</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SaveMode</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">SaveMode.CREATE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_rows_per_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1048576</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_per_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">67108864</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_storage_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace_impl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace_properties</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ray_remote_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.write_lance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.write_lance" title="Link to this definition">#</a></dt>
 <dd><p>Write the dataset to a Lance dataset.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2398,9 +2654,12 @@ before writing to <cite>path</cite>.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>path</strong> – The path to the destination Lance dataset.</p></li>
+<li><p><strong>path</strong> – The path to the destination Lance dataset. Ignored when namespace
+parameters are provided; the namespace-resolved location is used.</p></li>
 <li><p><strong>schema</strong> – The schema of the dataset. If not provided, it is inferred from the data.</p></li>
-<li><p><strong>mode</strong> – The write mode. Can be “create”, “append”, or “overwrite”.</p></li>
+<li><p><strong>mode</strong> – The write mode using SaveMode enum:
+SaveMode.CREATE, SaveMode.APPEND, or SaveMode.OVERWRITE.
+Namespace-backed writes currently support only SaveMode.CREATE.</p></li>
 <li><p><strong>min_rows_per_file</strong> – The minimum number of rows per file.</p></li>
 <li><p><strong>max_rows_per_file</strong> – The maximum number of rows per file.</p></li>
 <li><p><strong>data_storage_version</strong> – The version of the data storage format to use. Newer versions are more
@@ -2408,6 +2667,16 @@ efficient but require newer versions of lance to read.  The default is
 “legacy” which will use the legacy v1 version.  See the user guide
 for more details.</p></li>
 <li><p><strong>storage_options</strong> – The storage options for the writer. Default is None.</p></li>
+<li><p><strong>table_id</strong> – The table identifier as a list of strings, used with namespace params.</p></li>
+<li><p><strong>namespace_impl</strong> – The namespace implementation type (e.g., “rest”, “dir”).</p></li>
+<li><p><strong>namespace_properties</strong> – Properties for connecting to the namespace.
+When namespace params are provided, only SaveMode.CREATE is
+currently supported.</p></li>
+<li><p><strong>ray_remote_args</strong> – Kwargs passed to <code class="xref py py-func docutils literal notranslate"><span class="pre">ray.remote()</span></code> in the write tasks.</p></li>
+<li><p><strong>concurrency</strong> – The maximum number of Xpark tasks to run concurrently. Set this
+to control number of tasks to run concurrently. This doesn’t change the
+total number of tasks run. By default, concurrency is dynamically
+decided based on the available resources.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2561,14 +2830,14 @@ to control number of tasks to run concurrently. This doesn’t change the
 total number of tasks run. By default, concurrency is dynamically
 decided based on the available resources.</p></li>
 <li><p><strong>num_rows_per_file</strong> – [Deprecated] Use min_rows_per_file instead.</p></li>
-<li><p><strong>arrow_parquet_args</strong> – <p>Options to pass to
-<a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.parquet.ParquetWriter.html">pyarrow.parquet.ParquetWriter()</a>, which is used to write
-out each block to a file. See <cite>arrow_parquet_args_fn</cite> for more detail.</p>
-</p></li>
 <li><p><strong>mode</strong> – Determines how to handle existing files. Valid modes are “overwrite”, “error”,
 “ignore”, “append”. Defaults to “append”.
 NOTE: This method isn’t atomic. “Overwrite” first deletes all the data
 before writing to <cite>path</cite>.</p></li>
+<li><p><strong>**arrow_parquet_args</strong> – <p>Options to pass to
+<a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.parquet.ParquetWriter.html">pyarrow.parquet.ParquetWriter()</a>, which is used to write
+out each block to a file. See <cite>arrow_parquet_args_fn</cite> for more detail.</p>
+</p></li>
 </ul>
 </dd>
 </dl>
@@ -2585,6 +2854,62 @@ See <cite>pyarrow.dataset.partitioning</cite> &lt;<a class="reference external" 
 <a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.parquet.ParquetWriter.html#pyarrow.parquet.ParquetWriter.write_table">pyarrow.parquet.ParquetWriter.write_table()</a>.</p></li>
 </ul>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.Dataset.write_sql">
+<span class="sig-name descname"><span class="pre">write_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection_factory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ray_remote_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/xpark/dataset/dataset.html#Dataset.write_sql"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.Dataset.write_sql" title="Link to this definition">#</a></dt>
+<dd><p>Write to a database that provides a
+<a class="reference external" href="https://peps.python.org/pep-0249/">Python DB API2-compliant</a> connector.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method writes data in parallel using the DB API2 <code class="docutils literal notranslate"><span class="pre">executemany</span></code>
+method. To learn more about this method, see
+<a class="reference external" href="https://peps.python.org/pep-0249/#executemany">PEP 249</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This operation will trigger execution of the lazy transformations performed on this dataset.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xpark</span>
+
+<span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;example.db&quot;</span><span class="p">)</span>
+<span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE movie(title, year, score)&quot;</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">xpark</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">from_items</span><span class="p">([</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Monty Python and the Holy Grail&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1975</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="mf">8.2</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;And Now for Something Completely Different&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1971</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="mf">7.5</span><span class="p">}</span>
+<span class="p">])</span>
+
+<span class="n">dataset</span><span class="o">.</span><span class="n">write_sql</span><span class="p">(</span>
+    <span class="s2">&quot;INSERT INTO movie VALUES(?, ?, ?)&quot;</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;example.db&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM movie ORDER BY year&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[(&#39;And Now for Something Completely Different&#39;, 1971, 7.5), (&#39;Monty Python and the Holy Grail&#39;, 1975, 8.2)]
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sql</strong> – An <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code> statement that specifies the table to write to. The
+number of parameters must match the number of columns in the table.</p></li>
+<li><p><strong>connection_factory</strong> – A function that takes no arguments and returns a
+Python DB API2
+<a class="reference external" href="https://peps.python.org/pep-0249/#connection-objects">Connection object</a>.</p></li>
+<li><p><strong>ray_remote_args</strong> – Keyword arguments passed to <code class="xref py py-func docutils literal notranslate"><span class="pre">ray.remote()</span></code> in the
+write tasks.</p></li>
+<li><p><strong>concurrency</strong> – The maximum number of Xpark tasks to run concurrently. Set this
+to control number of tasks to run concurrently. This doesn’t change the
+total number of tasks run. By default, concurrency is dynamically
+decided based on the available resources.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -2645,6 +2970,7 @@ See <cite>pyarrow.dataset.partitioning</cite> &lt;<a class="reference external" 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.count"><code class="docutils literal notranslate"><span class="pre">Dataset.count()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.drop_columns"><code class="docutils literal notranslate"><span class="pre">Dataset.drop_columns()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.filter"><code class="docutils literal notranslate"><span class="pre">Dataset.filter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.flat_map"><code class="docutils literal notranslate"><span class="pre">Dataset.flat_map()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.groupby"><code class="docutils literal notranslate"><span class="pre">Dataset.groupby()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.input_files"><code class="docutils literal notranslate"><span class="pre">Dataset.input_files()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.iter_batches"><code class="docutils literal notranslate"><span class="pre">Dataset.iter_batches()</span></code></a></li>
@@ -2655,6 +2981,7 @@ See <cite>pyarrow.dataset.partitioning</cite> &lt;<a class="reference external" 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.max"><code class="docutils literal notranslate"><span class="pre">Dataset.max()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.mean"><code class="docutils literal notranslate"><span class="pre">Dataset.mean()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.min"><code class="docutils literal notranslate"><span class="pre">Dataset.min()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.random_sample"><code class="docutils literal notranslate"><span class="pre">Dataset.random_sample()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.repartition"><code class="docutils literal notranslate"><span class="pre">Dataset.repartition()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.schema"><code class="docutils literal notranslate"><span class="pre">Dataset.schema()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.select_columns"><code class="docutils literal notranslate"><span class="pre">Dataset.select_columns()</span></code></a></li>
@@ -2668,6 +2995,8 @@ See <cite>pyarrow.dataset.partitioning</cite> &lt;<a class="reference external" 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.take_batch"><code class="docutils literal notranslate"><span class="pre">Dataset.take_batch()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.to_arrow_refs"><code class="docutils literal notranslate"><span class="pre">Dataset.to_arrow_refs()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.to_pandas"><code class="docutils literal notranslate"><span class="pre">Dataset.to_pandas()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.to_ray_dataset"><code class="docutils literal notranslate"><span class="pre">Dataset.to_ray_dataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.union"><code class="docutils literal notranslate"><span class="pre">Dataset.union()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.unique"><code class="docutils literal notranslate"><span class="pre">Dataset.unique()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.with_column"><code class="docutils literal notranslate"><span class="pre">Dataset.with_column()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.write_csv"><code class="docutils literal notranslate"><span class="pre">Dataset.write_csv()</span></code></a></li>
@@ -2676,6 +3005,7 @@ See <cite>pyarrow.dataset.partitioning</cite> &lt;<a class="reference external" 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.write_lance"><code class="docutils literal notranslate"><span class="pre">Dataset.write_lance()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.write_numpy"><code class="docutils literal notranslate"><span class="pre">Dataset.write_numpy()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.write_parquet"><code class="docutils literal notranslate"><span class="pre">Dataset.write_parquet()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.Dataset.write_sql"><code class="docutils literal notranslate"><span class="pre">Dataset.write_sql()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -2703,8 +3033,8 @@ See <cite>pyarrow.dataset.partitioning</cite> &lt;<a class="reference external" 
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -2738,7 +3068,7 @@ See <cite>pyarrow.dataset.partitioning</cite> &lt;<a class="reference external" 
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

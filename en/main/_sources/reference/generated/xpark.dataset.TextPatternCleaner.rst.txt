@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextPatternCleaner
+================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextPatternCleaner
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextPatternCleaner.__call__
+      ~TextPatternCleaner.options
+      ~TextPatternCleaner.with_column
+   
+   
+
+   
+   
+   

@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.AbsMax
+==============================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: AbsMax
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AbsMax.aggregate_block
+      ~AbsMax.combine
+      ~AbsMax.finalize
+      ~AbsMax.get_agg_name
+      ~AbsMax.get_target_column
+   
+   
+
+   
+   
+   

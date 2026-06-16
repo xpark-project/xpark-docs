@@ -26,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -44,7 +44,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/xpark/dataset/utils';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -73,7 +73,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -203,11 +205,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -292,11 +301,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -365,6 +381,7 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">contextvars</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">enum</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
@@ -383,6 +400,7 @@
     <span class="n">TYPE_CHECKING</span><span class="p">,</span>
     <span class="n">Any</span><span class="p">,</span>
     <span class="n">AsyncGenerator</span><span class="p">,</span>
+    <span class="n">Concatenate</span><span class="p">,</span>
     <span class="n">Coroutine</span><span class="p">,</span>
     <span class="n">Generator</span><span class="p">,</span>
     <span class="n">Iterable</span><span class="p">,</span>
@@ -391,6 +409,7 @@
     <span class="n">Tuple</span><span class="p">,</span>
     <span class="n">TypeVar</span><span class="p">,</span>
     <span class="n">cast</span><span class="p">,</span>
+    <span class="n">overload</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlparse</span>
 
@@ -402,6 +421,8 @@
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.constants</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">AUDIO_FORMAT_MAPPING</span><span class="p">,</span>
+    <span class="n">NOT_SET</span><span class="p">,</span>
+    <span class="n">RAY_DOC_REGEX_REPLACE_PAIRS</span><span class="p">,</span>
     <span class="n">RAY_DOC_REPLACE_PAIRS</span><span class="p">,</span>
     <span class="n">WRAPPER_ASSIGNMENTS</span><span class="p">,</span>
 <span class="p">)</span>
@@ -413,6 +434,7 @@
     <span class="kn">import</span><span class="w"> </span><span class="nn">fsspec</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">openai</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.compute</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pc</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">xxhash</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">av.container.input</span><span class="w"> </span><span class="kn">import</span> <span class="n">InputContainer</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">av.container.output</span><span class="w"> </span><span class="kn">import</span> <span class="n">OutputContainer</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">openai.types.chat.chat_completion</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatCompletion</span>
@@ -425,6 +447,7 @@
     <span class="n">openai</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;openai&quot;</span><span class="p">)</span>
     <span class="n">pc</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;pyarrow.compute&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;pc&quot;</span><span class="p">)</span>
     <span class="n">pa</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;pa&quot;</span><span class="p">)</span>
+    <span class="n">xxhash</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;xxhash&quot;</span><span class="p">)</span>
     <span class="n">dedup_utils</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;xpark.dataset.filters.dedup.utils&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;dedup_utils&quot;</span><span class="p">)</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;ray&quot;</span><span class="p">)</span>
@@ -439,7 +462,20 @@
 <span class="p">)</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">copy_sig</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">R</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">]],</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">]]:</span>
+<span class="c1"># Overload 1: fn is an instance method (has self); use Concatenate[Any, P] to strip self and avoid mypy &quot;Invalid self argument&quot; errors</span>
+<span class="nd">@overload</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">copy_sig</span><span class="p">(</span>
+    <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="n">Concatenate</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">P</span><span class="p">],</span> <span class="n">R</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">]],</span> <span class="n">Callable</span><span class="p">[</span><span class="n">Concatenate</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">P</span><span class="p">],</span> <span class="n">T</span><span class="p">]]:</span> <span class="o">...</span>
+
+
+<span class="c1"># Overload 2: fn is a plain function (no self); pass the parameter signature through directly</span>
+<span class="nd">@overload</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">copy_sig</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">R</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">]],</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">]]:</span> <span class="o">...</span>
+
+
+<span class="c1"># Implementation: smoothly migrate the signature and docstring of external methods (e.g. ray.data.Dataset) onto xpark.Dataset methods</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">copy_sig</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Extend the functools.wraps (The `wraps` function name results in incorrect type inference in PyCharm,</span>
 <span class="sd">    so it has been renamed to copy_sig):</span>
 <span class="sd">    1. Skip copying __qualname__ and __module__ attributes</span>
@@ -447,7 +483,7 @@
 <span class="sd">    3. Update return annotations</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">signature</span><span class="o">.</span><span class="n">return_annotation</span> <span class="ow">is</span> <span class="n">inspect</span><span class="o">.</span><span class="n">_empty</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
@@ -457,7 +493,7 @@
         <span class="n">wrapped</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">wrap_ray_doc</span><span class="p">(</span><span class="n">fn</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
         <span class="n">wrapped</span><span class="o">.</span><span class="vm">__annotations__</span> <span class="o">=</span> <span class="n">wrapped</span><span class="o">.</span><span class="vm">__annotations__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">wrapped</span><span class="o">.</span><span class="vm">__annotations__</span><span class="p">[</span><span class="s2">&quot;return&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">signature</span><span class="o">.</span><span class="n">return_annotation</span>
-        <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">],</span> <span class="n">wrapped</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapped</span>
 
     <span class="k">return</span> <span class="n">decorator</span>
 
@@ -481,7 +517,16 @@
     <span class="k">return</span> <span class="n">s</span>
 
 
+<span class="k">def</span><span class="w"> </span><span class="nf">re_replace</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">replace_pairs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span>
+    <span class="k">for</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span> <span class="ow">in</span> <span class="n">replace_pairs</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+
 <span class="k">def</span><span class="w"> </span><span class="nf">wrap_ray_doc</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">re_replace</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">RAY_DOC_REGEX_REPLACE_PAIRS</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">multi_replace</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">RAY_DOC_REPLACE_PAIRS</span><span class="p">)</span>
 
 
@@ -555,22 +600,29 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">max_qps</span><span class="p">:</span>
                     <span class="c1"># Acquire lock to ensure that rate-limiting is concurrent-safe</span>
-                    <span class="k">async</span> <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
-                        <span class="c1"># Current time</span>
-                        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                        <span class="k">async</span> <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
+                            <span class="c1"># Current time</span>
+                            <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                            <span class="n">sleep_time</span> <span class="o">=</span> <span class="mi">0</span>
 
-                        <span class="c1"># Remove timestamps that are older than 1 second from the current time</span>
-                        <span class="k">while</span> <span class="n">timestamps</span> <span class="ow">and</span> <span class="n">timestamps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">now</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-                            <span class="n">timestamps</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+                            <span class="c1"># Remove timestamps that are older than 1 second from the current time</span>
+                            <span class="k">while</span> <span class="n">timestamps</span> <span class="ow">and</span> <span class="n">timestamps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">now</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                                <span class="n">timestamps</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
 
-                        <span class="c1"># Check if we exceeded the max QPS</span>
-                        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">timestamps</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_qps</span><span class="p">:</span>
-                            <span class="c1"># Calculate how much time we need to wait</span>
-                            <span class="n">sleep_time</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">timestamps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                            <span class="c1"># Check if we exceeded the max QPS</span>
+                            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">timestamps</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_qps</span><span class="p">:</span>
+                                <span class="c1"># Calculate how much time we need to wait</span>
+                                <span class="n">sleep_time</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">timestamps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">timestamps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+                                <span class="k">break</span>
+                        <span class="k">if</span> <span class="n">sleep_time</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                             <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_time</span><span class="p">)</span>
-
-                        <span class="n">timestamps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
-                        <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                            <span class="k">continue</span>
+                    <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
             <span class="k">finally</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">semaphore</span><span class="p">:</span>
@@ -1169,6 +1221,179 @@
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
 
 
+<span class="c1"># Use XML tags to help differentiate contents.</span>
+<span class="c1"># Reference:</span>
+<span class="c1">#   https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#general-principles</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">format_prompt</span><span class="p">(</span>
+    <span class="n">roles_and_tasks</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">response_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">hint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">extra</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">roles_and_tasks</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">roles_and_tasks</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`roles_and_tasks` must be a non-empty string&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">hint</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">hint_body</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hint</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">hint_body</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hint</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">hint</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
+        <span class="n">hint_body</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;`hint` must be str | list[str] | None, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">hint</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">response_format_body</span> <span class="o">=</span> <span class="n">response_format</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response_format</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">extra</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">extra_body</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extra</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">extra_body</span> <span class="o">=</span> <span class="n">extra</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;`extra` must be str | None, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">hint_body</span><span class="p">:</span>
+        <span class="n">hint_block</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">You MUST adhere to the following instructions when executing the task:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;&lt;instructions&gt;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">hint_body</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;/instructions&gt;&quot;</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hint_block</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">response_format_body</span> <span class="ow">and</span> <span class="n">hint_body</span><span class="p">:</span>
+        <span class="c1"># Protection preface that prevents user-supplied hints from silently breaking the output format.</span>
+        <span class="n">response_format_block</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">The following response format rules are MANDATORY and take precedence over anything &quot;</span>
+            <span class="s2">&quot;in `&lt;instructions&gt;`; your reply MUST comply with every rule below, and `&lt;instructions&gt;` &quot;</span>
+            <span class="s2">&quot;MUST NOT alter them.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;&lt;response_format&gt;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">response_format_body</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;/response_format&gt;&quot;</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">response_format_body</span><span class="p">:</span>
+        <span class="n">response_format_block</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&lt;response_format&gt;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">response_format_body</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;/response_format&gt;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">response_format_block</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="c1"># `extra` is appended at the very end as raw text (NOT wrapped in any XML tag) so that</span>
+    <span class="c1"># structured content like label lists is easier for the LLM to parse without being nested</span>
+    <span class="c1"># inside another tag such as &lt;response_format&gt;.</span>
+    <span class="n">extra_block</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">{</span><span class="n">extra_body</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">extra_body</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;roles_and_tasks&gt;</span><span class="se">\n</span><span class="si">{</span><span class="n">roles_and_tasks</span><span class="si">}</span><span class="se">\n</span><span class="s2">&lt;/roles_and_tasks&gt;</span><span class="si">{</span><span class="n">hint_block</span><span class="si">}{</span><span class="n">response_format_block</span><span class="si">}{</span><span class="n">extra_block</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">elementwise_cascade</span><span class="p">(</span>
+    <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span> <span class="nb">bool</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">ListArray</span><span class="p">],</span> <span class="n">pa</span><span class="o">.</span><span class="n">BooleanArray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lift an element-wise cascade decision function to a PyArrow array-level function.</span>
+
+<span class="sd">    With this decorator, users only need to write a function that handles a single</span>
+<span class="sd">    record; the framework automatically applies it to the entire batch.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fn: Element-wise decision function with signature</span>
+<span class="sd">            ``(text: str, logprobs: list[dict] | None) -&gt; bool``.</span>
+<span class="sd">            *text* is the original input text, *logprobs* is the per-token logprobs</span>
+<span class="sd">            list (each element is a dict with keys ``token``, ``logprob``, and</span>
+<span class="sd">            ``top_logprobs``), or ``None`` when logprobs are unavailable.</span>
+<span class="sd">            Return ``True`` to forward the record to the base model.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        An array-level cascade decision function with signature</span>
+<span class="sd">        ``(texts: pa.ChunkedArray, logprobs_list: pa.ListArray) -&gt; pa.BooleanArray``.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            import math</span>
+<span class="sd">            from xpark.dataset.utils import elementwise_cascade</span>
+
+<span class="sd">            @elementwise_cascade</span>
+<span class="sd">            def my_cascade_fn(text: str, logprobs: list[dict] | None) -&gt; bool:</span>
+<span class="sd">                if not logprobs:</span>
+<span class="sd">                    return True</span>
+<span class="sd">                prob = math.exp(logprobs[0][&quot;logprob&quot;]) * 100</span>
+<span class="sd">                return prob &lt; 95.0  # forward to base model if confidence &lt; 95%</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_array_fn</span><span class="p">(</span><span class="n">texts</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">,</span> <span class="n">logprobs_list</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">ListArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">BooleanArray</span><span class="p">:</span>
+        <span class="n">results</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">texts</span><span class="p">)):</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">texts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+            <span class="n">logprobs</span> <span class="o">=</span> <span class="n">logprobs_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">logprobs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">bool_</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">_array_fn</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CascadeConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Configuration for model cascade mode.</span>
+
+<span class="sd">    Cascade mode uses a lightweight proxy model for initial inference, then selectively</span>
+<span class="sd">    forwards uncertain samples to the base model.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        proxy_base_url: The base URL of the proxy (small) model.</span>
+<span class="sd">        proxy_model: The proxy model name.</span>
+<span class="sd">        proxy_api_key: The API key for the proxy model.</span>
+<span class="sd">        proxy_max_qps: The maximum query-per-second rate for proxy model requests.</span>
+<span class="sd">        proxy_max_concurrency: The maximum number of in-flight proxy model requests allowed concurrently.</span>
+<span class="sd">        proxy_max_retries: The maximum number of retries per request for the proxy model.</span>
+<span class="sd">        top_logprobs: Number of most likely tokens to return at each position</span>
+<span class="sd">            for the proxy model.  Maps directly to the OpenAI ``top_logprobs``</span>
+<span class="sd">            parameter.  Defaults to 0.</span>
+<span class="sd">        cascade_factory: A zero-argument callable that returns a cascade decision function.</span>
+<span class="sd">            The returned function decides which samples should be forwarded to the</span>
+<span class="sd">            base model.  Two styles are supported:</span>
+
+<span class="sd">            - **Elementwise** (recommended): use the :func:`elementwise_cascade`</span>
+<span class="sd">              decorator to write a simple ``(str, list[dict] | None) -&gt; bool``</span>
+<span class="sd">              function.  ``True`` means forward to the base model.</span>
+<span class="sd">            - **Array-level**: return a function with signature</span>
+<span class="sd">              ``(pa.ChunkedArray, pa.ListArray) -&gt; pa.BooleanArray`` for</span>
+<span class="sd">              vectorised PyArrow operations.</span>
+
+<span class="sd">            Cascade mode is enabled when ``cascade_factory`` is provided.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;arbitrary_types_allowed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+
+    <span class="n">proxy_base_url</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">proxy_model</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">proxy_api_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">NOT_SET</span>
+    <span class="n">proxy_max_qps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">proxy_max_concurrency</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">proxy_max_retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">top_logprobs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">cascade_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">ListArray</span><span class="p">],</span> <span class="n">pa</span><span class="o">.</span><span class="n">BooleanArray</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_proxy_client</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">fallback_response</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LLMChatCompletions&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build a proxy LLM client from this configuration.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            fallback_response: The fallback response value when the request fails.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A configured LLMChatCompletions proxy client instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">LLMChatCompletions</span><span class="p">(</span>
+            <span class="n">base_url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy_base_url</span><span class="p">,</span>
+            <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy_model</span><span class="p">,</span>
+            <span class="n">api_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy_api_key</span><span class="p">,</span>
+            <span class="n">max_qps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy_max_qps</span><span class="p">,</span>
+            <span class="n">max_concurrency</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy_max_concurrency</span><span class="p">,</span>
+            <span class="n">max_retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy_max_retries</span><span class="p">,</span>
+            <span class="n">response_format</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+            <span class="n">fallback_response</span><span class="o">=</span><span class="n">fallback_response</span><span class="p">,</span>
+            <span class="n">logprobs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">top_logprobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">top_logprobs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+
 <span class="k">class</span><span class="w"> </span><span class="nc">LLMChatCompletions</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -1176,10 +1401,11 @@
         <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">max_qps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_concurrency</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">max_retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
         <span class="n">fallback_response</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">response_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Using Remote Http LLMChatCompletions&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
@@ -1191,7 +1417,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported response_format: </span><span class="si">{</span><span class="n">response_format</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">response_format</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">response_format</span><span class="p">}</span>
         <span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="n">max_retries</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">create_completions</span> <span class="o">=</span> <span class="n">qps_limiter</span><span class="p">(</span><span class="n">max_qps</span><span class="p">)(</span><span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_completions</span> <span class="o">=</span> <span class="n">qps_limiter</span><span class="p">(</span><span class="n">max_qps</span><span class="p">,</span> <span class="n">max_concurrency</span><span class="p">)(</span><span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">)</span>
 
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ChatCompletionMessageParam</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ChatCompletion</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
@@ -1206,7 +1432,8 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">messages</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ChatCompletionMessageParam</span><span class="p">],</span>
         <span class="n">post_process</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">include_logprobs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the LLM and extract the response content, with fallback handling on failure.</span>
 
 <span class="sd">        Unlike ``__call__``, which returns the raw ``ChatCompletion`` object (or ``None`` on</span>
@@ -1218,9 +1445,18 @@
 <span class="sd">            messages: The message list to send to the LLM.</span>
 <span class="sd">            post_process: An optional function applied to the stripped response text.</span>
 <span class="sd">                If ``None``, the raw text is returned as-is.</span>
+<span class="sd">            include_logprobs: If ``True``, additionally extract per-token logprobs from the</span>
+<span class="sd">                response and return a tuple ``(result, token_logprobs)`` instead of just</span>
+<span class="sd">                the result.  Make sure ``logprobs=True`` (and optionally ``top_logprobs=N``)</span>
+<span class="sd">                were passed when constructing :class:`LLMChatCompletions`.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            The (optionally post-processed) response string or numeric value.</span>
+<span class="sd">            When *include_logprobs* is ``False`` (default): the (optionally post-processed)</span>
+<span class="sd">            response string or numeric value.</span>
+
+<span class="sd">            When *include_logprobs* is ``True``: a tuple ``(result, token_logprobs)`` where</span>
+<span class="sd">            *token_logprobs* is a raw list of dicts with per-token logprobs, or ``None``</span>
+<span class="sd">            if logprobs are unavailable.</span>
 
 <span class="sd">        Raises:</span>
 <span class="sd">            ValueError: If the LLM call fails or returns empty content and no</span>
@@ -1229,10 +1465,30 @@
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="p">(</span><span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="k">return</span> <span class="n">content</span> <span class="k">if</span> <span class="n">post_process</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">post_process</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">content</span> <span class="k">if</span> <span class="n">post_process</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">post_process</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">include_logprobs</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">result</span>
+
+            <span class="n">token_logprobs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">choice_logprobs</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">logprobs</span>
+            <span class="k">if</span> <span class="n">choice_logprobs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">choice_logprobs</span><span class="o">.</span><span class="n">content</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">token_logprobs</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token_info</span><span class="o">.</span><span class="n">token</span><span class="p">,</span>
+                        <span class="s2">&quot;logprob&quot;</span><span class="p">:</span> <span class="n">token_info</span><span class="o">.</span><span class="n">logprob</span><span class="p">,</span>
+                        <span class="s2">&quot;top_logprobs&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">token</span><span class="p">,</span> <span class="s2">&quot;logprob&quot;</span><span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">logprob</span><span class="p">}</span> <span class="k">for</span> <span class="n">tp</span> <span class="ow">in</span> <span class="p">(</span><span class="n">token_info</span><span class="o">.</span><span class="n">top_logprobs</span> <span class="ow">or</span> <span class="p">[])</span>
+                        <span class="p">],</span>
+                    <span class="p">}</span>
+                    <span class="k">for</span> <span class="n">token_info</span> <span class="ow">in</span> <span class="n">choice_logprobs</span><span class="o">.</span><span class="n">content</span>
+                <span class="p">]</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">token_logprobs</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;request failed, response is: </span><span class="si">{</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fallback_response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">include_logprobs</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fallback_response</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fallback_response</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;LLM call failed or returned empty content.&quot;</span><span class="p">)</span>
@@ -1243,11 +1499,42 @@
         <span class="n">build_prompt</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ChatCompletionMessageParam</span><span class="p">]],</span>
         <span class="n">post_process</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">datatype</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">DataType</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">(),</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+        <span class="n">include_logprobs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">StructArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run batch inference on *texts*.</span>
 
-        <span class="n">requests</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">call_with_fallback</span><span class="p">(</span><span class="n">messages</span><span class="o">=</span><span class="n">build_prompt</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">post_process</span><span class="o">=</span><span class="n">post_process</span><span class="p">)</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">]</span>
+<span class="sd">        When *include_logprobs* is ``True``, per-token logprobs are collected and</span>
+<span class="sd">        the return type changes to a ``pa.StructArray`` with two fields:</span>
+
+<span class="sd">        - ``prediction`` (*datatype*): the post-processed prediction value,</span>
+<span class="sd">          using the same PyArrow type as the *datatype* parameter.</span>
+<span class="sd">        - ``logprobs`` (list&lt;struct{token, logprob, top_logprobs}&gt;): the raw</span>
+<span class="sd">          per-token logprobs in native PyArrow nested types, or ``null`` when</span>
+<span class="sd">          the request failed.</span>
+
+<span class="sd">        Make sure ``logprobs=True`` (and optionally ``top_logprobs=N``) were</span>
+<span class="sd">        passed when constructing :class:`LLMChatCompletions` if you intend to</span>
+<span class="sd">        use ``include_logprobs=True``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">requests</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">call_with_fallback</span><span class="p">(</span>
+                <span class="n">messages</span><span class="o">=</span><span class="n">build_prompt</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">post_process</span><span class="o">=</span><span class="n">post_process</span><span class="p">,</span> <span class="n">include_logprobs</span><span class="o">=</span><span class="n">include_logprobs</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span>
+        <span class="p">]</span>
         <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">requests</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">include_logprobs</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+
+        <span class="n">pairs</span> <span class="o">=</span> <span class="n">results</span>
+        <span class="n">predictions_raw</span><span class="p">,</span> <span class="n">logprobs_list</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">pairs</span><span class="p">)</span> <span class="k">if</span> <span class="n">pairs</span> <span class="k">else</span> <span class="p">([],</span> <span class="p">[])</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">predictions_raw</span><span class="p">),</span> <span class="nb">type</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+        <span class="n">logprobs_arr</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">logprobs_list</span><span class="p">),</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">LOGPROBS_TOKEN_TYPE</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">StructArray</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">predictions</span><span class="p">,</span> <span class="n">logprobs_arr</span><span class="p">],</span>
+            <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="s2">&quot;logprobs&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_split_text_with_regex</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">separator</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">keep_separator</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
@@ -1493,6 +1780,202 @@
         <span class="n">u</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span>
         <span class="n">safe</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">safe</span><span class="p">[:</span><span class="w"> </span><span class="n">max_len</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">9</span><span class="p">]</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">return</span> <span class="n">safe</span>
+
+
+<span class="c1"># PyArrow type for a single logprobs token entry</span>
+<span class="n">LOGPROBS_TOKEN_TYPE</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">struct</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+        <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;logprob&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float64</span><span class="p">()),</span>
+        <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span>
+            <span class="s2">&quot;top_logprobs&quot;</span><span class="p">,</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span>
+                <span class="n">pa</span><span class="o">.</span><span class="n">struct</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+                        <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;logprob&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float64</span><span class="p">()),</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">cascade_call</span><span class="p">(</span>
+    <span class="n">texts</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">,</span>
+    <span class="n">proxy</span><span class="p">:</span> <span class="n">LLMChatCompletions</span><span class="p">,</span>
+    <span class="n">base</span><span class="p">:</span> <span class="n">LLMChatCompletions</span><span class="p">,</span>
+    <span class="n">cascade_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">ListArray</span><span class="p">],</span> <span class="n">pa</span><span class="o">.</span><span class="n">BooleanArray</span><span class="p">],</span>
+    <span class="n">build_prompt</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">ChatCompletionMessageParam</span><span class="p">]],</span>
+    <span class="n">post_process</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">datatype</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">DataType</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">(),</span>
+    <span class="n">include_logprobs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">StructArray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Shared cascade logic for discriminative processors.</span>
+
+<span class="sd">    The proxy model infers first with logprobs, then *cascade_fn* decides which</span>
+<span class="sd">    samples should be forwarded to the base model.  Samples whose logprobs are</span>
+<span class="sd">    ``None`` (request failures) are always forwarded.</span>
+
+<span class="sd">    When *include_logprobs* is ``True``, the return type changes to a</span>
+<span class="sd">    ``pa.StructArray`` containing both predictions and per-token logprobs</span>
+<span class="sd">    from the mixed proxy/base results.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        texts: Input texts to process.</span>
+<span class="sd">        proxy: The proxy (small) LLM client, must have ``logprobs=True``.</span>
+<span class="sd">        base: The base (large) LLM client used for uncertain samples.</span>
+<span class="sd">        cascade_fn: Decision function that returns a ``pa.BooleanArray`` where</span>
+<span class="sd">            ``True`` means forward to the base model.  Two styles are supported:</span>
+
+<span class="sd">            - **Elementwise** (via :func:`elementwise_cascade`):</span>
+<span class="sd">              ``(str, list[dict] | None) -&gt; bool``</span>
+<span class="sd">            - **Array-level**:</span>
+<span class="sd">              ``(pa.ChunkedArray, pa.ListArray) -&gt; pa.BooleanArray``</span>
+<span class="sd">        build_prompt: Prompt builder shared by both proxy and base calls.</span>
+<span class="sd">        post_process: Post-processing function shared by both proxy and base calls.</span>
+<span class="sd">        datatype: PyArrow data type for the result array.</span>
+<span class="sd">        include_logprobs: If ``True``, return a ``pa.StructArray`` with both</span>
+<span class="sd">            predictions and logprobs (mixed from proxy and base).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A ``pa.Array`` when *include_logprobs* is ``False``, or a</span>
+<span class="sd">        ``pa.StructArray`` when ``True``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Step 1: proxy inference (with logprobs)</span>
+    <span class="n">proxy_struct</span> <span class="o">=</span> <span class="k">await</span> <span class="n">proxy</span><span class="o">.</span><span class="n">batch_generate</span><span class="p">(</span>
+        <span class="n">texts</span><span class="o">=</span><span class="n">texts</span><span class="p">,</span>
+        <span class="n">build_prompt</span><span class="o">=</span><span class="n">build_prompt</span><span class="p">,</span>
+        <span class="n">post_process</span><span class="o">=</span><span class="n">post_process</span><span class="p">,</span>
+        <span class="n">datatype</span><span class="o">=</span><span class="n">datatype</span><span class="p">,</span>
+        <span class="n">include_logprobs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">proxy_results</span> <span class="o">=</span> <span class="n">proxy_struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">)</span>
+    <span class="n">logprobs_array</span> <span class="o">=</span> <span class="n">proxy_struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;logprobs&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Step 2: separate samples with valid logprobs from those without,</span>
+    <span class="c1"># so that cascade_fn never sees None logprobs.</span>
+    <span class="n">logprobs_valid_mask</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">logprobs_array</span><span class="p">)</span>
+    <span class="n">valid_cascade_indices</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">indices_nonzero</span><span class="p">(</span><span class="n">logprobs_valid_mask</span><span class="p">)</span>
+    <span class="n">valid_logprobs_array</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">logprobs_array</span><span class="p">,</span> <span class="n">valid_cascade_indices</span><span class="p">)</span>
+
+    <span class="c1"># Step 3: invoke the decision function only on samples with valid logprobs.</span>
+    <span class="c1"># Samples with None logprobs are always forwarded; initial forward_mask = ~logprobs_valid_mask.</span>
+    <span class="n">forward_mask</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="n">logprobs_valid_mask</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">valid_cascade_indices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">valid_texts_array</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">valid_cascade_indices</span><span class="p">)</span>
+        <span class="n">should_forward</span> <span class="o">=</span> <span class="n">cascade_fn</span><span class="p">(</span><span class="n">valid_texts_array</span><span class="p">,</span> <span class="n">valid_logprobs_array</span><span class="p">)</span>
+        <span class="c1"># Validate that cascade_fn returned pa.BooleanArray with the expected length</span>
+        <span class="n">expected_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">valid_cascade_indices</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">should_forward</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="ow">or</span> <span class="n">should_forward</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="n">pa</span><span class="o">.</span><span class="n">bool_</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;cascade_fn must return pa.BooleanArray, but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">should_forward</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot; with type </span><span class="si">{</span><span class="n">should_forward</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">should_forward</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">should_forward</span><span class="p">)</span> <span class="o">!=</span> <span class="n">expected_len</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;cascade_fn returned </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">should_forward</span><span class="p">)</span><span class="si">}</span><span class="s2"> decisions, &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;but expected </span><span class="si">{</span><span class="n">expected_len</span><span class="si">}</span><span class="s2"> (one per valid-logprobs sample)&quot;</span>
+            <span class="p">)</span>
+        <span class="c1"># Scatter cascade_fn decisions back to original positions</span>
+        <span class="n">forward_mask</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">replace_with_mask</span><span class="p">(</span><span class="n">forward_mask</span><span class="p">,</span> <span class="n">logprobs_valid_mask</span><span class="p">,</span> <span class="n">should_forward</span><span class="p">)</span>
+
+    <span class="c1"># Step 4: call the base model only for samples that need forwarding</span>
+    <span class="n">forward_indices</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">indices_nonzero</span><span class="p">(</span><span class="n">forward_mask</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">forward_indices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">forward_texts</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">forward_indices</span><span class="p">)</span>
+        <span class="n">base_results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">base</span><span class="o">.</span><span class="n">batch_generate</span><span class="p">(</span>
+            <span class="n">texts</span><span class="o">=</span><span class="n">forward_texts</span><span class="p">,</span>
+            <span class="n">build_prompt</span><span class="o">=</span><span class="n">build_prompt</span><span class="p">,</span>
+            <span class="n">post_process</span><span class="o">=</span><span class="n">post_process</span><span class="p">,</span>
+            <span class="n">datatype</span><span class="o">=</span><span class="n">datatype</span><span class="p">,</span>
+            <span class="n">include_logprobs</span><span class="o">=</span><span class="n">include_logprobs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">include_logprobs</span><span class="p">:</span>
+            <span class="n">base_predictions</span> <span class="o">=</span> <span class="n">base_results</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">)</span>
+            <span class="n">base_logprobs_arr</span> <span class="o">=</span> <span class="n">base_results</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;logprobs&quot;</span><span class="p">)</span>
+            <span class="n">merged_predictions</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">replace_with_mask</span><span class="p">(</span><span class="n">proxy_results</span><span class="p">,</span> <span class="n">forward_mask</span><span class="p">,</span> <span class="n">base_predictions</span><span class="p">)</span>
+
+            <span class="c1"># pc.replace_with_mask does not support list&lt;struct&gt;, so we use</span>
+            <span class="c1"># cumulative_sum + if_else to scatter base logprobs into the correct positions.</span>
+            <span class="c1">#</span>
+            <span class="c1"># Example: forward_mask = [F, T, F, T, F], base has 2 elements (indices 0, 1)</span>
+            <span class="c1">#   cumsum        = [0, 1, 1, 2, 2]   (running count of True values)</span>
+            <span class="c1">#   base_indices  = [-1, 0, 0, 1, 1]  (cumsum - 1)</span>
+            <span class="c1">#   safe_indices  = [0, 0, 0, 1, 0]   (clamp -1 → 0 for False positions)</span>
+            <span class="c1">#   base_expanded = [b0, b0, b0, b1, b0]  (take from base; False values are discarded)</span>
+            <span class="c1">#   merged        = [proxy, b0, proxy, b1, proxy]  (if_else picks by mask)</span>
+            <span class="n">cumsum</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">cumulative_sum</span><span class="p">(</span><span class="n">forward_mask</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">int32</span><span class="p">()),</span> <span class="n">skip_nulls</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">base_indices</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">cumsum</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">safe_indices</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">if_else</span><span class="p">(</span><span class="n">forward_mask</span><span class="p">,</span> <span class="n">base_indices</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">base_expanded</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">base_logprobs_arr</span><span class="p">,</span> <span class="n">safe_indices</span><span class="p">)</span>
+            <span class="n">merged_logprobs</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">if_else</span><span class="p">(</span><span class="n">forward_mask</span><span class="p">,</span> <span class="n">base_expanded</span><span class="p">,</span> <span class="n">logprobs_array</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">StructArray</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">merged_predictions</span><span class="p">,</span> <span class="n">merged_logprobs</span><span class="p">],</span>
+                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="s2">&quot;logprobs&quot;</span><span class="p">],</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Merge results using pyarrow vectorized operations</span>
+        <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">replace_with_mask</span><span class="p">(</span><span class="n">proxy_results</span><span class="p">,</span> <span class="n">forward_mask</span><span class="p">,</span> <span class="n">base_results</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">include_logprobs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">proxy_struct</span>
+
+    <span class="k">return</span> <span class="n">proxy_results</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">reject_cascade_params</span><span class="p">(</span><span class="n">processor_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check whether kwargs contain the ``cascade`` parameter and raise ValueError if so.</span>
+
+<span class="sd">    Used in processors that do not support cascade mode, called in __init__ for fail-fast.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        processor_name: The processor class name, used in the error message.</span>
+<span class="sd">        kwargs: The processor&#39;s **kwargs dict.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If kwargs contain the ``cascade`` parameter.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;cascade&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">processor_name</span><span class="si">}</span><span class="s2">&#39; does not support cascade mode. &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Cascade is only available for discriminative processors: &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;TextClassify, TextSentiment, TextPredicateEval.&quot;</span>
+        <span class="p">)</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">compute_hash</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">is_file</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">algorithm</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the hash of a text string or file.</span>
+
+<span class="sd">    Text hashing is a pure in-memory CPU op and runs synchronously; only file</span>
+<span class="sd">    hashing is offloaded to a worker thread to avoid blocking the event loop.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">algorithm</span> <span class="ow">in</span> <span class="n">xxhash</span><span class="o">.</span><span class="n">algorithms_available</span><span class="p">:</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">xxhash</span><span class="p">,</span> <span class="n">algorithm</span><span class="p">)()</span>
+    <span class="k">elif</span> <span class="n">algorithm</span> <span class="ow">in</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">algorithms_available</span><span class="p">:</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">algorithm</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported hash algorithm: </span><span class="si">{</span><span class="n">algorithm</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_file</span><span class="p">:</span>
+        <span class="n">encoded</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">data</span>
+        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">h</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span> <span class="s2">&quot;data must be a file path (str) when is_file=True&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_hash_file</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">auto_open</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">chunk</span> <span class="o">:=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">):</span>
+                <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">h</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">_hash_file</span><span class="p">)</span>
 </pre></div>
 
                 </article>
@@ -1522,8 +2005,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1557,7 +2040,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

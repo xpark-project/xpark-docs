@@ -1,0 +1,6 @@
+﻿xpark.dataset.from\_range
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: from_range

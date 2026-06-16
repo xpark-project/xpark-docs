@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.Min
+===========================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: Min
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Min.aggregate_block
+      ~Min.combine
+      ~Min.finalize
+      ~Min.get_agg_name
+      ~Min.get_target_column
+   
+   
+
+   
+   
+   

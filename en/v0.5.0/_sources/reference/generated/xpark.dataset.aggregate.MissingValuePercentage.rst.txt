@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.MissingValuePercentage
+==============================================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: MissingValuePercentage
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MissingValuePercentage.aggregate_block
+      ~MissingValuePercentage.combine
+      ~MissingValuePercentage.finalize
+      ~MissingValuePercentage.get_agg_name
+      ~MissingValuePercentage.get_target_column
+   
+   
+
+   
+   
+   

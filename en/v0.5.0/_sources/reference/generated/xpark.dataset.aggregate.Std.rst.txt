@@ -1,0 +1,25 @@
+﻿xpark.dataset.aggregate.Std
+===========================
+
+.. currentmodule:: xpark.dataset.aggregate
+
+.. autoclass:: Std
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Std.aggregate_block
+      ~Std.combine
+      ~Std.finalize
+      ~Std.get_agg_name
+      ~Std.get_target_column
+   
+   
+
+   
+   
+   

@@ -26,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -44,7 +44,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ray/data/namespace_expressions/dt_namespace';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -73,7 +73,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -203,11 +205,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -292,11 +301,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -361,16 +377,15 @@
 <span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Literal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Literal</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.compute</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pc</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.datatype</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataType</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyarrow_udf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">_create_pyarrow_compute_udf</span>
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Expr</span><span class="p">,</span> <span class="n">UDFExpr</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Expr</span><span class="p">,</span> <span class="n">PyArrowComputeUDFExpr</span>
 
 <span class="n">TemporalUnit</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span>
     <span class="s2">&quot;year&quot;</span><span class="p">,</span>
@@ -393,115 +408,88 @@
 
     <span class="n">_expr</span><span class="p">:</span> <span class="s2">&quot;Expr&quot;</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_unary_temporal_int</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">],</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Helper for year/month/… that return int32.&quot;&quot;&quot;</span>
-
-        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">_udf</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">_udf</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span>
-
     <span class="c1"># extractors</span>
 
 <div class="viewcode-block" id="_DatetimeNamespace.year">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.year">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">year</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">year</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract year component.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unary_temporal_int</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">year</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="_DatetimeNamespace.month">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.month">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">month</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">month</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract month component.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unary_temporal_int</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">month</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="_DatetimeNamespace.day">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.day">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">day</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">day</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract day component.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unary_temporal_int</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">day</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="_DatetimeNamespace.hour">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.hour">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">hour</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hour</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract hour component.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unary_temporal_int</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="_DatetimeNamespace.minute">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.minute">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">minute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">minute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract minute component.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unary_temporal_int</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">minute</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="_DatetimeNamespace.second">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.second">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">second</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">second</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract second component.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unary_temporal_int</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">second</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">second</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
 
 
     <span class="c1"># formatting</span>
 
 <div class="viewcode-block" id="_DatetimeNamespace.strftime">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.strftime">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">strftime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fmt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">strftime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fmt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Format timestamps with a strftime pattern.&quot;&quot;&quot;</span>
-
-        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">_format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">strftime</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">string</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span>
+        <span class="p">)</span></div>
 
 
     <span class="c1"># rounding</span>
 
 <div class="viewcode-block" id="_DatetimeNamespace.ceil">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.ceil">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">ceil</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">TemporalUnit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ceil</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">TemporalUnit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Ceil timestamps to the next multiple of the given unit.&quot;&quot;&quot;</span>
-        <span class="n">return_dtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span>
-
-        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">return_dtype</span><span class="p">)</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">_ceil</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">ceil_temporal</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">_ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">ceil_temporal</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span><span class="p">)(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span>
+        <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="_DatetimeNamespace.floor">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.floor">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">floor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">TemporalUnit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">floor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">TemporalUnit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Floor timestamps to the previous multiple of the given unit.&quot;&quot;&quot;</span>
-        <span class="n">return_dtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span>
-
-        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">return_dtype</span><span class="p">)</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">_floor</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">floor_temporal</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">_floor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">floor_temporal</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span><span class="p">)(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span>
+        <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="_DatetimeNamespace.round">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.datetime_namespace._DatetimeNamespace.round">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">TemporalUnit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">TemporalUnit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Round timestamps to the nearest multiple of the given unit.&quot;&quot;&quot;</span>
-        <span class="n">return_dtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span>
-
-        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">return_dtype</span><span class="p">)</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">_round</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-
-            <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">round_temporal</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">_round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">round_temporal</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span><span class="p">)(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span>
+        <span class="p">)</span></div>
 
 </pre></div>
 
@@ -532,8 +520,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -567,7 +555,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

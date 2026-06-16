@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextLanguageDetector
+==================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextLanguageDetector
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextLanguageDetector.__call__
+      ~TextLanguageDetector.options
+      ~TextLanguageDetector.with_column
+   
+   
+
+   
+   
+   

@@ -26,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -44,7 +44,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ray/data/namespace_expressions/list_namespace';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -73,7 +73,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -203,11 +205,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -292,11 +301,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -371,10 +387,10 @@
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data._internal.arrow_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_combine_as_list_array</span><span class="p">,</span> <span class="n">_counts_to_offsets</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.datatype</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataType</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyarrow_udf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">,</span> <span class="n">pyarrow_udf</span>
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Expr</span><span class="p">,</span> <span class="n">UDFExpr</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Expr</span><span class="p">,</span> <span class="n">PyArrowComputeUDFExpr</span><span class="p">,</span> <span class="n">UDFExpr</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_ensure_array</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
@@ -456,24 +472,21 @@
 
 <div class="viewcode-block" id="_ListNamespace.len">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.len">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the length of each list.&quot;&quot;&quot;</span>
-
-        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">_list_len</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">list_value_length</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">_list_len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">list_value_length</span><span class="p">,</span> <span class="n">DataType</span><span class="o">.</span><span class="n">int32</span><span class="p">())(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span>
+        <span class="p">)</span></div>
 
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">slice</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">slice</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get element or slice using bracket notation.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            key: An integer for element access or slice for list slicing.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            UDFExpr that extracts the element or slice.</span>
+<span class="sd">            Expression that extracts the element or slice.</span>
 
 <span class="sd">        Example:</span>
 <span class="sd">            &gt;&gt;&gt; col(&quot;items&quot;).list[0]      # Get first item  # doctest: +SKIP</span>
@@ -491,38 +504,35 @@
 
 <div class="viewcode-block" id="_ListNamespace.get">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.get">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get element at the specified index from each list.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            index: The index of the element to retrieve. Negative indices are supported.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            UDFExpr that extracts the element at the given index.</span>
+<span class="sd">            Expression that extracts the element at the given index.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># Infer return type from the list&#39;s value type</span>
-        <span class="n">return_dtype</span> <span class="o">=</span> <span class="n">DataType</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>  <span class="c1"># fallback</span>
+        <span class="n">return_dtype</span> <span class="o">=</span> <span class="n">DataType</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span><span class="o">.</span><span class="n">is_arrow_type</span><span class="p">():</span>
             <span class="n">arrow_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span><span class="o">.</span><span class="n">to_arrow_dtype</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_list</span><span class="p">(</span><span class="n">arrow_type</span><span class="p">)</span> <span class="ow">or</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_large_list</span><span class="p">(</span>
-                <span class="n">arrow_type</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">pyarrow</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_list</span><span class="p">(</span><span class="n">arrow_type</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_large_list</span><span class="p">(</span><span class="n">arrow_type</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_fixed_size_list</span><span class="p">(</span><span class="n">arrow_type</span><span class="p">)</span>
             <span class="p">):</span>
                 <span class="n">return_dtype</span> <span class="o">=</span> <span class="n">DataType</span><span class="o">.</span><span class="n">from_arrow</span><span class="p">(</span><span class="n">arrow_type</span><span class="o">.</span><span class="n">value_type</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_fixed_size_list</span><span class="p">(</span><span class="n">arrow_type</span><span class="p">):</span>
-                <span class="n">return_dtype</span> <span class="o">=</span> <span class="n">DataType</span><span class="o">.</span><span class="n">from_arrow</span><span class="p">(</span><span class="n">arrow_type</span><span class="o">.</span><span class="n">value_type</span><span class="p">)</span>
 
-        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">return_dtype</span><span class="p">)</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">_list_get</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">list_element</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">_list_get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">list_element</span><span class="p">,</span> <span class="n">return_dtype</span><span class="p">)(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span> <span class="n">index</span>
+        <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="_ListNamespace.slice">
 <a class="viewcode-back" href="../../../../reference/index.html#xpark.dataset.namespace_expressions.list_namespace._ListNamespace.slice">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">slice</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">stop</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;UDFExpr&quot;</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;PyArrowComputeUDFExpr&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Slice each list.</span>
 
 <span class="sd">        Args:</span>
@@ -531,21 +541,14 @@
 <span class="sd">            step: Step size. Defaults to 1.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            UDFExpr that extracts a slice from each list.</span>
+<span class="sd">            Expression that extracts a slice from each list.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># Return type is the same as the input list type</span>
-        <span class="n">return_dtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span>
-
-        <span class="nd">@pyarrow_udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">return_dtype</span><span class="p">)</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">_list_slice</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">list_slice</span><span class="p">(</span>
-                <span class="n">arr</span><span class="p">,</span>
-                <span class="n">start</span><span class="o">=</span><span class="mi">0</span> <span class="k">if</span> <span class="n">start</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">start</span><span class="p">,</span>
-                <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span>
-                <span class="n">step</span><span class="o">=</span><span class="mi">1</span> <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">step</span><span class="p">,</span>
-            <span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">_list_slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_create_pyarrow_compute_udf</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">list_slice</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="o">.</span><span class="n">data_type</span><span class="p">)(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_expr</span><span class="p">,</span>
+            <span class="n">start</span><span class="o">=</span><span class="mi">0</span> <span class="k">if</span> <span class="n">start</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">start</span><span class="p">,</span>
+            <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span>
+            <span class="n">step</span><span class="o">=</span><span class="mi">1</span> <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">step</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="_ListNamespace.sort">
@@ -750,8 +753,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -785,7 +788,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

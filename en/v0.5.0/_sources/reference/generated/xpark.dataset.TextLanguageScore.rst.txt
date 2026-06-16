@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextLanguageScore
+===============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextLanguageScore
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextLanguageScore.__call__
+      ~TextLanguageScore.options
+      ~TextLanguageScore.with_column
+   
+   
+
+   
+   
+   

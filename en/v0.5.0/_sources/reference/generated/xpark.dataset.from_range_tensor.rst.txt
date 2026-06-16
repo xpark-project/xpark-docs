@@ -1,0 +1,6 @@
+﻿xpark.dataset.from\_range\_tensor
+=================================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: from_range_tensor

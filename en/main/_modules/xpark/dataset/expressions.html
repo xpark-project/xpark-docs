@@ -26,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -44,7 +44,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/xpark/dataset/expressions';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -73,7 +73,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -203,11 +205,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -292,11 +301,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -383,6 +399,7 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ray</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ray.data.expressions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data._internal.compute</span><span class="w"> </span><span class="kn">import</span> <span class="n">ComputeStrategy</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.block</span><span class="w"> </span><span class="kn">import</span> <span class="n">BatchColumn</span><span class="p">,</span> <span class="n">DataBatch</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.datatype</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataType</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinaryExpr</span><span class="p">,</span> <span class="n">ColumnExpr</span><span class="p">,</span> <span class="n">DownloadExpr</span><span class="p">,</span> <span class="n">Expr</span><span class="p">,</span> <span class="n">LiteralExpr</span><span class="p">,</span> <span class="n">StarExpr</span><span class="p">,</span> <span class="n">UDFExpr</span><span class="p">,</span> <span class="n">UnaryExpr</span>
@@ -395,6 +412,7 @@
     <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.array_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_ArrayNamespace</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.datetime_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_DatetimeNamespace</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.list_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_ListNamespace</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.map_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MapNamespace</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.string_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_StringNamespace</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.struct_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_StructNamespace</span>
 
@@ -830,7 +848,9 @@
             <span class="n">data_type</span><span class="o">=</span><span class="n">expr</span><span class="o">.</span><span class="n">data_type</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">expr</span><span class="p">:</span> <span class="n">Expr</span><span class="p">,</span> <span class="o">**</span><span class="n">ray_remote_args</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">column_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">expr</span><span class="p">:</span> <span class="n">Expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">compute</span><span class="p">:</span> <span class="n">ComputeStrategy</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">ray_remote_args</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
         <span class="n">expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
         <span class="n">final_column_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ExprReturn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_return_index</span><span class="o">.</span><span class="n">last_value</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">expr</span><span class="o">.</span><span class="n">structurally_equals</span><span class="p">(</span><span class="n">ColumnExpr</span><span class="p">(</span><span class="n">final_column_name</span><span class="p">)):</span>
@@ -839,6 +859,7 @@
             <span class="n">dataset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
                 <span class="n">column_name</span><span class="p">,</span>
                 <span class="n">expr</span><span class="p">,</span>
+                <span class="n">compute</span><span class="o">=</span><span class="n">compute</span><span class="p">,</span>
                 <span class="o">**</span><span class="n">ray_remote_args</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="n">drop_columns</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">ExprReturn</span><span class="p">(</span><span class="n">index</span><span class="p">))</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_return_index</span><span class="o">.</span><span class="n">range</span><span class="p">())</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dropped_indexes</span><span class="p">]</span>
@@ -886,6 +907,7 @@
 <span class="sd">    Example:</span>
 <span class="sd">        &gt;&gt;&gt; from xpark.dataset import from_items</span>
 <span class="sd">        &gt;&gt;&gt; from xpark.dataset.expressions import col, udf</span>
+<span class="sd">        &gt;&gt;&gt; from xpark.dataset.datatype import DataType</span>
 <span class="sd">        &gt;&gt;&gt; import pyarrow as pa</span>
 <span class="sd">        &gt;&gt;&gt; import pyarrow.compute as pc</span>
 <span class="sd">        &gt;&gt;&gt; import ray</span>
@@ -952,6 +974,61 @@
 
 
 
+<span class="k">def</span><span class="w"> </span><span class="nf">element_wise_udf</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">return_dtype</span><span class="p">:</span> <span class="n">DataType</span><span class="p">,</span>
+    <span class="n">raw_scalar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">udf_options</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorator for element-wise UDFs that automatically preserves nulls.</span>
+
+<span class="sd">    The wrapped function only needs to handle a single non-None value and return</span>
+<span class="sd">    a single value. None inputs propagate to None outputs without invoking the</span>
+<span class="sd">    user function.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        return_dtype: Logical return data type.</span>
+<span class="sd">        raw_scalar: If False (default), convert each scalar to a Python object before</span>
+<span class="sd">            passing to ``fn``. If True, pass the raw ``pa.Scalar`` directly so</span>
+<span class="sd">            ``fn`` can decide how to consume it. Useful for nested types (e.g.</span>
+<span class="sd">            list/struct) where ``as_py()`` is expensive.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; import pyarrow as pa</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; from xpark.dataset import from_arrow</span>
+<span class="sd">        &gt;&gt;&gt; from xpark.dataset.datatype import DataType</span>
+<span class="sd">        &gt;&gt;&gt; from xpark.dataset.expressions import col, element_wise_udf</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; @element_wise_udf(return_dtype=DataType.string())</span>
+<span class="sd">        ... def upper(value: str) -&gt; str:</span>
+<span class="sd">        ...     return value.upper()</span>
+<span class="sd">        ...</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; ds = from_arrow(pa.table({&quot;name&quot;: pa.array([&quot;alice&quot;, None, &quot;bob&quot;], type=pa.string())}))</span>
+<span class="sd">        &gt;&gt;&gt; ds = ds.with_column(&quot;upper_name&quot;, upper(col(&quot;name&quot;)))</span>
+<span class="sd">        &gt;&gt;&gt; result = ds.take_all()</span>
+<span class="sd">        &gt;&gt;&gt; print({row[&quot;name&quot;]: row[&quot;upper_name&quot;] for row in result})</span>
+<span class="sd">        {&#39;alice&#39;: &#39;ALICE&#39;, None: None, &#39;bob&#39;: &#39;BOB&#39;}</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">):</span>
+        <span class="nd">@udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">return_dtype</span><span class="p">,</span> <span class="o">**</span><span class="n">udf_options</span><span class="p">)</span>
+        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">raw_scalar</span><span class="p">:</span>
+                <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">fn</span><span class="p">(</span><span class="n">scalar</span><span class="o">.</span><span class="n">as_py</span><span class="p">())</span> <span class="k">if</span> <span class="n">scalar</span><span class="o">.</span><span class="n">is_valid</span> <span class="k">else</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">scalar</span> <span class="ow">in</span> <span class="n">array</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">fn</span><span class="p">(</span><span class="n">scalar</span><span class="p">)</span> <span class="k">if</span> <span class="n">scalar</span><span class="o">.</span><span class="n">is_valid</span> <span class="k">else</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">scalar</span> <span class="ow">in</span> <span class="n">array</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">return_dtype</span><span class="o">.</span><span class="n">to_arrow_dtype</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+    <span class="k">return</span> <span class="n">decorator</span>
+
+
 <div class="viewcode-block" id="star">
 <a class="viewcode-back" href="../../../reference/generated/xpark.dataset.expressions.star.html#xpark.dataset.expressions.star">[docs]</a>
 <span class="nd">@copy_sig</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">expressions</span><span class="o">.</span><span class="n">star</span><span class="p">)</span>
@@ -1007,7 +1084,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.list_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_ListNamespace</span>
 
-        <span class="k">return</span> <span class="n">_ListNamespace</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_ListNamespace</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">Expr</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;_StringNamespace&quot;</span><span class="p">:</span>
@@ -1029,7 +1106,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.string_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_StringNamespace</span>
 
-        <span class="k">return</span> <span class="n">_StringNamespace</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_StringNamespace</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">Expr</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">struct</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;_StructNamespace&quot;</span><span class="p">:</span>
@@ -1054,7 +1131,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.struct_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_StructNamespace</span>
 
-        <span class="k">return</span> <span class="n">_StructNamespace</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_StructNamespace</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">Expr</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">dt</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;_DatetimeNamespace&quot;</span><span class="p">:</span>
@@ -1073,20 +1150,58 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.datetime_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_DatetimeNamespace</span>
 
-        <span class="k">return</span> <span class="n">_DatetimeNamespace</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_DatetimeNamespace</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">Expr</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">arr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;_ArrayNamespace&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Namespace for array operations on expression columns.</span>
 
 <span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; from xpark.dataset import from_arrow</span>
 <span class="sd">            &gt;&gt;&gt; from xpark.dataset.expressions import col</span>
+<span class="sd">            &gt;&gt;&gt; import pyarrow as pa</span>
+<span class="sd">            &gt;&gt;&gt; # Build a dataset with a fixed-size list column</span>
+<span class="sd">            &gt;&gt;&gt; ds = from_arrow(pa.table({</span>
+<span class="sd">            ...     &quot;features&quot;: pa.array(</span>
+<span class="sd">            ...         [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]],</span>
+<span class="sd">            ...         type=pa.list_(pa.float32(), 3),</span>
+<span class="sd">            ...     )</span>
+<span class="sd">            ... }))</span>
 <span class="sd">            &gt;&gt;&gt; # Convert fixed-size lists to variable-length lists</span>
-<span class="sd">            &gt;&gt;&gt; expr = col(&quot;features&quot;).arr.to_list()</span>
+<span class="sd">            &gt;&gt;&gt; ds = ds.with_column(&quot;features_list&quot;, col(&quot;features&quot;).arr.to_list())</span>
+<span class="sd">            &gt;&gt;&gt; ds.take(2)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.array_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_ArrayNamespace</span>
 
-        <span class="k">return</span> <span class="n">_ArrayNamespace</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_ArrayNamespace</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">Expr</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;_MapNamespace&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Access map operations for this expression.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A _MapNamespace that provides map-specific operations.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; from xpark.dataset import from_arrow</span>
+<span class="sd">            &gt;&gt;&gt; from xpark.dataset.expressions import col</span>
+<span class="sd">            &gt;&gt;&gt; import pyarrow as pa</span>
+<span class="sd">            &gt;&gt;&gt; # Build a dataset with a map-typed column</span>
+<span class="sd">            &gt;&gt;&gt; ds = from_arrow(pa.table({</span>
+<span class="sd">            ...     &quot;headers&quot;: pa.array(</span>
+<span class="sd">            ...         [[(&quot;k1&quot;, &quot;v1&quot;), (&quot;k2&quot;, &quot;v2&quot;)], [(&quot;k3&quot;, &quot;v3&quot;)]],</span>
+<span class="sd">            ...         type=pa.map_(pa.string(), pa.string()),</span>
+<span class="sd">            ...     )</span>
+<span class="sd">            ... }))</span>
+<span class="sd">            &gt;&gt;&gt; # Get keys from map column</span>
+<span class="sd">            &gt;&gt;&gt; ds = ds.with_column(&quot;keys&quot;, col(&quot;headers&quot;).map.keys())</span>
+<span class="sd">            &gt;&gt;&gt; # Get values from map column</span>
+<span class="sd">            &gt;&gt;&gt; ds = ds.with_column(&quot;values&quot;, col(&quot;headers&quot;).map.values())</span>
+<span class="sd">            &gt;&gt;&gt; ds.take(2)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.namespace_expressions.map_namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MapNamespace</span>
+
+        <span class="k">return</span> <span class="n">_MapNamespace</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">Expr</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
 
 
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">_PatchExpr</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1125,8 +1240,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1160,7 +1275,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

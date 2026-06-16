@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextPredicateEval
+===============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextPredicateEval
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextPredicateEval.__call__
+      ~TextPredicateEval.options
+      ~TextPredicateEval.with_column
+   
+   
+
+   
+   
+   

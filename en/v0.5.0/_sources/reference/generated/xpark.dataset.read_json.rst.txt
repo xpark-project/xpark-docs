@@ -1,0 +1,6 @@
+﻿xpark.dataset.read\_json
+========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: read_json

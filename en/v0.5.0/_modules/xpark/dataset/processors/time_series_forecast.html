@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xpark.dataset.processors.time_series_forecast &#8212; Xpark</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/xpark/dataset/processors/time_series_forecast';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'v0.5.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../../../_static/searchtools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script src="../../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xpark</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">xpark.dataset.processors.time_series_forecast</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for xpark.dataset.processors.time_series_forecast</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">string</span><span class="w"> </span><span class="kn">import</span> <span class="n">Template</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.datatype</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BatchColumnClassProtocol</span><span class="p">,</span> <span class="n">udf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.import_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">lazy_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.model</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelSpec</span><span class="p">,</span> <span class="n">cache_model</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">chronos.chronos2</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chronos2Pipeline</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">np</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;np&quot;</span><span class="p">)</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;pa&quot;</span><span class="p">)</span>
+    <span class="n">pd</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;pd&quot;</span><span class="p">)</span>
+    <span class="n">torch</span> <span class="o">=</span> <span class="n">lazy_import</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;ray&quot;</span><span class="p">)</span>
+
+<span class="n">ForecastModel</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;amazon/chronos-2&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;model_specs&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;huggingface&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;amazon/chronos-2&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;model_revision&quot;</span><span class="p">:</span> <span class="s2">&quot;0f8a440441931157957e2be1a9bce66627d99c76&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;modelscope&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pytorch&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;amazon/chronos-2&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;quantizations&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ForecastModelSpec</span><span class="p">(</span><span class="n">ModelSpec</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="n">ALL_FORECAST_MODELS</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">ForecastModelSpec</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ForecastModel</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="n">AVAILABLE_MODELS</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ALL_FORECAST_MODELS</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">label</span> <span class="o">&amp;</span> <span class="p">{</span><span class="s2">&quot;all&quot;</span><span class="p">}]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_to_float32_array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">where</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;np.ndarray&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a Python list (decoded from a ``list&lt;float&gt;`` cell) to a 1-D ``float32`` array.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;forecast input is NULL at </span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2">; expected a non-null list of numbers&quot;</span><span class="p">)</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;forecast input at </span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> must be 1-D, got shape </span><span class="si">{</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">arr</span>
+
+
+<span class="n">_FORECAST_RETURN_DTYPE</span> <span class="o">=</span> <span class="n">DataType</span><span class="o">.</span><span class="n">from_arrow</span><span class="p">(</span>
+    <span class="n">pa</span><span class="o">.</span><span class="n">struct</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">))),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;0.1&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">())),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">())),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;0.9&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">())),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="TimeSeriesForecast">
+<a class="viewcode-back" href="../../../../reference/generated/xpark.dataset.TimeSeriesForecast.html#xpark.dataset.TimeSeriesForecast">[docs]</a>
+<span class="nd">@udf</span><span class="p">(</span><span class="n">return_dtype</span><span class="o">=</span><span class="n">_FORECAST_RETURN_DTYPE</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TimeSeriesForecast</span><span class="p">(</span><span class="n">BatchColumnClassProtocol</span><span class="p">):</span>
+    <span class="vm">__doc__</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Time-series forecasting processor backed by Chronos-2.</span>
+
+<span class="s2">    The processor treats **one row as one complete time series**. The ``target``</span>
+<span class="s2">    column is expected to be a ``list&lt;float&gt;`` containing the historical</span>
+<span class="s2">    observations of a single series (already sorted by timestamp and equally</span>
+<span class="s2">    spaced). The second positional argument is the ``timestamps`` column</span>
+<span class="s2">    (``list&lt;timestamp&gt;``) carrying each row&#39;s historical timestamps; the</span>
+<span class="s2">    processor uses it to derive the future timestamps returned alongside the</span>
+<span class="s2">    quantile predictions. Any</span>
+<span class="s2">    number of additional ``feature`` columns can be passed as further</span>
+<span class="s2">    positional arguments; each must also be a ``list&lt;float&gt;`` of the same</span>
+<span class="s2">    length as ``target`` and is forwarded to Chronos-2 as a **past-only</span>
+<span class="s2">    covariate**. Future covariates are intentionally not</span>
+<span class="s2">    exposed here.</span>
+
+<span class="s2">    Args:</span>
+<span class="s2">        _local_model: Chronos-2 model id. Available models: $</span><span class="si">{AVAILABLE_MODELS}</span>
+<span class="s2">        prediction_length: Number of future steps to predict for each series.</span>
+<span class="s2">        quantile_levels: Quantile levels to return. Must not contain</span>
+<span class="s2">            duplicates (otherwise the resulting field names would collide and</span>
+<span class="s2">            the constructor raises ``ValueError``). The output column is a</span>
+<span class="s2">            ``struct`` containing a leading ``&quot;timestamp&quot;`` field of type</span>
+<span class="s2">            ``list&lt;timestamp[ns]&gt;`` (the future timestamps inferred from the</span>
+<span class="s2">            ``timestamps`` input column) followed by one ``list&lt;float32&gt;``</span>
+<span class="s2">            field per requested quantile level; every inner list has length</span>
+<span class="s2">            ``prediction_length``.</span>
+
+<span class="s2">            **Quantile field naming rule.** Each quantile field name is</span>
+<span class="s2">            produced by Python&#39;s built-in ``format(q, &quot;.10g&quot;)``. For typical</span>
+<span class="s2">            usage where ``q`` has at most 3 decimal digits (between</span>
+<span class="s2">            ``0.001`` and ``0.999``), this is exactly the literal you would</span>
+<span class="s2">            write yourself, so just **wrap the number in quotes** when</span>
+<span class="s2">            indexing the output, e.g. ``row[&quot;forecast&quot;][&quot;0.1&quot;]``,</span>
+<span class="s2">            ``row[&quot;forecast&quot;][&quot;0.5&quot;]``, ``row[&quot;forecast&quot;][&quot;0.975&quot;]``.</span>
+<span class="s2">        context_length: Maximum history length used during inference. Defaults</span>
+<span class="s2">            to the model&#39;s built-in context length (typically 2048). Histories</span>
+<span class="s2">            longer than ``context_length`` are left-truncated by Chronos-2.</span>
+<span class="s2">        cross_learning: Whether to enable cross-learning mode in Chronos-2.</span>
+<span class="s2">            Recommended only when individual histories are very short.</span>
+<span class="s2">        limit_prediction_length: If True (default), raise when</span>
+<span class="s2">            ``prediction_length`` is greater than the model&#39;s default</span>
+<span class="s2">            prediction length.</span>
+<span class="s2">        freq: Optional frequency string (e.g. ``&quot;h&quot;``, ``&quot;D&quot;``, ``&quot;W&quot;``) used</span>
+<span class="s2">            to generate future timestamps. When ``None`` (default) the</span>
+<span class="s2">            frequency is inferred per row; pass an</span>
+<span class="s2">            explicit ``freq`` to skip inference (faster, and required for</span>
+<span class="s2">            series shorter than 3 points).</span>
+
+<span class="s2">    Examples:</span>
+<span class="s2">        .. code-block:: python</span>
+
+<span class="s2">            from xpark.dataset import TimeSeriesForecast, from_items</span>
+<span class="s2">            from xpark.dataset.expressions import col</span>
+
+<span class="s2">            # One row per series; ``target`` is the historical observation list,</span>
+<span class="s2">            # ``ts`` is the corresponding timestamp list (equally spaced).</span>
+<span class="s2">            ds = from_items([</span>
+<span class="s2">                {</span>
+<span class="s2">                    &quot;id&quot;: &quot;a&quot;,</span>
+<span class="s2">                    &quot;target&quot;: [1.0, 2.0, 3.0, 4.0, 5.0],</span>
+<span class="s2">                    &quot;ts&quot;: pd.date_range(&quot;2026-01-01&quot;, periods=5, freq=&quot;D&quot;).tolist(),</span>
+<span class="s2">                },</span>
+<span class="s2">            ])</span>
+<span class="s2">            ds = ds.with_column(</span>
+<span class="s2">                &quot;forecast&quot;,</span>
+<span class="s2">                TimeSeriesForecast(prediction_length=3, quantile_levels=[0.1, 0.5, 0.9])</span>
+<span class="s2">                .options(num_workers={&quot;GPU&quot;: 1})</span>
+<span class="s2">                .with_column(col(&quot;target&quot;), col(&quot;ts&quot;)),</span>
+<span class="s2">            )</span>
+<span class="s2">            # row[&quot;forecast&quot;] -&gt; {&quot;timestamp&quot;: [2026-01-06, 2026-01-07, 2026-01-08],</span>
+<span class="s2">            #                     &quot;0.1&quot;: [...], &quot;0.5&quot;: [...], &quot;0.9&quot;: [...]}</span>
+<span class="s2">            print(ds.take_all())</span>
+
+<span class="s2">        With past-only covariates (each covariate is a separate ``list&lt;float&gt;``</span>
+<span class="s2">        column with the same length as ``target``); covariates follow the</span>
+<span class="s2">        ``timestamps`` column positionally:</span>
+
+<span class="s2">        .. code-block:: python</span>
+
+<span class="s2">            ds = ds.with_column(</span>
+<span class="s2">                &quot;forecast&quot;,</span>
+<span class="s2">                TimeSeriesForecast(prediction_length=7)</span>
+<span class="s2">                .with_column(col(&quot;target&quot;), col(&quot;ts&quot;), col(&quot;humidity&quot;), col(&quot;wind_speed&quot;)),</span>
+<span class="s2">            )</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">safe_substitute</span><span class="p">(</span><span class="n">AVAILABLE_MODELS</span><span class="o">=</span><span class="n">AVAILABLE_MODELS</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">_local_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;amazon/chronos-2&quot;</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">prediction_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">quantile_levels</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span>
+        <span class="n">context_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">cross_learning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">limit_prediction_length</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">freq</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">_local_model</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ALL_FORECAST_MODELS</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported forecast model: </span><span class="si">{</span><span class="n">_local_model</span><span class="si">!r}</span><span class="s2">. Available: </span><span class="si">{</span><span class="n">AVAILABLE_MODELS</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">prediction_length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;prediction_length must be positive, got </span><span class="si">{</span><span class="n">prediction_length</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">quantiles</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">quantile_levels</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">quantiles</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;quantile_levels must not be empty&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">quantiles</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="mf">0.0</span> <span class="o">&lt;</span> <span class="n">q</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;quantile_levels entries must be in (0, 1), got </span><span class="si">{</span><span class="n">q</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantile_levels</span> <span class="o">=</span> <span class="n">quantiles</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="s2">&quot;.10g&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantile_levels</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">field_names</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">field_names</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;field_names contains duplicates: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">field_names</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">prediction_length</span> <span class="o">=</span> <span class="n">prediction_length</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_predict_kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;context_length&quot;</span><span class="p">:</span> <span class="n">context_length</span><span class="p">,</span>
+            <span class="s2">&quot;cross_learning&quot;</span><span class="p">:</span> <span class="n">cross_learning</span><span class="p">,</span>
+            <span class="s2">&quot;limit_prediction_length&quot;</span><span class="p">:</span> <span class="n">limit_prediction_length</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="kn">from</span><span class="w"> </span><span class="nn">chronos.chronos2</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chronos2Pipeline</span>
+
+        <span class="n">model_spec</span> <span class="o">=</span> <span class="n">ALL_FORECAST_MODELS</span><span class="p">[</span><span class="n">_local_model</span><span class="p">]</span>
+        <span class="n">model_path</span> <span class="o">=</span> <span class="n">cache_model</span><span class="p">(</span><span class="s2">&quot;huggingface&quot;</span><span class="p">,</span> <span class="s2">&quot;pytorch&quot;</span><span class="p">,</span> <span class="n">model_spec</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading Chronos-2 pipeline from </span><span class="si">{</span><span class="n">model_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="p">:</span> <span class="n">Chronos2Pipeline</span> <span class="o">=</span> <span class="n">Chronos2Pipeline</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">device_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_future_timestamps</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">timestamps</span><span class="p">:</span> <span class="s2">&quot;pa.ChunkedArray&quot;</span><span class="p">,</span>
+        <span class="n">n_rows</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;pa.Array&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Derive the per-row future timestamps from each row&#39;s history.</span>
+
+<span class="sd">        Mirrors Chronos-2&#39;s ``predict_df`` logic: infer (or use the</span>
+<span class="sd">        user-supplied) frequency, then extend the last historical timestamp by</span>
+<span class="sd">        ``[1..prediction_length] * offset``.</span>
+
+<span class="sd">        Each input row must contain at least 3 timestamps when ``self.freq``</span>
+<span class="sd">        is not provided, otherwise ``pandas.infer_freq`` cannot decide a</span>
+<span class="sd">        frequency. The returned ``pa.Array`` has type</span>
+<span class="sd">        ``list&lt;timestamp[ns]&gt;`` with each row of length ``prediction_length``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">timestamps</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n_rows</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;timestamps column length </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">timestamps</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not match target column length </span><span class="si">{</span><span class="n">n_rows</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prediction_length</span>
+        <span class="n">explicit_freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">freq</span>
+        <span class="n">future_per_row</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">history</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">timestamps</span><span class="o">.</span><span class="n">to_pylist</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="n">history</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;timestamps row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> is NULL; expected a list of timestamps&quot;</span><span class="p">)</span>
+            <span class="n">history_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">history</span><span class="p">)))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">history_index</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;timestamps row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> is empty&quot;</span><span class="p">)</span>
+
+            <span class="n">freq</span> <span class="o">=</span> <span class="n">explicit_freq</span>
+            <span class="k">if</span> <span class="n">freq</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">history_index</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;timestamps row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> has only </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">history_index</span><span class="p">)</span><span class="si">}</span><span class="s2"> points, &quot;</span>
+                        <span class="s2">&quot;need &gt;= 3 to infer frequency or pass `freq=` explicitly&quot;</span>
+                    <span class="p">)</span>
+                <span class="n">freq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">infer_freq</span><span class="p">(</span><span class="n">history_index</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">freq</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;could not infer frequency for timestamps row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">; &quot;</span>
+                        <span class="s2">&quot;ensure timestamps are equally spaced or pass `freq=` explicitly&quot;</span>
+                    <span class="p">)</span>
+
+            <span class="n">offset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">tseries</span><span class="o">.</span><span class="n">frequencies</span><span class="o">.</span><span class="n">to_offset</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>
+            <span class="n">last_ts</span> <span class="o">=</span> <span class="n">history_index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="c1"># Same recipe as ``df_utils.convert_df_input_to_list_of_dicts_input``</span>
+            <span class="c1"># in chronos-2: stack ``last_ts + step * offset`` for step=1..h.</span>
+            <span class="n">future_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">([</span><span class="n">last_ts</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">offset</span> <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+            <span class="n">future_per_row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">future_index</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;datetime64[ns]&quot;</span><span class="p">))</span>
+
+        <span class="c1"># ``pa.array`` accepts a list of ``np.ndarray[datetime64[ns]]`` rows</span>
+        <span class="c1"># directly, producing a ``list&lt;timestamp[ns]&gt;`` array.</span>
+        <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">future_per_row</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">)))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_inputs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">target</span><span class="p">:</span> <span class="s2">&quot;pa.ChunkedArray&quot;</span><span class="p">,</span>
+        <span class="n">features</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="s2">&quot;pa.ChunkedArray&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build the ``inputs`` argument expected by ``predict_quantiles``.</span>
+
+<span class="sd">        - When no covariates are supplied each row becomes a 1-D ``np.ndarray``</span>
+<span class="sd">          (the fast univariate path of Chronos-2).</span>
+<span class="sd">        - Otherwise each row becomes a dict ``{&quot;target&quot;: ..., &quot;past_covariates&quot;: {...}}``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">n_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">feat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n_rows</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;feature column #</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2"> length </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not match target column length </span><span class="si">{</span><span class="n">n_rows</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="n">targets</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">to_pylist</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">features</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">_to_float32_array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;target row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">targets</span><span class="p">)]</span>
+
+        <span class="n">feature_lists</span> <span class="o">=</span> <span class="p">[</span><span class="n">feat</span><span class="o">.</span><span class="n">to_pylist</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="n">features</span><span class="p">]</span>
+        <span class="n">feature_names</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;feature_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">features</span><span class="p">))]</span>
+
+        <span class="n">inputs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target_values</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">targets</span><span class="p">):</span>
+            <span class="n">target_arr</span> <span class="o">=</span> <span class="n">_to_float32_array</span><span class="p">(</span><span class="n">target_values</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;target row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">past_covariates</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">feat_values</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">feature_lists</span><span class="p">):</span>
+                <span class="n">cov_arr</span> <span class="o">=</span> <span class="n">_to_float32_array</span><span class="p">(</span><span class="n">feat_values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">where</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">cov_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">target_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;past covariate </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> length </span><span class="si">{</span><span class="n">cov_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> does not &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;match target length </span><span class="si">{</span><span class="n">target_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> at row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+                <span class="n">past_covariates</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cov_arr</span>
+            <span class="n">inputs</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">target_arr</span><span class="p">,</span> <span class="s2">&quot;past_covariates&quot;</span><span class="p">:</span> <span class="n">past_covariates</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">inputs</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">target</span><span class="p">:</span> <span class="s2">&quot;pa.ChunkedArray&quot;</span><span class="p">,</span>
+        <span class="n">timestamps</span><span class="p">:</span> <span class="s2">&quot;pa.ChunkedArray&quot;</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">features</span><span class="p">:</span> <span class="s2">&quot;pa.ChunkedArray&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;pa.Array&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run Chronos-2 inference for a batch of rows.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            target: the historical observations.</span>
+<span class="sd">            timestamps: the historical timestamps.</span>
+<span class="sd">            *features: Optional past-only covariate columns.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            ``StructArray`` with a leading ``&quot;timestamp&quot;`` field of type</span>
+<span class="sd">            ``list&lt;timestamp[ns]&gt;`` followed by one ``list&lt;float32&gt;`` field</span>
+<span class="sd">            per requested quantile level (field names are the quantile</span>
+<span class="sd">            literals ``&quot;0.1&quot;``, ``&quot;0.5&quot;``, ...). All inner lists have length</span>
+<span class="sd">            ``prediction_length`` and follow the user-specified quantile</span>
+<span class="sd">            ordering.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_inputs</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span>
+        <span class="n">n_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+
+        <span class="n">ts_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_future_timestamps</span><span class="p">(</span><span class="n">timestamps</span><span class="p">,</span> <span class="n">n_rows</span><span class="p">)</span>
+
+        <span class="c1"># ``predict_quantiles`` returns ``(quantiles, mean)``. Each element of</span>
+        <span class="c1"># ``quantiles`` has shape ``(n_variates, prediction_length, n_quantiles)``;</span>
+        <span class="c1"># since one row maps to a single univariate series we squeeze the</span>
+        <span class="c1"># leading variate dimension and end up with</span>
+        <span class="c1"># ``[prediction_length, n_quantiles]``.</span>
+        <span class="n">quantiles</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">predict_quantiles</span><span class="p">(</span>
+            <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span>
+            <span class="n">prediction_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">prediction_length</span><span class="p">,</span>
+            <span class="n">quantile_levels</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quantile_levels</span><span class="p">,</span>
+            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_predict_kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">n_q</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quantile_levels</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prediction_length</span>
+        <span class="c1"># Stay in torch all the way through reshaping. Each ``quantiles[i]`` has</span>
+        <span class="c1"># shape ``(n_variates, prediction_length, n_quantiles)``; with our</span>
+        <span class="c1"># one-row-per-series contract ``n_variates == 1`` so we squeeze the</span>
+        <span class="c1"># leading singleton dim and end up with ``(h, n_q)`` per row.</span>
+        <span class="n">per_row</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">quantiles</span><span class="p">):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n_q</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;unexpected quantile tensor shape </span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="si">}</span><span class="s2"> for row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;expected leading singleton variate dim followed by (</span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">n_q</span><span class="si">}</span><span class="s2">)&quot;</span>
+                <span class="p">)</span>
+            <span class="n">per_row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+        <span class="c1"># Stack per-row tensors of shape ``(h, n_q)`` into ``(n_rows, h, n_q)``,</span>
+        <span class="c1"># then transpose to ``(n_q, n_rows, h)`` so axis 0 indexes the quantile</span>
+        <span class="c1"># level. This lets us slice ``stacked[k]`` to get a ``(n_rows, h)``</span>
+        <span class="c1"># matrix for the k-th quantile -- exactly what each output PyArrow</span>
+        <span class="c1"># ``list&lt;float32&gt;`` column needs.</span>
+        <span class="n">stacked</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">per_row</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">contiguous</span><span class="p">()</span>
+
+        <span class="n">list_type</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">())</span>
+
+        <span class="n">quantile_matrix</span> <span class="o">=</span> <span class="n">stacked</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+        <span class="n">field_arrays</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">pa</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">ts_array</span><span class="p">,</span>
+            <span class="o">*</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">quantile_matrix</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span> <span class="nb">type</span><span class="o">=</span><span class="n">list_type</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_q</span><span class="p">)),</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">StructArray</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">(</span><span class="n">field_arrays</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">field_names</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Tencent.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

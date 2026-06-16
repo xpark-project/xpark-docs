@@ -1,0 +1,22 @@
+﻿xpark.dataset.TextExactSubstringDedup
+=====================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextExactSubstringDedup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextExactSubstringDedup.collect_sa_deduped_dataset
+      ~TextExactSubstringDedup.with_column
+   
+   
+
+   
+   
+   
