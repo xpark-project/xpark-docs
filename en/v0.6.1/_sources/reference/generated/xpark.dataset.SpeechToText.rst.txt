@@ -1,0 +1,23 @@
+﻿xpark.dataset.SpeechToText
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: SpeechToText
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SpeechToText.__call__
+      ~SpeechToText.options
+      ~SpeechToText.with_column
+   
+   
+
+   
+   
+   

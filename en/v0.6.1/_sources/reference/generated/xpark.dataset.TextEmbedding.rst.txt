@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextEmbedding
+===========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextEmbedding
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextEmbedding.__call__
+      ~TextEmbedding.options
+      ~TextEmbedding.with_column
+   
+   
+
+   
+   
+   

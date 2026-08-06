@@ -1,0 +1,23 @@
+﻿xpark.dataset.extensions.MemoryExtract
+======================================
+
+.. currentmodule:: xpark.dataset.extensions
+
+.. autoclass:: MemoryExtract
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MemoryExtract.__call__
+      ~MemoryExtract.options
+      ~MemoryExtract.with_column
+   
+   
+
+   
+   
+   

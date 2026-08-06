@@ -1,0 +1,23 @@
+﻿xpark.dataset.VideoShotDetect
+=============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoShotDetect
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoShotDetect.__call__
+      ~VideoShotDetect.options
+      ~VideoShotDetect.with_column
+   
+   
+
+   
+   
+   

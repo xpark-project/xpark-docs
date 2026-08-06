@@ -1,0 +1,6 @@
+﻿xpark.dataset.Dataset.write\_lance
+==================================
+
+.. currentmodule:: xpark.dataset
+
+.. automethod:: Dataset.write_lance

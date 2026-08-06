@@ -1,0 +1,21 @@
+﻿xpark.dataset.CommonCompute
+===========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: CommonCompute
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CommonCompute.binary_persist
+   
+   
+
+   
+   
+   

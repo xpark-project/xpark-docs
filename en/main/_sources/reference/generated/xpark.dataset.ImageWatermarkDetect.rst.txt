@@ -1,0 +1,23 @@
+﻿xpark.dataset.ImageWatermarkDetect
+==================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageWatermarkDetect
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageWatermarkDetect.__call__
+      ~ImageWatermarkDetect.options
+      ~ImageWatermarkDetect.with_column
+   
+   
+
+   
+   
+   

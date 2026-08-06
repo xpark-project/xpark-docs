@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextPerplexity
+============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextPerplexity
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextPerplexity.__call__
+      ~TextPerplexity.options
+      ~TextPerplexity.with_column
+   
+   
+
+   
+   
+   

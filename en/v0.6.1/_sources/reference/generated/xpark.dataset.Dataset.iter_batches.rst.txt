@@ -1,0 +1,6 @@
+﻿xpark.dataset.Dataset.iter\_batches
+===================================
+
+.. currentmodule:: xpark.dataset
+
+.. automethod:: Dataset.iter_batches

@@ -1,0 +1,6 @@
+﻿xpark.dataset.expressions.col
+=============================
+
+.. currentmodule:: xpark.dataset.expressions
+
+.. autofunction:: col

@@ -1,0 +1,23 @@
+﻿xpark.dataset.VideoCaption
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoCaption
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoCaption.__call__
+      ~VideoCaption.options
+      ~VideoCaption.with_column
+   
+   
+
+   
+   
+   

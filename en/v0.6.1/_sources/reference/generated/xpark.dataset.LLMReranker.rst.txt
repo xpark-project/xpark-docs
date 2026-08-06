@@ -1,0 +1,23 @@
+﻿xpark.dataset.LLMReranker
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: LLMReranker
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LLMReranker.__call__
+      ~LLMReranker.options
+      ~LLMReranker.with_column
+   
+   
+
+   
+   
+   

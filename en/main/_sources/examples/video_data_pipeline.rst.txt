@@ -1,0 +1,304 @@
+Video Data Processing Pipeline
+==============================
+
+Background
+----------
+
+This pipeline demonstrates how to build a complete video data processing pipeline for
+training data curation by chaining multiple Xpark operators in a funnel-style architecture.
+It is designed for scenarios such as embodied AI and robotics, where large-scale multimodal
+video data needs to be cleaned, filtered, and annotated before being used for model training.
+
+The pipeline covers the full lifecycle of video data preparation: shot segmentation,
+quality filtering, and semantic annotation. It follows two key design principles:
+
+- **Shot segmentation first**: Shot segmentation is placed at the very beginning of the pipeline
+  to avoid discontinuous scenes being mixed into the same clip.
+- **Funnel-style filtering**: Lightweight operators (duration filter, subtitle/watermark/aesthetic
+  scoring) run first to quickly discard obviously problematic samples, so that expensive VLM
+  inference only processes the narrowed-down, high-quality subset.
+
+The detailed workflow is as follows:
+
+1. **Read Videos**: Use ``from_items`` to load a list of video file paths.
+2. **Shot Segmentation**: Use ``VideoShotDetect`` to detect shot boundaries and split videos into shots.
+3. **Explode & Duration Filter**: Expand one-to-many shot results into individual rows, then filter by duration.
+4. **Subtitle Detection**: Use ``VideoTextAreaRatio`` to measure on-screen text (subtitle) area ratio.
+5. **Watermark Detection**: Use ``VideoWatermarkDetect`` to estimate watermark probability.
+6. **Aesthetic Scoring**: Use ``VideoAestheticScore`` to evaluate visual quality.
+7. **Quality Filter**: Combine subtitle/watermark/aesthetic scores to keep only high-quality shots.
+8. **VLM Caption**: Use ``VideoCaption`` to generate a natural-language description via a remote VLM.
+9. **Scene Classification**: Use ``TextClassify`` to assign multi-label scene tags based on the caption.
+10. **Text Embedding**: Use ``TextEmbedding`` to vectorize captions for downstream semantic search or deduplication.
+
+Prerequisites
+-------------
+
+- **GPU resources (recommended)**: Operators such as ``VideoShotDetect`` (with ``"transnetv2"`` method),
+  ``VideoTextAreaRatio``, ``VideoWatermarkDetect``, ``VideoAestheticScore``, and ``TextEmbedding``
+  all support GPU acceleration. While these operators can run on CPU, GPU is strongly recommended
+  for production workloads to achieve acceptable throughput.
+- **Remote VLM service**: Steps 8–9 (caption and classification) require access to an OpenAI-compatible
+  VLM endpoint. You can use `Tencent Cloud TokenHub <https://cloud.tencent.com/document/product/1823/130058>`_
+  or any compatible service.
+- **Environment variables**: Set ``VLM_BASE_URL`` and ``VLM_API_KEY`` for the remote VLM endpoint.
+
+Video Data Pipeline
+-------------------
+
+The following example shows how to chain Xpark operators to build a complete video data
+processing pipeline:
+
+.. code-block:: python
+
+    import os
+    from functools import partial
+
+    from xpark.dataset import (
+        TextClassify,
+        TextEmbedding,
+        VideoAestheticScore,
+        VideoCaption,
+        VideoCompute,
+        VideoShotDetect,
+        VideoTextAreaRatio,
+        VideoWatermarkDetect,
+        from_items,
+    )
+    from xpark.dataset.expressions import col
+    from xpark.dataset.processors.video_text_area_ratio import subtitle_area_ratio
+
+    # Input video list (supports local paths, COS, S3, HTTP, etc.)
+    video_paths = [
+        "/path/to/video1.mp4",
+        "/path/to/video2.mp4",
+        "/path/to/video3.mp4",
+    ]
+
+    # =========================================================================
+    # Phase 1: Shot Segmentation & Preprocessing
+    # =========================================================================
+
+    # Step 1: Build the video dataset
+    ds = from_items([{"video": p} for p in video_paths])
+
+    # Step 2: Shot segmentation (SceneDetect adaptive algorithm)
+    # Returns a list of segment URIs written to output_dir per input video
+    ds = ds.with_column(
+        "shots",
+        VideoShotDetect(method="scenedetect", detector="adaptive", output_dir="/data/output/shots/")
+        .options(num_workers={"CPU": 4}, batch_size=1)
+        .with_column(col("video")),
+    )
+
+    # Step 3: Explode & duration filter — one row with multiple shots → one row per shot
+    # shots field is already a list of segment URIs (written by VideoShotDetect)
+    ds = ds.flat_map(lambda row: [
+        {"video": row["video"], "shot_idx": i, "shot_path": path}
+        for i, path in enumerate(row.get("shots") or [])
+    ])
+
+    # Compute shot duration and filter (keep 5s ~ 5min)
+    ds = ds.with_column("shot_duration", VideoCompute.duration(col("shot_path")))
+    ds = ds.filter(
+        expr=(col("shot_duration") >= 5.0) & (col("shot_duration") <= 300.0)
+    )
+
+    # =========================================================================
+    # Phase 2: Quality Filtering
+    # =========================================================================
+
+    # Step 4: Subtitle area ratio (OCR detection, sample 3 frames, measure subtitle band)
+    ds = ds.with_column(
+        "subtitle_ratio",
+        VideoTextAreaRatio(frame_sample_num=3, ratio_fn=subtitle_area_ratio)
+        .options(num_workers={"GPU": 1}, batch_size=4)
+        .with_column(col("shot_path")),
+    )
+
+    # Step 5: Watermark detection (LAION watermark classifier, sample 5 frames, take max)
+    ds = ds.with_column(
+        "watermark_prob",
+        VideoWatermarkDetect(num_frames=5, reduce_mode="max")
+        .options(num_workers={"GPU": 1}, batch_size=4)
+        .with_column(col("shot_path")),
+    )
+
+    # Step 6: Aesthetic score (normalized to [0, 1], sample 5 frames, take average)
+    ds = ds.with_column(
+        "aesthetic_score",
+        VideoAestheticScore(num_frames=5, normalized=True, reduce_mode="avg")
+        .options(num_workers={"GPU": 1}, batch_size=8)
+        .with_column(col("shot_path")),
+    )
+
+    # Step 7: Combined quality filter
+    ds = ds.filter(
+        expr=(col("subtitle_ratio") <= 0.005)
+        & (col("watermark_prob") <= 0.5)
+        & (col("aesthetic_score") >= 0.45)
+    )
+
+    # =========================================================================
+    # Phase 3: Semantic Enrichment
+    # =========================================================================
+
+    vlm_base_url = os.getenv("VLM_BASE_URL")
+    vlm_api_key = os.getenv("VLM_API_KEY")
+
+    # Step 8: VLM video caption — sample 8 frames → remote multimodal model → description
+    ds = ds.with_column(
+        "caption",
+        VideoCaption(
+            base_url=vlm_base_url,
+            api_key=vlm_api_key,
+            model="your-vlm-model",
+            hint=[
+                "Describe the video content in Chinese, including subject actions, "
+                "scene environment, location type, and lighting conditions.",
+                "Keep the description under 80 characters.",
+            ],
+            num_frames=8,
+            max_words=0,
+            max_new_tokens=512,
+        )
+        .options(num_workers={"IO": 1}, batch_size=4)
+        .with_column(col("shot_path")),
+    )
+
+    # Step 9: Scene multi-label classification (based on caption text, via remote LLM)
+    SCENE_LABELS = [
+        {"label": "indoor", "description": "Indoor scene such as room, corridor, warehouse"},
+        {"label": "outdoor", "description": "Outdoor scene such as street, park, field"},
+        {"label": "warehouse", "description": "Warehouse, logistics area, shelving zone"},
+        {"label": "road", "description": "Road, sidewalk, parking lot, traffic scene"},
+        {"label": "daytime", "description": "Daytime with natural lighting"},
+        {"label": "nighttime", "description": "Nighttime or very dark environment"},
+    ]
+
+    ds = ds.with_column(
+        "labels",
+        TextClassify(
+            SCENE_LABELS,
+            model="your-llm-model",
+            base_url=vlm_base_url,
+            api_key=vlm_api_key,
+            multi_label=True,
+            hint=[
+                "Classify the scene based on the video description text.",
+                "Select only from the provided label list. Multiple labels allowed.",
+            ],
+            max_retries=3,
+            fallback_response=[],
+        )
+        .options(num_workers={"IO": 1}, batch_size=8)
+        .with_column(col("caption")),
+    )
+
+    # Step 10: Text embedding (local CPU inference, for downstream semantic search/dedup)
+    ds = ds.with_column(
+        "embedding",
+        TextEmbedding("Qwen/Qwen3-Embedding-0.6B")
+        .options(num_workers={"CPU": 4}, batch_size=32)
+        .with_column(col("caption")),
+    )
+
+    # =========================================================================
+    # Output Results
+    # =========================================================================
+
+    # Display the schema and sample data
+    ds.select_columns([
+        "video", "shot_idx", "shot_duration", "subtitle_ratio",
+        "watermark_prob", "aesthetic_score", "caption", "labels",
+    ]).show()
+
+    # Print detailed results
+    results = ds.select_columns([
+        "video", "shot_idx", "shot_duration", "caption", "labels",
+    ]).take_all()
+    for row in results:
+        print(f"Video: {row['video']}")
+        print(f"Shot: #{row['shot_idx']} ({row['shot_duration']:.1f}s)")
+        print(f"Caption: {row['caption']}")
+        print(f"Labels: {row['labels']}")
+        print("-" * 60)
+
+About Helper Functions
+~~~~~~~~~~~~~~~~~~~~~~
+
+The ``flat_map`` call in Step 3 uses a helper function to explode shot segmentation results.
+When ``output_dir`` is set, ``VideoShotDetect`` writes each segment to the specified directory
+and returns a list of URIs. The ``flat_map`` simply enumerates these URIs into individual rows:
+
+- **Input**: A single row dict containing a ``"shots"`` field (list of segment URI strings).
+- **Output**: A list of row dicts, each with ``"shot_idx"`` (int) and ``"shot_path"`` (str).
+
+For VLM response parsing, a similar ``flat_map`` function can be used to extract structured
+fields (e.g., caption, is_synthetic) from raw JSON responses, with fallback regex extraction
+and garbled-text detection to handle malformed model outputs gracefully.
+
+Example Output
+--------------
+
+The ``ds.show()`` call displays the dataset schema and sample rows:
+
+.. code-block:: text
+
+    ╭──────────────────┬──────────┬───────────────┬────────────────┬────────────────┬────────────────┬──────────────────────────────────────────┬─────────────────────────────────╮
+    │ video            ┆ shot_idx ┆ shot_duration ┆ subtitle_ratio ┆ watermark_prob ┆ aesthetic_score┆ caption                                  ┆ labels                          │
+    │ ---              ┆ ---      ┆ ---           ┆ ---            ┆ ---            ┆ ---            ┆ ---                                      ┆ ---                             │
+    │ String           ┆ Int64    ┆ Float64       ┆ Float64        ┆ Float64        ┆ Float64        ┆ String                                   ┆ List[String]                    │
+    ╞══════════════════╪══════════╪═══════════════╪════════════════╪════════════════╪════════════════╪══════════════════════════════════════════╪═════════════════════════════════╡
+    │ /path/to/vid...  ┆ 47       ┆ 77.8          ┆ 0.0003         ┆ 0.0725         ┆ 0.507          ┆ Indoor furniture store with mul...        ┆ [indoor, warehouse, artific...  │
+    │ /path/to/vid...  ┆ 83       ┆ 16.5          ┆ 0.0            ┆ 0.0935         ┆ 0.480          ┆ Building materials supermarket...         ┆ [indoor, warehouse, nightti...  │
+    │ /path/to/vid...  ┆ 90       ┆ 201.3         ┆ 0.0009         ┆ 0.1200         ┆ 0.512          ┆ Supermarket with customers bro...         ┆ [indoor, artificial_light, ...  │
+    ╰──────────────────┴──────────┴───────────────┴────────────────┴────────────────┴────────────────┴──────────────────────────────────────────┴─────────────────────────────────╯
+
+The detailed print output:
+
+.. code-block:: text
+
+    Video: /path/to/video1.mp4
+    Shot: #47 (77.8s)
+    Caption: Indoor furniture store with multiple display areas, customers browsing and selecting items
+    Labels: ['indoor', 'warehouse', 'daytime', 'artificial_light']
+    ------------------------------------------------------------
+    Video: /path/to/video1.mp4
+    Shot: #83 (16.5s)
+    Caption: Building materials supermarket at dusk, metal shelves displaying renovation materials
+    Labels: ['indoor', 'warehouse', 'nighttime', 'artificial_light']
+    ------------------------------------------------------------
+    Video: /path/to/video2.mp4
+    Shot: #90 (201.3s)
+    Caption: Supermarket with customers browsing shelves, signage showing product categories
+    Labels: ['indoor', 'artificial_light']
+    ------------------------------------------------------------
+
+Operator Reference
+------------------
+
+- :py:class:`xpark.dataset.VideoShotDetect` — Video shot boundary detection. Supports ``"scenedetect"`` (CPU, traditional methods) and ``"transnetv2"`` (GPU, deep learning). When ``output_dir`` is set, returns segment URI list; when unset, returns structured frame positions.
+- :py:class:`xpark.dataset.VideoCompute` — Video metadata and processing utilities. The ``duration`` method extracts video duration in seconds.
+- :py:class:`xpark.dataset.VideoTextAreaRatio` — On-screen text area measurement via OCR. Supports custom scoring functions (``subtitle_area_ratio``, ``watermark_area_ratio``) for region-specific detection.
+- :py:class:`xpark.dataset.VideoWatermarkDetect` — Watermark detection based on LAION watermark classifier. Returns a probability in [0, 1].
+- :py:class:`xpark.dataset.VideoAestheticScore` — Visual aesthetic quality scoring based on LAION Aesthetic. Supports normalization to [0, 1].
+- :py:class:`xpark.dataset.VideoCaption` — Video captioning via remote OpenAI-compatible VLM endpoint. Samples frames uniformly and generates natural-language descriptions.
+- :py:class:`xpark.dataset.TextClassify` — Text classification using LLM. Supports multi-label classification with custom label schemas.
+- :py:class:`xpark.dataset.TextEmbedding` — Text embedding for semantic vectorization. Supports local CPU/GPU models and remote HTTP endpoints.
+
+Further Notes
+-------------
+
+This pipeline architecture is designed for large-scale video data curation in domains such as
+embodied AI and robotics training. Key considerations:
+
+- **Intermediate persistence**: For production workloads, consider writing intermediate results
+  to Lance format (``ds.write_lance(...)``) between phases. This enables checkpoint/resume and
+  allows threshold tuning without re-running expensive upstream operators.
+- **Resource scheduling**: All GPU-capable operators (shot segmentation, subtitle/watermark/aesthetic
+  scoring, text embedding) can also run on CPU, but GPU is strongly recommended for production
+  throughput. IO-bound operators (VLM, LLM) use IO workers with concurrency control.
+- **Scalability**: The funnel design ensures that the most expensive operators (VLM caption at
+  ~40 clips/hour/GPU) only process the subset that passed all lightweight filters, significantly
+  reducing total compute cost.

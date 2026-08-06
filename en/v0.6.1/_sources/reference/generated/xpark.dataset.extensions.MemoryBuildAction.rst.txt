@@ -1,0 +1,23 @@
+﻿xpark.dataset.extensions.MemoryBuildAction
+==========================================
+
+.. currentmodule:: xpark.dataset.extensions
+
+.. autoclass:: MemoryBuildAction
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MemoryBuildAction.__call__
+      ~MemoryBuildAction.options
+      ~MemoryBuildAction.with_column
+   
+   
+
+   
+   
+   

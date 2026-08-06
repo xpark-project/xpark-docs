@@ -27,17 +27,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -45,7 +45,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/xpark.dataset.TimeSeriesForecast';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="xpark.dataset.connectors.InsertVectorDB" href="xpark.dataset.connectors.InsertVectorDB.html" />
-    <link rel="prev" title="xpark.dataset.SpeechToText" href="xpark.dataset.SpeechToText.html" />
+    <link rel="prev" title="xpark.dataset.PDFToText" href="xpark.dataset.PDFToText.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -324,7 +324,8 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
     <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
   </svg>
   <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
@@ -336,6 +337,7 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.CommonCompute.html">xpark.dataset.CommonCompute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.HashDedup.html">xpark.dataset.HashDedup</a></li>
 </ul>
 <ul class="nav bd-sidenav">
@@ -353,6 +355,7 @@
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCompute.html">xpark.dataset.VideoCompute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoShotDetect.html">xpark.dataset.VideoShotDetect</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextEmbedding.html">xpark.dataset.TextEmbedding</a></li>
@@ -369,15 +372,29 @@
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextPerplexity.html">xpark.dataset.TextPerplexity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextLanguageDetector.html">xpark.dataset.TextLanguageDetector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextLanguageScore.html">xpark.dataset.TextLanguageScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.LLMReranker.html">xpark.dataset.LLMReranker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextPatternCleaner.html">xpark.dataset.TextPatternCleaner</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageNSFWScore.html">xpark.dataset.ImageNSFWScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageTextSimilarityScore.html">xpark.dataset.ImageTextSimilarityScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageAestheticScore.html">xpark.dataset.ImageAestheticScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractTextLayout.html">xpark.dataset.ImageExtractTextLayout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageWatermarkDetect.html">xpark.dataset.ImageWatermarkDetect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageCaption.html">xpark.dataset.ImageCaption</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.SpeechToText.html">xpark.dataset.SpeechToText</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoAestheticScore.html">xpark.dataset.VideoAestheticScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoNSFWScore.html">xpark.dataset.VideoNSFWScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoTextAreaRatio.html">xpark.dataset.VideoTextAreaRatio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoWatermarkDetect.html">xpark.dataset.VideoWatermarkDetect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCaption.html">xpark.dataset.VideoCaption</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.PDFToText.html">xpark.dataset.PDFToText</a></li>
 </ul>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">xpark.dataset.TimeSeriesForecast</a></li>
@@ -387,6 +404,10 @@
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.connectors.UpsertVectorDB.html">xpark.dataset.connectors.UpsertVectorDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.connectors.DeleteVectorDB.html">xpark.dataset.connectors.DeleteVectorDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.connectors.SearchVectorDB.html">xpark.dataset.connectors.SearchVectorDB</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.extensions.MemoryExtract.html">xpark.dataset.extensions.MemoryExtract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.extensions.MemoryBuildAction.html">xpark.dataset.extensions.MemoryBuildAction</a></li>
 </ul>
 </div>
 </nav></div>
@@ -451,8 +472,25 @@
 <h1>xpark.dataset.TimeSeriesForecast<a class="headerlink" href="#xpark-dataset-timeseriesforecast" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="xpark.dataset.TimeSeriesForecast">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">TimeSeriesForecast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_local_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'amazon/chronos-2'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantile_levels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0.1,</span> <span class="pre">0.5,</span> <span class="pre">0.9)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_learning</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_prediction_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/xpark/dataset/processors/time_series_forecast.html#TimeSeriesForecast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xpark.dataset.TimeSeriesForecast" title="Link to this definition">#</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">TimeSeriesForecast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_local_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'amazon/chronos-2'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NOT_SET'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_qps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantile_levels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0.1,</span> <span class="pre">0.5,</span> <span class="pre">0.9)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_learning</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_prediction_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xpark.dataset.TimeSeriesForecast" title="Link to this definition">#</a></dt>
 <dd><p>Time-series forecasting processor backed by Chronos-2.</p>
+<p>Three back-ends are supported and picked based on the current worker’s
+environment (matches the dispatch used by <a class="reference internal" href="xpark.dataset.TextEmbedding.html#xpark.dataset.TextEmbedding" title="xpark.dataset.TextEmbedding"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextEmbedding</span></code></a>):</p>
+<ul class="simple">
+<li><p><strong>GPU local pipeline</strong> (when <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES</span></code> is set, i.e.
+<code class="docutils literal notranslate"><span class="pre">num_workers={&quot;GPU&quot;:</span> <span class="pre">..}</span></code>): a <code class="docutils literal notranslate"><span class="pre">Chronos2Pipeline</span></code> is loaded with
+<code class="docutils literal notranslate"><span class="pre">device_map=&quot;auto&quot;</span></code> and lands on the visible GPU.</p></li>
+<li><p><strong>Remote HTTP</strong> (when <code class="docutils literal notranslate"><span class="pre">XPARK_IO_WORKER</span></code> is set, i.e.
+<code class="docutils literal notranslate"><span class="pre">num_workers={&quot;IO&quot;:</span> <span class="pre">..}</span></code>): calls are POSTed to a tcray-hosted
+Chronos-2 <code class="docutils literal notranslate"><span class="pre">/infer</span></code> endpoint. <code class="docutils literal notranslate"><span class="pre">base_url</span></code> is required; <code class="docutils literal notranslate"><span class="pre">api_key</span></code>
+(or the <code class="docutils literal notranslate"><span class="pre">CHRONOS_API_KEY</span></code> env var) must be supplied.</p></li>
+<li><p><strong>CPU local pipeline</strong> (fallback, i.e. <code class="docutils literal notranslate"><span class="pre">num_workers={&quot;CPU&quot;:</span> <span class="pre">..}</span></code>):
+the same <code class="docutils literal notranslate"><span class="pre">Chronos2Pipeline</span></code> is loaded with <code class="docutils literal notranslate"><span class="pre">device_map=&quot;auto&quot;</span></code> and
+lands on CPU.</p></li>
+</ul>
+<p>The GPU and CPU branches share <code class="docutils literal notranslate"><span class="pre">TimeSeriesForecastLocal</span></code>; the
+<code class="docutils literal notranslate"><span class="pre">device_map=&quot;auto&quot;</span></code> argument to <code class="docutils literal notranslate"><span class="pre">Chronos2Pipeline.from_pretrained</span></code>
+handles device placement automatically.</p>
 <p>The processor treats <strong>one row as one complete time series</strong>. The <code class="docutils literal notranslate"><span class="pre">target</span></code>
 column is expected to be a <code class="docutils literal notranslate"><span class="pre">list&lt;float&gt;</span></code> containing the historical
 observations of a single series (already sorted by timestamp and equally
@@ -468,8 +506,40 @@ exposed here.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>_local_model</strong> – Chronos-2 model id. Available models: [‘amazon/chronos-2’]</p></li>
-<li><p><strong>prediction_length</strong> – Number of future steps to predict for each series.</p></li>
+<li><p><strong>_local_model</strong> – Chronos-2 model id used by the local pipeline back-end.
+Available models: [‘amazon/chronos-2’]. Required for the GPU/CPU
+branches; ignored on IO workers.</p></li>
+<li><p><strong>base_url</strong> – Full <code class="docutils literal notranslate"><span class="pre">/infer</span></code> URL of the remote Chronos-2 endpoint (e.g.
+<code class="docutils literal notranslate"><span class="pre">https://.../v2/models/m-chronos-2-.../infer</span></code>). Required for
+the remote HTTP back-end (IO worker); ignored on GPU/CPU workers.</p></li>
+<li><p><strong>api_key</strong> – Bearer token for the remote endpoint. Falls back to the
+<code class="docutils literal notranslate"><span class="pre">CHRONOS_API_KEY</span></code> environment variable when unset.</p></li>
+<li><p><strong>max_retries</strong> – Number of additional retries on transient failures
+(HTTP 408/425/429/5xx and connection errors) for the remote
+back-end. Backs off exponentially with jitter, capped at 8s.</p></li>
+<li><p><strong>**kwargs</strong> – <p>Transport-level keyword arguments forwarded to every remote
+request. Only applies to the remote HTTP back-end. The accepted keys are a closed set –
+<code class="docutils literal notranslate"><span class="pre">extra_headers</span></code>, <code class="docutils literal notranslate"><span class="pre">timeout</span></code>, <code class="docutils literal notranslate"><span class="pre">params</span></code>; any other key
+raises <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> at construction time with the allowed set
+spelled out.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">extra_headers</span></code>: per-request headers appended on top of the
+defaults (bearer auth). Use this for upstream traffic-tagging
+headers; the name matches the OpenAI-SDK-based operators
+so the same keyword works across
+all remote operators.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code>: per-request timeout in seconds; also seeds the
+underlying <code class="docutils literal notranslate"><span class="pre">httpx</span></code> client’s default. Defaults to 120s when
+omitted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params</span></code>: query-string parameters for every request.</p></li>
+</ul>
+</p></li>
+<li><p><strong>prediction_length</strong> – Number of future steps to predict for each series.
+Must be positive. The remote HTTP backend additionally enforces
+<code class="docutils literal notranslate"><span class="pre">prediction_length</span> <span class="pre">&lt;=</span> <span class="pre">1024</span></code> (Chronos-2 cloud endpoint hard cap);
+the local backend has no such ceiling and instead honours
+<code class="docutils literal notranslate"><span class="pre">limit_prediction_length</span></code> – pass <code class="docutils literal notranslate"><span class="pre">limit_prediction_length=False</span></code>
+to go beyond the model’s recommended horizon locally.</p></li>
 <li><p><strong>quantile_levels</strong> – <p>Quantile levels to return. Must not contain
 duplicates (otherwise the resulting field names would collide and
 the constructor raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>). The output column is a
@@ -491,9 +561,10 @@ to the model’s built-in context length (typically 2048). Histories
 longer than <code class="docutils literal notranslate"><span class="pre">context_length</span></code> are left-truncated by Chronos-2.</p></li>
 <li><p><strong>cross_learning</strong> – Whether to enable cross-learning mode in Chronos-2.
 Recommended only when individual histories are very short.</p></li>
-<li><p><strong>limit_prediction_length</strong> – If True (default), raise when
-<code class="docutils literal notranslate"><span class="pre">prediction_length</span></code> is greater than the model’s default
-prediction length.</p></li>
+<li><p><strong>limit_prediction_length</strong> – Local-only flag. If True (default), raise
+when <code class="docutils literal notranslate"><span class="pre">prediction_length</span></code> is greater than the model’s default
+prediction length. Ignored by the remote HTTP backend, which is
+always capped at 1024 by the cloud endpoint itself.</p></li>
 <li><p><strong>freq</strong> – Optional frequency string (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;h&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;D&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;W&quot;</span></code>) used
 to generate future timestamps. When <code class="docutils literal notranslate"><span class="pre">None</span></code> (default) the
 frequency is inferred per row; pass an
@@ -526,6 +597,21 @@ series shorter than 3 points).</p></li>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">take_all</span><span class="p">())</span>
 </pre></div>
 </div>
+<p>Using the remote HTTP back-end (each xpark <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> becomes one
+request; tune <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> on the caller side to trade off payload
+size vs. throughput):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">&quot;forecast&quot;</span><span class="p">,</span>
+    <span class="n">TimeSeriesForecast</span><span class="p">(</span>
+        <span class="n">prediction_length</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span>
+        <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://tcray-aerogate.../v2/models/m-chronos-2-.../infer&quot;</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CHRONOS_API_KEY&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;IO&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;target&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
 <p>With past-only covariates (each covariate is a separate <code class="docutils literal notranslate"><span class="pre">list&lt;float&gt;</span></code>
 column with the same length as <code class="docutils literal notranslate"><span class="pre">target</span></code>); covariates follow the
 <code class="docutils literal notranslate"><span class="pre">timestamps</span></code> column positionally:</p>
@@ -540,13 +626,13 @@ column with the same length as <code class="docutils literal notranslate"><span 
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.TimeSeriesForecast.__call__" title="xpark.dataset.TimeSeriesForecast.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(target, timestamps, *features)</p></td>
-<td><p>Run Chronos-2 inference for a batch of rows.</p></td>
+<td><p>Call self as a function.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.TimeSeriesForecast.options" title="xpark.dataset.TimeSeriesForecast.options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">options</span></code></a>(**kwargs)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.TimeSeriesForecast.with_column" title="xpark.dataset.TimeSeriesForecast.with_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_column</span></code></a>(target, timestamps, *features)</p></td>
-<td><p>Run Chronos-2 inference for a batch of rows.</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -554,24 +640,7 @@ column with the same length as <code class="docutils literal notranslate"><span 
 <dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.TimeSeriesForecast.__call__">
 <span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pa.Array</span></span></span><a class="headerlink" href="#xpark.dataset.TimeSeriesForecast.__call__" title="Link to this definition">#</a></dt>
-<dd><p>Run Chronos-2 inference for a batch of rows.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>target</strong> – the historical observations.</p></li>
-<li><p><strong>timestamps</strong> – the historical timestamps.</p></li>
-<li><p><strong>*features</strong> – Optional past-only covariate columns.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">StructArray</span></code> with a leading <code class="docutils literal notranslate"><span class="pre">&quot;timestamp&quot;</span></code> field of type
-<code class="docutils literal notranslate"><span class="pre">list&lt;timestamp[ns]&gt;</span></code> followed by one <code class="docutils literal notranslate"><span class="pre">list&lt;float32&gt;</span></code> field
-per requested quantile level (field names are the quantile
-literals <code class="docutils literal notranslate"><span class="pre">&quot;0.1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;0.5&quot;</span></code>, …). All inner lists have length
-<code class="docutils literal notranslate"><span class="pre">prediction_length</span></code> and follow the user-specified quantile
-ordering.</p>
-</dd>
-</dl>
+<dd><p>Call self as a function.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -582,25 +651,7 @@ ordering.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.TimeSeriesForecast.with_column">
 <span class="sig-name descname"><span class="pre">with_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pa.Array</span></span></span><a class="headerlink" href="#xpark.dataset.TimeSeriesForecast.with_column" title="Link to this definition">#</a></dt>
-<dd><p>Run Chronos-2 inference for a batch of rows.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>target</strong> – the historical observations.</p></li>
-<li><p><strong>timestamps</strong> – the historical timestamps.</p></li>
-<li><p><strong>*features</strong> – Optional past-only covariate columns.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">StructArray</span></code> with a leading <code class="docutils literal notranslate"><span class="pre">&quot;timestamp&quot;</span></code> field of type
-<code class="docutils literal notranslate"><span class="pre">list&lt;timestamp[ns]&gt;</span></code> followed by one <code class="docutils literal notranslate"><span class="pre">list&lt;float32&gt;</span></code> field
-per requested quantile level (field names are the quantile
-literals <code class="docutils literal notranslate"><span class="pre">&quot;0.1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;0.5&quot;</span></code>, …). All inner lists have length
-<code class="docutils literal notranslate"><span class="pre">prediction_length</span></code> and follow the user-specified quantile
-ordering.</p>
-</dd>
-</dl>
-</dd></dl>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -617,12 +668,12 @@ ordering.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="xpark.dataset.SpeechToText.html"
+       href="xpark.dataset.PDFToText.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">xpark.dataset.SpeechToText</p>
+        <p class="prev-next-title">xpark.dataset.PDFToText</p>
       </div>
     </a>
     <a class="right-next"
@@ -684,8 +735,8 @@ ordering.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -719,7 +770,7 @@ ordering.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
 </p></div>
       
     </div>

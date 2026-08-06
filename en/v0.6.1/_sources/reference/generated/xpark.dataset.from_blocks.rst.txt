@@ -1,0 +1,6 @@
+﻿xpark.dataset.from\_blocks
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: from_blocks

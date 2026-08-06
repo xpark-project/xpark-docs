@@ -1,0 +1,23 @@
+﻿xpark.dataset.ImageExtractTextLayout
+====================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageExtractTextLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageExtractTextLayout.__call__
+      ~ImageExtractTextLayout.options
+      ~ImageExtractTextLayout.with_column
+   
+   
+
+   
+   
+   

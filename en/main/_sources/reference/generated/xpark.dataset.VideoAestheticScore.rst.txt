@@ -1,0 +1,23 @@
+﻿xpark.dataset.VideoAestheticScore
+=================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoAestheticScore
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoAestheticScore.__call__
+      ~VideoAestheticScore.options
+      ~VideoAestheticScore.with_column
+   
+   
+
+   
+   
+   

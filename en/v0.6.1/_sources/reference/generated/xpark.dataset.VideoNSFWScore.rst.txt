@@ -1,0 +1,23 @@
+﻿xpark.dataset.VideoNSFWScore
+============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoNSFWScore
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoNSFWScore.__call__
+      ~VideoNSFWScore.options
+      ~VideoNSFWScore.with_column
+   
+   
+
+   
+   
+   

@@ -1,0 +1,23 @@
+﻿xpark.dataset.MarkdownChunking
+==============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: MarkdownChunking
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MarkdownChunking.__call__
+      ~MarkdownChunking.options
+      ~MarkdownChunking.with_column
+   
+   
+
+   
+   
+   

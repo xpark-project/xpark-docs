@@ -1,0 +1,23 @@
+﻿xpark.dataset.VideoWatermarkDetect
+==================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoWatermarkDetect
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoWatermarkDetect.__call__
+      ~VideoWatermarkDetect.options
+      ~VideoWatermarkDetect.with_column
+   
+   
+
+   
+   
+   

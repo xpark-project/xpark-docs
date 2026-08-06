@@ -1,0 +1,23 @@
+﻿xpark.dataset.ImageCaption
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageCaption
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageCaption.__call__
+      ~ImageCaption.options
+      ~ImageCaption.with_column
+   
+   
+
+   
+   
+   

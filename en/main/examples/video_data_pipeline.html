@@ -1,0 +1,828 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Video Data Processing Pipeline &#8212; Xpark</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/video_data_pipeline';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dataset API" href="../reference/index.html" />
+    <link rel="prev" title="Video Classify By Speech Content" href="video_classify.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xpark</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="text_dedup.html">Large-Scale Text Data Deduplication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_classify.html">Video Classify By Speech Content</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Video Data Processing Pipeline</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Video Data Processing Pipeline</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="video-data-processing-pipeline">
+<h1>Video Data Processing Pipeline<a class="headerlink" href="#video-data-processing-pipeline" title="Link to this heading">#</a></h1>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>This pipeline demonstrates how to build a complete video data processing pipeline for
+training data curation by chaining multiple Xpark operators in a funnel-style architecture.
+It is designed for scenarios such as embodied AI and robotics, where large-scale multimodal
+video data needs to be cleaned, filtered, and annotated before being used for model training.</p>
+<p>The pipeline covers the full lifecycle of video data preparation: shot segmentation,
+quality filtering, and semantic annotation. It follows two key design principles:</p>
+<ul class="simple">
+<li><p><strong>Shot segmentation first</strong>: Shot segmentation is placed at the very beginning of the pipeline
+to avoid discontinuous scenes being mixed into the same clip.</p></li>
+<li><p><strong>Funnel-style filtering</strong>: Lightweight operators (duration filter, subtitle/watermark/aesthetic
+scoring) run first to quickly discard obviously problematic samples, so that expensive VLM
+inference only processes the narrowed-down, high-quality subset.</p></li>
+</ul>
+<p>The detailed workflow is as follows:</p>
+<ol class="arabic simple">
+<li><p><strong>Read Videos</strong>: Use <code class="docutils literal notranslate"><span class="pre">from_items</span></code> to load a list of video file paths.</p></li>
+<li><p><strong>Shot Segmentation</strong>: Use <code class="docutils literal notranslate"><span class="pre">VideoShotDetect</span></code> to detect shot boundaries and split videos into shots.</p></li>
+<li><p><strong>Explode &amp; Duration Filter</strong>: Expand one-to-many shot results into individual rows, then filter by duration.</p></li>
+<li><p><strong>Subtitle Detection</strong>: Use <code class="docutils literal notranslate"><span class="pre">VideoTextAreaRatio</span></code> to measure on-screen text (subtitle) area ratio.</p></li>
+<li><p><strong>Watermark Detection</strong>: Use <code class="docutils literal notranslate"><span class="pre">VideoWatermarkDetect</span></code> to estimate watermark probability.</p></li>
+<li><p><strong>Aesthetic Scoring</strong>: Use <code class="docutils literal notranslate"><span class="pre">VideoAestheticScore</span></code> to evaluate visual quality.</p></li>
+<li><p><strong>Quality Filter</strong>: Combine subtitle/watermark/aesthetic scores to keep only high-quality shots.</p></li>
+<li><p><strong>VLM Caption</strong>: Use <code class="docutils literal notranslate"><span class="pre">VideoCaption</span></code> to generate a natural-language description via a remote VLM.</p></li>
+<li><p><strong>Scene Classification</strong>: Use <code class="docutils literal notranslate"><span class="pre">TextClassify</span></code> to assign multi-label scene tags based on the caption.</p></li>
+<li><p><strong>Text Embedding</strong>: Use <code class="docutils literal notranslate"><span class="pre">TextEmbedding</span></code> to vectorize captions for downstream semantic search or deduplication.</p></li>
+</ol>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>GPU resources (recommended)</strong>: Operators such as <code class="docutils literal notranslate"><span class="pre">VideoShotDetect</span></code> (with <code class="docutils literal notranslate"><span class="pre">&quot;transnetv2&quot;</span></code> method),
+<code class="docutils literal notranslate"><span class="pre">VideoTextAreaRatio</span></code>, <code class="docutils literal notranslate"><span class="pre">VideoWatermarkDetect</span></code>, <code class="docutils literal notranslate"><span class="pre">VideoAestheticScore</span></code>, and <code class="docutils literal notranslate"><span class="pre">TextEmbedding</span></code>
+all support GPU acceleration. While these operators can run on CPU, GPU is strongly recommended
+for production workloads to achieve acceptable throughput.</p></li>
+<li><p><strong>Remote VLM service</strong>: Steps 8–9 (caption and classification) require access to an OpenAI-compatible
+VLM endpoint. You can use <a class="reference external" href="https://cloud.tencent.com/document/product/1823/130058">Tencent Cloud TokenHub</a>
+or any compatible service.</p></li>
+<li><p><strong>Environment variables</strong>: Set <code class="docutils literal notranslate"><span class="pre">VLM_BASE_URL</span></code> and <code class="docutils literal notranslate"><span class="pre">VLM_API_KEY</span></code> for the remote VLM endpoint.</p></li>
+</ul>
+</section>
+<section id="video-data-pipeline">
+<h2>Video Data Pipeline<a class="headerlink" href="#video-data-pipeline" title="Link to this heading">#</a></h2>
+<p>The following example shows how to chain Xpark operators to build a complete video data
+processing pipeline:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partial</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TextClassify</span><span class="p">,</span>
+    <span class="n">TextEmbedding</span><span class="p">,</span>
+    <span class="n">VideoAestheticScore</span><span class="p">,</span>
+    <span class="n">VideoCaption</span><span class="p">,</span>
+    <span class="n">VideoCompute</span><span class="p">,</span>
+    <span class="n">VideoShotDetect</span><span class="p">,</span>
+    <span class="n">VideoTextAreaRatio</span><span class="p">,</span>
+    <span class="n">VideoWatermarkDetect</span><span class="p">,</span>
+    <span class="n">from_items</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.processors.video_text_area_ratio</span><span class="w"> </span><span class="kn">import</span> <span class="n">subtitle_area_ratio</span>
+
+<span class="c1"># Input video list (supports local paths, COS, S3, HTTP, etc.)</span>
+<span class="n">video_paths</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;/path/to/video1.mp4&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;/path/to/video2.mp4&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;/path/to/video3.mp4&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># =========================================================================</span>
+<span class="c1"># Phase 1: Shot Segmentation &amp; Preprocessing</span>
+<span class="c1"># =========================================================================</span>
+
+<span class="c1"># Step 1: Build the video dataset</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">}</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">video_paths</span><span class="p">])</span>
+
+<span class="c1"># Step 2: Shot segmentation (SceneDetect adaptive algorithm)</span>
+<span class="c1"># Returns a list of segment URIs written to output_dir per input video</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">&quot;shots&quot;</span><span class="p">,</span>
+    <span class="n">VideoShotDetect</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;scenedetect&quot;</span><span class="p">,</span> <span class="n">detector</span><span class="o">=</span><span class="s2">&quot;adaptive&quot;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;/data/output/shots/&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># Step 3: Explode &amp; duration filter — one row with multiple shots → one row per shot</span>
+<span class="c1"># shots field is already a list of segment URIs (written by VideoShotDetect)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">flat_map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;video&quot;</span><span class="p">],</span> <span class="s2">&quot;shot_idx&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;shot_path&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;shots&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])</span>
+<span class="p">])</span>
+
+<span class="c1"># Compute shot duration and filter (keep 5s ~ 5min)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;shot_duration&quot;</span><span class="p">,</span> <span class="n">VideoCompute</span><span class="o">.</span><span class="n">duration</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;shot_path&quot;</span><span class="p">)))</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+    <span class="n">expr</span><span class="o">=</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;shot_duration&quot;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">5.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;shot_duration&quot;</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">300.0</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># =========================================================================</span>
+<span class="c1"># Phase 2: Quality Filtering</span>
+<span class="c1"># =========================================================================</span>
+
+<span class="c1"># Step 4: Subtitle area ratio (OCR detection, sample 3 frames, measure subtitle band)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">&quot;subtitle_ratio&quot;</span><span class="p">,</span>
+    <span class="n">VideoTextAreaRatio</span><span class="p">(</span><span class="n">frame_sample_num</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ratio_fn</span><span class="o">=</span><span class="n">subtitle_area_ratio</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;GPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;shot_path&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># Step 5: Watermark detection (LAION watermark classifier, sample 5 frames, take max)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">&quot;watermark_prob&quot;</span><span class="p">,</span>
+    <span class="n">VideoWatermarkDetect</span><span class="p">(</span><span class="n">num_frames</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">reduce_mode</span><span class="o">=</span><span class="s2">&quot;max&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;GPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;shot_path&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># Step 6: Aesthetic score (normalized to [0, 1], sample 5 frames, take average)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">&quot;aesthetic_score&quot;</span><span class="p">,</span>
+    <span class="n">VideoAestheticScore</span><span class="p">(</span><span class="n">num_frames</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">reduce_mode</span><span class="o">=</span><span class="s2">&quot;avg&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;GPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;shot_path&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># Step 7: Combined quality filter</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+    <span class="n">expr</span><span class="o">=</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;subtitle_ratio&quot;</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.005</span><span class="p">)</span>
+    <span class="o">&amp;</span> <span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;watermark_prob&quot;</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="o">&amp;</span> <span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;aesthetic_score&quot;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.45</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># =========================================================================</span>
+<span class="c1"># Phase 3: Semantic Enrichment</span>
+<span class="c1"># =========================================================================</span>
+
+<span class="n">vlm_base_url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;VLM_BASE_URL&quot;</span><span class="p">)</span>
+<span class="n">vlm_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;VLM_API_KEY&quot;</span><span class="p">)</span>
+
+<span class="c1"># Step 8: VLM video caption — sample 8 frames → remote multimodal model → description</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">&quot;caption&quot;</span><span class="p">,</span>
+    <span class="n">VideoCaption</span><span class="p">(</span>
+        <span class="n">base_url</span><span class="o">=</span><span class="n">vlm_base_url</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="o">=</span><span class="n">vlm_api_key</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;your-vlm-model&quot;</span><span class="p">,</span>
+        <span class="n">hint</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;Describe the video content in Chinese, including subject actions, &quot;</span>
+            <span class="s2">&quot;scene environment, location type, and lighting conditions.&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Keep the description under 80 characters.&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">num_frames</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+        <span class="n">max_words</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;IO&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;shot_path&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># Step 9: Scene multi-label classification (based on caption text, via remote LLM)</span>
+<span class="n">SCENE_LABELS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;indoor&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indoor scene such as room, corridor, warehouse&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;outdoor&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Outdoor scene such as street, park, field&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;warehouse&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Warehouse, logistics area, shelving zone&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;road&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Road, sidewalk, parking lot, traffic scene&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;daytime&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Daytime with natural lighting&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;nighttime&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Nighttime or very dark environment&quot;</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">&quot;labels&quot;</span><span class="p">,</span>
+    <span class="n">TextClassify</span><span class="p">(</span>
+        <span class="n">SCENE_LABELS</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;your-llm-model&quot;</span><span class="p">,</span>
+        <span class="n">base_url</span><span class="o">=</span><span class="n">vlm_base_url</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="o">=</span><span class="n">vlm_api_key</span><span class="p">,</span>
+        <span class="n">multi_label</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">hint</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;Classify the scene based on the video description text.&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Select only from the provided label list. Multiple labels allowed.&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">max_retries</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">fallback_response</span><span class="o">=</span><span class="p">[],</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;IO&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;caption&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># Step 10: Text embedding (local CPU inference, for downstream semantic search/dedup)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">&quot;embedding&quot;</span><span class="p">,</span>
+    <span class="n">TextEmbedding</span><span class="p">(</span><span class="s2">&quot;Qwen/Qwen3-Embedding-0.6B&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;caption&quot;</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># =========================================================================</span>
+<span class="c1"># Output Results</span>
+<span class="c1"># =========================================================================</span>
+
+<span class="c1"># Display the schema and sample data</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">select_columns</span><span class="p">([</span>
+    <span class="s2">&quot;video&quot;</span><span class="p">,</span> <span class="s2">&quot;shot_idx&quot;</span><span class="p">,</span> <span class="s2">&quot;shot_duration&quot;</span><span class="p">,</span> <span class="s2">&quot;subtitle_ratio&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;watermark_prob&quot;</span><span class="p">,</span> <span class="s2">&quot;aesthetic_score&quot;</span><span class="p">,</span> <span class="s2">&quot;caption&quot;</span><span class="p">,</span> <span class="s2">&quot;labels&quot;</span><span class="p">,</span>
+<span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Print detailed results</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">select_columns</span><span class="p">([</span>
+    <span class="s2">&quot;video&quot;</span><span class="p">,</span> <span class="s2">&quot;shot_idx&quot;</span><span class="p">,</span> <span class="s2">&quot;shot_duration&quot;</span><span class="p">,</span> <span class="s2">&quot;caption&quot;</span><span class="p">,</span> <span class="s2">&quot;labels&quot;</span><span class="p">,</span>
+<span class="p">])</span><span class="o">.</span><span class="n">take_all</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Video: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;video&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shot: #</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;shot_idx&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;shot_duration&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">s)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Caption: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;caption&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Labels: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="about-helper-functions">
+<h3>About Helper Functions<a class="headerlink" href="#about-helper-functions" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">flat_map</span></code> call in Step 3 uses a helper function to explode shot segmentation results.
+When <code class="docutils literal notranslate"><span class="pre">output_dir</span></code> is set, <code class="docutils literal notranslate"><span class="pre">VideoShotDetect</span></code> writes each segment to the specified directory
+and returns a list of URIs. The <code class="docutils literal notranslate"><span class="pre">flat_map</span></code> simply enumerates these URIs into individual rows:</p>
+<ul class="simple">
+<li><p><strong>Input</strong>: A single row dict containing a <code class="docutils literal notranslate"><span class="pre">&quot;shots&quot;</span></code> field (list of segment URI strings).</p></li>
+<li><p><strong>Output</strong>: A list of row dicts, each with <code class="docutils literal notranslate"><span class="pre">&quot;shot_idx&quot;</span></code> (int) and <code class="docutils literal notranslate"><span class="pre">&quot;shot_path&quot;</span></code> (str).</p></li>
+</ul>
+<p>For VLM response parsing, a similar <code class="docutils literal notranslate"><span class="pre">flat_map</span></code> function can be used to extract structured
+fields (e.g., caption, is_synthetic) from raw JSON responses, with fallback regex extraction
+and garbled-text detection to handle malformed model outputs gracefully.</p>
+</section>
+</section>
+<section id="example-output">
+<h2>Example Output<a class="headerlink" href="#example-output" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ds.show()</span></code> call displays the dataset schema and sample rows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>╭──────────────────┬──────────┬───────────────┬────────────────┬────────────────┬────────────────┬──────────────────────────────────────────┬─────────────────────────────────╮
+│ video            ┆ shot_idx ┆ shot_duration ┆ subtitle_ratio ┆ watermark_prob ┆ aesthetic_score┆ caption                                  ┆ labels                          │
+│ ---              ┆ ---      ┆ ---           ┆ ---            ┆ ---            ┆ ---            ┆ ---                                      ┆ ---                             │
+│ String           ┆ Int64    ┆ Float64       ┆ Float64        ┆ Float64        ┆ Float64        ┆ String                                   ┆ List[String]                    │
+╞══════════════════╪══════════╪═══════════════╪════════════════╪════════════════╪════════════════╪══════════════════════════════════════════╪═════════════════════════════════╡
+│ /path/to/vid...  ┆ 47       ┆ 77.8          ┆ 0.0003         ┆ 0.0725         ┆ 0.507          ┆ Indoor furniture store with mul...        ┆ [indoor, warehouse, artific...  │
+│ /path/to/vid...  ┆ 83       ┆ 16.5          ┆ 0.0            ┆ 0.0935         ┆ 0.480          ┆ Building materials supermarket...         ┆ [indoor, warehouse, nightti...  │
+│ /path/to/vid...  ┆ 90       ┆ 201.3         ┆ 0.0009         ┆ 0.1200         ┆ 0.512          ┆ Supermarket with customers bro...         ┆ [indoor, artificial_light, ...  │
+╰──────────────────┴──────────┴───────────────┴────────────────┴────────────────┴────────────────┴──────────────────────────────────────────┴─────────────────────────────────╯
+</pre></div>
+</div>
+<p>The detailed print output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Video: /path/to/video1.mp4
+Shot: #47 (77.8s)
+Caption: Indoor furniture store with multiple display areas, customers browsing and selecting items
+Labels: [&#39;indoor&#39;, &#39;warehouse&#39;, &#39;daytime&#39;, &#39;artificial_light&#39;]
+------------------------------------------------------------
+Video: /path/to/video1.mp4
+Shot: #83 (16.5s)
+Caption: Building materials supermarket at dusk, metal shelves displaying renovation materials
+Labels: [&#39;indoor&#39;, &#39;warehouse&#39;, &#39;nighttime&#39;, &#39;artificial_light&#39;]
+------------------------------------------------------------
+Video: /path/to/video2.mp4
+Shot: #90 (201.3s)
+Caption: Supermarket with customers browsing shelves, signage showing product categories
+Labels: [&#39;indoor&#39;, &#39;artificial_light&#39;]
+------------------------------------------------------------
+</pre></div>
+</div>
+</section>
+<section id="operator-reference">
+<h2>Operator Reference<a class="headerlink" href="#operator-reference" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.VideoShotDetect.html#xpark.dataset.VideoShotDetect" title="xpark.dataset.VideoShotDetect"><code class="xref py py-class docutils literal notranslate"><span class="pre">xpark.dataset.VideoShotDetect</span></code></a> — Video shot boundary detection. Supports <code class="docutils literal notranslate"><span class="pre">&quot;scenedetect&quot;</span></code> (CPU, traditional methods) and <code class="docutils literal notranslate"><span class="pre">&quot;transnetv2&quot;</span></code> (GPU, deep learning). When <code class="docutils literal notranslate"><span class="pre">output_dir</span></code> is set, returns segment URI list; when unset, returns structured frame positions.</p></li>
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.VideoCompute.html#xpark.dataset.VideoCompute" title="xpark.dataset.VideoCompute"><code class="xref py py-class docutils literal notranslate"><span class="pre">xpark.dataset.VideoCompute</span></code></a> — Video metadata and processing utilities. The <code class="docutils literal notranslate"><span class="pre">duration</span></code> method extracts video duration in seconds.</p></li>
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.VideoTextAreaRatio.html#xpark.dataset.VideoTextAreaRatio" title="xpark.dataset.VideoTextAreaRatio"><code class="xref py py-class docutils literal notranslate"><span class="pre">xpark.dataset.VideoTextAreaRatio</span></code></a> — On-screen text area measurement via OCR. Supports custom scoring functions (<code class="docutils literal notranslate"><span class="pre">subtitle_area_ratio</span></code>, <code class="docutils literal notranslate"><span class="pre">watermark_area_ratio</span></code>) for region-specific detection.</p></li>
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.VideoWatermarkDetect.html#xpark.dataset.VideoWatermarkDetect" title="xpark.dataset.VideoWatermarkDetect"><code class="xref py py-class docutils literal notranslate"><span class="pre">xpark.dataset.VideoWatermarkDetect</span></code></a> — Watermark detection based on LAION watermark classifier. Returns a probability in [0, 1].</p></li>
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.VideoAestheticScore.html#xpark.dataset.VideoAestheticScore" title="xpark.dataset.VideoAestheticScore"><code class="xref py py-class docutils literal notranslate"><span class="pre">xpark.dataset.VideoAestheticScore</span></code></a> — Visual aesthetic quality scoring based on LAION Aesthetic. Supports normalization to [0, 1].</p></li>
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.VideoCaption.html#xpark.dataset.VideoCaption" title="xpark.dataset.VideoCaption"><code class="xref py py-class docutils literal notranslate"><span class="pre">xpark.dataset.VideoCaption</span></code></a> — Video captioning via remote OpenAI-compatible VLM endpoint. Samples frames uniformly and generates natural-language descriptions.</p></li>
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.TextClassify.html#xpark.dataset.TextClassify" title="xpark.dataset.TextClassify"><code class="xref py py-class docutils literal notranslate"><span class="pre">xpark.dataset.TextClassify</span></code></a> — Text classification using LLM. Supports multi-label classification with custom label schemas.</p></li>
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.TextEmbedding.html#xpark.dataset.TextEmbedding" title="xpark.dataset.TextEmbedding"><code class="xref py py-class docutils literal notranslate"><span class="pre">xpark.dataset.TextEmbedding</span></code></a> — Text embedding for semantic vectorization. Supports local CPU/GPU models and remote HTTP endpoints.</p></li>
+</ul>
+</section>
+<section id="further-notes">
+<h2>Further Notes<a class="headerlink" href="#further-notes" title="Link to this heading">#</a></h2>
+<p>This pipeline architecture is designed for large-scale video data curation in domains such as
+embodied AI and robotics training. Key considerations:</p>
+<ul class="simple">
+<li><p><strong>Intermediate persistence</strong>: For production workloads, consider writing intermediate results
+to Lance format (<code class="docutils literal notranslate"><span class="pre">ds.write_lance(...)</span></code>) between phases. This enables checkpoint/resume and
+allows threshold tuning without re-running expensive upstream operators.</p></li>
+<li><p><strong>Resource scheduling</strong>: All GPU-capable operators (shot segmentation, subtitle/watermark/aesthetic
+scoring, text embedding) can also run on CPU, but GPU is strongly recommended for production
+throughput. IO-bound operators (VLM, LLM) use IO workers with concurrency control.</p></li>
+<li><p><strong>Scalability</strong>: The funnel design ensures that the most expensive operators (VLM caption at
+~40 clips/hour/GPU) only process the subset that passed all lightweight filters, significantly
+reducing total compute cost.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="video_classify.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Video Classify By Speech Content</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../reference/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dataset API</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-data-pipeline">Video Data Pipeline</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-helper-functions">About Helper Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-output">Example Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-reference">Operator Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-notes">Further Notes</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/examples/video_data_pipeline.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Tencent.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

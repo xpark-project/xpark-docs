@@ -1,0 +1,23 @@
+﻿xpark.dataset.PDFToText
+=======================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: PDFToText
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PDFToText.__call__
+      ~PDFToText.options
+      ~PDFToText.with_column
+   
+   
+
+   
+   
+   

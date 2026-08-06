@@ -1,0 +1,23 @@
+﻿xpark.dataset.VideoTextAreaRatio
+================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoTextAreaRatio
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoTextAreaRatio.__call__
+      ~VideoTextAreaRatio.options
+      ~VideoTextAreaRatio.with_column
+   
+   
+
+   
+   
+   

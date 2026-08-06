@@ -1,0 +1,23 @@
+﻿xpark.dataset.expressions.ExprUDFOptions
+========================================
+
+.. currentmodule:: xpark.dataset.expressions
+
+.. autoclass:: ExprUDFOptions
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ExprUDFOptions.batch_size
+      ~ExprUDFOptions.num_workers
+      ~ExprUDFOptions.worker_ray_remote_args
+   
+   

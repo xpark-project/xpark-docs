@@ -1,0 +1,6 @@
+﻿xpark.dataset.from\_huggingface
+===============================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: from_huggingface

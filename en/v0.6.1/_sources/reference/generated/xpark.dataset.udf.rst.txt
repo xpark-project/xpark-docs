@@ -1,0 +1,6 @@
+﻿xpark.dataset.udf
+=================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: udf

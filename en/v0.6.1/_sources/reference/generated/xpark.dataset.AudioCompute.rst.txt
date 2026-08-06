@@ -1,0 +1,28 @@
+﻿xpark.dataset.AudioCompute
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: AudioCompute
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AudioCompute.channels
+      ~AudioCompute.duration
+      ~AudioCompute.format
+      ~AudioCompute.frames
+      ~AudioCompute.load
+      ~AudioCompute.samplerate
+      ~AudioCompute.split_by_duration
+      ~AudioCompute.subtype
+   
+   
+
+   
+   
+   

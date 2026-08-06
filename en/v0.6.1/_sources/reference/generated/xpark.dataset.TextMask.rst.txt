@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextMask
+======================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextMask
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextMask.__call__
+      ~TextMask.options
+      ~TextMask.with_column
+   
+   
+
+   
+   
+   

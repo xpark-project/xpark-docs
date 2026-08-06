@@ -1,0 +1,6 @@
+﻿xpark.dataset.from\_numpy
+=========================
+
+.. currentmodule:: xpark.dataset
+
+.. autofunction:: from_numpy

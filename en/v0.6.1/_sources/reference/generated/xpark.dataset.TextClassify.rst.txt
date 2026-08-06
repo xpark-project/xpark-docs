@@ -1,0 +1,23 @@
+﻿xpark.dataset.TextClassify
+==========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: TextClassify
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TextClassify.__call__
+      ~TextClassify.options
+      ~TextClassify.with_column
+   
+   
+
+   
+   
+   
