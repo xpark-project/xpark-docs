@@ -51,7 +51,6 @@ Video
     :toctree: generated/
 
     xpark.dataset.VideoCompute
-    xpark.dataset.VideoShotDetect
 
 
 AI Processors
@@ -87,9 +86,12 @@ Image
     xpark.dataset.ImageNSFWScore
     xpark.dataset.ImageTextSimilarityScore
     xpark.dataset.ImageAestheticScore
+    xpark.dataset.ImageExtractDepth
+    xpark.dataset.ImageExtractRay
     xpark.dataset.ImageExtractTextLayout
     xpark.dataset.ImageWatermarkDetect
     xpark.dataset.ImageCaption
+    xpark.dataset.ImageToPdf
 
 
 Audio
@@ -106,10 +108,14 @@ Video
     :toctree: generated/
 
     xpark.dataset.VideoAestheticScore
+    xpark.dataset.VideoCaption
+    xpark.dataset.VideoExtractSubtitle
     xpark.dataset.VideoNSFWScore
+    xpark.dataset.VideoOpticalFlow
+    xpark.dataset.VideoQualityCheck
+    xpark.dataset.VideoShotDetect
     xpark.dataset.VideoTextAreaRatio
     xpark.dataset.VideoWatermarkDetect
-    xpark.dataset.VideoCaption
 
 
 Document
@@ -117,6 +123,7 @@ Document
 .. autosummary::
     :toctree: generated/
 
+    xpark.dataset.PDFToImage
     xpark.dataset.PDFToText
 
 

@@ -1,0 +1,23 @@
+﻿xpark.dataset.VideoOpticalFlow
+==============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoOpticalFlow
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoOpticalFlow.__call__
+      ~VideoOpticalFlow.options
+      ~VideoOpticalFlow.with_column
+   
+   
+
+   
+   
+   

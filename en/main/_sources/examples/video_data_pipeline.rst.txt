@@ -147,20 +147,24 @@ processing pipeline:
     vlm_api_key = os.getenv("VLM_API_KEY")
 
     # Step 8: VLM video caption — sample 8 frames → remote multimodal model → description
+    # Extra instructions go through prompt_builder, which returns the system turn.
+    def describe_shot(components):
+        return (
+            components.default_prompt
+            + "\nDescribe the video content in Chinese, including subject actions, "
+            "scene environment, location type, and lighting conditions."
+        )
+
     ds = ds.with_column(
         "caption",
         VideoCaption(
             base_url=vlm_base_url,
             api_key=vlm_api_key,
             model="your-vlm-model",
-            hint=[
-                "Describe the video content in Chinese, including subject actions, "
-                "scene environment, location type, and lighting conditions.",
-                "Keep the description under 80 characters.",
-            ],
+            prompt_builder=describe_shot,
             num_frames=8,
-            max_words=0,
-            max_new_tokens=512,
+            max_words=80,
+            sampling_params={"max_tokens": 512},
         )
         .options(num_workers={"IO": 1}, batch_size=4)
         .with_column(col("shot_path")),

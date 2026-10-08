@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -27,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -45,7 +44,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/xpark.dataset.VideoCompute';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -54,7 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="xpark.dataset.VideoShotDetect" href="xpark.dataset.VideoShotDetect.html" />
+    <link rel="next" title="xpark.dataset.TextEmbedding" href="xpark.dataset.TextEmbedding.html" />
     <link rel="prev" title="xpark.dataset.ImageCompute" href="xpark.dataset.ImageCompute.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -106,7 +105,7 @@
   
     <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -198,7 +197,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -209,15 +208,15 @@
         <div class="navbar-item">
 
 <div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
     <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
     <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
     <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
   </ul>
 </div></div>
       
@@ -228,7 +227,7 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -237,7 +236,7 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -307,15 +306,15 @@
           <div class="navbar-item">
 
 <div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
     <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
     <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
     <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
   </ul>
 </div></div>
         
@@ -324,7 +323,7 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
   <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
     <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
   </svg>
@@ -354,8 +353,7 @@
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageCompute.html">xpark.dataset.ImageCompute</a></li>
 </ul>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">xpark.dataset.VideoCompute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoShotDetect.html">xpark.dataset.VideoShotDetect</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">xpark.dataset.VideoCompute</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextEmbedding.html">xpark.dataset.TextEmbedding</a></li>
@@ -379,21 +377,29 @@
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageNSFWScore.html">xpark.dataset.ImageNSFWScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageTextSimilarityScore.html">xpark.dataset.ImageTextSimilarityScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageAestheticScore.html">xpark.dataset.ImageAestheticScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractDepth.html">xpark.dataset.ImageExtractDepth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractRay.html">xpark.dataset.ImageExtractRay</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractTextLayout.html">xpark.dataset.ImageExtractTextLayout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageWatermarkDetect.html">xpark.dataset.ImageWatermarkDetect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageCaption.html">xpark.dataset.ImageCaption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageToPdf.html">xpark.dataset.ImageToPdf</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.SpeechToText.html">xpark.dataset.SpeechToText</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoAestheticScore.html">xpark.dataset.VideoAestheticScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCaption.html">xpark.dataset.VideoCaption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoExtractSubtitle.html">xpark.dataset.VideoExtractSubtitle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoNSFWScore.html">xpark.dataset.VideoNSFWScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoOpticalFlow.html">xpark.dataset.VideoOpticalFlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoQualityCheck.html">xpark.dataset.VideoQualityCheck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoShotDetect.html">xpark.dataset.VideoShotDetect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoTextAreaRatio.html">xpark.dataset.VideoTextAreaRatio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoWatermarkDetect.html">xpark.dataset.VideoWatermarkDetect</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCaption.html">xpark.dataset.VideoCaption</a></li>
 </ul>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.PDFToImage.html">xpark.dataset.PDFToImage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.PDFToText.html">xpark.dataset.PDFToText</a></li>
 </ul>
 <ul class="nav bd-sidenav">
@@ -516,16 +522,19 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.pix_fmt" title="xpark.dataset.VideoCompute.pix_fmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pix_fmt</span></code></a>(videos)</p></td>
 <td><p>The pixel format of the video, e.g., 'yuv420p'</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.split_by_duration" title="xpark.dataset.VideoCompute.split_by_duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_by_duration</span></code></a>(videos[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.quality_check_from_frames" title="xpark.dataset.VideoCompute.quality_check_from_frames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quality_check_from_frames</span></code></a>(frames, *[, detectors])</p></td>
+<td><p>Video quality check on a pre-extracted frames tensor column.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.split_by_duration" title="xpark.dataset.VideoCompute.split_by_duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_by_duration</span></code></a>(videos[, ...])</p></td>
 <td><p>Split video by duration.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.split_by_key_frame" title="xpark.dataset.VideoCompute.split_by_key_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_by_key_frame</span></code></a>(videos)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.split_by_key_frame" title="xpark.dataset.VideoCompute.split_by_key_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_by_key_frame</span></code></a>(videos)</p></td>
 <td><p>Split video by keyframe</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.time_base" title="xpark.dataset.VideoCompute.time_base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_base</span></code></a>(videos)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.time_base" title="xpark.dataset.VideoCompute.time_base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_base</span></code></a>(videos)</p></td>
 <td><p>The time base of the stream, representing the unit of time for timestamps</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.width" title="xpark.dataset.VideoCompute.width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">width</span></code></a>(videos)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.VideoCompute.width" title="xpark.dataset.VideoCompute.width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">width</span></code></a>(videos)</p></td>
 <td><p>Video width, in pixels</p></td>
 </tr>
 </tbody>
@@ -593,18 +602,18 @@ S3, HTTP, binary sources, and other fsspec-compatible storage systems.</p>
 
 <span class="n">ctx</span> <span class="o">=</span> <span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span>
 <span class="c1"># set cos storage_options</span>
-<span class="c1"># ctx.storage_options = {&quot;cos&quot;: {&quot;endpoint_url&quot;: &quot;https://your-cos-endpoint&quot;}}</span>
+<span class="c1"># ctx.storage_options = {"cos": {"endpoint_url": "https://your-cos-endpoint"}}</span>
 <span class="c1"># VIDEO_COS_PATH is cos path like cos://bucket/path/to/video.mp4</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="n">VIDEO_COS_PATH</span><span class="p">}])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">"video"</span><span class="p">:</span> <span class="n">VIDEO_COS_PATH</span><span class="p">}])</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;audio&quot;</span><span class="p">,</span>
+    <span class="s2">"audio"</span><span class="p">,</span>
     <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_audio</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">)),</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">)),</span>
 <span class="p">)</span>
 
-<span class="n">audio_bytes</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;audio&#39;</span><span class="p">]</span>
+<span class="n">audio_bytes</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'audio'</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -638,14 +647,14 @@ dtype uint8, values in range [0, 255].</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.processors.video_compute</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoCompute</span>
 
 <span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span>
-    <span class="p">{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="s2">&quot;video.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="s2">&quot;video.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"video"</span><span class="p">:</span> <span class="s2">"video.mp4"</span><span class="p">,</span> <span class="s2">"timestamp"</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"video"</span><span class="p">:</span> <span class="s2">"video.mp4"</span><span class="p">,</span> <span class="s2">"timestamp"</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
 <span class="p">])</span>
 
 <span class="c1"># Decode video frame at specified timestamp</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;frame&quot;</span><span class="p">,</span>
-    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frame_at</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">)),</span>
+    <span class="s2">"frame"</span><span class="p">,</span>
+    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frame_at</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"timestamp"</span><span class="p">)),</span>
 <span class="p">)</span>
 
 <span class="c1"># Get extract frames</span>
@@ -653,21 +662,21 @@ dtype uint8, values in range [0, 255].</p>
 </pre></div>
 </div>
 <p>With float input:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="s2">&quot;video.mp4&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="s2">&quot;video1.mp4&quot;</span><span class="p">}])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">"video"</span><span class="p">:</span> <span class="s2">"video.mp4"</span><span class="p">},</span> <span class="p">{</span><span class="s2">"video"</span><span class="p">:</span> <span class="s2">"video1.mp4"</span><span class="p">}])</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;frame&quot;</span><span class="p">,</span>
-    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frame_at</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">),</span>
+    <span class="s2">"frame"</span><span class="p">,</span>
+    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frame_at</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <p>With custom options:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;frame&quot;</span><span class="p">,</span>
+    <span class="s2">"frame"</span><span class="p">,</span>
     <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frame_at</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-        <span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span>
-        <span class="n">col</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">),</span>
+        <span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span>
+        <span class="n">col</span><span class="p">(</span><span class="s2">"timestamp"</span><span class="p">),</span>
     <span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
@@ -721,31 +730,31 @@ dtype uint8, values in range [0, 255].</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.processors.video_compute</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoCompute</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="s2">&quot;video.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;ts&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]}])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">"video"</span><span class="p">:</span> <span class="s2">"video.mp4"</span><span class="p">,</span> <span class="s2">"ts"</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]}])</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;frames&quot;</span><span class="p">,</span>
-    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)),</span>
+    <span class="s2">"frames"</span><span class="p">,</span>
+    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"ts"</span><span class="p">)),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <p>Extract frames at 2 FPS:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;frames&quot;</span><span class="p">,</span>
-    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span> <span class="n">fps</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mf">5.0</span><span class="p">),</span>
+    <span class="s2">"frames"</span><span class="p">,</span>
+    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span> <span class="n">fps</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mf">5.0</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <p>Extract keyframes only:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;keyframes&quot;</span><span class="p">,</span>
-    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span> <span class="n">keyframes_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_frames</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mf">50.0</span><span class="p">),</span>
+    <span class="s2">"keyframes"</span><span class="p">,</span>
+    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span> <span class="n">keyframes_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_frames</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mf">50.0</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <p>Extract 10 frames uniformly:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;frames&quot;</span><span class="p">,</span>
-    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span> <span class="n">num_frames</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mf">0.0</span><span class="p">),</span>
+    <span class="s2">"frames"</span><span class="p">,</span>
+    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span> <span class="n">num_frames</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mf">0.0</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -798,24 +807,24 @@ e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;-crf&qu
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.processors.video_compute</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoCompute</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="s2">&quot;input.mp4&quot;</span><span class="p">}])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">"video"</span><span class="p">:</span> <span class="s2">"input.mp4"</span><span class="p">}])</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;video_720p&quot;</span><span class="p">,</span>
+    <span class="s2">"video_720p"</span><span class="p">,</span>
     <span class="n">VideoCompute</span><span class="o">.</span><span class="n">ffmpeg_transform</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span> <span class="n">vf</span><span class="o">=</span><span class="s2">&quot;scale=1280:720&quot;</span><span class="p">),</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span> <span class="n">vf</span><span class="o">=</span><span class="s2">"scale=1280:720"</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <p>Write transcoded videos to COS:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;output_uri&quot;</span><span class="p">,</span>
+    <span class="s2">"output_uri"</span><span class="p">,</span>
     <span class="n">VideoCompute</span><span class="o">.</span><span class="n">ffmpeg_transform</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
     <span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-        <span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">),</span>
-        <span class="n">vf</span><span class="o">=</span><span class="s2">&quot;scale=1280:720&quot;</span><span class="p">,</span>
-        <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;cos://bucket/output/&quot;</span><span class="p">,</span>
+        <span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span>
+        <span class="n">vf</span><span class="o">=</span><span class="s2">"scale=1280:720"</span><span class="p">,</span>
+        <span class="n">output_dir</span><span class="o">=</span><span class="s2">"cos://bucket/output/"</span><span class="p">,</span>
     <span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
@@ -832,6 +841,64 @@ e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;-crf&qu
 <dt class="sig sig-object py" id="xpark.dataset.VideoCompute.pix_fmt">
 <span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">pix_fmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">videos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pa.Array</span></span></span><a class="headerlink" href="#xpark.dataset.VideoCompute.pix_fmt" title="Link to this definition">#</a></dt>
 <dd><p>The pixel format of the video, e.g., ‘yuv420p’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xpark.dataset.VideoCompute.quality_check_from_frames">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">quality_check_from_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">detectors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">DetectorSpec</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pa.Array</span></span></span><a class="headerlink" href="#xpark.dataset.VideoCompute.quality_check_from_frames" title="Link to this definition">#</a></dt>
+<dd><p>Video quality check on a pre-extracted frames tensor column.</p>
+<p>Thin expression-layer wrapper of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">VideoQualityCheckFromFrames</span></code>.
+Consumes the frames column produced by <a class="reference internal" href="#xpark.dataset.VideoCompute.extract_frames" title="xpark.dataset.VideoCompute.extract_frames"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_frames()</span></code></a> and
+emits per-row ratios + hit positions for the 5 pixel-class
+detector families (black / static / overexposed / low_light / blur).</p>
+<p>Pure measurement stage: accept / reject verdicts belong to
+downstream filters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frames</strong> – Column of (N, H, W, C) uint8 frame tensors, typically
+produced by <a class="reference internal" href="#xpark.dataset.VideoCompute.extract_frames" title="xpark.dataset.VideoCompute.extract_frames"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_frames()</span></code></a>. Null / empty rows emit
+sample_count=0 with every family struct null.</p></li>
+<li><p><strong>detectors</strong> – Optional list of detector Specs. None (default)
+enables all 5 pixel-class detectors with default thresholds.
+MissingFrameSpec is rejected (no codec context on a frames
+column); use VideoQualityCheck for full-decode checking.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>sample_count
+plus the black / static / overexposed / low_light / blur family
+structs (null when the detector was not requested).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Struct array matching QC_FROM_FRAMES_RESULT_STRUCT</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.processors.video_compute</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoCompute</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"frames"</span><span class="p">,</span>
+    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">),</span> <span class="n">num_frames</span><span class="o">=</span><span class="mi">32</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"qc"</span><span class="p">,</span>
+    <span class="n">VideoCompute</span><span class="o">.</span><span class="n">quality_check_from_frames</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"frames"</span><span class="p">)),</span>
+<span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"qc"</span><span class="p">)</span><span class="o">.</span><span class="n">struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"black"</span><span class="p">)</span><span class="o">.</span><span class="n">struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"ratio"</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">drop_columns</span><span class="p">([</span><span class="s2">"frames"</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#xpark.dataset.VideoCompute.extract_frames" title="xpark.dataset.VideoCompute.extract_frames"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_frames()</span></code></a>: Produce the frames column consumed here.</p></li>
+<li><p><a class="reference internal" href="xpark.dataset.VideoQualityCheck.html#xpark.dataset.VideoQualityCheck" title="xpark.dataset.processors.video_quality_check.VideoQualityCheck"><code class="xref py py-class docutils literal notranslate"><span class="pre">VideoQualityCheck</span></code></a>:
+Full-decode twin emitting segment intervals instead of ratios.</p></li>
+</ul>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -861,18 +928,18 @@ default value is 0</p></li>
 
 <span class="n">ctx</span> <span class="o">=</span> <span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span>
 <span class="c1"># set cos storage_options</span>
-<span class="c1"># ctx.storage_options = {&quot;cos&quot;: {&quot;endpoint_url&quot;: &quot;https://your-cos-endpoint&quot;}}</span>
+<span class="c1"># ctx.storage_options = {"cos": {"endpoint_url": "https://your-cos-endpoint"}}</span>
 <span class="c1"># VIDEO_COS_PATH is cos path like cos://bucket/path/to/video.mp4</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="n">VIDEO_COS_PATH</span><span class="p">}])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">"video"</span><span class="p">:</span> <span class="n">VIDEO_COS_PATH</span><span class="p">}])</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;split_videos&quot;</span><span class="p">,</span>
+    <span class="s2">"split_videos"</span><span class="p">,</span>
     <span class="n">VideoCompute</span><span class="o">.</span><span class="n">split_by_duration</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">)),</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">)),</span>
 <span class="p">)</span>
 
-<span class="n">split_videos</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;split_videos&#39;</span><span class="p">]</span>
+<span class="n">split_videos</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'split_videos'</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -900,18 +967,18 @@ S3, HTTP, binary sources, and other fsspec-compatible storage systems.</p>
 
 <span class="n">ctx</span> <span class="o">=</span> <span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span>
 <span class="c1"># set cos storage_options</span>
-<span class="c1"># ctx.storage_options = {&quot;cos&quot;: {&quot;endpoint_url&quot;: &quot;https://your-cos-endpoint&quot;}}</span>
+<span class="c1"># ctx.storage_options = {"cos": {"endpoint_url": "https://your-cos-endpoint"}}</span>
 <span class="c1"># VIDEO_COS_PATH is cos path like cos://bucket/path/to/video.mp4</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;video&quot;</span><span class="p">:</span> <span class="n">VIDEO_COS_PATH</span><span class="p">}])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">"video"</span><span class="p">:</span> <span class="n">VIDEO_COS_PATH</span><span class="p">}])</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;split_videos&quot;</span><span class="p">,</span>
+    <span class="s2">"split_videos"</span><span class="p">,</span>
     <span class="n">VideoCompute</span><span class="o">.</span><span class="n">split_by_key_frame</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;video&quot;</span><span class="p">)),</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">)),</span>
 <span class="p">)</span>
 
-<span class="n">split_videos</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;split_videos&#39;</span><span class="p">]</span>
+<span class="n">split_videos</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'split_videos'</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -952,11 +1019,11 @@ S3, HTTP, binary sources, and other fsspec-compatible storage systems.</p>
       </div>
     </a>
     <a class="right-next"
-       href="xpark.dataset.VideoShotDetect.html"
+       href="xpark.dataset.TextEmbedding.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">xpark.dataset.VideoShotDetect</p>
+        <p class="prev-next-title">xpark.dataset.TextEmbedding</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -992,6 +1059,7 @@ S3, HTTP, binary sources, and other fsspec-compatible storage systems.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.VideoCompute.ffmpeg_transform"><code class="docutils literal notranslate"><span class="pre">VideoCompute.ffmpeg_transform()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.VideoCompute.height"><code class="docutils literal notranslate"><span class="pre">VideoCompute.height()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.VideoCompute.pix_fmt"><code class="docutils literal notranslate"><span class="pre">VideoCompute.pix_fmt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.VideoCompute.quality_check_from_frames"><code class="docutils literal notranslate"><span class="pre">VideoCompute.quality_check_from_frames()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.VideoCompute.split_by_duration"><code class="docutils literal notranslate"><span class="pre">VideoCompute.split_by_duration()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.VideoCompute.split_by_key_frame"><code class="docutils literal notranslate"><span class="pre">VideoCompute.split_by_key_frame()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xpark.dataset.VideoCompute.time_base"><code class="docutils literal notranslate"><span class="pre">VideoCompute.time_base()</span></code></a></li>
@@ -1023,8 +1091,8 @@ S3, HTTP, binary sources, and other fsspec-compatible storage systems.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1045,7 +1113,6 @@ S3, HTTP, binary sources, and other fsspec-compatible storage systems.</p>
 
   <p class="sphinx-version">
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
-    <br/>
   </p>
 </div>
       
@@ -1058,7 +1125,7 @@ S3, HTTP, binary sources, and other fsspec-compatible storage systems.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
 </p></div>
       
     </div>

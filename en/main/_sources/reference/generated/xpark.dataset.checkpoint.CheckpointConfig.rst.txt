@@ -1,0 +1,25 @@
+﻿xpark.dataset.checkpoint.CheckpointConfig
+=========================================
+
+.. currentmodule:: xpark.dataset.checkpoint
+
+.. autoclass:: CheckpointConfig
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CheckpointConfig.CHECKPOINT_ACTOR_MEMORY_BYTES
+      ~CheckpointConfig.CHECKPOINT_ACTOR_POOL_MAX_SIZE
+      ~CheckpointConfig.CHECKPOINT_ACTOR_POOL_MIN_SIZE
+      ~CheckpointConfig.DEFAULT_CHECKPOINT_PATH_BUCKET_ENV_VAR
+      ~CheckpointConfig.DEFAULT_CHECKPOINT_PATH_DIR
+   
+   

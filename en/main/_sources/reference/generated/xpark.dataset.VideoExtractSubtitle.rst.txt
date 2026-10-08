@@ -1,0 +1,23 @@
+﻿xpark.dataset.VideoExtractSubtitle
+==================================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoExtractSubtitle
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoExtractSubtitle.__call__
+      ~VideoExtractSubtitle.options
+      ~VideoExtractSubtitle.with_column
+   
+   
+
+   
+   
+   

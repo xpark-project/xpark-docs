@@ -1,0 +1,23 @@
+﻿xpark.dataset.ImageToPdf
+========================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageToPdf
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageToPdf.__call__
+      ~ImageToPdf.options
+      ~ImageToPdf.with_column
+   
+   
+
+   
+   
+   

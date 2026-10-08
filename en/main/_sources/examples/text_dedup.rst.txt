@@ -13,7 +13,7 @@ Xpark provides high-performance deduplication capabilities, including the indust
 - **Exact Substring Dedup**: A distributed exact substring deduplication method that identifies and removes documents sharing long common substrings. For more details, refer to the paper `Deduplicating Training Data Makes Language Models Better <https://arxiv.org/abs/2107.06499>`_.
 
 Why Use Xpark
-----------
+-------------
 
 - **MinHash Dedup**: **8.5× faster** deduplication performance than Data-Juicer (v1.4.3)
 - **Exact Substring Dedup**: Xpark is the first in the industry to provide a distributed implementation of this operator, whereas other open-source projects only support single-machine execution. **It can deduplicate 1.2 TB of data in 2,813 seconds using a 3-node cluster**.
@@ -29,9 +29,9 @@ The following example demonstrates how to perform fuzzy deduplication using Xpar
     from xpark.dataset import TextFuzzyDedup, read_parquet
     from xpark.dataset.expressions import col
 
-    ds = read_parquet("/path/to/parquets/", dynamic_uid="uid")
-    ds.filter(TextFuzzyDedup().with_column(uid=col("uid"), text=col("text"))).drop_columns(
-        "uid"
+    ds = read_parquet("/path/to/parquets/", include_row_hash=True)
+    ds.filter(TextFuzzyDedup().with_column(uid=col("row_hash"), text=col("text"))).drop_columns(
+        "row_hash"
     ).write_parquet("/path/to/output/deduped_parquets/")
 
 
@@ -97,15 +97,15 @@ The following example demonstrates how to perform exact substring deduplication 
     from xpark.dataset.filters.dedup.text_exact_substring_dedup import TextExactSubstringDedup
     from xpark.dataset.expressions import col
 
-    ds = read_parquet("/path/to/parquets/", dynamic_uid="uid")
-    dedup_op = TextExactSubstringDedup(min_match_tokens=64).with_column(uid=col("uid"), text=col("text"))
+    ds = read_parquet("/path/to/parquets/", include_row_hash=True)
+    dedup_op = TextExactSubstringDedup(min_match_tokens=64).with_column(uid=col("row_hash"), text=col("text"))
 
     # Get documents that have no duplicate substrings with any other documents
-    ds.filter(dedup_op).drop_columns("uid").write_parquet("/path/to/output/unique_data")
+    ds.filter(dedup_op).drop_columns("row_hash").write_parquet("/path/to/output/unique_data")
 
     # For potentially duplicated documents, deduplicate using suffix array
     ds_connected_deduped = dedup_op.collect_sa_deduped_dataset()
-    ds_connected_deduped.drop_columns("uid").write_parquet("/path/to/output/deduped_by_sa_data")
+    ds_connected_deduped.drop_columns("row_hash").write_parquet("/path/to/output/deduped_by_sa_data")
 
 Performance Results
 ~~~~~~~~~~~~~~~~~~~

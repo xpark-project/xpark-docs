@@ -29,6 +29,16 @@ Dataset Context
     xpark.dataset.DatasetContext
 
 
+Checkpointing
+-------------
+.. autosummary::
+    :toctree: generated/
+
+    xpark.dataset.checkpoint.CheckpointConfig
+    xpark.dataset.checkpoint.CheckpointBackend
+    xpark.dataset.checkpoint.build_checkpoint_filesystem
+
+
 Grouped Dataset
 ---------------
 .. autosummary::
@@ -60,6 +70,7 @@ Read API
     xpark.dataset.read_iceberg
     xpark.dataset.read_lance
     xpark.dataset.read_lerobot
+    xpark.dataset.read_mcap
     xpark.dataset.read_files
 
 

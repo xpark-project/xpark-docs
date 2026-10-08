@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -27,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -45,7 +44,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/xpark.dataset.ImageCaption';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -54,7 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="xpark.dataset.SpeechToText" href="xpark.dataset.SpeechToText.html" />
+    <link rel="next" title="xpark.dataset.ImageToPdf" href="xpark.dataset.ImageToPdf.html" />
     <link rel="prev" title="xpark.dataset.ImageWatermarkDetect" href="xpark.dataset.ImageWatermarkDetect.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -106,7 +105,7 @@
   
     <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -198,7 +197,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -209,15 +208,15 @@
         <div class="navbar-item">
 
 <div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
     <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
     <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
     <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
   </ul>
 </div></div>
       
@@ -228,7 +227,7 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -237,7 +236,7 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -307,15 +306,15 @@
           <div class="navbar-item">
 
 <div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
     <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
     <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
     <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
   </ul>
 </div></div>
         
@@ -324,7 +323,7 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
   <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
     <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
   </svg>
@@ -355,7 +354,6 @@
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCompute.html">xpark.dataset.VideoCompute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoShotDetect.html">xpark.dataset.VideoShotDetect</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextEmbedding.html">xpark.dataset.TextEmbedding</a></li>
@@ -379,21 +377,29 @@
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageNSFWScore.html">xpark.dataset.ImageNSFWScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageTextSimilarityScore.html">xpark.dataset.ImageTextSimilarityScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageAestheticScore.html">xpark.dataset.ImageAestheticScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractDepth.html">xpark.dataset.ImageExtractDepth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractRay.html">xpark.dataset.ImageExtractRay</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractTextLayout.html">xpark.dataset.ImageExtractTextLayout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageWatermarkDetect.html">xpark.dataset.ImageWatermarkDetect</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">xpark.dataset.ImageCaption</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">xpark.dataset.ImageCaption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageToPdf.html">xpark.dataset.ImageToPdf</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.SpeechToText.html">xpark.dataset.SpeechToText</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoAestheticScore.html">xpark.dataset.VideoAestheticScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCaption.html">xpark.dataset.VideoCaption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoExtractSubtitle.html">xpark.dataset.VideoExtractSubtitle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoNSFWScore.html">xpark.dataset.VideoNSFWScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoOpticalFlow.html">xpark.dataset.VideoOpticalFlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoQualityCheck.html">xpark.dataset.VideoQualityCheck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoShotDetect.html">xpark.dataset.VideoShotDetect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoTextAreaRatio.html">xpark.dataset.VideoTextAreaRatio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoWatermarkDetect.html">xpark.dataset.VideoWatermarkDetect</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCaption.html">xpark.dataset.VideoCaption</a></li>
 </ul>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.PDFToImage.html">xpark.dataset.PDFToImage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.PDFToText.html">xpark.dataset.PDFToText</a></li>
 </ul>
 <ul class="nav bd-sidenav">
@@ -472,89 +478,177 @@
 <h1>xpark.dataset.ImageCaption<a class="headerlink" href="#xpark-dataset-imagecaption" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="xpark.dataset.ImageCaption">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">ImageCaption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_local_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Qwen/Qwen3.5-0.8B'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">hint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_quality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'fast'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'balanced'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'accurate'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_token_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_token_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NOT_SET'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_new_tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_qps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xpark.dataset.ImageCaption" title="Link to this definition">#</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">ImageCaption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_local_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Qwen/Qwen3.5-4B'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">PromptComponents</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'fast'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'balanced'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'accurate'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_token_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_token_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chat_template_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NOT_SET'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_qps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xpark.dataset.ImageCaption" title="Link to this definition">#</a></dt>
 <dd><p>Image caption processor for CPU, GPU and remote Http requests.</p>
 <p>Generates a natural-language description (caption) for each input image using a Qwen3.5
-vision-language model. The backend is chosen automatically per worker: GPU (transformers) when a
-CUDA device is assigned, remote OpenAI-compatible endpoint on IO workers, otherwise CPU
+vision-language model. The backend is chosen automatically per worker: GPU (in-process vLLM)
+when a CUDA device is assigned, remote OpenAI-compatible endpoint on IO workers, otherwise CPU
 (GGUF + mmproj via xllamacpp).</p>
+<p>Each entry in <code class="docutils literal notranslate"><span class="pre">Args</span></code> carries the backends it applies to: <code class="docutils literal notranslate"><span class="pre">[all]</span></code>, <code class="docutils literal notranslate"><span class="pre">[CPU/GPU]</span></code>
+(local engines) or <code class="docutils literal notranslate"><span class="pre">[remote</span> <span class="pre">only]</span></code> (IO workers).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>_local_model</strong> – The vision model name for CPU or GPU. Available models: [‘Qwen/Qwen3.5-0.8B’, ‘Qwen/Qwen3.5-4B’, ‘Qwen/Qwen3.5-9B’].
-Defaults to <code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3.5-0.8B</span></code>.</p></li>
-<li><p><strong>hint</strong> – Optional extra instructions or constraints to guide the caption (e.g. focus, tone,
-output language). Accepts either a single string or a list of strings, where each item is
-one hint written in plain text. Passing a list is recommended — use one string per hint.
-Rendered into an <code class="docutils literal notranslate"><span class="pre">&lt;instructions&gt;</span></code> block of the system prompt.</p></li>
-<li><p><strong>max_words</strong> – A non-negative best-effort target for the number of words in the caption.
-Defaults to 50. If set to 0, there is no word limit. This is a soft, prompt-level
-constraint rendered into a <code class="docutils literal notranslate"><span class="pre">&lt;response_format&gt;</span></code> block; it is orthogonal to the hard token
-cap <code class="docutils literal notranslate"><span class="pre">max_new_tokens</span></code> (local) / <code class="docutils literal notranslate"><span class="pre">max_tokens</span></code> (remote).</p></li>
-<li><p><strong>resize</strong> – If True (default), each image is passed through <code class="xref py py-func docutils literal notranslate"><span class="pre">smart_resize()</span></code>
-before being handed to the backend. Applies to all three backends (GPU, CPU, remote
-HTTP). Set to False to feed the original resolution.</p></li>
-<li><p><strong>image_quality</strong> – <p>Semantic preset for the per-image vision-token budget. Sets
+<li><p><strong>_local_model</strong> – [CPU/GPU] The vision model name for CPU or GPU. Available models:
+[‘Qwen/Qwen3.5-0.8B’, ‘Qwen/Qwen3.5-4B’, ‘Qwen/Qwen3.5-9B’]. Defaults to <code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3.5-4B</span></code>.</p></li>
+<li><p><strong>prompt_builder</strong> – [all] Optional <code class="docutils literal notranslate"><span class="pre">(components)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code> hook that replaces the whole
+system prompt. <code class="docutils literal notranslate"><span class="pre">components</span></code> is a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">PromptComponents</span></code>: the blocks xpark would render
+(<code class="docutils literal notranslate"><span class="pre">roles_and_tasks</span></code>, <code class="docutils literal notranslate"><span class="pre">response_format</span></code>, <code class="docutils literal notranslate"><span class="pre">default_prompt</span></code>), the row’s
+prepared <code class="docutils literal notranslate"><span class="pre">image</span></code> and the <code class="docutils literal notranslate"><span class="pre">token_budget</span></code> left for text — a hard ceiling: a
+longer prompt raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> instead of being truncated. Runs once per row,
+on the worker that owns the batch, so keep it stateless.</p></li>
+<li><p><strong>max_words</strong> – [all] A non-negative best-effort target for the number of words in the caption.
+Defaults to 100. If set to 0, there is no word limit. A soft, prompt-level
+constraint rendered into a <code class="docutils literal notranslate"><span class="pre">&lt;response_format&gt;</span></code> block, orthogonal to the hard token
+cap <code class="docutils literal notranslate"><span class="pre">sampling_params[&quot;max_tokens&quot;]</span></code>.</p></li>
+<li><p><strong>quality</strong> – <p>[all] Semantic preset for the per-image vision-token budget. Sets
 <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code> under the hood:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fast&quot;</span></code>     — <code class="docutils literal notranslate"><span class="pre">max_token_num=256</span></code>   (~200 K pixels): thumbnails, coarse
-captioning, low-latency / high-throughput.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;balanced&quot;</span></code> — <code class="docutils literal notranslate"><span class="pre">max_token_num=1280</span></code>  (~1 M pixels): general understanding,
-recommended default for most downstream tasks.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;accurate&quot;</span></code> — <code class="docutils literal notranslate"><span class="pre">max_token_num=16384</span></code> (~12.8 M pixels): keeps fine text /
-small objects intact (OCR-grade).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fast&quot;</span></code>     — <code class="docutils literal notranslate"><span class="pre">max_token_num=256</span></code>: thumbnails, coarse captioning,
+low-latency / high-throughput.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;balanced&quot;</span></code> — <code class="docutils literal notranslate"><span class="pre">max_token_num=1280</span></code>: general understanding, the usual choice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;accurate&quot;</span></code> — <code class="docutils literal notranslate"><span class="pre">max_token_num=16384</span></code>: keeps fine text / small objects
+intact (OCR-grade).</p></li>
 </ul>
-<p>When <code class="docutils literal notranslate"><span class="pre">None</span></code> (default) no preset is applied and <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code> decides.
-When combined with an explicit <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code>, the <strong>tighter (smaller)</strong> of
-the two wins — the preset states the caller’s intent, and <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code> can
-only further tighten it. Only takes effect when <code class="docutils literal notranslate"><span class="pre">resize</span></code> is True.</p>
+<p>The pixel budget is <code class="docutils literal notranslate"><span class="pre">max_token_num</span> <span class="pre">*</span> <span class="pre">factor**2</span></code>, where <code class="docutils literal notranslate"><span class="pre">factor</span></code> is inferred
+from the model by <code class="xref py py-func docutils literal notranslate"><span class="pre">smart_resize_factor_for_model()</span></code>
+(32 for Qwen3-VL / Qwen3.5, 28 for the Qwen2 family).</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">None</span></code> (default) no preset is applied and <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code> decides. When
+combined with an explicit <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code>, the tighter (smaller) of the two wins.</p>
 </p></li>
-<li><p><strong>min_token_num</strong> – Optional lower bound on the per-image vision-token budget,
-forwarded to <code class="xref py py-func docutils literal notranslate"><span class="pre">smart_resize()</span></code>. When <code class="docutils literal notranslate"><span class="pre">None</span></code> (default) the underlying
-<code class="xref py py-func docutils literal notranslate"><span class="pre">smart_resize()</span></code> default is used. Independent of <code class="docutils literal notranslate"><span class="pre">image_quality</span></code>.</p></li>
-<li><p><strong>max_token_num</strong> – Optional upper bound on the per-image vision-token budget,
-forwarded to <code class="xref py py-func docutils literal notranslate"><span class="pre">smart_resize()</span></code>. When <code class="docutils literal notranslate"><span class="pre">None</span></code> (default) the underlying
-<code class="xref py py-func docutils literal notranslate"><span class="pre">smart_resize()</span></code> default is used, which preserves detail. Lowering this
-cap trades image detail for a much smaller vision-token / prefill budget and
-can substantially speed up local CPU inference and remote payload size.
-Combined with <code class="docutils literal notranslate"><span class="pre">image_quality</span></code> via <code class="docutils literal notranslate"><span class="pre">min(...)</span></code> — see <code class="docutils literal notranslate"><span class="pre">image_quality</span></code> for
-details. Only takes effect when <code class="docutils literal notranslate"><span class="pre">resize</span></code> is True. Applies to all three
-backends.</p></li>
-<li><p><strong>base_url</strong> – The base URL of the remote OpenAI-compatible endpoint.</p></li>
-<li><p><strong>model</strong> – The request model name (remote).</p></li>
-<li><p><strong>api_key</strong> – The request API key (remote).</p></li>
-<li><p><strong>max_new_tokens</strong> – Hard upper bound on generated tokens; maps to <code class="docutils literal notranslate"><span class="pre">max_tokens</span></code> on the remote
-endpoint. Default to 1024.</p></li>
-<li><p><strong>max_qps</strong> – The maximum query-per-second rate for remote requests.</p></li>
-<li><p><strong>max_concurrency</strong> – The maximum number of in-flight remote requests allowed concurrently.</p></li>
-<li><p><strong>max_retries</strong> – The maximum number of retries per request in the event of failures.
-We retry with exponential backoff upto this specific maximum retries.</p></li>
-<li><p><strong>fallback_response</strong> – The response value to return when a remote request fails.
-If set to None, the failed rows fall back to None.</p></li>
-<li><p><strong>**kwargs</strong> – Keyword arguments to pass to the <a class="reference external" href="https://github.com/openai/openai-python/blob/main/src/openai/resources/chat/completions/completions.py">openai.AsyncClient.chat.completions.create</a> API.</p></li>
+<li><p><strong>min_token_num</strong> – [all] lower bound on the per-image vision-token budget. Defaults to 128.</p></li>
+<li><p><strong>max_token_num</strong> – [all] upper bound on the per-image vision-token budget. Defaults to the
+16384 the checkpoint’s own image processor allows (the resolved budget caps it
+lower on CPU). Combined with <code class="docutils literal notranslate"><span class="pre">quality</span></code> via <code class="docutils literal notranslate"><span class="pre">min(...)</span></code>.</p></li>
+<li><p><strong>fallback_response</strong> – [all] The response value to return when the backend produces no caption
+text (remote request failure after retries, or empty local generation).
+If set to None, an empty string is returned instead of a null.</p></li>
+<li><p><strong>engine_kwargs</strong> – [CPU/GPU] Extra arguments forwarded to the local inference engine (GPU:
+<code class="docutils literal notranslate"><span class="pre">vllm.LLM</span></code> constructor; CPU: <code class="docutils literal notranslate"><span class="pre">llama.cpp</span></code> <code class="docutils literal notranslate"><span class="pre">CommonParams</span></code> fields). Unknown
+keys are dropped with a warning on GPU and raise on CPU. Overriding fields the
+backend sizes itself (e.g. <code class="docutils literal notranslate"><span class="pre">n_ctx</span></code>) is allowed but gives up the
+capacity-sizing guarantees. Ignored by the remote backend.</p></li>
+<li><p><strong>base_url</strong> – [remote only] The base URL of the remote OpenAI-compatible endpoint.</p></li>
+<li><p><strong>model</strong> – [remote only] The request model name.</p></li>
+<li><p><strong>api_key</strong> – [remote only] The request API key.</p></li>
+<li><p><strong>max_qps</strong> – [remote only] The maximum query-per-second rate for remote requests.</p></li>
+<li><p><strong>max_concurrency</strong> – [remote only] The maximum number of in-flight remote requests allowed
+concurrently.</p></li>
+<li><p><strong>max_retries</strong> – [remote only] The maximum number of retries per request, with exponential
+backoff. Defaults to 2.</p></li>
+<li><p><strong>sampling_params</strong> – [all] Sampling parameters for the <strong>sampler</strong>: on GPU they become
+<code class="docutils literal notranslate"><span class="pre">SamplingParams</span></code>, on CPU and on remote HTTP they go into the chat-completions
+request. Layered field by field over the model’s presets, so
+<code class="docutils literal notranslate"><span class="pre">{&quot;temperature&quot;:</span> <span class="pre">0.2}</span></code> keeps every other preset value. <code class="docutils literal notranslate"><span class="pre">max_tokens</span></code> is the
+hard generation cap; it defaults to 1024 when omitted. Unknown fields are dropped
+with a warning on GPU. <code class="docutils literal notranslate"><span class="pre">repetition_penalty</span></code> only takes effect on the GPU
+backend: the CPU shim does not expose it, and on the remote endpoint it travels
+via <code class="docutils literal notranslate"><span class="pre">extra_body</span></code>, so whether it applies is up to the server.</p></li>
+<li><p><strong>chat_template_kwargs</strong> – [all] Options for the <strong>chat template</strong> (<code class="docutils literal notranslate"><span class="pre">apply_chat_template</span></code>
+on GPU, <code class="docutils literal notranslate"><span class="pre">chat_template_kwargs</span></code> in the request on CPU / remote HTTP). Layered
+over xpark’s <code class="docutils literal notranslate"><span class="pre">{&quot;enable_thinking&quot;:</span> <span class="pre">False}</span></code>, so pass
+<code class="docutils literal notranslate"><span class="pre">{&quot;enable_thinking&quot;:</span> <span class="pre">True}</span></code> to let the model reason (at the cost of the
+generation budget).</p></li>
 </ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If an argument is out of range or contradicts another (<code class="docutils literal notranslate"><span class="pre">max_words</span></code>,
+    <code class="docutils literal notranslate"><span class="pre">min_token_num</span></code> / <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code>, <code class="docutils literal notranslate"><span class="pre">quality</span></code>), the model name is
+    unsupported, or the target itself is missing (neither <code class="docutils literal notranslate"><span class="pre">_local_model</span></code> nor
+    <code class="docutils literal notranslate"><span class="pre">base_url</span></code>; <code class="docutils literal notranslate"><span class="pre">_local_model</span></code> on a local worker; <code class="docutils literal notranslate"><span class="pre">base_url</span></code> / <code class="docutils literal notranslate"><span class="pre">model</span></code> on an
+    IO worker). Also raised when a budget cannot be satisfied (the clip-level token
+    budget exceeds the model context, or the worst legal image does not fit the CPU
+    engine window), when <code class="docutils literal notranslate"><span class="pre">engine_kwargs</span></code> names a field the CPU backend does not
+    have, and when <code class="docutils literal notranslate"><span class="pre">prompt_builder</span></code> is not callable, returns a blank or non-string
+    prompt, or returns a prompt longer than the <code class="docutils literal notranslate"><span class="pre">token_budget</span></code> the worker’s engine
+    has left for text.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageCaption</span><span class="p">,</span> <span class="n">from_items</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptComponents</span><span class="p">,</span> <span class="n">estimate_prompt_tokens</span><span class="p">,</span> <span class="n">format_prompt</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span><span class="s2">&quot;cat.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;dog.jpg&quot;</span><span class="p">])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span><span class="s2">"cat.jpg"</span><span class="p">,</span> <span class="s2">"dog.jpg"</span><span class="p">])</span>
+
+<span class="c1"># CPU worker.</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;caption&quot;</span><span class="p">,</span>
-    <span class="n">ImageCaption</span><span class="p">(</span>
-        <span class="c1"># Local vision model.</span>
-        <span class="s2">&quot;Qwen/Qwen3.5-0.8B&quot;</span><span class="p">,</span>
-        <span class="c1"># For remote requests.</span>
-        <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:9997/v1&quot;</span><span class="p">,</span>
-        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen3.5-vl&quot;</span><span class="p">,</span>
-        <span class="n">hint</span><span class="o">=</span><span class="s2">&quot;Focus on the main subject.&quot;</span><span class="p">,</span>
-        <span class="n">max_words</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-        <span class="n">image_quality</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;IO&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">)),</span>
+    <span class="s2">"caption_cpu"</span><span class="p">,</span>
+    <span class="n">ImageCaption</span><span class="p">()</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
 <span class="p">)</span>
+
+<span class="c1"># GPU worker.</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"caption_gpu"</span><span class="p">,</span>
+    <span class="n">ImageCaption</span><span class="p">()</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"GPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># Remote OpenAI-compatible endpoint (IO worker).</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"caption_io"</span><span class="p">,</span>
+    <span class="n">ImageCaption</span><span class="p">(</span>
+        <span class="n">base_url</span><span class="o">=</span><span class="s2">"https://your-endpoint/v1"</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">"youtu-vita"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"IO"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># --- Custom prompts ---------------------------------------------------------</span>
+
+<span class="c1"># 1. Keep xpark's prompt and append one constraint.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ocr_prompt</span><span class="p">(</span><span class="n">components</span><span class="p">:</span> <span class="n">PromptComponents</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">components</span><span class="o">.</span><span class="n">default_prompt</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Transcribe every visible string, in reading order."</span>
+
+<span class="c1"># 2. Swap the task wording only: xpark's ``&lt;response_format&gt;`` block survives.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">curator_prompt</span><span class="p">(</span><span class="n">components</span><span class="p">:</span> <span class="n">PromptComponents</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">format_prompt</span><span class="p">(</span>
+        <span class="n">roles_and_tasks</span><span class="o">=</span><span class="p">(</span>
+            <span class="s2">"You are a museum curator. Describe the artwork's subject, medium and period."</span>
+        <span class="p">),</span>
+        <span class="n">response_format</span><span class="o">=</span><span class="n">components</span><span class="o">.</span><span class="n">response_format</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="c1"># 3. Build the system turn from scratch: the blocks, the prepared image and the</span>
+<span class="c1">#    budget are still yours to read. The user turn (the image item) stays xpark's.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">grounded_ocr_prompt</span><span class="p">(</span><span class="n">components</span><span class="p">:</span> <span class="n">PromptComponents</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">components</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"You are an OCR engine. Transcribe every string in the image, in reading order."</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"The image is </span><span class="si">{</span><span class="n">width</span><span class="si">}</span><span class="s2">x</span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s2"> px."</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="c1"># ``token_budget`` is a hard ceiling: going over raises, so trim when close.</span>
+    <span class="k">if</span> <span class="n">components</span><span class="o">.</span><span class="n">token_budget</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">estimate_prompt_tokens</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">components</span><span class="o">.</span><span class="n">token_budget</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">prompt</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">builder</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"caption_ocr"</span><span class="p">,</span> <span class="n">ocr_prompt</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"caption_curator"</span><span class="p">,</span> <span class="n">curator_prompt</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"caption_grounded"</span><span class="p">,</span> <span class="n">grounded_ocr_prompt</span><span class="p">),</span>
+<span class="p">]:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+        <span class="n">name</span><span class="p">,</span>
+        <span class="n">ImageCaption</span><span class="p">(</span><span class="n">prompt_builder</span><span class="o">=</span><span class="n">builder</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+        <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
+    <span class="p">)</span>
+
+<span class="c1"># Sampling and chat-template knobs: one destination each.</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"caption_thinking"</span><span class="p">,</span>
+    <span class="n">ImageCaption</span><span class="p">(</span>
+        <span class="n">sampling_params</span><span class="o">=</span><span class="p">{</span><span class="s2">"temperature"</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">"max_tokens"</span><span class="p">:</span> <span class="mi">512</span><span class="p">},</span>
+        <span class="n">chat_template_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">"enable_thinking"</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
+<span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -613,11 +707,11 @@ If set to None, the failed rows fall back to None.</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="xpark.dataset.SpeechToText.html"
+       href="xpark.dataset.ImageToPdf.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">xpark.dataset.SpeechToText</p>
+        <p class="prev-next-title">xpark.dataset.ImageToPdf</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -671,8 +765,8 @@ If set to None, the failed rows fall back to None.</p></li>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -693,7 +787,6 @@ If set to None, the failed rows fall back to None.</p></li>
 
   <p class="sphinx-version">
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
-    <br/>
   </p>
 </div>
       
@@ -706,7 +799,7 @@ If set to None, the failed rows fall back to None.</p></li>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
 </p></div>
       
     </div>

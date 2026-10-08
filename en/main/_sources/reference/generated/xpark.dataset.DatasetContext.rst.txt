@@ -55,9 +55,12 @@
       ~DatasetContext.gpu_shuffle_setup_timeout_s
       ~DatasetContext.gpu_shuffle_spill_memory_limit
       ~DatasetContext.hash_shuffle_aggregator_health_warning_interval_s
+      ~DatasetContext.hash_shuffle_compression
+      ~DatasetContext.hash_shuffle_reduce_batch_size
+      ~DatasetContext.hash_shuffle_reduce_get_timeout_s
       ~DatasetContext.isolate_read_workers
       ~DatasetContext.large_args_threshold
-      ~DatasetContext.log_internal_stack_trace_to_stdout
+      ~DatasetContext.log_internal_stack_trace
       ~DatasetContext.max_errored_blocks
       ~DatasetContext.max_map_retries
       ~DatasetContext.memory_usage_poll_interval_s
@@ -81,6 +84,7 @@
       ~DatasetContext.trace_allocations
       ~DatasetContext.use_arrow_tensor_v2
       ~DatasetContext.use_datasource_v2
+      ~DatasetContext.use_hash_shuffle_v2
       ~DatasetContext.use_polars
       ~DatasetContext.use_polars_sort
       ~DatasetContext.use_push_based_shuffle

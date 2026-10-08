@@ -1,0 +1,23 @@
+﻿xpark.dataset.ImageExtractRay
+=============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageExtractRay
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageExtractRay.__call__
+      ~ImageExtractRay.options
+      ~ImageExtractRay.with_column
+   
+   
+
+   
+   
+   

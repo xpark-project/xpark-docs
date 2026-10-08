@@ -1,0 +1,6 @@
+﻿xpark.dataset.checkpoint.build\_checkpoint\_filesystem
+======================================================
+
+.. currentmodule:: xpark.dataset.checkpoint
+
+.. autofunction:: build_checkpoint_filesystem

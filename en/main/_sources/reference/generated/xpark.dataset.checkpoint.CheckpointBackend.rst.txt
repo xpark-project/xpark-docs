@@ -1,0 +1,22 @@
+﻿xpark.dataset.checkpoint.CheckpointBackend
+==========================================
+
+.. currentmodule:: xpark.dataset.checkpoint
+
+.. autoclass:: CheckpointBackend
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CheckpointBackend.CLOUD_OBJECT_STORAGE
+      ~CheckpointBackend.FILE_STORAGE
+   
+   

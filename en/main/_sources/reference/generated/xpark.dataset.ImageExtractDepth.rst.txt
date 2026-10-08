@@ -1,0 +1,23 @@
+﻿xpark.dataset.ImageExtractDepth
+===============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: ImageExtractDepth
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImageExtractDepth.__call__
+      ~ImageExtractDepth.options
+      ~ImageExtractDepth.with_column
+   
+   
+
+   
+   
+   

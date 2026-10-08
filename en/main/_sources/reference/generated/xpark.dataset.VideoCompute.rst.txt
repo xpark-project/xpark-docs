@@ -24,6 +24,7 @@
       ~VideoCompute.ffmpeg_transform
       ~VideoCompute.height
       ~VideoCompute.pix_fmt
+      ~VideoCompute.quality_check_from_frames
       ~VideoCompute.split_by_duration
       ~VideoCompute.split_by_key_frame
       ~VideoCompute.time_base

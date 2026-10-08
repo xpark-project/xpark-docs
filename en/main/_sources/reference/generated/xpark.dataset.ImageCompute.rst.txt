@@ -23,6 +23,7 @@
       ~ImageCompute.quantize
       ~ImageCompute.reduce
       ~ImageCompute.resize
+      ~ImageCompute.resize_to_budget
       ~ImageCompute.rotate
       ~ImageCompute.size
       ~ImageCompute.width

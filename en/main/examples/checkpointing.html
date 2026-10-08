@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Job-level Checkpointing Pipelines &#8212; Xpark</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/checkpointing';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Large-Scale Text Data Deduplication" href="text_dedup.html" />
+    <link rel="prev" title="Examples" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xpark</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/get_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Dataset API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/processors.html">
+    Processors
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Job-level Checkpointing Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_dedup.html">Large-Scale Text Data Deduplication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_classify.html">Video Classify By Speech Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_data_pipeline.html">Video Data Processing Pipeline</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Job-level Checkpointing Pipelines</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="job-level-checkpointing-pipelines">
+<span id="checkpointing-example"></span><h1>Job-level Checkpointing Pipelines<a class="headerlink" href="#job-level-checkpointing-pipelines" title="Link to this heading">#</a></h1>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>Long-running Xpark jobs (batch LLM inference, embedding, video curation) can fail
+midway due to transient errors, preemption, or bad samples. Without checkpointing,
+the entire job must restart from the beginning.</p>
+<p>Xpark uses Ray Data’s <strong>job-level checkpointing</strong>: after a failure, re-run the
+same Read → transform → Write pipeline and already-written rows are skipped by
+ID. S3-compatible object storage (<code class="docutils literal notranslate"><span class="pre">s3://</span></code> / <code class="docutils literal notranslate"><span class="pre">cos://</span></code> / <code class="docutils literal notranslate"><span class="pre">oss://</span></code>) is the
+default checkpoint backend; TCLake is supported as an optional extension.</p>
+<p>This page shows practical patterns. For the API overview, see
+<a class="reference internal" href="../reference/get_started.html#job-level-checkpointing"><span class="std std-ref">Job-level Checkpointing</span></a>.</p>
+</section>
+<section id="enabling-checkpointing-ray-native-pattern">
+<h2>Enabling checkpointing (Ray-native pattern)<a class="headerlink" href="#enabling-checkpointing-ray-native-pattern" title="Link to this heading">#</a></h2>
+<p>Checkpointing is configured by assigning a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">CheckpointConfig</span></code> to Ray Data’s
+<code class="docutils literal notranslate"><span class="pre">DataContext.checkpoint_config</span></code> — <strong>before</strong> creating the Dataset (the context
+is sealed at creation time):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ray.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataContext</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">CheckpointConfig</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_checkpoint_filesystem</span>
+
+<span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">"cos://my-bucket/xpark-ckpts/job-1"</span>
+
+<span class="n">DataContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+    <span class="n">id_column</span><span class="o">=</span><span class="s2">"uid"</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span>
+    <span class="c1"># For cos:// the builder disables the s3fs listing cache (resume</span>
+    <span class="c1"># must see fresh commits) and adds the COS Content-MD5 delete hook;</span>
+    <span class="c1"># credentials/endpoints come from storage_options. Omit it for</span>
+    <span class="c1"># plain POSIX paths.</span>
+    <span class="n">override_filesystem</span><span class="o">=</span><span class="n">build_checkpoint_filesystem</span><span class="p">(</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span> <span class="n">storage_options</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Resume semantics</strong>: re-running the same <code class="docutils literal notranslate"><span class="pre">checkpoint_path</span></code> skips
+already-written IDs automatically; pick a fresh path (e.g. a new <code class="docutils literal notranslate"><span class="pre">job-N</span></code>
+suffix) for a fresh run. A failed attempt retains its checkpoint
+(deletion only happens after success), and the successful retry cleans it
+up by default (<code class="docutils literal notranslate"><span class="pre">delete_checkpoint_on_success=True</span></code>). Set it to <code class="docutils literal notranslate"><span class="pre">False</span></code>
+only while debugging, to inspect the checkpoint layout left behind.</p>
+<p>Requirements:</p>
+<ul class="simple">
+<li><p>Pipeline <strong>starts with a read</strong> and <strong>ends with a write</strong>
+(<code class="docutils literal notranslate"><span class="pre">write_parquet</span></code>, <code class="docutils literal notranslate"><span class="pre">write_json</span></code>, …).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_column</span></code> values are <strong>unique</strong> and <strong>preserved</strong> through all operators.</p></li>
+<li><p>The read is <strong>identical across retries</strong> — a <code class="docutils literal notranslate"><span class="pre">row_hash</span></code> ID changes if the
+input file set or a pushed-down filter changes (see below).</p></li>
+<li><p>Prefer map-like ops: <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">map_batches</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">flat_map</span></code>,
+<code class="docutils literal notranslate"><span class="pre">with_column</span></code>. Avoid shuffle / join / aggregation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">checkpoint_path</span></code> is reachable by every worker (object storage or shared FS).</p></li>
+</ul>
+</section>
+<section id="parquet-batch-job-with-include-row-hash">
+<h2>Parquet Batch Job with <code class="docutils literal notranslate"><span class="pre">include_row_hash</span></code><a class="headerlink" href="#parquet-batch-job-with-include-row-hash" title="Link to this heading">#</a></h2>
+<p>Use <a class="reference internal" href="../reference/generated/xpark.dataset.read_parquet.html#xpark.dataset.read_parquet" title="xpark.dataset.read_parquet"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_parquet()</span></code></a> <code class="docutils literal notranslate"><span class="pre">include_row_hash=True</span></code> when the
+input has no stable primary key. The generated <code class="docutils literal notranslate"><span class="pre">row_hash</span></code> column is a
+deterministic uint64 hash computed from the source file path and the row’s
+<strong>output position</strong> (post-filter), so it is only reproducible across re-reads
+<strong>with the same pipeline configuration</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because the hash encodes the row’s output position, it is a valid
+cross-run ID only while the read itself is unchanged. Adding, removing or
+renaming input files, or changing a pushed-down filter, shifts positions
+and yields different hashes — resume then no longer matches the
+checkpointed IDs and rewrites those rows. Start from a fresh
+<code class="docutils literal notranslate"><span class="pre">checkpoint_path</span></code> whenever the read changes.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ray.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataContext</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">CheckpointConfig</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_parquet</span>
+
+<span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">"s3://my-bucket/xpark-ckpts/parquet-job-1"</span>
+
+<span class="n">DataContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+    <span class="n">id_column</span><span class="o">=</span><span class="s2">"row_hash"</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span>
+    <span class="n">override_filesystem</span><span class="o">=</span><span class="n">build_checkpoint_filesystem</span><span class="p">(</span><span class="n">CHECKPOINT_PATH</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">read_parquet</span><span class="p">(</span><span class="s2">"s3://my-bucket/input/"</span><span class="p">,</span> <span class="n">include_row_hash</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">"s3://my-bucket/output/"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On failure, re-run the same script: checkpointed rows are skipped.</p>
+</section>
+<section id="s3-compatible-object-storage-s3-cos-oss">
+<h2>S3-Compatible Object Storage (S3 / COS / OSS)<a class="headerlink" href="#s3-compatible-object-storage-s3-cos-oss" title="Link to this heading">#</a></h2>
+<p>S3-compatible object storage is the <strong>default</strong> checkpoint backend.
+<code class="docutils literal notranslate"><span class="pre">cos://</span></code> paths are built by Xpark’s s3fs layer
+(<a class="reference internal" href="../reference/generated/xpark.dataset.checkpoint.build_checkpoint_filesystem.html#xpark.dataset.checkpoint.build_checkpoint_filesystem" title="xpark.dataset.checkpoint.build_checkpoint_filesystem"><code class="xref py py-func docutils literal notranslate"><span class="pre">build_checkpoint_filesystem()</span></code></a>): the <code class="docutils literal notranslate"><span class="pre">cos</span></code>
+fsspec protocol is registered on first use (an s3fs <code class="docutils literal notranslate"><span class="pre">S3FileSystem</span></code>
+subclass), and credentials/endpoints come from the explicit
+<code class="docutils literal notranslate"><span class="pre">storage_options</span></code> entry; <code class="docutils literal notranslate"><span class="pre">s3://</span></code> uses plain native s3fs (the botocore
+<code class="docutils literal notranslate"><span class="pre">AWS_*</span></code> credential chain).</p>
+<p>Other cloud schemes are served by their native fsspec implementations when
+installed — e.g. <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ossfs</span></code> for <code class="docutils literal notranslate"><span class="pre">oss://</span></code> (Alibaba Cloud) or
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">gcsfs</span></code> for <code class="docutils literal notranslate"><span class="pre">gcs://</span></code> (Google Cloud). Enable them through
+explicit <code class="docutils literal notranslate"><span class="pre">storage_options</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">storage_options={&quot;oss&quot;:</span> <span class="pre">{...}}</span></code>);
+Xpark disables their directory-listing cache so checkpoint resume observes
+freshly-committed files.</p>
+<section id="minio-and-other-s3-compatible-stores">
+<h3>MinIO and other S3-compatible stores<a class="headerlink" href="#minio-and-other-s3-compatible-stores" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">s3://</span></code> paths pointing at any S3-compatible store (MinIO, …) work
+through the native botocore environment chain — no Xpark-specific variables
+needed:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code> / <code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code>, plus the optional
+<code class="docutils literal notranslate"><span class="pre">AWS_SESSION_TOKEN</span></code> for AWS STS temporary credentials</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_ENDPOINT_URL_S3</span></code> (or <code class="docutils literal notranslate"><span class="pre">AWS_ENDPOINT_URL</span></code>) — endpoint override;
+custom endpoints default to path-style addressing under botocore’s
+endpoint rules, which single-node MinIO deployments need</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS_DEFAULT_REGION</span></code> — optional; any value works for MinIO (it only
+feeds the SigV4 signature, e.g. <code class="docutils literal notranslate"><span class="pre">us-east-1</span></code>)</p></li>
+</ul>
+<p>Alternatively, fsspec’s native <code class="docutils literal notranslate"><span class="pre">FSSPEC_&lt;proto&gt;_&lt;kwarg&gt;</span></code> variables fill the
+matching s3fs constructor kwargs for their protocol:
+<code class="docutils literal notranslate"><span class="pre">FSSPEC_S3_KEY</span></code> / <code class="docutils literal notranslate"><span class="pre">FSSPEC_S3_SECRET</span></code> / <code class="docutils literal notranslate"><span class="pre">FSSPEC_S3_ENDPOINT_URL</span></code>, and
+dict-valued kwargs such as
+<code class="docutils literal notranslate"><span class="pre">FSSPEC_S3_CONFIG_KWARGS='{&quot;s3&quot;:</span> <span class="pre">{&quot;addressing_style&quot;:</span> <span class="pre">&quot;path&quot;}}'</span></code> are
+JSON-decoded.  Note that values are JSON-parsed first — credentials that
+look like JSON literals (<code class="docutils literal notranslate"><span class="pre">12345</span></code>, <code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">null</span></code>) are type-converted —
+so prefer the <code class="docutils literal notranslate"><span class="pre">AWS_*</span></code> channel for such secrets.</p>
+<p>Set the addressing style explicitly in the <code class="docutils literal notranslate"><span class="pre">cos</span></code> <code class="docutils literal notranslate"><span class="pre">storage_options</span></code>:
+Tencent COS endpoints need
+<code class="docutils literal notranslate"><span class="pre">config_kwargs={&quot;s3&quot;:</span> <span class="pre">{&quot;addressing_style&quot;:</span> <span class="pre">&quot;virtual&quot;}}</span></code> (the service
+rejects path-style requests), while single-node MinIO deployments lack the
+wildcard DNS virtual hosting needs and require
+<code class="docutils literal notranslate"><span class="pre">config_kwargs={&quot;s3&quot;:</span> <span class="pre">{&quot;addressing_style&quot;:</span> <span class="pre">&quot;path&quot;}}</span></code>.</p>
+<p>Pass credentials and endpoints explicitly via
+<a class="reference internal" href="../reference/generated/xpark.dataset.DatasetContext.html#xpark.dataset.DatasetContext.storage_options" title="xpark.dataset.DatasetContext.storage_options"><code class="xref py py-attr docutils literal notranslate"><span class="pre">storage_options</span></code></a> (any other s3fs keyword
+is forwarded as-is):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">CheckpointConfig</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatasetContext</span><span class="p">,</span> <span class="n">read_parquet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_checkpoint_filesystem</span>
+
+<span class="n">ctx</span> <span class="o">=</span> <span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">storage_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"cos"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"key"</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"COS_SECRET_ID"</span><span class="p">),</span>
+        <span class="s2">"secret"</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"COS_SECRET_KEY"</span><span class="p">),</span>
+        <span class="s2">"client_kwargs"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"endpoint_url"</span><span class="p">:</span> <span class="s2">"https://cos.ap-guangzhou.myqcloud.com"</span><span class="p">},</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">"cos://my-bucket/xpark-ckpts/job-1"</span>
+
+<span class="n">ctx</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+    <span class="n">id_column</span><span class="o">=</span><span class="s2">"row_hash"</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span>
+    <span class="n">override_filesystem</span><span class="o">=</span><span class="n">build_checkpoint_filesystem</span><span class="p">(</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span> <span class="n">ctx</span><span class="o">.</span><span class="n">storage_options</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c1"># cos:// data paths need an explicit filesystem for reads/writes (Ray /</span>
+<span class="c1"># PyArrow cannot infer the scheme); build it from the same layer:</span>
+<span class="n">cos_fs</span> <span class="o">=</span> <span class="n">build_checkpoint_filesystem</span><span class="p">(</span><span class="s2">"cos://my-bucket"</span><span class="p">,</span> <span class="n">ctx</span><span class="o">.</span><span class="n">storage_options</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">read_parquet</span><span class="p">(</span><span class="s2">"cos://my-bucket/input/"</span><span class="p">,</span> <span class="n">include_row_hash</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filesystem</span><span class="o">=</span><span class="n">cos_fs</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="k">lambda</span> <span class="n">batch</span><span class="p">:</span> <span class="n">batch</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">"cos://my-bucket/output/"</span><span class="p">,</span> <span class="n">filesystem</span><span class="o">=</span><span class="n">cos_fs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">cos://</span></code> checkpoint filesystems disable the s3fs directory-listing cache
+(<code class="docutils literal notranslate"><span class="pre">use_listings_cache=False</span></code>) by default so a resumed run observes the files
+the previous run committed; override it through <code class="docutils literal notranslate"><span class="pre">storage_options</span></code> if you
+prefer the cache.</p>
+</section>
+</section>
+<section id="tclake">
+<h2>TCLake<a class="headerlink" href="#tclake" title="Link to this heading">#</a></h2>
+<p>Checkpoints can also live on a TCLake VOLUME catalog via <code class="docutils literal notranslate"><span class="pre">tclake://</span></code> paths.
+TCLake support requires the optional <code class="docutils literal notranslate"><span class="pre">tclakefs</span></code> package, which is <strong>not
+published on public PyPI</strong> — install it manually first (e.g. from a wheel you
+obtained); the extra then just verifies the version bound:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>tclakefs-1.0.x.whl<span class="w">   </span><span class="c1"># manual install from your channel</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'xpark[tclake]'</span>
+</pre></div>
+</div>
+<p>Then supply Tencent Cloud credentials through <code class="docutils literal notranslate"><span class="pre">storage_options</span></code> (same
+SecretId/SecretKey as COS, managed by the tclake catalog):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">CheckpointConfig</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatasetContext</span><span class="p">,</span> <span class="n">from_range</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_checkpoint_filesystem</span>
+
+<span class="n">ctx</span> <span class="o">=</span> <span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">storage_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"tclake"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"region"</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"TENCENTCLOUD_REGION"</span><span class="p">,</span> <span class="s2">"ap-guangzhou"</span><span class="p">),</span>
+        <span class="s2">"sid"</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"TENCENTCLOUD_SECRET_ID"</span><span class="p">),</span>
+        <span class="s2">"sk"</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"TENCENTCLOUD_SECRET_KEY"</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">"tclake://volume/my-catalog/default/my-volume/ckpts"</span>
+
+<span class="n">ctx</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+    <span class="n">id_column</span><span class="o">=</span><span class="s2">"uid"</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span>
+    <span class="n">override_filesystem</span><span class="o">=</span><span class="n">build_checkpoint_filesystem</span><span class="p">(</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span> <span class="n">ctx</span><span class="o">.</span><span class="n">storage_options</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Only <strong>VOLUME</strong> catalogs are supported (<code class="docutils literal notranslate"><span class="pre">tclake://volume/...</span></code>); LAKEHOUSE
+catalogs are rejected with a clear error. The schema and volume named in the
+path must already exist on the catalog — create them yourself before the
+first run. Using <code class="docutils literal notranslate"><span class="pre">tclake://</span></code> without the optional package raises an
+<code class="docutils literal notranslate"><span class="pre">ImportError</span></code> with the install hint above, while local and S3-compatible
+checkpoints keep working. The fail-and-resume pattern below applies to
+<code class="docutils literal notranslate"><span class="pre">tclake://</span></code> paths unchanged.</p>
+<p>Like Ray Data’s <code class="docutils literal notranslate"><span class="pre">filesystem=</span></code> parameters, Xpark’s <code class="docutils literal notranslate"><span class="pre">read_parquet</span></code> /
+<code class="docutils literal notranslate"><span class="pre">write_parquet</span></code> and <code class="docutils literal notranslate"><span class="pre">override_filesystem</span></code> also accept fsspec
+<code class="docutils literal notranslate"><span class="pre">AbstractFileSystem</span></code> objects directly.</p>
+</section>
+<section id="shared-filesystem-checkpoints-cloud-disk-nfs">
+<h2>Shared-filesystem checkpoints (cloud disk / NFS)<a class="headerlink" href="#shared-filesystem-checkpoints-cloud-disk-nfs" title="Link to this heading">#</a></h2>
+<p>When the cluster already has a cloud-disk shared filesystem — NFS, Tencent
+Cloud CFS, AWS EFS, Aliyun NAS, JuiceFS, or a shared cloud-disk mount —
+checkpoints become the simplest possible case: <strong>plain POSIX paths need no
+filesystem object at all</strong>. PyArrow resolves ordinary paths natively, so
+<code class="docutils literal notranslate"><span class="pre">override_filesystem</span></code> is simply omitted:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ray.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataContext</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">CheckpointConfig</span>
+
+<span class="n">DataContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+    <span class="n">id_column</span><span class="o">=</span><span class="s2">"uid"</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="s2">"/mnt/shared-fs/xpark-ckpts/job-1"</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Why this is the low-friction option:</p>
+<ul class="simple">
+<li><p><strong>Zero credentials/endpoints</strong> — no object-storage setup of any kind.</p></li>
+<li><p><strong>Strong consistency</strong> — POSIX listings never lag, so none of the
+object-store consistency caveats apply.</p></li>
+<li><p><strong>All checkpoint machinery identical</strong> — the 2-phase commit, ID filtering
+and <code class="docutils literal notranslate"><span class="pre">delete_checkpoint_on_success</span></code> behave exactly as on object storage.</p></li>
+</ul>
+<p>Requirements and trade-offs:</p>
+<ul class="simple">
+<li><p>The mount must be visible under the <strong>same absolute path</strong> on the driver and
+every worker, and writable by all workers.</p></li>
+<li><p>Checkpoint commits are metadata-heavy small-file writes (one pending rename
+per task) — make sure the shared filesystem handles many small files well;
+object storage is sometimes faster for this access pattern.</p></li>
+</ul>
+</section>
+<section id="fail-and-resume-pattern">
+<h2>Fail-and-Resume Pattern<a class="headerlink" href="#fail-and-resume-pattern" title="Link to this heading">#</a></h2>
+<p>Wrap the pipeline in a function so retries share the same checkpoint path and
+ID column (the config is assigned once, outside the retry loop). A failed
+attempt retains its checkpoint automatically (deletion only happens after
+success); the successful retry then cleans it up by default.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ray.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataContext</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">CheckpointConfig</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatasetContext</span><span class="p">,</span> <span class="n">read_parquet</span>
+
+<span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">"/mnt/shared/xpark-ckpts/resume-demo"</span>
+<span class="n">INPUT_PATH</span> <span class="o">=</span> <span class="s2">"/data/input/"</span>
+<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s2">"/data/output/"</span>
+
+<span class="n">DataContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+    <span class="n">id_column</span><span class="o">=</span><span class="s2">"row_hash"</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_pipeline</span><span class="p">():</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">read_parquet</span><span class="p">(</span><span class="n">INPUT_PATH</span><span class="p">,</span> <span class="n">include_row_hash</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map_batches</span><span class="p">(</span><span class="n">expensive_transform</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+    <span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="n">OUTPUT_PATH</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">expensive_transform</span><span class="p">(</span><span class="n">batch</span><span class="p">):</span>
+    <span class="c1"># Your CPU/GPU batch work here.</span>
+    <span class="k">return</span> <span class="n">batch</span>
+
+
+<span class="c1"># First attempt may fail; second attempt resumes from checkpoint.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">run_pipeline</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="n">run_pipeline</span><span class="p">()</span>
+
+<span class="c1"># Read full output without filtering by checkpoint IDs.</span>
+<span class="n">DataContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">OUTPUT_PATH</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="text-embedding-batch-inference">
+<h2>Text Embedding Batch Inference<a class="headerlink" href="#text-embedding-batch-inference" title="Link to this heading">#</a></h2>
+<p>Checkpointing is a good fit for expensive map-only AI processors that write
+results to Parquet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">CheckpointConfig</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatasetContext</span><span class="p">,</span> <span class="n">TextEmbedding</span><span class="p">,</span> <span class="n">read_parquet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_checkpoint_filesystem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">"s3://my-bucket/xpark-ckpts/embed-job-1"</span>
+
+<span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+    <span class="n">id_column</span><span class="o">=</span><span class="s2">"row_hash"</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span>
+    <span class="n">override_filesystem</span><span class="o">=</span><span class="n">build_checkpoint_filesystem</span><span class="p">(</span><span class="n">CHECKPOINT_PATH</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">read_parquet</span><span class="p">(</span><span class="s2">"s3://my-bucket/texts/"</span><span class="p">,</span> <span class="n">include_row_hash</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"embedding"</span><span class="p">,</span>
+    <span class="n">TextEmbedding</span><span class="p">(</span><span class="s2">"Qwen/Qwen3-Embedding-0.6B"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"text"</span><span class="p">)),</span>
+<span class="p">)</span>
+<span class="c1"># Keep row_hash in the output so resumed writes stay consistent.</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">select_columns</span><span class="p">([</span><span class="s2">"row_hash"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="s2">"embedding"</span><span class="p">])</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span>
+    <span class="s2">"s3://my-bucket/embeddings/"</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="video-pipeline-checkpoint-after-explode">
+<h2>Video Pipeline: Checkpoint After Explode<a class="headerlink" href="#video-pipeline-checkpoint-after-explode" title="Link to this heading">#</a></h2>
+<p>Video funnels often do <strong>1:N</strong> transforms (one video → many shots). Checkpointing
+filters by <strong>source</strong> IDs at read time. If you use the source video path as
+<code class="docutils literal notranslate"><span class="pre">id_column</span></code> and only some shots were written, resume skips the whole video and
+drops remaining shots.</p>
+<p><strong>Recommended pattern:</strong> materialize shots first, then run a second checkpointed
+job with a <strong>post-explode</strong> stable ID.</p>
+<p><strong>Stage 1 — shot segmentation (optional checkpoint on video path)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">CheckpointConfig</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatasetContext</span><span class="p">,</span> <span class="n">VideoShotDetect</span><span class="p">,</span> <span class="n">from_items</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_checkpoint_filesystem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">"s3://my-bucket/xpark-ckpts/video-stage1"</span>
+
+<span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+    <span class="n">id_column</span><span class="o">=</span><span class="s2">"video"</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span>
+    <span class="n">override_filesystem</span><span class="o">=</span><span class="n">build_checkpoint_filesystem</span><span class="p">(</span><span class="n">CHECKPOINT_PATH</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">"video"</span><span class="p">:</span> <span class="n">p</span><span class="p">}</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">video_paths</span><span class="p">])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"shots"</span><span class="p">,</span>
+    <span class="n">VideoShotDetect</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"scenedetect"</span><span class="p">,</span> <span class="n">detector</span><span class="o">=</span><span class="s2">"adaptive"</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">"/data/shots/"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"video"</span><span class="p">)),</span>
+<span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">flat_map</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"video"</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">"video"</span><span class="p">],</span>
+            <span class="s2">"shot_idx"</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span>
+            <span class="s2">"shot_path"</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
+            <span class="c1"># Stable ID for the next stage.</span>
+            <span class="s2">"shot_id"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">'video'</span><span class="p">]</span><span class="si">}</span><span class="s2">#</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"shots"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">"s3://my-bucket/shots-meta/"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Stage 2 — expensive per-shot scoring / caption (checkpoint on ``shot_id``)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ray.data.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">CheckpointConfig</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DatasetContext</span><span class="p">,</span>
+    <span class="n">VideoAestheticScore</span><span class="p">,</span>
+    <span class="n">VideoCaption</span><span class="p">,</span>
+    <span class="n">read_parquet</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.checkpoint</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_checkpoint_filesystem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+
+<span class="n">CHECKPOINT_PATH</span> <span class="o">=</span> <span class="s2">"s3://my-bucket/xpark-ckpts/video-stage2"</span>
+
+<span class="n">DatasetContext</span><span class="o">.</span><span class="n">get_current</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+    <span class="n">id_column</span><span class="o">=</span><span class="s2">"shot_id"</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">CHECKPOINT_PATH</span><span class="p">,</span>
+    <span class="n">override_filesystem</span><span class="o">=</span><span class="n">build_checkpoint_filesystem</span><span class="p">(</span><span class="n">CHECKPOINT_PATH</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">read_parquet</span><span class="p">(</span><span class="s2">"s3://my-bucket/shots-meta/"</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"aesthetic_score"</span><span class="p">,</span>
+    <span class="n">VideoAestheticScore</span><span class="p">(</span><span class="n">num_frames</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">reduce_mode</span><span class="o">=</span><span class="s2">"avg"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"GPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"shot_path"</span><span class="p">)),</span>
+<span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"caption"</span><span class="p">,</span>
+    <span class="n">VideoCaption</span><span class="p">(</span>
+        <span class="n">base_url</span><span class="o">=</span><span class="n">vlm_base_url</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="o">=</span><span class="n">vlm_api_key</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">"your-vlm-model"</span><span class="p">,</span>
+        <span class="n">num_frames</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"IO"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"shot_path"</span><span class="p">)),</span>
+<span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">select_columns</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">"shot_id"</span><span class="p">,</span> <span class="s2">"video"</span><span class="p">,</span> <span class="s2">"shot_idx"</span><span class="p">,</span> <span class="s2">"shot_path"</span><span class="p">,</span> <span class="s2">"aesthetic_score"</span><span class="p">,</span> <span class="s2">"caption"</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">write_parquet</span><span class="p">(</span><span class="s2">"s3://my-bucket/shots-enriched/"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="common-pitfalls">
+<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>No write sink</strong> — <code class="docutils literal notranslate"><span class="pre">show()</span></code> / <code class="docutils literal notranslate"><span class="pre">take_all()</span></code> / <code class="docutils literal notranslate"><span class="pre">count()</span></code> do not write
+checkpoints. Always end with <code class="docutils literal notranslate"><span class="pre">write_*</span></code>.</p></li>
+<li><p><strong>Dropped ID column</strong> — do not <code class="docutils literal notranslate"><span class="pre">drop_columns</span></code> / rename the ID before write.</p></li>
+<li><p><strong>Changed read with ``row_hash`` IDs</strong> — a new/renamed input file or a
+different filter renumbers row hashes, so the checkpoint no longer matches;
+use a fresh <code class="docutils literal notranslate"><span class="pre">checkpoint_path</span></code>.</p></li>
+<li><p><strong>1:N with source IDs</strong> — use post-explode IDs or split into stages (see above).</p></li>
+<li><p><strong>Shuffle / dedup / groupby</strong> — planner may still enable checkpointing, but
+semantics are wrong; keep those jobs separate and uncheckpointed.</p></li>
+<li><p><strong>Reading output with checkpointing still on</strong> — set
+<code class="docutils literal notranslate"><span class="pre">DataContext.get_current().checkpoint_config</span> <span class="pre">=</span> <span class="pre">None</span></code> first, or IDs in
+the output path may be filtered incorrectly.</p></li>
+</ul>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../reference/get_started.html#job-level-checkpointing"><span class="std std-ref">Job-level Checkpointing</span></a> — API overview</p></li>
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.DatasetContext.html#xpark.dataset.DatasetContext" title="xpark.dataset.DatasetContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetContext</span></code></a></p></li>
+<li><p><a class="reference internal" href="../reference/generated/xpark.dataset.checkpoint.build_checkpoint_filesystem.html#xpark.dataset.checkpoint.build_checkpoint_filesystem" title="xpark.dataset.checkpoint.build_checkpoint_filesystem"><code class="xref py py-func docutils literal notranslate"><span class="pre">build_checkpoint_filesystem()</span></code></a></p></li>
+<li><p><span class="xref std std-ref">video_data_pipeline</span> — full video funnel (add checkpoint stages as needed)</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="text_dedup.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Large-Scale Text Data Deduplication</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-checkpointing-ray-native-pattern">Enabling checkpointing (Ray-native pattern)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parquet-batch-job-with-include-row-hash">Parquet Batch Job with <code class="docutils literal notranslate"><span class="pre">include_row_hash</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#s3-compatible-object-storage-s3-cos-oss">S3-Compatible Object Storage (S3 / COS / OSS)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minio-and-other-s3-compatible-stores">MinIO and other S3-compatible stores</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tclake">TCLake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-filesystem-checkpoints-cloud-disk-nfs">Shared-filesystem checkpoints (cloud disk / NFS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fail-and-resume-pattern">Fail-and-Resume Pattern</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-embedding-batch-inference">Text Embedding Batch Inference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-pipeline-checkpoint-after-explode">Video Pipeline: Checkpoint After Explode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">Common Pitfalls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/examples/checkpointing.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Tencent.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

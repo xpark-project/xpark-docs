@@ -125,7 +125,7 @@ supported file formats, see the :ref:`Read API <read-api>`.
 
 **From distributed sources**
     Xpark's multimodal operators support reading from various file types (audio, video, and images)
-    across remote distributed file systems and object storage services, such as S3, HDFS, and COS.
+    across remote distributed file systems and object storage services, such as S3, HDFS, COS, and OSS.
     
 .. code-block:: python
 
@@ -175,7 +175,7 @@ Use :meth:`~xpark.dataset.Dataset.with_column` to add or overwrite columns using
 
 
 Applying AI/Data Processors
-----------------------
+---------------------------
 
 Xpark comes with a rich set of built-in AI/Data processors for text, image, audio, and video.
 For the full list of available processors, see :ref:`Processors <processors>`.
@@ -305,6 +305,90 @@ UDF results can also be composed with other expressions:
     ds = ds.with_column("tripled_plus_ten", Multiplier(3)(col("id")) + 10)
 
 
+Worker CPU Threads
+------------------
+
+CPU-side engines and decode pools size their threads from the worker's Ray CPU reservation;
+User can set environment value ``XPARK_NUM_THREADS`` to override it, deliberately allowing more/less threads than the worker
+reserved:
+
+.. code-block:: python
+
+    # 4 CPUs per CPU worker -> its engines and decode pools run 4 threads each.
+    ds = ds.with_column(
+        "text",
+        SpeechToText("openai/whisper-large-v3")
+        .options(num_workers={"CPU": 1}, worker_ray_remote_args={"CPU": {"num_cpus": 4}})
+        .with_column(col("item")),
+    )
+
+.. code-block:: bash
+
+    # Or oversubscribe a worker on purpose.
+    XPARK_NUM_THREADS=16 python my_xpark_pipeline.py
+
+
+.. _job_level_checkpointing:
+
+Job-level Checkpointing
+-----------------------
+
+Long-running Read → transform → Write pipelines can resume after failure by
+skipping rows that were already successfully written. Assign a
+:class:`~ray.data.checkpoint.CheckpointConfig` to Ray Data's
+``DataContext.checkpoint_config`` **before** creating the Dataset.
+
+Requirements:
+
+* The pipeline must start with a read and end with a write
+  (``write_parquet``, ``write_json``, …).
+* ``id_column`` values must be unique and preserved through all operators.
+* Prefer map-like operators (``map``, ``map_batches``, ``filter``, ``flat_map``,
+  ``with_column``). Avoid shuffle / join / aggregation semantics.
+* For 1:N transforms (for example video shot explode), use a **post-explode**
+  stable ID (e.g. ``f"{video}#{shot_idx}"``), not the source row ID alone.
+* ``checkpoint_path`` must be reachable by every worker (object storage or a
+  shared network filesystem).
+
+**Parquet batch job with auto-generated IDs**
+
+.. code-block:: python
+
+    from ray.data.checkpoint import CheckpointConfig
+
+    from xpark.dataset import DatasetContext, read_parquet
+    from xpark.dataset.checkpoint import build_checkpoint_filesystem
+
+    ctx = DatasetContext.get_current()
+    # s3:// checkpoints resolve credentials through the native botocore
+    # chain (AWS_*); cos:// checkpoints need explicit storage_options
+    # (key/secret/client_kwargs endpoint). tclake:// checkpoints need
+    # tclakefs (not on public PyPI — install manually, then pip install
+    # 'xpark[tclake]' verifies the version).
+
+    CHECKPOINT_PATH = "s3://my-bucket/xpark-ckpts/job-1"
+    ctx.checkpoint_config = CheckpointConfig(
+        id_column="row_hash",
+        checkpoint_path=CHECKPOINT_PATH,
+        override_filesystem=build_checkpoint_filesystem(CHECKPOINT_PATH),
+    )
+
+    ds = read_parquet("s3://my-bucket/input/", include_row_hash=True)
+    ds = ds.map_batches(lambda batch: batch)
+    ds.write_parquet("s3://my-bucket/output/")
+
+On failure, re-run the same code. Xpark skips rows whose IDs were already
+checkpointed: the failed attempt retains its checkpoint automatically
+(deletion only happens after success), and the successful retry cleans it up
+by default (``delete_checkpoint_on_success=True``). Set it to ``False`` only
+while debugging, to inspect the checkpoint layout left behind. Set
+``ctx.checkpoint_config = None`` before reading the output if you need the
+full result without filtering.
+
+For full pipeline patterns (COS credentials, fail-and-resume, embedding batch,
+video post-explode IDs), see :ref:`checkpointing_example`.
+
+
 Collecting Results
 ------------------
 
@@ -333,3 +417,5 @@ Next Steps
 
 - :ref:`reference_index` — Full Dataset API reference
 - :ref:`processors` — All built-in Data and AI Processors
+- :ref:`checkpointing_example` — Job-level checkpointing pipeline patterns
+- :ref:`examples_index` — More end-to-end examples

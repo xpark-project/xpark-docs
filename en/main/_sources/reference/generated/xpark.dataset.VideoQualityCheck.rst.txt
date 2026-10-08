@@ -1,0 +1,23 @@
+﻿xpark.dataset.VideoQualityCheck
+===============================
+
+.. currentmodule:: xpark.dataset
+
+.. autoclass:: VideoQualityCheck
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VideoQualityCheck.__call__
+      ~VideoQualityCheck.options
+      ~VideoQualityCheck.with_column
+   
+   
+
+   
+   
+   

@@ -1,0 +1,488 @@
+.. _checkpointing_example:
+
+=================================
+Job-level Checkpointing Pipelines
+=================================
+
+Background
+----------
+
+Long-running Xpark jobs (batch LLM inference, embedding, video curation) can fail
+midway due to transient errors, preemption, or bad samples. Without checkpointing,
+the entire job must restart from the beginning.
+
+Xpark uses Ray Data's **job-level checkpointing**: after a failure, re-run the
+same Read → transform → Write pipeline and already-written rows are skipped by
+ID. S3-compatible object storage (``s3://`` / ``cos://`` / ``oss://``) is the
+default checkpoint backend; TCLake is supported as an optional extension.
+
+This page shows practical patterns. For the API overview, see
+:ref:`job_level_checkpointing`.
+
+
+Enabling checkpointing (Ray-native pattern)
+--------------------------------------------
+
+Checkpointing is configured by assigning a
+:class:`~ray.data.checkpoint.CheckpointConfig` to Ray Data's
+``DataContext.checkpoint_config`` — **before** creating the Dataset (the context
+is sealed at creation time):
+
+.. code-block:: python
+
+    from ray.data import DataContext
+    from ray.data.checkpoint import CheckpointConfig
+
+    from xpark.dataset.checkpoint import build_checkpoint_filesystem
+
+    CHECKPOINT_PATH = "cos://my-bucket/xpark-ckpts/job-1"
+
+    DataContext.get_current().checkpoint_config = CheckpointConfig(
+        id_column="uid",
+        checkpoint_path=CHECKPOINT_PATH,
+        # For cos:// the builder disables the s3fs listing cache (resume
+        # must see fresh commits) and adds the COS Content-MD5 delete hook;
+        # credentials/endpoints come from storage_options. Omit it for
+        # plain POSIX paths.
+        override_filesystem=build_checkpoint_filesystem(CHECKPOINT_PATH, storage_options),
+    )
+
+**Resume semantics**: re-running the same ``checkpoint_path`` skips
+already-written IDs automatically; pick a fresh path (e.g. a new ``job-N``
+suffix) for a fresh run. A failed attempt retains its checkpoint
+(deletion only happens after success), and the successful retry cleans it
+up by default (``delete_checkpoint_on_success=True``). Set it to ``False``
+only while debugging, to inspect the checkpoint layout left behind.
+
+Requirements:
+
+* Pipeline **starts with a read** and **ends with a write**
+  (``write_parquet``, ``write_json``, …).
+* ``id_column`` values are **unique** and **preserved** through all operators.
+* The read is **identical across retries** — a ``row_hash`` ID changes if the
+  input file set or a pushed-down filter changes (see below).
+* Prefer map-like ops: ``map``, ``map_batches``, ``filter``, ``flat_map``,
+  ``with_column``. Avoid shuffle / join / aggregation.
+* ``checkpoint_path`` is reachable by every worker (object storage or shared FS).
+
+
+Parquet Batch Job with ``include_row_hash``
+-------------------------------------------
+
+Use :func:`~xpark.dataset.read_parquet` ``include_row_hash=True`` when the
+input has no stable primary key. The generated ``row_hash`` column is a
+deterministic uint64 hash computed from the source file path and the row's
+**output position** (post-filter), so it is only reproducible across re-reads
+**with the same pipeline configuration**.
+
+.. note::
+
+   Because the hash encodes the row's output position, it is a valid
+   cross-run ID only while the read itself is unchanged. Adding, removing or
+   renaming input files, or changing a pushed-down filter, shifts positions
+   and yields different hashes — resume then no longer matches the
+   checkpointed IDs and rewrites those rows. Start from a fresh
+   ``checkpoint_path`` whenever the read changes.
+
+.. code-block:: python
+
+    from ray.data import DataContext
+    from ray.data.checkpoint import CheckpointConfig
+
+    from xpark.dataset import read_parquet
+
+    CHECKPOINT_PATH = "s3://my-bucket/xpark-ckpts/parquet-job-1"
+
+    DataContext.get_current().checkpoint_config = CheckpointConfig(
+        id_column="row_hash",
+        checkpoint_path=CHECKPOINT_PATH,
+        override_filesystem=build_checkpoint_filesystem(CHECKPOINT_PATH),
+    )
+
+    ds = read_parquet("s3://my-bucket/input/", include_row_hash=True)
+    ds = ds.map_batches(lambda batch: batch, batch_size=64)
+    ds.write_parquet("s3://my-bucket/output/")
+
+On failure, re-run the same script: checkpointed rows are skipped.
+
+
+S3-Compatible Object Storage (S3 / COS / OSS)
+---------------------------------------------
+
+S3-compatible object storage is the **default** checkpoint backend.
+``cos://`` paths are built by Xpark's s3fs layer
+(:func:`~xpark.dataset.checkpoint.build_checkpoint_filesystem`): the ``cos``
+fsspec protocol is registered on first use (an s3fs ``S3FileSystem``
+subclass), and credentials/endpoints come from the explicit
+``storage_options`` entry; ``s3://`` uses plain native s3fs (the botocore
+``AWS_*`` credential chain).
+
+Other cloud schemes are served by their native fsspec implementations when
+installed — e.g. ``pip install ossfs`` for ``oss://`` (Alibaba Cloud) or
+``pip install gcsfs`` for ``gcs://`` (Google Cloud). Enable them through
+explicit ``storage_options`` (e.g. ``storage_options={"oss": {...}}``);
+Xpark disables their directory-listing cache so checkpoint resume observes
+freshly-committed files.
+
+MinIO and other S3-compatible stores
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``s3://`` paths pointing at any S3-compatible store (MinIO, ...) work
+through the native botocore environment chain — no Xpark-specific variables
+needed:
+
+* ``AWS_ACCESS_KEY_ID`` / ``AWS_SECRET_ACCESS_KEY``, plus the optional
+  ``AWS_SESSION_TOKEN`` for AWS STS temporary credentials
+* ``AWS_ENDPOINT_URL_S3`` (or ``AWS_ENDPOINT_URL``) — endpoint override;
+  custom endpoints default to path-style addressing under botocore's
+  endpoint rules, which single-node MinIO deployments need
+* ``AWS_DEFAULT_REGION`` — optional; any value works for MinIO (it only
+  feeds the SigV4 signature, e.g. ``us-east-1``)
+
+Alternatively, fsspec's native ``FSSPEC_<proto>_<kwarg>`` variables fill the
+matching s3fs constructor kwargs for their protocol:
+``FSSPEC_S3_KEY`` / ``FSSPEC_S3_SECRET`` / ``FSSPEC_S3_ENDPOINT_URL``, and
+dict-valued kwargs such as
+``FSSPEC_S3_CONFIG_KWARGS='{"s3": {"addressing_style": "path"}}'`` are
+JSON-decoded.  Note that values are JSON-parsed first — credentials that
+look like JSON literals (``12345``, ``true``, ``null``) are type-converted —
+so prefer the ``AWS_*`` channel for such secrets.
+
+Set the addressing style explicitly in the ``cos`` ``storage_options``:
+Tencent COS endpoints need
+``config_kwargs={"s3": {"addressing_style": "virtual"}}`` (the service
+rejects path-style requests), while single-node MinIO deployments lack the
+wildcard DNS virtual hosting needs and require
+``config_kwargs={"s3": {"addressing_style": "path"}}``.
+
+Pass credentials and endpoints explicitly via
+:attr:`~xpark.dataset.DatasetContext.storage_options` (any other s3fs keyword
+is forwarded as-is):
+
+.. code-block:: python
+
+    import os
+
+    from ray.data.checkpoint import CheckpointConfig
+
+    from xpark.dataset import DatasetContext, read_parquet
+    from xpark.dataset.checkpoint import build_checkpoint_filesystem
+
+    ctx = DatasetContext.get_current()
+    ctx.storage_options = {
+        "cos": {
+            "key": os.getenv("COS_SECRET_ID"),
+            "secret": os.getenv("COS_SECRET_KEY"),
+            "client_kwargs": {"endpoint_url": "https://cos.ap-guangzhou.myqcloud.com"},
+        }
+    }
+    CHECKPOINT_PATH = "cos://my-bucket/xpark-ckpts/job-1"
+
+    ctx.checkpoint_config = CheckpointConfig(
+        id_column="row_hash",
+        checkpoint_path=CHECKPOINT_PATH,
+        override_filesystem=build_checkpoint_filesystem(CHECKPOINT_PATH, ctx.storage_options),
+    )
+
+    # cos:// data paths need an explicit filesystem for reads/writes (Ray /
+    # PyArrow cannot infer the scheme); build it from the same layer:
+    cos_fs = build_checkpoint_filesystem("cos://my-bucket", ctx.storage_options)
+    ds = read_parquet("cos://my-bucket/input/", include_row_hash=True, filesystem=cos_fs)
+    ds = ds.map_batches(lambda batch: batch)
+    ds.write_parquet("cos://my-bucket/output/", filesystem=cos_fs)
+
+``cos://`` checkpoint filesystems disable the s3fs directory-listing cache
+(``use_listings_cache=False``) by default so a resumed run observes the files
+the previous run committed; override it through ``storage_options`` if you
+prefer the cache.
+
+TCLake
+------
+
+Checkpoints can also live on a TCLake VOLUME catalog via ``tclake://`` paths.
+TCLake support requires the optional ``tclakefs`` package, which is **not
+published on public PyPI** — install it manually first (e.g. from a wheel you
+obtained); the extra then just verifies the version bound:
+
+.. code-block:: bash
+
+    pip install tclakefs-1.0.x.whl   # manual install from your channel
+    pip install 'xpark[tclake]'
+
+Then supply Tencent Cloud credentials through ``storage_options`` (same
+SecretId/SecretKey as COS, managed by the tclake catalog):
+
+.. code-block:: python
+
+    import os
+
+    from ray.data.checkpoint import CheckpointConfig
+
+    from xpark.dataset import DatasetContext, from_range
+    from xpark.dataset.checkpoint import build_checkpoint_filesystem
+
+    ctx = DatasetContext.get_current()
+    ctx.storage_options = {
+        "tclake": {
+            "region": os.getenv("TENCENTCLOUD_REGION", "ap-guangzhou"),
+            "sid": os.getenv("TENCENTCLOUD_SECRET_ID"),
+            "sk": os.getenv("TENCENTCLOUD_SECRET_KEY"),
+        }
+    }
+    CHECKPOINT_PATH = "tclake://volume/my-catalog/default/my-volume/ckpts"
+
+    ctx.checkpoint_config = CheckpointConfig(
+        id_column="uid",
+        checkpoint_path=CHECKPOINT_PATH,
+        override_filesystem=build_checkpoint_filesystem(CHECKPOINT_PATH, ctx.storage_options),
+    )
+
+Only **VOLUME** catalogs are supported (``tclake://volume/...``); LAKEHOUSE
+catalogs are rejected with a clear error. The schema and volume named in the
+path must already exist on the catalog — create them yourself before the
+first run. Using ``tclake://`` without the optional package raises an
+``ImportError`` with the install hint above, while local and S3-compatible
+checkpoints keep working. The fail-and-resume pattern below applies to
+``tclake://`` paths unchanged.
+
+Like Ray Data's ``filesystem=`` parameters, Xpark's ``read_parquet`` /
+``write_parquet`` and ``override_filesystem`` also accept fsspec
+``AbstractFileSystem`` objects directly.
+
+
+Shared-filesystem checkpoints (cloud disk / NFS)
+------------------------------------------------
+
+When the cluster already has a cloud-disk shared filesystem — NFS, Tencent
+Cloud CFS, AWS EFS, Aliyun NAS, JuiceFS, or a shared cloud-disk mount —
+checkpoints become the simplest possible case: **plain POSIX paths need no
+filesystem object at all**. PyArrow resolves ordinary paths natively, so
+``override_filesystem`` is simply omitted:
+
+.. code-block:: python
+
+    from ray.data import DataContext
+    from ray.data.checkpoint import CheckpointConfig
+
+    DataContext.get_current().checkpoint_config = CheckpointConfig(
+        id_column="uid",
+        checkpoint_path="/mnt/shared-fs/xpark-ckpts/job-1",
+    )
+
+Why this is the low-friction option:
+
+* **Zero credentials/endpoints** — no object-storage setup of any kind.
+* **Strong consistency** — POSIX listings never lag, so none of the
+  object-store consistency caveats apply.
+* **All checkpoint machinery identical** — the 2-phase commit, ID filtering
+  and ``delete_checkpoint_on_success`` behave exactly as on object storage.
+
+Requirements and trade-offs:
+
+* The mount must be visible under the **same absolute path** on the driver and
+  every worker, and writable by all workers.
+* Checkpoint commits are metadata-heavy small-file writes (one pending rename
+  per task) — make sure the shared filesystem handles many small files well;
+  object storage is sometimes faster for this access pattern.
+
+Fail-and-Resume Pattern
+-----------------------
+
+Wrap the pipeline in a function so retries share the same checkpoint path and
+ID column (the config is assigned once, outside the retry loop). A failed
+attempt retains its checkpoint automatically (deletion only happens after
+success); the successful retry then cleans it up by default.
+
+.. code-block:: python
+
+    from ray.data import DataContext
+    from ray.data.checkpoint import CheckpointConfig
+
+    from xpark.dataset import DatasetContext, read_parquet
+
+    CHECKPOINT_PATH = "/mnt/shared/xpark-ckpts/resume-demo"
+    INPUT_PATH = "/data/input/"
+    OUTPUT_PATH = "/data/output/"
+
+    DataContext.get_current().checkpoint_config = CheckpointConfig(
+        id_column="row_hash",
+        checkpoint_path=CHECKPOINT_PATH,
+    )
+
+
+    def run_pipeline():
+        ds = read_parquet(INPUT_PATH, include_row_hash=True)
+        ds = ds.map_batches(expensive_transform, batch_size=32)
+        ds.write_parquet(OUTPUT_PATH)
+
+
+    def expensive_transform(batch):
+        # Your CPU/GPU batch work here.
+        return batch
+
+
+    # First attempt may fail; second attempt resumes from checkpoint.
+    try:
+        run_pipeline()
+    except Exception:
+        run_pipeline()
+
+    # Read full output without filtering by checkpoint IDs.
+    DataContext.get_current().checkpoint_config = None
+    print(read_parquet(OUTPUT_PATH).count())
+
+
+Text Embedding Batch Inference
+------------------------------
+
+Checkpointing is a good fit for expensive map-only AI processors that write
+results to Parquet.
+
+.. code-block:: python
+
+    from ray.data.checkpoint import CheckpointConfig
+
+    from xpark.dataset import DatasetContext, TextEmbedding, read_parquet
+    from xpark.dataset.checkpoint import build_checkpoint_filesystem
+    from xpark.dataset.expressions import col
+
+    CHECKPOINT_PATH = "s3://my-bucket/xpark-ckpts/embed-job-1"
+
+    DatasetContext.get_current().checkpoint_config = CheckpointConfig(
+        id_column="row_hash",
+        checkpoint_path=CHECKPOINT_PATH,
+        override_filesystem=build_checkpoint_filesystem(CHECKPOINT_PATH),
+    )
+
+    ds = read_parquet("s3://my-bucket/texts/", include_row_hash=True)
+    ds = ds.with_column(
+        "embedding",
+        TextEmbedding("Qwen/Qwen3-Embedding-0.6B")
+        .options(num_workers={"CPU": 4}, batch_size=32)
+        .with_column(col("text")),
+    )
+    # Keep row_hash in the output so resumed writes stay consistent.
+    ds.select_columns(["row_hash", "text", "embedding"]).write_parquet(
+        "s3://my-bucket/embeddings/"
+    )
+
+
+Video Pipeline: Checkpoint After Explode
+----------------------------------------
+
+Video funnels often do **1:N** transforms (one video → many shots). Checkpointing
+filters by **source** IDs at read time. If you use the source video path as
+``id_column`` and only some shots were written, resume skips the whole video and
+drops remaining shots.
+
+**Recommended pattern:** materialize shots first, then run a second checkpointed
+job with a **post-explode** stable ID.
+
+**Stage 1 — shot segmentation (optional checkpoint on video path)**
+
+.. code-block:: python
+
+    from ray.data.checkpoint import CheckpointConfig
+
+    from xpark.dataset import DatasetContext, VideoShotDetect, from_items
+    from xpark.dataset.checkpoint import build_checkpoint_filesystem
+    from xpark.dataset.expressions import col
+
+    CHECKPOINT_PATH = "s3://my-bucket/xpark-ckpts/video-stage1"
+
+    DatasetContext.get_current().checkpoint_config = CheckpointConfig(
+        id_column="video",
+        checkpoint_path=CHECKPOINT_PATH,
+        override_filesystem=build_checkpoint_filesystem(CHECKPOINT_PATH),
+    )
+
+    ds = from_items([{"video": p} for p in video_paths])
+    ds = ds.with_column(
+        "shots",
+        VideoShotDetect(method="scenedetect", detector="adaptive", output_dir="/data/shots/")
+        .options(num_workers={"CPU": 4}, batch_size=1)
+        .with_column(col("video")),
+    )
+    ds = ds.flat_map(
+        lambda row: [
+            {
+                "video": row["video"],
+                "shot_idx": i,
+                "shot_path": path,
+                # Stable ID for the next stage.
+                "shot_id": f"{row['video']}#{i}",
+            }
+            for i, path in enumerate(row.get("shots") or [])
+        ]
+    )
+    ds.write_parquet("s3://my-bucket/shots-meta/")
+
+**Stage 2 — expensive per-shot scoring / caption (checkpoint on ``shot_id``)**
+
+.. code-block:: python
+
+    from ray.data.checkpoint import CheckpointConfig
+
+    from xpark.dataset import (
+        DatasetContext,
+        VideoAestheticScore,
+        VideoCaption,
+        read_parquet,
+    )
+    from xpark.dataset.checkpoint import build_checkpoint_filesystem
+    from xpark.dataset.expressions import col
+
+    CHECKPOINT_PATH = "s3://my-bucket/xpark-ckpts/video-stage2"
+
+    DatasetContext.get_current().checkpoint_config = CheckpointConfig(
+        id_column="shot_id",
+        checkpoint_path=CHECKPOINT_PATH,
+        override_filesystem=build_checkpoint_filesystem(CHECKPOINT_PATH),
+    )
+
+    ds = read_parquet("s3://my-bucket/shots-meta/")
+    ds = ds.with_column(
+        "aesthetic_score",
+        VideoAestheticScore(num_frames=5, normalized=True, reduce_mode="avg")
+        .options(num_workers={"GPU": 1}, batch_size=8)
+        .with_column(col("shot_path")),
+    )
+    ds = ds.with_column(
+        "caption",
+        VideoCaption(
+            base_url=vlm_base_url,
+            api_key=vlm_api_key,
+            model="your-vlm-model",
+            num_frames=8,
+        )
+        .options(num_workers={"IO": 1}, batch_size=4)
+        .with_column(col("shot_path")),
+    )
+    ds.select_columns(
+        ["shot_id", "video", "shot_idx", "shot_path", "aesthetic_score", "caption"]
+    ).write_parquet("s3://my-bucket/shots-enriched/")
+
+
+Common Pitfalls
+---------------
+
+* **No write sink** — ``show()`` / ``take_all()`` / ``count()`` do not write
+  checkpoints. Always end with ``write_*``.
+* **Dropped ID column** — do not ``drop_columns`` / rename the ID before write.
+* **Changed read with ``row_hash`` IDs** — a new/renamed input file or a
+  different filter renumbers row hashes, so the checkpoint no longer matches;
+  use a fresh ``checkpoint_path``.
+* **1:N with source IDs** — use post-explode IDs or split into stages (see above).
+* **Shuffle / dedup / groupby** — planner may still enable checkpointing, but
+  semantics are wrong; keep those jobs separate and uncheckpointed.
+* **Reading output with checkpointing still on** — set
+  ``DataContext.get_current().checkpoint_config = None`` first, or IDs in
+  the output path may be filtered incorrectly.
+
+See also
+--------
+
+* :ref:`job_level_checkpointing` — API overview
+* :class:`~xpark.dataset.DatasetContext`
+* :func:`~xpark.dataset.checkpoint.build_checkpoint_filesystem`
+* :ref:`video_data_pipeline` — full video funnel (add checkpoint stages as needed)

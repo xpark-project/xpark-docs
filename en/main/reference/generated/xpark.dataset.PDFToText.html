@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -27,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -45,7 +44,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/xpark.dataset.PDFToText';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -55,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="xpark.dataset.TimeSeriesForecast" href="xpark.dataset.TimeSeriesForecast.html" />
-    <link rel="prev" title="xpark.dataset.VideoCaption" href="xpark.dataset.VideoCaption.html" />
+    <link rel="prev" title="xpark.dataset.PDFToImage" href="xpark.dataset.PDFToImage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -106,7 +105,7 @@
   
     <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -198,7 +197,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -209,15 +208,15 @@
         <div class="navbar-item">
 
 <div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
     <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
     <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
     <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
   </ul>
 </div></div>
       
@@ -228,7 +227,7 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -237,7 +236,7 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -307,15 +306,15 @@
           <div class="navbar-item">
 
 <div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
     <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
     <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
     <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
   </ul>
 </div></div>
         
@@ -324,7 +323,7 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
   <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
     <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
   </svg>
@@ -355,7 +354,6 @@
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCompute.html">xpark.dataset.VideoCompute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoShotDetect.html">xpark.dataset.VideoShotDetect</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextEmbedding.html">xpark.dataset.TextEmbedding</a></li>
@@ -379,22 +377,30 @@
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageNSFWScore.html">xpark.dataset.ImageNSFWScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageTextSimilarityScore.html">xpark.dataset.ImageTextSimilarityScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageAestheticScore.html">xpark.dataset.ImageAestheticScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractDepth.html">xpark.dataset.ImageExtractDepth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractRay.html">xpark.dataset.ImageExtractRay</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractTextLayout.html">xpark.dataset.ImageExtractTextLayout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageWatermarkDetect.html">xpark.dataset.ImageWatermarkDetect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageCaption.html">xpark.dataset.ImageCaption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageToPdf.html">xpark.dataset.ImageToPdf</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.SpeechToText.html">xpark.dataset.SpeechToText</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoAestheticScore.html">xpark.dataset.VideoAestheticScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCaption.html">xpark.dataset.VideoCaption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoExtractSubtitle.html">xpark.dataset.VideoExtractSubtitle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoNSFWScore.html">xpark.dataset.VideoNSFWScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoOpticalFlow.html">xpark.dataset.VideoOpticalFlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoQualityCheck.html">xpark.dataset.VideoQualityCheck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoShotDetect.html">xpark.dataset.VideoShotDetect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoTextAreaRatio.html">xpark.dataset.VideoTextAreaRatio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoWatermarkDetect.html">xpark.dataset.VideoWatermarkDetect</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCaption.html">xpark.dataset.VideoCaption</a></li>
 </ul>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">xpark.dataset.PDFToText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.PDFToImage.html">xpark.dataset.PDFToImage</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">xpark.dataset.PDFToText</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TimeSeriesForecast.html">xpark.dataset.TimeSeriesForecast</a></li>
@@ -472,22 +478,29 @@
 <h1>xpark.dataset.PDFToText<a class="headerlink" href="#xpark-dataset-pdftotext" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="xpark.dataset.PDFToText">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">PDFToText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'fast'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'fast'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'markdown'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'text'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'html'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'json'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'markdown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xpark.dataset.PDFToText" title="Link to this definition">#</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">PDFToText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'fast'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'fast'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'markdown'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'text'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'html'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'json'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'markdown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document_timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xpark.dataset.PDFToText" title="Link to this definition">#</a></dt>
 <dt class="sig sig-object py">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">PDFToText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'standard'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OutputFormat</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'markdown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdf_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document_timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_ocr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_full_page_ocr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_table_structure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_formula</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">PDFToText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'standard'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OutputFormat</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'markdown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdf_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document_timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">images_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_ocr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_full_page_ocr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_table_structure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_formula</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
 <dt class="sig sig-object py">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">PDFToText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'vlm'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OutputFormat</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'markdown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdf_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document_timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">NOT_SET</span></span></em><span class="sig-paren">)</span></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">PDFToText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'paddle'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'markdown'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'text'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'json'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'markdown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdf_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document_timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vlm_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">PDFToText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'vlm'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OutputFormat</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'markdown'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdf_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document_timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">images_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">NOT_SET</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vlm_options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>PDF → text operator. Parsing modes pick different quality/speed/hardware
 trade-offs; each mode exposes only the params that are meaningful for
 that path.</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">&quot;fast&quot;</span></code><span class="classifier">Sub-second per file via the EdgeParse Rust engine; digital-text</span></dt><dd><p>only (no OCR). Native tables and multi-column reading order.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;fast&quot;</span></code><span class="classifier">Sub-second per file via the Rust engine; digital-text</span></dt><dd><p>only (no OCR). Native tables and multi-column reading order.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">&quot;standard&quot;</span></code> (default): Layout + (optional) table/text OCR/formula/code. Balanced</dt><dd><p>quality, highly customizable.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;standard&quot;</span></code> (default): Layout + (optional) table/text OCR/formula/code. Balanced</dt><dd><p>quality, rich output formats, highly customizable.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;paddle&quot;</span></code>: PaddleOCR-VL pipeline (PP-DocLayoutV3 layout + PaddleOCR-VL 1.6)</dt><dd><p>via the <code class="docutils literal notranslate"><span class="pre">paddleocr</span></code> package. Strong on complex / scanned / formula-heavy pages.</p>
 </dd>
 </dl>
 </li>
@@ -500,32 +513,58 @@ that path.</p>
 <p>Parameters tagged <code class="docutils literal notranslate"><span class="pre">[standard</span> <span class="pre">only]</span></code> / <code class="docutils literal notranslate"><span class="pre">[vlm</span> <span class="pre">only]</span></code> apply to a single mode;
 passing them in another mode is ignored with a warning. Untagged parameters
 apply to all modes.</p>
+<p>Input <code class="docutils literal notranslate"><span class="pre">path</span></code> may be a local path or a remote URI supported by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>
+(e.g. <code class="docutils literal notranslate"><span class="pre">cos://bucket/prefix/doc.pdf</span></code>); remote documents are downloaded
+once per row to a local temp file (created via <code class="docutils literal notranslate"><span class="pre">tempfile</span></code>, which honors
+<code class="docutils literal notranslate"><span class="pre">TMPDIR</span></code>) before conversion, since the underlying parsers require a
+local file. <code class="docutils literal notranslate"><span class="pre">image_output_dir</span></code> likewise accepts fsspec URIs — extracted
+images are uploaded via <code class="docutils literal notranslate"><span class="pre">write_bytes</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mode</strong> – parsing chain, one of <code class="docutils literal notranslate"><span class="pre">&quot;fast&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;standard&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;vlm&quot;</span></code>.
-Default <code class="docutils literal notranslate"><span class="pre">&quot;standard&quot;</span></code>.</p></li>
+<li><p><strong>mode</strong> – parsing chain, one of <code class="docutils literal notranslate"><span class="pre">&quot;fast&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;standard&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;paddle&quot;</span></code> /
+<code class="docutils literal notranslate"><span class="pre">&quot;vlm&quot;</span></code>. Default <code class="docutils literal notranslate"><span class="pre">&quot;standard&quot;</span></code>.</p></li>
 <li><p><strong>output_format</strong> – result format, one of <code class="docutils literal notranslate"><span class="pre">&quot;markdown&quot;</span></code> (default) /
 <code class="docutils literal notranslate"><span class="pre">&quot;text&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;html&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;json&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;doctags&quot;</span></code>
-(<code class="docutils literal notranslate"><span class="pre">&quot;fast&quot;</span></code> mode does not support <code class="docutils literal notranslate"><span class="pre">doctags</span></code>).</p></li>
+(<code class="docutils literal notranslate"><span class="pre">&quot;fast&quot;</span></code> mode does not support <code class="docutils literal notranslate"><span class="pre">doctags</span></code>; <code class="docutils literal notranslate"><span class="pre">&quot;paddle&quot;</span></code> supports
+only <code class="docutils literal notranslate"><span class="pre">&quot;markdown&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;text&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;json&quot;</span></code>).</p></li>
 <li><p><strong>max_pages</strong> – parse only the first N pages (page range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">N]</span></code>);
-<code class="docutils literal notranslate"><span class="pre">None</span></code> (default) =&gt; all pages. Applies to all modes. For <code class="docutils literal notranslate"><span class="pre">vlm</span></code>,
-each page is a full VLM forward pass, so large <code class="docutils literal notranslate"><span class="pre">max_pages</span></code> on
-long PDFs can dominate GPU memory / latency — prefer slicing the
-PDF upfront.</p></li>
-<li><p><strong>pdf_concurrency</strong> – number of CPU threads a <em>single</em> PDF’s docling pipeline
-may use (maps to docling <code class="docutils literal notranslate"><span class="pre">AcceleratorOptions.num_threads</span></code>, i.e.
-intra-PDF parallelism). Default <code class="docutils literal notranslate"><span class="pre">1</span></code>. Raise it for large/few PDFs,
-keep it at <code class="docutils literal notranslate"><span class="pre">1</span></code> for many small PDFs. Only honored by <code class="docutils literal notranslate"><span class="pre">standard</span></code> /
-<code class="docutils literal notranslate"><span class="pre">vlm</span></code> local (docling); ignored by <code class="docutils literal notranslate"><span class="pre">fast</span></code> (forced to <code class="docutils literal notranslate"><span class="pre">1</span></code> with a
-warning) and a no-op in <code class="docutils literal notranslate"><span class="pre">vlm</span></code> remote (no local model inference).</p></li>
+<code class="docutils literal notranslate"><span class="pre">None</span></code> (default) =&gt; all pages. Must be <code class="docutils literal notranslate"><span class="pre">None</span></code> or a positive
+integer. Applies to all modes. For <code class="docutils literal notranslate"><span class="pre">vlm</span></code>, each page is a full VLM
+forward pass, so large <code class="docutils literal notranslate"><span class="pre">max_pages</span></code> on long PDFs can dominate GPU
+memory / latency — prefer slicing the PDF upfront.</p></li>
+<li><p><strong>pdf_concurrency</strong> – concurrency / thread count for a single PDF’s
+processing. Default <code class="docutils literal notranslate"><span class="pre">4</span></code>. Raise it for large/few PDFs. For
+<code class="docutils literal notranslate"><span class="pre">standard</span></code>/<code class="docutils literal notranslate"><span class="pre">vlm</span></code> maps to docling <code class="docutils literal notranslate"><span class="pre">num_threads</span></code>. For
+<code class="docutils literal notranslate"><span class="pre">paddle</span></code> it sets the recognition server’s concurrency — vLLM
+<code class="docutils literal notranslate"><span class="pre">max-num-seqs</span></code> on GPU, llama.cpp <code class="docutils literal notranslate"><span class="pre">n_parallel</span></code> on CPU — and the
+client request concurrency (<code class="docutils literal notranslate"><span class="pre">vl_rec_max_concurrency</span></code>) is pinned
+to the server’s actual capacity. Ignored by <code class="docutils literal notranslate"><span class="pre">fast</span></code> (no model
+inference).</p></li>
 <li><p><strong>fallback_response</strong> – text returned for a PDF whose conversion fails
 (including <code class="docutils literal notranslate"><span class="pre">document_timeout</span></code> expiry). When <code class="docutils literal notranslate"><span class="pre">None</span></code> (default)
 the underlying exception is raised instead.</p></li>
-<li><p><strong>document_timeout</strong> – max seconds spent on a single document before it is
-treated as failed (see <code class="docutils literal notranslate"><span class="pre">fallback_response</span></code> above). <code class="docutils literal notranslate"><span class="pre">None</span></code>
-(default) means no timeout. Only honored by <code class="docutils literal notranslate"><span class="pre">standard</span></code> / <code class="docutils literal notranslate"><span class="pre">vlm</span></code>
-(docling); ignored by <code class="docutils literal notranslate"><span class="pre">fast</span></code>.</p></li>
+<li><p><strong>document_timeout</strong> – max seconds for one document’s conversion before it
+is treated as failed (see <code class="docutils literal notranslate"><span class="pre">fallback_response</span></code> above). <code class="docutils literal notranslate"><span class="pre">None</span></code>
+(default) means no timeout. Applies to all modes. The budget covers
+the whole per-document slice, including downloading remote input
+paths to a local temp file.</p></li>
+<li><p><strong>image_output_dir</strong> – directory (local path or fsspec URI) to write embedded
+images extracted from each PDF. Each PDF gets its own subdirectory
+(from <code class="docutils literal notranslate"><span class="pre">filenames</span></code> if provided, else a random uuid) and markdown
+image references are rewritten to the uploaded URIs. Only honored by
+<code class="docutils literal notranslate"><span class="pre">paddle</span></code> / <code class="docutils literal notranslate"><span class="pre">standard</span></code> / <code class="docutils literal notranslate"><span class="pre">vlm</span></code> with <code class="docutils literal notranslate"><span class="pre">output_format=&quot;markdown&quot;</span></code>;
+ignored (with a warning) by <code class="docutils literal notranslate"><span class="pre">fast</span></code> or non-markdown formats. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code> (default), image references are stripped from the markdown.</p></li>
+<li><p><strong>filenames</strong> – optional column of output subdirectory names, one per PDF row,
+used to name each PDF’s image subdirectory under <code class="docutils literal notranslate"><span class="pre">image_output_dir</span></code>
+(falls back to a random uuid when unset). Passed as a second column to
+<code class="docutils literal notranslate"><span class="pre">with_column</span></code>, e.g.
+<code class="docutils literal notranslate"><span class="pre">PDFToText(mode=&quot;standard&quot;,</span> <span class="pre">image_output_dir=&quot;cos://b/imgs&quot;)</span>
+<span class="pre">.with_column(col(&quot;path&quot;),</span> <span class="pre">col(&quot;filename&quot;))</span></code>. Only meaningful when
+<code class="docutils literal notranslate"><span class="pre">image_output_dir</span></code> is set.</p></li>
+<li><p><strong>images_scale</strong> – [standard / vlm only] upscaling factor for docling picture
+images. Default <code class="docutils literal notranslate"><span class="pre">2.0</span></code>. Only relevant when <code class="docutils literal notranslate"><span class="pre">image_output_dir</span></code> is set.</p></li>
 <li><p><strong>do_ocr</strong> – [standard only] enable OCR (needed for scanned PDFs). Default <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>force_full_page_ocr</strong> – [standard only] force OCR to run on the full page
 (required for scanned PDFs, since the layout model would otherwise
@@ -541,11 +580,15 @@ for this remote path — inference happens off-worker, so workers just
 do I/O and the concurrency budget lives on the IO resource.</p></li>
 <li><p><strong>model</strong> – <p>[vlm only] VLM model name. Its meaning depends on <code class="docutils literal notranslate"><span class="pre">base_url</span></code>:</p>
 <ul>
-<li><p>Local (<code class="docutils literal notranslate"><span class="pre">base_url</span></code> unset): local preset. Currently the only
-supported preset is <code class="docutils literal notranslate"><span class="pre">&quot;granite-docling&quot;</span></code> — ibm-granite/granite-
-docling-258M (also the default when <code class="docutils literal notranslate"><span class="pre">model</span></code> is omitted); fast
-but lower accuracy. Additional presets (e.g. GLM-OCR) are on the
-roadmap once their env dependencies are resolved.</p></li>
+<li><p>Local (<code class="docutils literal notranslate"><span class="pre">base_url</span></code> unset): local preset. Supported presets:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;granite-docling&quot;</span></code> — ibm-granite/granite-docling-258M (also
+the default when <code class="docutils literal notranslate"><span class="pre">model</span></code> is omitted); fast but lower accuracy.</p></li>
+</ul>
+<p>Additional presets (e.g. GLM-OCR) are on the roadmap once their
+env dependencies are resolved. For PaddleOCR-VL, use the dedicated
+<code class="docutils literal notranslate"><span class="pre">mode=&quot;paddle&quot;</span></code> chain instead of a <code class="docutils literal notranslate"><span class="pre">model</span></code> preset.</p>
+</li>
 <li><p>Remote (<code class="docutils literal notranslate"><span class="pre">base_url</span></code> set): the served model name passed through
 to the endpoint (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;hunyuan-ocr&quot;</span></code>).</p></li>
 </ul>
@@ -553,6 +596,29 @@ to the endpoint (e.g. <code class="docutils literal notranslate"><span class="pr
 <li><p><strong>api_key</strong> – [vlm only] bearer token for the remote endpoint; when set, sent as
 <code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">Bearer</span> <span class="pre">&lt;api_key&gt;</span></code>. Leave unset for endpoints
 without auth (e.g. self-hosted vLLM without a proxy).</p></li>
+<li><p><strong>vlm_options</strong> – <p>[vlm / paddle only] extra keyword arguments forwarded to the
+underlying backend, overriding (and extending) the built-in defaults.
+The target depends on the mode:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode=&quot;vlm&quot;</span></code> remote (<code class="docutils literal notranslate"><span class="pre">base_url</span></code> set): merged into the
+chat-completions request <code class="docutils literal notranslate"><span class="pre">params</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">{&quot;temperature&quot;:</span> <span class="pre">0.0,</span>
+<span class="pre">&quot;top_p&quot;:</span> <span class="pre">0.8}</span></code> or a smaller <code class="docutils literal notranslate"><span class="pre">max_tokens</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode=&quot;paddle&quot;</span></code>: identifier keys are merged into the
+<code class="docutils literal notranslate"><span class="pre">paddleocr.PaddleOCRVL(...)</span></code> constructor (or <code class="docutils literal notranslate"><span class="pre">.predict(...)</span></code>)
+kwargs (e.g. switch <code class="docutils literal notranslate"><span class="pre">vl_rec_backend</span></code> or pass additional pipeline
+knobs), overriding defaults such as <code class="docutils literal notranslate"><span class="pre">vl_rec_backend</span></code> /
+<code class="docutils literal notranslate"><span class="pre">use_queues</span></code>. <code class="docutils literal notranslate"><span class="pre">min_pixels</span></code> / <code class="docutils literal notranslate"><span class="pre">max_pixels</span></code> set the VL input
+image pixel bounds (defaults 112896 / 1003520): forwarded to vLLM
+on GPU, converted to llama.cpp <code class="docutils literal notranslate"><span class="pre">image_min_tokens</span></code> /
+<code class="docutils literal notranslate"><span class="pre">image_max_tokens</span></code> caps on CPU. Hyphenated keys (e.g.
+<code class="docutils literal notranslate"><span class="pre">{&quot;gpu-memory-utilization&quot;:</span> <span class="pre">0.6}</span></code>) are <code class="docutils literal notranslate"><span class="pre">vllm</span> <span class="pre">serve</span></code> CLI flags
+forwarded to the vLLM server (ignored on the CPU llama.cpp path).
+The recognition backend follows the assigned device: vLLM over the
+PyTorch checkpoint on GPU, llama.cpp over the Q8 GGUF build on CPU.</p></li>
+</ul>
+<p>Ignored by <code class="docutils literal notranslate"><span class="pre">mode=&quot;vlm&quot;</span></code> local presets (e.g. <code class="docutils literal notranslate"><span class="pre">granite-docling</span></code>).
+Default <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</p></li>
 </ul>
 </dd>
 </dl>
@@ -561,56 +627,64 @@ without auth (e.g. self-hosted vLLM without a proxy).</p></li>
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">from_items</span><span class="p">,</span> <span class="n">PDFToText</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/data/pdfs/a.pdf&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/data/pdfs/b.pdf&quot;</span><span class="p">}])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([{</span><span class="s2">"path"</span><span class="p">:</span> <span class="s2">"/data/pdfs/a.pdf"</span><span class="p">},</span> <span class="p">{</span><span class="s2">"path"</span><span class="p">:</span> <span class="s2">"/data/pdfs/b.pdf"</span><span class="p">}])</span>
 
 <span class="c1"># Fast path: EdgeParse Rust engine, GFM tables + reading order, digital text only.</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;md_fast&quot;</span><span class="p">,</span>
-    <span class="n">PDFToText</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;fast&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)),</span>
+    <span class="s2">"md_fast"</span><span class="p">,</span>
+    <span class="n">PDFToText</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">"fast"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)),</span>
 <span class="p">)</span>
 
 <span class="c1"># Standard pipeline: layout + tables, plus OCR for scanned PDFs.</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;md_pipe&quot;</span><span class="p">,</span>
-    <span class="n">PDFToText</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;standard&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)),</span>
+    <span class="s2">"md_pipe"</span><span class="p">,</span>
+    <span class="n">PDFToText</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">"standard"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)),</span>
 <span class="p">)</span>
 
 <span class="c1"># VLM, local model (GPU recommended).</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;md_vlm&quot;</span><span class="p">,</span>
-    <span class="n">PDFToText</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;vlm&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;GPU&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)),</span>
+    <span class="s2">"md_vlm"</span><span class="p">,</span>
+    <span class="n">PDFToText</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">"vlm"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"GPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># PaddleOCR-VL pipeline (GPU); strong on complex / scanned pages.</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"md_paddle"</span><span class="p">,</span>
+    <span class="n">PDFToText</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">"paddle"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"GPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)),</span>
 <span class="p">)</span>
 
 <span class="c1"># VLM, remote OpenAI-compatible endpoint (no local GPU).</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;md_vlm_api&quot;</span><span class="p">,</span>
+    <span class="s2">"md_vlm_api"</span><span class="p">,</span>
     <span class="n">PDFToText</span><span class="p">(</span>
-        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;vlm&quot;</span><span class="p">,</span>
-        <span class="n">base_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;VLM_ENDPOINT&quot;</span><span class="p">),</span>
-        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;hunyuan-ocr&quot;</span><span class="p">,</span>
-        <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;VLM_API_KEY&quot;</span><span class="p">),</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">"vlm"</span><span class="p">,</span>
+        <span class="n">base_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"VLM_ENDPOINT"</span><span class="p">),</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">"hunyuan-ocr"</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"VLM_API_KEY"</span><span class="p">),</span>
     <span class="p">)</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;IO&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)),</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"IO"</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.PDFToText.__call__" title="xpark.dataset.PDFToText.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(paths)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.PDFToText.__call__" title="xpark.dataset.PDFToText.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(paths[, filenames])</p></td>
 <td><p>Call self as a function.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#xpark.dataset.PDFToText.options" title="xpark.dataset.PDFToText.options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">options</span></code></a>(**kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.PDFToText.with_column" title="xpark.dataset.PDFToText.with_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_column</span></code></a>(paths)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xpark.dataset.PDFToText.with_column" title="xpark.dataset.PDFToText.with_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_column</span></code></a>(paths[, filenames])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -618,7 +692,7 @@ without auth (e.g. self-hosted vLLM without a proxy).</p></li>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.PDFToText.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pa.Array</span></span></span><a class="headerlink" href="#xpark.dataset.PDFToText.__call__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filenames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'pa.ChunkedArray'</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pa.Array</span></span></span><a class="headerlink" href="#xpark.dataset.PDFToText.__call__" title="Link to this definition">#</a></dt>
 <dd><p>Call self as a function.</p>
 </dd></dl>
 
@@ -629,7 +703,7 @@ without auth (e.g. self-hosted vLLM without a proxy).</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xpark.dataset.PDFToText.with_column">
-<span class="sig-name descname"><span class="pre">with_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pa.Array</span></span></span><a class="headerlink" href="#xpark.dataset.PDFToText.with_column" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">with_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pa.ChunkedArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filenames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'pa.ChunkedArray'</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pa.Array</span></span></span><a class="headerlink" href="#xpark.dataset.PDFToText.with_column" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -647,12 +721,12 @@ without auth (e.g. self-hosted vLLM without a proxy).</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="xpark.dataset.VideoCaption.html"
+       href="xpark.dataset.PDFToImage.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">xpark.dataset.VideoCaption</p>
+        <p class="prev-next-title">xpark.dataset.PDFToImage</p>
       </div>
     </a>
     <a class="right-next"
@@ -714,8 +788,8 @@ without auth (e.g. self-hosted vLLM without a proxy).</p></li>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -736,7 +810,6 @@ without auth (e.g. self-hosted vLLM without a proxy).</p></li>
 
   <p class="sphinx-version">
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
-    <br/>
   </p>
 </div>
       
@@ -749,7 +822,7 @@ without auth (e.g. self-hosted vLLM without a proxy).</p></li>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
 </p></div>
       
     </div>

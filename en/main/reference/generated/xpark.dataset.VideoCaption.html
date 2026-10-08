@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -27,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -45,7 +44,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/generated/xpark.dataset.VideoCaption';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://xpark-project.github.io/xpark-docs/en/main/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -54,8 +53,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="xpark.dataset.PDFToText" href="xpark.dataset.PDFToText.html" />
-    <link rel="prev" title="xpark.dataset.VideoWatermarkDetect" href="xpark.dataset.VideoWatermarkDetect.html" />
+    <link rel="next" title="xpark.dataset.VideoExtractSubtitle" href="xpark.dataset.VideoExtractSubtitle.html" />
+    <link rel="prev" title="xpark.dataset.VideoAestheticScore" href="xpark.dataset.VideoAestheticScore.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -106,7 +105,7 @@
   
     <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -198,7 +197,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -209,15 +208,15 @@
         <div class="navbar-item">
 
 <div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
     <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
     <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
     <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
   </ul>
 </div></div>
       
@@ -228,7 +227,7 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -237,7 +236,7 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -307,15 +306,15 @@
           <div class="navbar-item">
 
 <div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
     <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
     <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
     <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
-    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
   </ul>
 </div></div>
         
@@ -324,7 +323,7 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
   <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
     <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
   </svg>
@@ -355,7 +354,6 @@
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoCompute.html">xpark.dataset.VideoCompute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoShotDetect.html">xpark.dataset.VideoShotDetect</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.TextEmbedding.html">xpark.dataset.TextEmbedding</a></li>
@@ -379,21 +377,29 @@
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageNSFWScore.html">xpark.dataset.ImageNSFWScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageTextSimilarityScore.html">xpark.dataset.ImageTextSimilarityScore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageAestheticScore.html">xpark.dataset.ImageAestheticScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractDepth.html">xpark.dataset.ImageExtractDepth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractRay.html">xpark.dataset.ImageExtractRay</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageExtractTextLayout.html">xpark.dataset.ImageExtractTextLayout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageWatermarkDetect.html">xpark.dataset.ImageWatermarkDetect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageCaption.html">xpark.dataset.ImageCaption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.ImageToPdf.html">xpark.dataset.ImageToPdf</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.SpeechToText.html">xpark.dataset.SpeechToText</a></li>
 </ul>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoAestheticScore.html">xpark.dataset.VideoAestheticScore</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">xpark.dataset.VideoCaption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoExtractSubtitle.html">xpark.dataset.VideoExtractSubtitle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoNSFWScore.html">xpark.dataset.VideoNSFWScore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoOpticalFlow.html">xpark.dataset.VideoOpticalFlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoQualityCheck.html">xpark.dataset.VideoQualityCheck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoShotDetect.html">xpark.dataset.VideoShotDetect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoTextAreaRatio.html">xpark.dataset.VideoTextAreaRatio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.VideoWatermarkDetect.html">xpark.dataset.VideoWatermarkDetect</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">xpark.dataset.VideoCaption</a></li>
 </ul>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xpark.dataset.PDFToImage.html">xpark.dataset.PDFToImage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xpark.dataset.PDFToText.html">xpark.dataset.PDFToText</a></li>
 </ul>
 <ul class="nav bd-sidenav">
@@ -472,76 +478,207 @@
 <h1>xpark.dataset.VideoCaption<a class="headerlink" href="#xpark-dataset-videocaption" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="xpark.dataset.VideoCaption">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">VideoCaption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">hint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_frames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyframes_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_token_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_token_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_context_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NOT_SET'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_new_tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_qps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xpark.dataset.VideoCaption" title="Link to this definition">#</a></dt>
-<dd><p>Video caption processor (remote only, MVBench-style frame sampling).</p>
-<p>Generates a natural-language description (caption) for each input video by uniformly
-sampling <code class="docutils literal notranslate"><span class="pre">num_frames</span></code> frames along the video timeline (MVBench-style), encoding each
-frame as an <code class="docutils literal notranslate"><span class="pre">image_url</span></code> content item, and issuing a single multi-image chat-completion
-request against a remote OpenAI-compatible endpoint. The VLM compacts the frame sequence
-into one caption per video. The input column holds video paths or URLs.</p>
-<p>Local GPU / CPU inference is not implemented for video yet, so a non-remote configuration
-raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">xpark.dataset.</span></span><span class="sig-name descname"><span class="pre">VideoCaption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_local_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Qwen/Qwen3.5-4B'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">PromptComponents</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_frames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'fast'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'balanced'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'accurate'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyframes_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'auto'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'video'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'frames'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_token_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_token_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chat_template_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NOT_SET'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_qps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xpark.dataset.VideoCaption" title="Link to this definition">#</a></dt>
+<dd><p>Video caption processor for CPU, GPU and remote Http requests.</p>
+<p>Generates a natural-language description (caption) for each input video.
+The backend is chosen automatically per worker: GPU (in-process vLLM) when
+a CUDA device is assigned, remote OpenAI-compatible endpoint on IO workers, otherwise CPU
+(GGUF + mmproj via xllamacpp). The input column holds video paths or URLs.</p>
+<p>Each entry in <code class="docutils literal notranslate"><span class="pre">Args</span></code> carries the backends it applies to: <code class="docutils literal notranslate"><span class="pre">[all]</span></code>, <code class="docutils literal notranslate"><span class="pre">[CPU/GPU]</span></code>
+(local engines) or <code class="docutils literal notranslate"><span class="pre">[remote</span> <span class="pre">only]</span></code> (IO workers).</p>
+<p>Every sampled frame is passed through <code class="docutils literal notranslate"><span class="pre">smart_resize</span></code> before it reaches a backend: the
+frames of one clip share a <em>total</em> vision-token budget, so their resolution shrinks as
+<code class="docutils literal notranslate"><span class="pre">num_frames</span></code> grows. The alignment factor and the clip-level bound come from the model’s
+registry entry (<code class="xref py py-class docutils literal notranslate"><span class="pre">VisionModelSpec</span></code>); in
+<code class="docutils literal notranslate"><span class="pre">video_mode=&quot;video&quot;</span></code> this client-side resize is what enforces the clip-level budget as
+a hard constraint (the model’s own video processor resizes again on top of it).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hint</strong> – Optional extra instructions or constraints to guide the caption (e.g. focus, tone,
-output language). Accepts either a single string or a list of strings, where each item is
-one hint written in plain text. Passing a list is recommended — use one string per hint.
-Rendered into an <code class="docutils literal notranslate"><span class="pre">&lt;instructions&gt;</span></code> block of the system prompt.</p></li>
-<li><p><strong>max_words</strong> – A non-negative best-effort target for the number of words in the caption.
-Defaults to 50. If set to 0, there is no word limit. This is a soft, prompt-level
-constraint rendered into a <code class="docutils literal notranslate"><span class="pre">&lt;response_format&gt;</span></code> block; it is orthogonal to the hard token
-cap <code class="docutils literal notranslate"><span class="pre">max_tokens</span></code> (via <code class="docutils literal notranslate"><span class="pre">max_new_tokens</span></code>).</p></li>
-<li><p><strong>num_frames</strong> – Number of frames to uniformly sample per video. Defaults to 16.</p></li>
-<li><p><strong>keyframes_only</strong> – Only decode keyframes (I-frames) when sampling. Default True.</p></li>
-<li><p><strong>resize</strong> – If True (default), each sampled frame is passed through Qwen-VL-style
-<code class="docutils literal notranslate"><span class="pre">smart_resize</span></code> before base64 encoding. Unlike single-image sizing, the frames of
-one clip share a <em>total</em> vision-token budget, so the per-frame resolution automatically
-shrinks as <code class="docutils literal notranslate"><span class="pre">num_frames</span></code> grows — keeping the multi-image payload and prefill cost bounded.
-Set to False to send frames at their original resolution.</p></li>
-<li><p><strong>min_token_num</strong> – Optional lower bound on the per-frame vision-token budget.
-Only takes effect when <code class="docutils literal notranslate"><span class="pre">resize</span></code> is True.</p></li>
-<li><p><strong>max_token_num</strong> – Optional upper bound on the per-frame vision-token budget. The effective
-cap is always the video token budget derived from <code class="docutils literal notranslate"><span class="pre">num_frames</span></code>; an explicit
-<code class="docutils literal notranslate"><span class="pre">max_token_num</span></code> can only further <em>tighten</em> it. Only takes effect when <code class="docutils literal notranslate"><span class="pre">resize</span></code> is True.</p></li>
-<li><p><strong>model_context_length</strong> – Context length (in tokens) of the target VLM. Defaults to 128000,
-matching Qwen’s default <code class="docutils literal notranslate"><span class="pre">MODEL_SEQ_LEN</span></code>. The <em>total</em> per-clip vision-token budget
-shared across all frames follows Qwen (<code class="docutils literal notranslate"><span class="pre">model_context_length</span> <span class="pre">*</span> <span class="pre">0.9</span></code>, reserving ~10% of
-context for the prompt / generated text); this budget is then split across <code class="docutils literal notranslate"><span class="pre">num_frames</span></code>
-to derive the per-frame cap. Larger values allow higher per-frame resolution at high
-frame counts. Only takes effect when <code class="docutils literal notranslate"><span class="pre">resize</span></code> is True.</p></li>
-<li><p><strong>base_url</strong> – The base URL of the remote OpenAI-compatible endpoint (required).</p></li>
-<li><p><strong>model</strong> – The request model name (required).</p></li>
-<li><p><strong>api_key</strong> – The request API key.</p></li>
-<li><p><strong>max_new_tokens</strong> – Hard upper bound on generated tokens; maps to <code class="docutils literal notranslate"><span class="pre">max_tokens</span></code> on the remote
-endpoint. Defaults to 256.</p></li>
-<li><p><strong>max_qps</strong> – The maximum query-per-second rate for remote requests.</p></li>
-<li><p><strong>max_concurrency</strong> – The maximum number of in-flight remote requests allowed concurrently.</p></li>
-<li><p><strong>max_retries</strong> – The maximum number of retries per request in the event of failures.
-We retry with exponential backoff upto this specific maximum retries.</p></li>
-<li><p><strong>fallback_response</strong> – The response value to return when a remote request fails.
-If set to None, the failed rows fall back to None.</p></li>
-<li><p><strong>**kwargs</strong> – Keyword arguments to pass to the <a class="reference external" href="https://github.com/openai/openai-python/blob/main/src/openai/resources/chat/completions/completions.py">openai.AsyncClient.chat.completions.create</a> API.</p></li>
+<li><p><strong>_local_model</strong> – [CPU/GPU] The vision model name for CPU or GPU. Available models:
+[‘Qwen/Qwen3.5-0.8B’, ‘Qwen/Qwen3.5-4B’, ‘Qwen/Qwen3.5-9B’]. Defaults to <code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3.5-4B</span></code>.</p></li>
+<li><p><strong>prompt_builder</strong> – [all] Optional <code class="docutils literal notranslate"><span class="pre">(components)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code> hook that replaces the whole
+system prompt. <code class="docutils literal notranslate"><span class="pre">components</span></code> is a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">PromptComponents</span></code>: the blocks xpark would render
+(<code class="docutils literal notranslate"><span class="pre">roles_and_tasks</span></code>, <code class="docutils literal notranslate"><span class="pre">response_format</span></code>, <code class="docutils literal notranslate"><span class="pre">default_prompt</span></code>), the
+<code class="docutils literal notranslate"><span class="pre">token_budget</span></code> left for text — a hard ceiling: a longer prompt raises
+<code class="docutils literal notranslate"><span class="pre">ValueError</span></code> instead of being truncated — and the row’s prepared media —
+<code class="docutils literal notranslate"><span class="pre">frames</span></code> as <code class="docutils literal notranslate"><span class="pre">[(timestamp,</span> <span class="pre">frame),</span> <span class="pre">...]</span></code> in <code class="docutils literal notranslate"><span class="pre">frames</span></code> mode, each frame the
+clip’s own <code class="docutils literal notranslate"><span class="pre">(H,</span> <span class="pre">W,</span> <span class="pre">3)</span></code> uint8 array; <code class="docutils literal notranslate"><span class="pre">video</span></code> (that same <code class="docutils literal notranslate"><span class="pre">(T,</span> <span class="pre">H,</span> <span class="pre">W,</span> <span class="pre">3)</span></code> clip
+array) in <code class="docutils literal notranslate"><span class="pre">video</span></code> mode. Building on <code class="docutils literal notranslate"><span class="pre">components.default_prompt</span></code> keeps
+the built-in “one clip, chronological order” wording; assembling from scratch
+means restating it. Runs once per row, on the worker that owns the batch, so keep
+it stateless — see <code class="docutils literal notranslate"><span class="pre">Examples:</span></code>.</p></li>
+<li><p><strong>max_words</strong> – [all] A non-negative best-effort target for the number of words in the caption.
+Defaults to 100. If set to 0, there is no word limit. A soft, prompt-level
+constraint rendered into a <code class="docutils literal notranslate"><span class="pre">&lt;response_format&gt;</span></code> block, orthogonal to the hard token
+cap <code class="docutils literal notranslate"><span class="pre">sampling_params[&quot;max_tokens&quot;]</span></code>.</p></li>
+<li><p><strong>num_frames</strong> – [all] Number of frames to uniformly sample per video. Defaults to 16
+(or to the <code class="docutils literal notranslate"><span class="pre">quality</span></code> preset’s frame count when one is selected).
+An explicit value always wins over the preset.</p></li>
+<li><p><strong>quality</strong> – [all] Semantic preset bundling <code class="docutils literal notranslate"><span class="pre">num_frames</span></code> and <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code>:
+<code class="docutils literal notranslate"><span class="pre">&quot;fast&quot;</span></code> (4 frames, 256 tokens/frame), <code class="docutils literal notranslate"><span class="pre">&quot;balanced&quot;</span></code> (8 frames, 768),
+<code class="docutils literal notranslate"><span class="pre">&quot;accurate&quot;</span></code> (16 frames, 768, the raw defaults). An explicit <code class="docutils literal notranslate"><span class="pre">num_frames</span></code>
+wins outright; an explicit <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code> can only tighten the preset’s cap.</p></li>
+<li><p><strong>keyframes_only</strong> – [all] Only decode keyframes (I-frames) when sampling. Defaults to False.</p></li>
+<li><p><strong>video_mode</strong> – <p>[all] How the sampled clip is handed to the model. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>,
+which picks <code class="docutils literal notranslate"><span class="pre">&quot;frames&quot;</span></code> on every backend.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;frames&quot;</span></code> – pass the frames as independent images with the timestamp
+markers rendered into the prompt text. Works on every backend and model, but
+forgoes the temporal merge (full <code class="docutils literal notranslate"><span class="pre">num_frames</span></code> vision-token cost).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;video&quot;</span></code> – pass the clip as one video item. The model’s video processor
+merges consecutive frames 2:1, halving vision-token cost, and dates each merged
+pair by the average of <code class="docutils literal notranslate"><span class="pre">frames_indices</span> <span class="pre">/</span> <span class="pre">fps</span></code>. Requires both the local vLLM
+backend and a model whose registry entry declares <code class="docutils literal notranslate"><span class="pre">&quot;video&quot;</span></code>; every model
+listed above does.</p></li>
 </ul>
+<p>A requested mode is always checked against the model’s declared modes, so
+<code class="docutils literal notranslate"><span class="pre">&quot;video&quot;</span></code> where the model or the backend does not support it raises
+<code class="docutils literal notranslate"><span class="pre">ValueError</span></code> rather than silently downgrading.</p>
+</p></li>
+<li><p><strong>min_token_num</strong> – [all] lower bound on the per-frame vision-token budget. Defaults to 128.</p></li>
+<li><p><strong>max_token_num</strong> – [all] upper bound on the per-frame vision-token budget, never above 768
+(<code class="docutils literal notranslate"><span class="pre">VLM_HARD_PER_FRAME_TOKEN_CAP</span></code>). The effective cap is the clip’s vision budget
+(the model’s own clip bound, or a share of its context) divided across the clip’s
+merged frames; an explicit value can only tighten it further.</p></li>
+<li><p><strong>fallback_response</strong> – [all] The response value to return when the backend produces no caption
+text (remote request failure after retries, or empty local generation).
+If set to None, an empty string is returned instead of a null.</p></li>
+<li><p><strong>engine_kwargs</strong> – [CPU/GPU] Extra arguments forwarded to the local inference engine (GPU:
+<code class="docutils literal notranslate"><span class="pre">vllm.LLM</span></code> constructor; CPU: <code class="docutils literal notranslate"><span class="pre">llama.cpp</span></code> <code class="docutils literal notranslate"><span class="pre">CommonParams</span></code> fields). Unknown
+keys are dropped with a warning on GPU and raise on CPU. Overriding fields the
+backend sizes itself (e.g. <code class="docutils literal notranslate"><span class="pre">n_ctx</span></code>) is allowed but gives up the
+capacity-sizing guarantees. Ignored by the remote backend.</p></li>
+<li><p><strong>base_url</strong> – [remote only] The base URL of the remote OpenAI-compatible endpoint (required on
+IO workers).</p></li>
+<li><p><strong>model</strong> – [remote only] The request model name.</p></li>
+<li><p><strong>api_key</strong> – [remote only] The request API key.</p></li>
+<li><p><strong>max_qps</strong> – [remote only] The maximum query-per-second rate for remote requests.</p></li>
+<li><p><strong>max_concurrency</strong> – [remote only] The maximum number of in-flight remote requests allowed
+concurrently.</p></li>
+<li><p><strong>max_retries</strong> – [remote only] The maximum number of retries per request, with exponential
+backoff. Defaults to 2.</p></li>
+<li><p><strong>sampling_params</strong> – [all] Sampling parameters for the <strong>sampler</strong>: on GPU they become
+<code class="docutils literal notranslate"><span class="pre">SamplingParams</span></code>, on CPU and on remote HTTP they go into the chat-completions
+request. Layered field by field over the model’s presets, so
+<code class="docutils literal notranslate"><span class="pre">{&quot;temperature&quot;:</span> <span class="pre">0.2}</span></code> keeps every other preset value. <code class="docutils literal notranslate"><span class="pre">max_tokens</span></code> is the
+hard generation cap; it defaults to 256 when omitted. Unknown fields are dropped
+with a warning on GPU. <code class="docutils literal notranslate"><span class="pre">repetition_penalty</span></code> only takes effect on the GPU
+backend: the CPU shim does not expose it, and on the remote endpoint it travels
+via <code class="docutils literal notranslate"><span class="pre">extra_body</span></code>, so whether it applies is up to the server.</p></li>
+<li><p><strong>chat_template_kwargs</strong> – [all] Options for the <strong>chat template</strong> (<code class="docutils literal notranslate"><span class="pre">apply_chat_template</span></code>
+on GPU, <code class="docutils literal notranslate"><span class="pre">chat_template_kwargs</span></code> in the request on CPU / remote HTTP). Layered
+over xpark’s <code class="docutils literal notranslate"><span class="pre">{&quot;enable_thinking&quot;:</span> <span class="pre">False}</span></code>, so pass
+<code class="docutils literal notranslate"><span class="pre">{&quot;enable_thinking&quot;:</span> <span class="pre">True}</span></code> to let the model reason (at the cost of the
+generation budget).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If an argument is out of range or contradicts another (<code class="docutils literal notranslate"><span class="pre">max_words</span></code>,
+    <code class="docutils literal notranslate"><span class="pre">num_frames</span></code> / <code class="docutils literal notranslate"><span class="pre">min_token_num</span></code> / <code class="docutils literal notranslate"><span class="pre">max_token_num</span></code>, <code class="docutils literal notranslate"><span class="pre">quality</span></code>), if
+    <code class="docutils literal notranslate"><span class="pre">video_mode</span></code> is not one of <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;video&quot;</span></code> / <code class="docutils literal notranslate"><span class="pre">&quot;frames&quot;</span></code> or the model
+    does not declare the requested mode, if <code class="docutils literal notranslate"><span class="pre">video_mode=&quot;video&quot;</span></code> is requested on a
+    backend other than the local vLLM one, if the model name is unsupported, or if the
+    target itself is missing (neither <code class="docutils literal notranslate"><span class="pre">_local_model</span></code> nor <code class="docutils literal notranslate"><span class="pre">base_url</span></code>;
+    <code class="docutils literal notranslate"><span class="pre">_local_model</span></code> on a local worker; <code class="docutils literal notranslate"><span class="pre">base_url</span></code> / <code class="docutils literal notranslate"><span class="pre">model</span></code> on an IO worker).
+    Also raised when a budget cannot be satisfied (the clip-level token budget exceeds
+    the model context, or the worst legal clip does not fit the CPU engine window),
+    when <code class="docutils literal notranslate"><span class="pre">engine_kwargs</span></code> names a field the CPU backend does not have, and when
+    <code class="docutils literal notranslate"><span class="pre">prompt_builder</span></code> is not callable, returns a blank or non-string prompt, or
+    returns a prompt longer than the <code class="docutils literal notranslate"><span class="pre">token_budget</span></code> the worker’s engine has left
+    for text.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoCaption</span><span class="p">,</span> <span class="n">from_items</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xpark.dataset.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptComponents</span><span class="p">,</span> <span class="n">format_prompt</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span><span class="s2">&quot;https://example.com/clip.mp4&quot;</span><span class="p">])</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">from_items</span><span class="p">([</span><span class="s2">"https://example.com/clip.mp4"</span><span class="p">])</span>
+
+<span class="c1"># CPU worker.</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
-    <span class="s2">&quot;caption&quot;</span><span class="p">,</span>
-    <span class="n">VideoCaption</span><span class="p">(</span>
-        <span class="n">base_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;VLM_ENDPOINT&quot;</span><span class="p">),</span>
-        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen3.5-vl&quot;</span><span class="p">,</span>
-        <span class="n">num_frames</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
-        <span class="n">max_words</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;IO&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
-    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">)),</span>
+    <span class="s2">"caption_cpu"</span><span class="p">,</span>
+    <span class="n">VideoCaption</span><span class="p">()</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
 <span class="p">)</span>
+
+<span class="c1"># GPU worker.</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"caption_gpu"</span><span class="p">,</span>
+    <span class="n">VideoCaption</span><span class="p">()</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"GPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># Remote OpenAI-compatible endpoint (IO worker).</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"caption_io"</span><span class="p">,</span>
+    <span class="n">VideoCaption</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">base_url</span><span class="o">=</span><span class="s2">"https://your-endpoint/v1"</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">"youtu-vita"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"IO"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># --- Custom prompts ---------------------------------------------------------</span>
+
+<span class="c1"># 1. Keep xpark's prompt and append one constraint.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">scene_prompt</span><span class="p">(</span><span class="n">components</span><span class="p">:</span> <span class="n">PromptComponents</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">components</span><span class="o">.</span><span class="n">default_prompt</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">List each scene change with its timestamp."</span>
+
+<span class="c1"># 2. Build the system turn from scratch, in ``frames`` mode: xpark hands you the</span>
+<span class="c1">#    sampled timeline -- ``[(timestamp_seconds, (H, W, 3) uint8 frame), ...]`` -- and</span>
+<span class="c1">#    keeps the user turn (the frames, with their timestamp markers).</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">timeline_prompt</span><span class="p">(</span><span class="n">components</span><span class="p">:</span> <span class="n">PromptComponents</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">frames</span> <span class="o">=</span> <span class="n">components</span><span class="o">.</span><span class="n">frames</span>
+    <span class="n">stamps</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">seconds</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">s"</span> <span class="k">for</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">frames</span><span class="p">)</span>
+    <span class="c1"># Your wording becomes the task block; xpark still renders ``response_format``</span>
+    <span class="c1"># around it, so the tags stay the same as the built-in prompt.</span>
+    <span class="k">return</span> <span class="n">format_prompt</span><span class="p">(</span>
+        <span class="n">roles_and_tasks</span><span class="o">=</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"You are shown </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span><span class="si">}</span><span class="s2"> frames sampled in chronological order "</span>
+            <span class="sa">f</span><span class="s2">"from ONE video, at </span><span class="si">{</span><span class="n">stamps</span><span class="si">}</span><span class="s2">. "</span>
+            <span class="sa">f</span><span class="s2">"Describe what happens between consecutive frames."</span>
+        <span class="p">),</span>
+        <span class="n">response_format</span><span class="o">=</span><span class="n">components</span><span class="o">.</span><span class="n">response_format</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="c1"># 3. ``video`` mode (vLLM only): the clip is one prepared ``(T, H, W, 3)`` tensor.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">whole_clip_prompt</span><span class="p">(</span><span class="n">components</span><span class="p">:</span> <span class="n">PromptComponents</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">num_frames</span> <span class="o">=</span> <span class="n">components</span><span class="o">.</span><span class="n">video</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"You are shown one </span><span class="si">{</span><span class="n">num_frames</span><span class="si">}</span><span class="s2">-frame video clip. "</span>
+        <span class="sa">f</span><span class="s2">"Summarize it in a single sentence. </span><span class="si">{</span><span class="n">components</span><span class="o">.</span><span class="n">response_format</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">builder</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">"caption_scenes"</span><span class="p">,</span> <span class="n">scene_prompt</span><span class="p">),</span> <span class="p">(</span><span class="s2">"caption_timeline"</span><span class="p">,</span> <span class="n">timeline_prompt</span><span class="p">)]:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+        <span class="n">name</span><span class="p">,</span>
+        <span class="n">VideoCaption</span><span class="p">(</span><span class="n">prompt_builder</span><span class="o">=</span><span class="n">builder</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+        <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
+    <span class="p">)</span>
+
+<span class="c1"># ``video_mode="video"`` is vLLM-only, so that one runs on a GPU worker.</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"caption_whole"</span><span class="p">,</span>
+    <span class="n">VideoCaption</span><span class="p">(</span><span class="n">prompt_builder</span><span class="o">=</span><span class="n">whole_clip_prompt</span><span class="p">,</span> <span class="n">video_mode</span><span class="o">=</span><span class="s2">"video"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"GPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
+<span class="p">)</span>
+
+<span class="c1"># Sampling and chat-template knobs: one destination each.</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s2">"caption_thinking"</span><span class="p">,</span>
+    <span class="n">VideoCaption</span><span class="p">(</span>
+        <span class="n">sampling_params</span><span class="o">=</span><span class="p">{</span><span class="s2">"temperature"</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">"max_tokens"</span><span class="p">:</span> <span class="mi">512</span><span class="p">},</span>
+        <span class="n">chat_template_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">"enable_thinking"</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="p">{</span><span class="s2">"CPU"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)),</span>
+<span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -591,20 +728,20 @@ If set to None, the failed rows fall back to None.</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="xpark.dataset.VideoWatermarkDetect.html"
+       href="xpark.dataset.VideoAestheticScore.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">xpark.dataset.VideoWatermarkDetect</p>
+        <p class="prev-next-title">xpark.dataset.VideoAestheticScore</p>
       </div>
     </a>
     <a class="right-next"
-       href="xpark.dataset.PDFToText.html"
+       href="xpark.dataset.VideoExtractSubtitle.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">xpark.dataset.PDFToText</p>
+        <p class="prev-next-title">xpark.dataset.VideoExtractSubtitle</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -658,8 +795,8 @@ If set to None, the failed rows fall back to None.</p></li>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -680,7 +817,6 @@ If set to None, the failed rows fall back to None.</p></li>
 
   <p class="sphinx-version">
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
-    <br/>
   </p>
 </div>
       
@@ -693,7 +829,7 @@ If set to None, the failed rows fall back to None.</p></li>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
 </p></div>
       
     </div>

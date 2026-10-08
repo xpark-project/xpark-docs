@@ -8,6 +8,7 @@ Examples
    :maxdepth: 2
    :hidden:
 
+   checkpointing
    text_dedup
    video_classify
    video_data_pipeline

@@ -1,34 +1,42 @@
 [
     {
         "version": "main",
-        "url": "https://xpark-project.github.io/xpark-docs/en/main/"
+        "url": "https://xpark.pages.woa.com/en/main/"
+    },
+    {
+        "version": "v0.6.2",
+        "url": "https://xpark.pages.woa.com/en/v0.6.2/"
     },
     {
         "version": "v0.6.1",
-        "url": "https://xpark-project.github.io/xpark-docs/en/v0.6.1/"
+        "url": "https://xpark.pages.woa.com/en/v0.6.1/"
+    },
+    {
+        "version": "v0.6.0",
+        "url": "https://xpark.pages.woa.com/en/v0.6.0/"
     },
     {
         "version": "v0.5.1",
-        "url": "https://xpark-project.github.io/xpark-docs/en/v0.5.1/"
+        "url": "https://xpark.pages.woa.com/en/v0.5.1/"
     },
     {
         "version": "v0.5.0",
-        "url": "https://xpark-project.github.io/xpark-docs/en/v0.5.0/"
+        "url": "https://xpark.pages.woa.com/en/v0.5.0/"
     },
     {
         "version": "v0.4.0",
-        "url": "https://xpark-project.github.io/xpark-docs/en/v0.4.0/"
+        "url": "https://xpark.pages.woa.com/en/v0.4.0/"
     },
     {
         "version": "v0.3.1",
-        "url": "https://xpark-project.github.io/xpark-docs/en/v0.3.1/"
+        "url": "https://xpark.pages.woa.com/en/v0.3.1/"
     },
     {
         "version": "v0.3.0",
-        "url": "https://xpark-project.github.io/xpark-docs/en/v0.3.0/"
+        "url": "https://xpark.pages.woa.com/en/v0.3.0/"
     },
     {
         "version": "v0.1.0",
-        "url": "https://xpark-project.github.io/xpark-docs/en/v0.1.0/"
+        "url": "https://xpark.pages.woa.com/en/v0.1.0/"
     }
 ]
